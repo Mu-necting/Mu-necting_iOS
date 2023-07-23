@@ -3,22 +3,32 @@
 
 ## Foldering
 📂 Resource
+
 ↳ 🗒 Info.plist
+
 ↳ 🗳 Assets.xcassets
+
 ↳ 📂 Storyboards
 
 📂 Sources
-↳ 🗒 AppDelegate.swift
-↳ 🗒 SceneDelegate.swift
-↳ 📂 APIServices
-↳ 📂 Extensions
-↳ 📂 Models
-↳ 📂 Protocols
-↳ 📂 Cells
-↳ 📂 Views
-↳ 📂 ViewControllers
 
-<br/>
+↳ 🗒 AppDelegate.swift
+
+↳ 🗒 SceneDelegate.swift
+
+↳ 📂 APIServices
+
+↳ 📂 Extensions
+
+↳ 📂 Models
+
+↳ 📂 Protocols
+
+↳ 📂 Cells
+
+↳ 📂 Views
+
+↳ 📂 ViewControllers
 
 ## Branch Structure
 - main : 배포
