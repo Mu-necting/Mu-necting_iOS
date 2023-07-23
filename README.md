@@ -1,5 +1,5 @@
-# 🎵Mu:necting-음악으로 연결하다_Spring boot🍀
-<br/>
+# Mu-necting_iOS
+🎵Mu:necting-음악으로 연결하다_iOS🍎<br/>
 
 ## Package Structure
 - main
@@ -24,9 +24,9 @@
 ## Branch Structure
 - main : 배포
 - develop : 개발
-- feature#기능 : 새로운 기능 추가
-- release#버 : 배포전 최종 버그 수정
-- hotfix#버그 : 배포 버전의 버그 수정
+- feature: 새로운 기능 추가
+- release : 배포전 최종 버그 수정
+- hotfix : 배포 버전의 버그 수정
 
 <br/>
 
