@@ -2,22 +2,21 @@
 🎵Mu:necting-음악으로 연결하다_iOS🍎<br/>
 
 ## Foldering
-- main
-  - java
-    - com.munecting.server
-      - domain
-        - archive 
-          - entity 
-        - member
-          - entity
-        - music
-          - entity
-      - global
-        - config
-        - utils
-            
-  - resources
-    - application.yml
+📂 Resource
+↳ 🗒 Info.plist
+↳ 🗳 Assets.xcassets
+↳ 📂 Storyboards
+
+📂 Sources
+↳ 🗒 AppDelegate.swift
+↳ 🗒 SceneDelegate.swift
+↳ 📂 APIServices
+↳ 📂 Extensions
+↳ 📂 Models
+↳ 📂 Protocols
+↳ 📂 Cells
+↳ 📂 Views
+↳ 📂 ViewControllers
 
 <br/>
 
