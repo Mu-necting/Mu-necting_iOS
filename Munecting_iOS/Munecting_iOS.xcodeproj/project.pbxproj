@@ -45,7 +45,7 @@
 		D2E3458C2A66BD7000922A1C /* Munecting_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Munecting_iOS.xcdatamodel; sourceTree = "<group>"; };
 		D2E3458E2A66BD7100922A1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2E345912A66BD7100922A1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D2E345932A66BD7100922A1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2E345932A66BD7100922A1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Munecting_iOS/Resource/Info.plist; sourceTree = SOURCE_ROOT; };
 		D2E345982A66BD7200922A1C /* Munecting_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Munecting_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E3459C2A66BD7200922A1C /* Munecting_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Munecting_iOSTests.swift; sourceTree = "<group>"; };
 		D2E345A22A66BD7200922A1C /* Munecting_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Munecting_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +78,91 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C17DBB352A6E3BE0007F45BD /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D2E345932A66BD7100922A1C /* Info.plist */,
+				D2E3458E2A66BD7100922A1C /* Assets.xcassets */,
+				C17DBB362A6E3BEF007F45BD /* Storyboards */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		C17DBB362A6E3BEF007F45BD /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D2E345882A66BD7000922A1C /* Main.storyboard */,
+				D2E345902A66BD7100922A1C /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C17DBB372A6E3C15007F45BD /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C17DBB3E2A6E3C59007F45BD /* Views */,
+				C17DBB3D2A6E3C53007F45BD /* Cells */,
+				C17DBB3C2A6E3C4A007F45BD /* Protocols */,
+				C17DBB3B2A6E3C44007F45BD /* Models */,
+				C17DBB3A2A6E3C3C007F45BD /* Extensions */,
+				C17DBB392A6E3C34007F45BD /* APIServices */,
+				C17DBB382A6E3C25007F45BD /* ViewControllers */,
+				D2E345822A66BD7000922A1C /* AppDelegate.swift */,
+				D2E345842A66BD7000922A1C /* SceneDelegate.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		C17DBB382A6E3C25007F45BD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D2E345862A66BD7000922A1C /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C17DBB392A6E3C34007F45BD /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIServices;
+			sourceTree = "<group>";
+		};
+		C17DBB3A2A6E3C3C007F45BD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C17DBB3B2A6E3C44007F45BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C17DBB3C2A6E3C4A007F45BD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C17DBB3D2A6E3C53007F45BD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C17DBB3E2A6E3C59007F45BD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D2E345762A66BD7000922A1C = {
 			isa = PBXGroup;
 			children = (
@@ -101,13 +186,8 @@
 		D2E345812A66BD7000922A1C /* Munecting_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D2E345822A66BD7000922A1C /* AppDelegate.swift */,
-				D2E345842A66BD7000922A1C /* SceneDelegate.swift */,
-				D2E345862A66BD7000922A1C /* ViewController.swift */,
-				D2E345882A66BD7000922A1C /* Main.storyboard */,
-				D2E3458E2A66BD7100922A1C /* Assets.xcassets */,
-				D2E345902A66BD7100922A1C /* LaunchScreen.storyboard */,
-				D2E345932A66BD7100922A1C /* Info.plist */,
+				C17DBB372A6E3C15007F45BD /* Sources */,
+				C17DBB352A6E3BE0007F45BD /* Resource */,
 				D2E3458B2A66BD7000922A1C /* Munecting_iOS.xcdatamodeld */,
 			);
 			path = Munecting_iOS;
@@ -442,7 +522,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Munecting_iOS/Info.plist;
+				INFOPLIST_FILE = Munecting_iOS/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -469,7 +549,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Munecting_iOS/Info.plist;
+				INFOPLIST_FILE = Munecting_iOS/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
