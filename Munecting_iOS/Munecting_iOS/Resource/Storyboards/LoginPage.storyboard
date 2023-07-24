@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="LoginViewController" customModule="Munecting_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="LoginPage" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="IM7-Rf-Fy7">
+                                <rect key="frame" x="56.666666666666657" y="334.33333333333331" width="280" height="208.33333333333331"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5iq-15-QbH">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="2mg-Ih-Api"/>
+                                            <constraint firstAttribute="width" constant="280" id="Hbm-7W-HQh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PW" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gng-c9-3rB">
+                                        <rect key="frame" x="0.0" y="58" width="280" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="Tih-9F-hTE"/>
+                                            <constraint firstAttribute="height" constant="42" id="tm4-7O-zH8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3w-V1-W9c">
+                                        <rect key="frame" x="211.66666666666666" y="115.99999999999999" width="68.333333333333343" height="34.333333333333329"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="로그인"/>
+                                        <connections>
+                                            <action selector="onTapLogin:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="MEO-OE-4rk"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kakao_login" translatesAutoresizingMaskIntoConstraints="NO" id="6Si-LI-3FJ">
+                                        <rect key="frame" x="0.0" y="166.33333333333337" width="280" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="NxI-gl-MRU"/>
+                                            <constraint firstAttribute="height" constant="42" id="gaQ-tc-s8R"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mu:necting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1D-gf-dYG">
+                                <rect key="frame" x="92.333333333333329" y="226.33333333333334" width="208.66666666666669" height="48.000000000000028"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="5VK-5M-i0F">
+                                <rect key="frame" x="67.333333333333343" y="676.66666666666663" width="258.66666666666663" height="82.666666666666629"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="tIu-6H-Jcw">
+                                        <rect key="frame" x="6.0000000000000142" y="0.0" width="246.33333333333337" height="34.333333333333336"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 회원이 아니신가요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgo-M9-Gma">
+                                                <rect key="frame" x="0.0" y="8.3333333333333712" width="145.33333333333334" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t22-9B-S5q">
+                                                <rect key="frame" x="163.33333333333331" y="0.0" width="83" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="회원가입"/>
+                                                <connections>
+                                                    <action selector="onTapSignUp:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pFE-so-iA5"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="btF-xJ-Lcc">
+                                        <rect key="frame" x="0.0" y="48.333333333333371" width="258.66666666666669" height="34.333333333333343"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unA-tP-3aa">
+                                                <rect key="frame" x="0.0" y="0.0" width="102" height="34.333333333333336"/>
+                                                <color key="tintColor" systemColor="secondaryLabelColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="이메일 찾기"/>
+                                                <connections>
+                                                    <action selector="onTapFindEmail:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CQG-Pw-s5R"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lkw-JN-JKC">
+                                                <rect key="frame" x="120.00000000000001" y="6.9999999999999982" width="4" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4M-It-o22">
+                                                <rect key="frame" x="142" y="0.0" width="116.66666666666669" height="34.333333333333336"/>
+                                                <color key="tintColor" systemColor="secondaryLabelColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="비밀번호 찾기"/>
+                                                <connections>
+                                                    <action selector="onTapFindPwd:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NT2-V5-4hD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IM7-Rf-Fy7" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="12c-Zu-9RQ"/>
+                            <constraint firstItem="5VK-5M-i0F" firstAttribute="top" secondItem="6Si-LI-3FJ" secondAttribute="bottom" constant="134" id="BUK-XC-0GZ"/>
+                            <constraint firstItem="5VK-5M-i0F" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Ibj-QU-9yg"/>
+                            <constraint firstItem="IM7-Rf-Fy7" firstAttribute="top" secondItem="o1D-gf-dYG" secondAttribute="bottom" constant="60" id="TMS-n9-suu"/>
+                            <constraint firstItem="IM7-Rf-Fy7" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="f9A-1R-ehZ"/>
+                            <constraint firstItem="o1D-gf-dYG" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="oCE-sr-TBW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="kakaoLoginButton" destination="6Si-LI-3FJ" id="5Jx-L0-ylj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25.190839694656489" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="kakao_login" width="100" height="15"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
