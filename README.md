@@ -29,6 +29,8 @@
 ↳ 📂 Views
 
 ↳ 📂 ViewControllers
+## Libraries
+pod 'DropDown'
 
 ## Branch Structure
 - main : 배포
