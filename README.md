@@ -30,6 +30,7 @@
 
 ↳ 📂 ViewControllers
 ## Libraries
+Swift Version : 4.2
 pod 'DropDown'
 
 ## Branch Structure
