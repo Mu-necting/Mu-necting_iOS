@@ -33,6 +33,12 @@ class LoginViewController: UIViewController {
     
     @IBAction func onTapSignUp(_ sender: Any) {
         print("회원가입")
+        presentSignUpModal()
+//        let signUpModal = SignUpModalViewController()
+//        if let sheet = signUpModal.sheetPresentationController {
+//               sheet.detents = [.medium()]
+//           }
+//        self.present(signUpModal, animated: true)
     }
     
     
@@ -44,17 +50,64 @@ class LoginViewController: UIViewController {
         print("비밀번호 찾기")
     }
     
+    @objc private func presentSignUpModal() {
+        
+        let signUpModal = UIViewController()
+        signUpModal.view.backgroundColor = UIColor(hexCode: "D9D9D9")
+        signUpModal.modalPresentationStyle = .pageSheet
+        signUpModal.navigationItem.title = "간단한 회원가입"
+        
+        if let sheet = signUpModal.sheetPresentationController {
+            
+            //지원할 크기 지정
+            sheet.detents = [.medium()]
 
-//    @IBAction func presentModal(_ sender: Any) {
-//          guard let viewController = storyboard?.instantiateViewController(identifier: "ModalViewController") as? ModalViewController else {
-//              return
-//          }
+           
+            //시트 상단에 그래버 표시 (기본 값은 false)
+            sheet.prefersGrabberVisible = true
+        }
+        
+        
+        let modalTitle: UILabel = {
+                let lb = UILabel()
+                lb.text = "간단한 회원가입"
+                lb.textAlignment = .center
+                lb.font = .systemFont(ofSize: 30)
+                lb.textColor = .black
+                lb.backgroundColor = .red
+                lb.frame = CGRect(x: 120, y: 50, width: 100, height: 50)
+                
+                return lb
+            }()
+        
+        
+        let button = UIButton(type: .system)
+        button.setTitle("버튼", for: .normal)
+        button.backgroundColor = .blue
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        button.frame = CGRect(x: 0, y: 0, width: 100, height: 50) // 버튼의 프레임 설정
+        signUpModal.view.addSubview(button)
+        signUpModal.view.addSubview(modalTitle)
+
+        present(signUpModal, animated: true, completion: nil)
+    }
+
+    @objc private func buttonTapped() {
+    // 버튼 액션 처리
+        print("모달 버튼")
+    }
+
+    
+
+//    private func presentReviewModalViewController() {
+//            let reviewModalStoryboard = UIStoryboard(name: Const.Storyboard.Name.reviewModal, bundle: nil)
+//            guard let reviewModalViewController = reviewModalStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.reviewModal) as? SignUpModalViewController else {
+//                return
+//            }
 //
-//          // delegate에 있는 방식을 사용하고 싶기 때문에 .custom 사용
-//          viewController.modalPresentationStyle = .custom
-//          // 어떤 방식으로 커스텀을 정의할 지 된 sldeInTransitioningDelegate에 위임한다
-//          viewController.transitioningDelegate = slideInTransitioningDelegate
-//          // 모달을 띄운다
-//          self.present(viewController, animated: true, completion: nil)
-//      }
+//            reviewModalViewController.modalPresentationStyle = .custom
+//            reviewModalViewController.transitioningDelegate = self
+//            present(reviewModalViewController, animated: true, completion: nil)
+//    }
+    
 }
