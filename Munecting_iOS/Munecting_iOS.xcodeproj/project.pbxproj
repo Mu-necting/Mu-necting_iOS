@@ -11,6 +11,8 @@
 		B33B035F2A7665B0003D4531 /* ArchivePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33B035E2A7665B0003D4531 /* ArchivePickViewController.swift */; };
 		B33B03612A766D9F003D4531 /* ArchiveTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33B03602A766D9F003D4531 /* ArchiveTabBarController.swift */; };
 		B38637302A765AC100BB4F61 /* ArchivePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B386372F2A765AC100BB4F61 /* ArchivePage.storyboard */; };
+		C1769C9A2A767C280043BAF5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1769C992A767C280043BAF5 /* Home.storyboard */; };
+		C1F6F01A2A76A8C100A99CD2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F6F0192A76A8C100A99CD2 /* HomeViewController.swift */; };
 		D254462D2A6E5BFF007E582B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D254462C2A6E5BFF007E582B /* LoginViewController.swift */; };
 		D2913F2C2A6E5A4300B6174F /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2913F2B2A6E5A4300B6174F /* LoginPage.storyboard */; };
 		D2913F2E2A6E5BA700B6174F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2913F2D2A6E5BA700B6174F /* User.swift */; };
@@ -57,6 +59,8 @@
 		B386372D2A76594000BB4F61 /* Inter-Black900.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black900.ttf"; sourceTree = "<group>"; };
 		B386372E2A76594000BB4F61 /* Inter-ExtraBold800.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold800.ttf"; sourceTree = "<group>"; };
 		B386372F2A765AC100BB4F61 /* ArchivePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArchivePage.storyboard; sourceTree = "<group>"; };
+		C1769C992A767C280043BAF5 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		C1F6F0192A76A8C100A99CD2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D254462C2A6E5BFF007E582B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D2913F2B2A6E5A4300B6174F /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
 		D2913F2D2A6E5BA700B6174F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = Munecting_iOS/Sources/Models/User.swift; sourceTree = SOURCE_ROOT; };
@@ -133,6 +137,7 @@
 			children = (
 				D2E345882A66BD7000922A1C /* Main.storyboard */,
 				D2E345902A66BD7100922A1C /* LaunchScreen.storyboard */,
+				C1769C992A767C280043BAF5 /* Home.storyboard */,
 				D2913F2B2A6E5A4300B6174F /* LoginPage.storyboard */,
 				B386372F2A765AC100BB4F61 /* ArchivePage.storyboard */,
 			);
@@ -158,6 +163,7 @@
 				B33B035C2A766583003D4531 /* ArchiveUploadViewController.swift */,
 				B33B035E2A7665B0003D4531 /* ArchivePickViewController.swift */,
 				B33B03602A766D9F003D4531 /* ArchiveTabBarController.swift */,
+				C1F6F0192A76A8C100A99CD2 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 				D2E345922A66BD7100922A1C /* LaunchScreen.storyboard in Resources */,
 				D2913F2C2A6E5A4300B6174F /* LoginPage.storyboard in Resources */,
 				D2E3458F2A66BD7100922A1C /* Assets.xcassets in Resources */,
+				C1769C9A2A767C280043BAF5 /* Home.storyboard in Resources */,
 				B38637302A765AC100BB4F61 /* ArchivePage.storyboard in Resources */,
 				D2E3458A2A66BD7000922A1C /* Main.storyboard in Resources */,
 			);
@@ -355,6 +362,7 @@
 				D2E345872A66BD7000922A1C /* ViewController.swift in Sources */,
 				B33B035F2A7665B0003D4531 /* ArchivePickViewController.swift in Sources */,
 				B33B035D2A766583003D4531 /* ArchiveUploadViewController.swift in Sources */,
+				C1F6F01A2A76A8C100A99CD2 /* HomeViewController.swift in Sources */,
 				D2E345832A66BD7000922A1C /* AppDelegate.swift in Sources */,
 				D2E3458D2A66BD7000922A1C /* Munecting_iOS.xcdatamodeld in Sources */,
 				D2913F2E2A6E5BA700B6174F /* User.swift in Sources */,
