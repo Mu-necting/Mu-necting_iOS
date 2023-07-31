@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Authentication Phone View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier=" AuthenticationPhone" id="Y6W-OH-hqX" customClass="AuthenticationPhoneViewController" customModule="Munecting_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴대폰 번호 인증하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDf-NT-xyp">
+                                <rect key="frame" x="48" y="137" width="206" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qra-Yg-2cb">
+                                <rect key="frame" x="48" y="253" width="210" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="3to-5d-qNo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="인증번호 6자리" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pl5-aS-c1W">
+                                <rect key="frame" x="48" y="349" width="297" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="KhK-b6-SFN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전화번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAk-1v-UjF">
+                                <rect key="frame" x="56" y="219" width="63" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인증번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSG-fv-aEY">
+                                <rect key="frame" x="56" y="315" width="63" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNX-OQ-mOE">
+                                <rect key="frame" x="272" y="253" width="73" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="UrP-RJ-E0C"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="인증받기">
+                                            <attributes>
+                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZn-xP-mlr">
+                                <rect key="frame" x="48" y="417" width="297" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="GhU-5d-j2Y"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="다음">
+                                            <attributes>
+                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dDf-NT-xyp" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="78" id="949-qC-pRZ"/>
+                            <constraint firstItem="oNX-OQ-mOE" firstAttribute="leading" secondItem="Qra-Yg-2cb" secondAttribute="trailing" constant="14" id="CSF-9l-vbL"/>
+                            <constraint firstItem="Qra-Yg-2cb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="48" id="Lz9-EY-T2z"/>
+                            <constraint firstItem="GAk-1v-UjF" firstAttribute="leading" secondItem="Qra-Yg-2cb" secondAttribute="leading" constant="8" id="ScB-fJ-GJF"/>
+                            <constraint firstItem="GAk-1v-UjF" firstAttribute="top" secondItem="dDf-NT-xyp" secondAttribute="bottom" constant="52" id="Vkz-hu-bKs"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pl5-aS-c1W" secondAttribute="trailing" constant="48" id="YpY-td-YwS"/>
+                            <constraint firstItem="uZn-xP-mlr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="48" id="ZfU-e9-vXf"/>
+                            <constraint firstItem="uZn-xP-mlr" firstAttribute="top" secondItem="pl5-aS-c1W" secondAttribute="bottom" constant="26" id="bqC-DN-yvE"/>
+                            <constraint firstItem="CSG-fv-aEY" firstAttribute="leading" secondItem="GAk-1v-UjF" secondAttribute="leading" id="fJk-IY-b9m"/>
+                            <constraint firstItem="pl5-aS-c1W" firstAttribute="top" secondItem="CSG-fv-aEY" secondAttribute="bottom" constant="12" id="fkD-mJ-oP6"/>
+                            <constraint firstItem="CSG-fv-aEY" firstAttribute="top" secondItem="Qra-Yg-2cb" secondAttribute="bottom" constant="20" id="njv-bh-8zF"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oNX-OQ-mOE" secondAttribute="trailing" constant="48" id="oAd-dQ-FKO"/>
+                            <constraint firstItem="Qra-Yg-2cb" firstAttribute="top" secondItem="GAk-1v-UjF" secondAttribute="bottom" constant="12" id="qHO-2q-sN6"/>
+                            <constraint firstItem="oNX-OQ-mOE" firstAttribute="top" secondItem="Qra-Yg-2cb" secondAttribute="top" id="quV-Hp-eYk"/>
+                            <constraint firstItem="pl5-aS-c1W" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="48" id="tMc-QR-6KG"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="uZn-xP-mlr" secondAttribute="trailing" constant="48" id="ttA-fg-bbD"/>
+                            <constraint firstItem="dDf-NT-xyp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="48" id="xQQ-i3-E5F"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116.79389312977099" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -14,6 +14,13 @@
 		C1769C9A2A767C280043BAF5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1769C992A767C280043BAF5 /* Home.storyboard */; };
 		C1F6F01A2A76A8C100A99CD2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F6F0192A76A8C100A99CD2 /* HomeViewController.swift */; };
 		D254462D2A6E5BFF007E582B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D254462C2A6E5BFF007E582B /* LoginViewController.swift */; };
+		D254462F2A6E5FD4007E582B /* SignUpModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D254462E2A6E5FD4007E582B /* SignUpModalViewController.swift */; };
+		D25446382A6E6C1A007E582B /* AuthenticationPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D25446372A6E6C1A007E582B /* AuthenticationPhone.storyboard */; };
+		D25446872A7015F7007E582B /* AuthenticationPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25446862A7015F7007E582B /* AuthenticationPhoneViewController.swift */; };
+		D254468B2A7017DC007E582B /* SingUpWithEmail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D254468A2A7017DC007E582B /* SingUpWithEmail.storyboard */; };
+		D254468D2A701803007E582B /* SignUpWithEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D254468C2A701803007E582B /* SignUpWithEmailViewController.swift */; };
+		D254468F2A702186007E582B /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D254468E2A702186007E582B /* Tutorial.storyboard */; };
+		D25446922A716077007E582B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25446912A716077007E582B /* UIColor.swift */; };
 		D2913F2C2A6E5A4300B6174F /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2913F2B2A6E5A4300B6174F /* LoginPage.storyboard */; };
 		D2913F2E2A6E5BA700B6174F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2913F2D2A6E5BA700B6174F /* User.swift */; };
 		D2E345832A66BD7000922A1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E345822A66BD7000922A1C /* AppDelegate.swift */; };
@@ -62,6 +69,13 @@
 		C1769C992A767C280043BAF5 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		C1F6F0192A76A8C100A99CD2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D254462C2A6E5BFF007E582B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D254462E2A6E5FD4007E582B /* SignUpModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModalViewController.swift; sourceTree = "<group>"; };
+		D25446372A6E6C1A007E582B /* AuthenticationPhone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthenticationPhone.storyboard; sourceTree = "<group>"; };
+		D25446862A7015F7007E582B /* AuthenticationPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPhoneViewController.swift; sourceTree = "<group>"; };
+		D254468A2A7017DC007E582B /* SingUpWithEmail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SingUpWithEmail.storyboard; sourceTree = "<group>"; };
+		D254468C2A701803007E582B /* SignUpWithEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailViewController.swift; sourceTree = "<group>"; };
+		D254468E2A702186007E582B /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
+		D25446912A716077007E582B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		D2913F2B2A6E5A4300B6174F /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
 		D2913F2D2A6E5BA700B6174F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = Munecting_iOS/Sources/Models/User.swift; sourceTree = SOURCE_ROOT; };
 		D2E3457F2A66BD7000922A1C /* Munecting_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Munecting_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +153,9 @@
 				D2E345902A66BD7100922A1C /* LaunchScreen.storyboard */,
 				C1769C992A767C280043BAF5 /* Home.storyboard */,
 				D2913F2B2A6E5A4300B6174F /* LoginPage.storyboard */,
+				D25446372A6E6C1A007E582B /* AuthenticationPhone.storyboard */,
+				D254468A2A7017DC007E582B /* SingUpWithEmail.storyboard */,
+				D254468E2A702186007E582B /* Tutorial.storyboard */,
 				B386372F2A765AC100BB4F61 /* ArchivePage.storyboard */,
 			);
 			path = Storyboards;
@@ -147,6 +164,11 @@
 		C17DBB372A6E3C15007F45BD /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D25446902A716040007E582B /* Extensions */,
+				D25446352A6E6525007E582B /* APIServices */,
+				D25446332A6E650A007E582B /* Protocols */,
+				D25446322A6E64E2007E582B /* Cells */,
+				D25446312A6E64BE007E582B /* Views */,
 				D25446302A6E64A8007E582B /* Models */,
 				C17DBB382A6E3C25007F45BD /* ViewControllers */,
 				D2E345822A66BD7000922A1C /* AppDelegate.swift */,
@@ -160,6 +182,9 @@
 			children = (
 				D2E345862A66BD7000922A1C /* ViewController.swift */,
 				D254462C2A6E5BFF007E582B /* LoginViewController.swift */,
+				D254462E2A6E5FD4007E582B /* SignUpModalViewController.swift */,
+				D25446862A7015F7007E582B /* AuthenticationPhoneViewController.swift */,
+				D254468C2A701803007E582B /* SignUpWithEmailViewController.swift */,
 				B33B035C2A766583003D4531 /* ArchiveUploadViewController.swift */,
 				B33B035E2A7665B0003D4531 /* ArchivePickViewController.swift */,
 				B33B03602A766D9F003D4531 /* ArchiveTabBarController.swift */,
@@ -174,6 +199,42 @@
 				D2913F2D2A6E5BA700B6174F /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D25446312A6E64BE007E582B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D25446322A6E64E2007E582B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D25446332A6E650A007E582B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D25446352A6E6525007E582B /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIServices;
+			sourceTree = "<group>";
+		};
+		D25446902A716040007E582B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D25446912A716077007E582B /* UIColor.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D2E345762A66BD7000922A1C = {
@@ -327,8 +388,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D25446382A6E6C1A007E582B /* AuthenticationPhone.storyboard in Resources */,
+				D254468F2A702186007E582B /* Tutorial.storyboard in Resources */,
 				D2E345922A66BD7100922A1C /* LaunchScreen.storyboard in Resources */,
 				D2913F2C2A6E5A4300B6174F /* LoginPage.storyboard in Resources */,
+				D254468B2A7017DC007E582B /* SingUpWithEmail.storyboard in Resources */,
 				D2E3458F2A66BD7100922A1C /* Assets.xcassets in Resources */,
 				C1769C9A2A767C280043BAF5 /* Home.storyboard in Resources */,
 				B38637302A765AC100BB4F61 /* ArchivePage.storyboard in Resources */,
@@ -365,8 +429,12 @@
 				C1F6F01A2A76A8C100A99CD2 /* HomeViewController.swift in Sources */,
 				D2E345832A66BD7000922A1C /* AppDelegate.swift in Sources */,
 				D2E3458D2A66BD7000922A1C /* Munecting_iOS.xcdatamodeld in Sources */,
+				D25446872A7015F7007E582B /* AuthenticationPhoneViewController.swift in Sources */,
+				D254468D2A701803007E582B /* SignUpWithEmailViewController.swift in Sources */,
+				D254462F2A6E5FD4007E582B /* SignUpModalViewController.swift in Sources */,
 				D2913F2E2A6E5BA700B6174F /* User.swift in Sources */,
 				D2E345852A66BD7000922A1C /* SceneDelegate.swift in Sources */,
+				D25446922A716077007E582B /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
