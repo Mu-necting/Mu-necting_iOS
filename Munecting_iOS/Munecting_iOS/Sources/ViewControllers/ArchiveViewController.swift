@@ -9,6 +9,7 @@ import UIKit
 
 class ArchiveViewController: UIViewController {
     
+    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var pickView: UIView!
     @IBOutlet weak var uploadView: UIView!
@@ -24,6 +25,7 @@ class ArchiveViewController: UIViewController {
             uploadView.alpha = 1.0
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
