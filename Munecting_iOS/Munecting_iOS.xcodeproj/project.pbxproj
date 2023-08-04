@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		B33B035D2A766583003D4531 /* ArchiveUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33B035C2A766583003D4531 /* ArchiveUploadViewController.swift */; };
 		B33B035F2A7665B0003D4531 /* ArchivePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33B035E2A7665B0003D4531 /* ArchivePickViewController.swift */; };
-		B33B03612A766D9F003D4531 /* ArchiveTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33B03602A766D9F003D4531 /* ArchiveTabBarController.swift */; };
 		B38637302A765AC100BB4F61 /* ArchivePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B386372F2A765AC100BB4F61 /* ArchivePage.storyboard */; };
+		B39202472A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39202462A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift */; };
+		B39202492A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39202482A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift */; };
+		B3943B5C2A7CB91300317F2C /* ArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3943B5B2A7CB91300317F2C /* ArchiveViewController.swift */; };
 		C1769C9A2A767C280043BAF5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1769C992A767C280043BAF5 /* Home.storyboard */; };
 		C1F6F01A2A76A8C100A99CD2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F6F0192A76A8C100A99CD2 /* HomeViewController.swift */; };
 		D254462D2A6E5BFF007E582B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D254462C2A6E5BFF007E582B /* LoginViewController.swift */; };
@@ -57,7 +59,6 @@
 /* Begin PBXFileReference section */
 		B33B035C2A766583003D4531 /* ArchiveUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveUploadViewController.swift; sourceTree = "<group>"; };
 		B33B035E2A7665B0003D4531 /* ArchivePickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivePickViewController.swift; sourceTree = "<group>"; };
-		B33B03602A766D9F003D4531 /* ArchiveTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveTabBarController.swift; sourceTree = "<group>"; };
 		B38637262A76594000BB4F61 /* Inter-Regular400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular400.ttf"; sourceTree = "<group>"; };
 		B38637272A76594000BB4F61 /* Inter-ExtraLight200.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight200.ttf"; sourceTree = "<group>"; };
 		B38637282A76594000BB4F61 /* Inter-Bold700.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold700.ttf"; sourceTree = "<group>"; };
@@ -68,6 +69,9 @@
 		B386372D2A76594000BB4F61 /* Inter-Black900.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black900.ttf"; sourceTree = "<group>"; };
 		B386372E2A76594000BB4F61 /* Inter-ExtraBold800.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold800.ttf"; sourceTree = "<group>"; };
 		B386372F2A765AC100BB4F61 /* ArchivePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArchivePage.storyboard; sourceTree = "<group>"; };
+		B39202462A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivePickCollectionViewCell.swift; sourceTree = "<group>"; };
+		B39202482A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveUploadCollectionViewCell.swift; sourceTree = "<group>"; };
+		B3943B5B2A7CB91300317F2C /* ArchiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveViewController.swift; sourceTree = "<group>"; };
 		C1769C992A767C280043BAF5 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		C1F6F0192A76A8C100A99CD2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D254462C2A6E5BFF007E582B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -168,10 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				D25446902A716040007E582B /* Extensions */,
-				D25446352A6E6525007E582B /* APIServices */,
-				D25446332A6E650A007E582B /* Protocols */,
-				D25446322A6E64E2007E582B /* Cells */,
-				D25446312A6E64BE007E582B /* Views */,
 				D25446302A6E64A8007E582B /* Models */,
 				C17DBB382A6E3C25007F45BD /* ViewControllers */,
 				D2E345822A66BD7000922A1C /* AppDelegate.swift */,
@@ -187,9 +187,11 @@
 				D254462C2A6E5BFF007E582B /* LoginViewController.swift */,
 				D25446862A7015F7007E582B /* AuthenticationPhoneViewController.swift */,
 				D254468C2A701803007E582B /* SignUpWithEmailViewController.swift */,
-				B33B035C2A766583003D4531 /* ArchiveUploadViewController.swift */,
+				B3943B5B2A7CB91300317F2C /* ArchiveViewController.swift */,
 				B33B035E2A7665B0003D4531 /* ArchivePickViewController.swift */,
-				B33B03602A766D9F003D4531 /* ArchiveTabBarController.swift */,
+				B33B035C2A766583003D4531 /* ArchiveUploadViewController.swift */,
+				B39202462A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift */,
+				B39202482A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift */,
 				C1F6F0192A76A8C100A99CD2 /* HomeViewController.swift */,
 				D272FA292A7C0F9E0087C392 /* SignUpResultViewController.swift */,
 				D272FA2B2A7CA90D0087C392 /* TutorialViewController.swift */,
@@ -205,34 +207,6 @@
 				D2913F2D2A6E5BA700B6174F /* User.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		D25446312A6E64BE007E582B /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		D25446322A6E64E2007E582B /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		D25446332A6E650A007E582B /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		D25446352A6E6525007E582B /* APIServices */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = APIServices;
 			sourceTree = "<group>";
 		};
 		D25446902A716040007E582B /* Extensions */ = {
@@ -430,6 +404,7 @@
 				B33B03612A766D9F003D4531 /* ArchiveTabBarController.swift in Sources */,
 				D272FA2E2A7CF8770087C392 /* ProfileTutorialViewController.swift in Sources */,
 				D2E345872A66BD7000922A1C /* ViewController.swift in Sources */,
+				B39202472A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift in Sources */,
 				B33B035F2A7665B0003D4531 /* ArchivePickViewController.swift in Sources */,
 				B33B035D2A766583003D4531 /* ArchiveUploadViewController.swift in Sources */,
 				C1F6F01A2A76A8C100A99CD2 /* HomeViewController.swift in Sources */,
@@ -443,6 +418,8 @@
 				D2913F2E2A6E5BA700B6174F /* User.swift in Sources */,
 				D2E345852A66BD7000922A1C /* SceneDelegate.swift in Sources */,
 				D25446922A716077007E582B /* UIColor.swift in Sources */,
+				B39202492A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift in Sources */,
+				B3943B5C2A7CB91300317F2C /* ArchiveViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
