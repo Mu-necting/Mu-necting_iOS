@@ -39,10 +39,13 @@
                                 </connections>
                             </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Byf-mo-5Eb">
-                                <rect key="frame" x="0.0" y="787" width="393" height="32"/>
+                                <rect key="frame" x="0.0" y="762" width="393" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="ZJo-ZI-Hr2"/>
+                                </constraints>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="PICK"/>
+                                    <segment title="UPLOAD"/>
                                 </segments>
                                 <connections>
                                     <action selector="switchViews:" destination="hek-gb-gOq" eventType="valueChanged" id="WjG-21-FBV"/>
@@ -54,15 +57,15 @@
                         <constraints>
                             <constraint firstItem="v4B-U9-ula" firstAttribute="trailing" secondItem="ebb-HN-CVs" secondAttribute="trailing" id="0SF-Dd-PPg"/>
                             <constraint firstItem="v4B-U9-ula" firstAttribute="leading" secondItem="ebb-HN-CVs" secondAttribute="leading" id="7f3-Li-Rrj"/>
-                            <constraint firstItem="Byf-mo-5Eb" firstAttribute="leading" secondItem="ebb-HN-CVs" secondAttribute="leading" id="XRC-0e-5eU"/>
+                            <constraint firstItem="Byf-mo-5Eb" firstAttribute="trailing" secondItem="ebb-HN-CVs" secondAttribute="trailing" id="Cgh-t0-1gH"/>
+                            <constraint firstItem="Byf-mo-5Eb" firstAttribute="leading" secondItem="ebb-HN-CVs" secondAttribute="leading" id="RDi-cS-wZg"/>
                             <constraint firstItem="ebb-HN-CVs" firstAttribute="bottom" secondItem="v4B-U9-ula" secondAttribute="bottom" id="YuX-85-Eb0"/>
                             <constraint firstItem="Jwn-7Y-t18" firstAttribute="trailing" secondItem="ebb-HN-CVs" secondAttribute="trailing" id="bxr-k4-Ezp"/>
                             <constraint firstItem="Jwn-7Y-t18" firstAttribute="bottom" secondItem="ebb-HN-CVs" secondAttribute="bottom" id="e2k-fq-D9r"/>
                             <constraint firstItem="Jwn-7Y-t18" firstAttribute="leading" secondItem="ebb-HN-CVs" secondAttribute="leading" id="g27-2r-7RW"/>
                             <constraint firstItem="Jwn-7Y-t18" firstAttribute="top" secondItem="ebb-HN-CVs" secondAttribute="top" id="lLd-Va-S3w"/>
+                            <constraint firstAttribute="bottom" secondItem="Byf-mo-5Eb" secondAttribute="bottom" id="paS-5M-fqF"/>
                             <constraint firstItem="v4B-U9-ula" firstAttribute="top" secondItem="ebb-HN-CVs" secondAttribute="top" id="pmI-LN-BMf"/>
-                            <constraint firstItem="ebb-HN-CVs" firstAttribute="bottom" secondItem="Byf-mo-5Eb" secondAttribute="bottom" id="rwp-Jr-54I"/>
-                            <constraint firstItem="ebb-HN-CVs" firstAttribute="trailing" secondItem="Byf-mo-5Eb" secondAttribute="trailing" id="t75-Qy-pt4"/>
                         </constraints>
                     </view>
                     <connections>
@@ -73,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nv0-r2-ftN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3700" y="-614"/>
+            <point key="canvasLocation" x="3700" y="-614.08450704225356"/>
         </scene>
         <!--Archive Pick View Controller-->
         <scene sceneID="9vT-It-Kzn">
@@ -387,38 +390,38 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="New Jeans Album Cover" highlightedImage="New Jeans Album Cover" translatesAutoresizingMaskIntoConstraints="NO" id="jrm-jr-fwu">
-                                <rect key="frame" x="145" y="173" width="100" height="100"/>
+                                <rect key="frame" x="145" y="170.33333333333334" width="100" height="100.00000000000003"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="a2O-kc-Rho"/>
                                     <constraint firstAttribute="width" constant="100" id="vzG-c2-G7q"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000.00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18c-zd-GOO">
-                                <rect key="frame" x="0.0" y="281" width="393" height="19"/>
+                                <rect key="frame" x="0.0" y="278.33333333333331" width="393" height="17.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8O-sD-hgK">
-                                <rect key="frame" x="0.0" y="58" width="393" height="25"/>
+                                <rect key="frame" x="0.0" y="58.000000000000007" width="393" height="23.333333333333336"/>
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYq-md-gUS">
-                                <rect key="frame" x="0.0" y="103" width="393" height="21"/>
+                                <rect key="frame" x="0.0" y="101.33333333333333" width="393" height="20"/>
                                 <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="작성내용" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1R4-nr-ttG">
-                                <rect key="frame" x="39" y="354" width="315" height="384"/>
+                                <rect key="frame" x="39" y="350" width="315" height="388"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69G-5a-cRI">
-                                <rect key="frame" x="343" y="204" width="25" height="38.333333333333343"/>
+                                <rect key="frame" x="343" y="201.33333333333334" width="25" height="38.333333333333343"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="17a-e2-kzf"/>
                                     <constraint firstAttribute="height" constant="38.329999999999998" id="hFI-tq-Jfh"/>
@@ -470,38 +473,38 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="New Jeans Album Cover" translatesAutoresizingMaskIntoConstraints="NO" id="kJH-Z9-NIN">
-                                <rect key="frame" x="145" y="173" width="100" height="100"/>
+                                <rect key="frame" x="145" y="170.33333333333334" width="100" height="100.00000000000003"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="dBI-Nm-ZcT"/>
                                     <constraint firstAttribute="width" constant="100" id="mX1-5A-Ll7"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000.00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvn-br-1BS">
-                                <rect key="frame" x="0.0" y="281" width="393" height="19"/>
+                                <rect key="frame" x="0.0" y="278.33333333333331" width="393" height="17.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbl-Uh-mYe">
-                                <rect key="frame" x="0.0" y="58" width="393" height="25"/>
+                                <rect key="frame" x="0.0" y="58.000000000000007" width="393" height="23.333333333333336"/>
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2r-kB-7NY">
-                                <rect key="frame" x="0.0" y="103" width="393" height="21"/>
+                                <rect key="frame" x="0.0" y="101.33333333333333" width="393" height="20"/>
                                 <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="작성내용" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eoH-V7-3T7">
-                                <rect key="frame" x="39" y="354" width="315" height="384"/>
+                                <rect key="frame" x="39" y="350" width="315" height="388"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uft-DQ-BBY">
-                                <rect key="frame" x="343" y="204" width="25" height="38.333333333333343"/>
+                                <rect key="frame" x="343" y="201.33333333333334" width="25" height="38.333333333333343"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38.329999999999998" id="oft-DX-vj0"/>
                                     <constraint firstAttribute="width" constant="25" id="qSQ-Fp-pOM"/>
