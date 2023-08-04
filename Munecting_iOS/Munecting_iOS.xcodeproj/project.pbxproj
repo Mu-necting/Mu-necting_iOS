@@ -165,10 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				D25446902A716040007E582B /* Extensions */,
-				D25446352A6E6525007E582B /* APIServices */,
-				D25446332A6E650A007E582B /* Protocols */,
-				D25446322A6E64E2007E582B /* Cells */,
-				D25446312A6E64BE007E582B /* Views */,
 				D25446302A6E64A8007E582B /* Models */,
 				C17DBB382A6E3C25007F45BD /* ViewControllers */,
 				D2E345822A66BD7000922A1C /* AppDelegate.swift */,
@@ -199,34 +195,6 @@
 				D2913F2D2A6E5BA700B6174F /* User.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		D25446312A6E64BE007E582B /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		D25446322A6E64E2007E582B /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		D25446332A6E650A007E582B /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		D25446352A6E6525007E582B /* APIServices */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = APIServices;
 			sourceTree = "<group>";
 		};
 		D25446902A716040007E582B /* Extensions */ = {
