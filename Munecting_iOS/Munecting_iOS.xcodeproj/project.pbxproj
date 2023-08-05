@@ -25,12 +25,12 @@
 		C1B86EB62A7D1BAF00F9A151 /* MusicSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86EB52A7D1BAF00F9A151 /* MusicSearchCollectionViewCell.swift */; };
 		C1B86EBC2A7D1BED00F9A151 /* SearchMusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86EBA2A7D1BED00F9A151 /* SearchMusicCell.swift */; };
 		C1B86EBD2A7D1BED00F9A151 /* SearchMusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86EBB2A7D1BED00F9A151 /* SearchMusicTableViewCell.swift */; };
-		C1B86EBF2A7D1BFB00F9A151 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86EBE2A7D1BFB00F9A151 /* HomeViewController.swift */; };
 		C1B86EC12A7D1C0A00F9A151 /* BestMunectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86EC02A7D1C0A00F9A151 /* BestMunectorViewController.swift */; };
 		C1B86EC32A7D1C1500F9A151 /* MunectingMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86EC22A7D1C1500F9A151 /* MunectingMapViewController.swift */; };
 		C1B86EC52A7D1C1D00F9A151 /* MusicSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86EC42A7D1C1D00F9A151 /* MusicSearchViewController.swift */; };
 		C1B86EC72A7D1C2400F9A151 /* PickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86EC62A7D1C2400F9A151 /* PickViewController.swift */; };
 		C1B86EC92A7D1C2D00F9A151 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86EC82A7D1C2D00F9A151 /* UploadViewController.swift */; };
+		C1B86ECB2A7E48A400F9A151 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86ECA2A7E48A400F9A151 /* HomeViewController.swift */; };
 		D254462D2A6E5BFF007E582B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D254462C2A6E5BFF007E582B /* LoginViewController.swift */; };
 		D25446382A6E6C1A007E582B /* AuthenticationPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D25446372A6E6C1A007E582B /* AuthenticationPhone.storyboard */; };
 		D25446872A7015F7007E582B /* AuthenticationPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25446862A7015F7007E582B /* AuthenticationPhoneViewController.swift */; };
@@ -88,7 +88,7 @@
 		B39202462A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivePickCollectionViewCell.swift; sourceTree = "<group>"; };
 		B39202482A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveUploadCollectionViewCell.swift; sourceTree = "<group>"; };
 		B3943B5B2A7CB91300317F2C /* ArchiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveViewController.swift; sourceTree = "<group>"; };
-		C1B86EA32A7D1B2400F9A151 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = "../../../../../../workspace/IOS/IOS_Projects/Mu-necting/Mu-necting/Munecting_iOS/Munecting_iOS/Resource/Storyboards/Home.storyboard"; sourceTree = "<group>"; };
+		C1B86EA32A7D1B2400F9A151 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		C1B86EA52A7D1B3D00F9A151 /* BestMunector.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BestMunector.storyboard; sourceTree = "<group>"; };
 		C1B86EA72A7D1B4100F9A151 /* MunectingMap.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MunectingMap.storyboard; sourceTree = "<group>"; };
 		C1B86EA92A7D1B4A00F9A151 /* MusicSearch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MusicSearch.storyboard; sourceTree = "<group>"; };
@@ -100,12 +100,12 @@
 		C1B86EB52A7D1BAF00F9A151 /* MusicSearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		C1B86EBA2A7D1BED00F9A151 /* SearchMusicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchMusicCell.swift; sourceTree = "<group>"; };
 		C1B86EBB2A7D1BED00F9A151 /* SearchMusicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchMusicTableViewCell.swift; sourceTree = "<group>"; };
-		C1B86EBE2A7D1BFB00F9A151 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "../../../../../../workspace/IOS/IOS_Projects/Mu-necting/Mu-necting/Munecting_iOS/Munecting_iOS/Sources/ViewControllers/HomeViewController.swift"; sourceTree = "<group>"; };
 		C1B86EC02A7D1C0A00F9A151 /* BestMunectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestMunectorViewController.swift; sourceTree = "<group>"; };
 		C1B86EC22A7D1C1500F9A151 /* MunectingMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MunectingMapViewController.swift; sourceTree = "<group>"; };
 		C1B86EC42A7D1C1D00F9A151 /* MusicSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicSearchViewController.swift; sourceTree = "<group>"; };
 		C1B86EC62A7D1C2400F9A151 /* PickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickViewController.swift; sourceTree = "<group>"; };
 		C1B86EC82A7D1C2D00F9A151 /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		C1B86ECA2A7E48A400F9A151 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D254462C2A6E5BFF007E582B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D25446372A6E6C1A007E582B /* AuthenticationPhone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthenticationPhone.storyboard; sourceTree = "<group>"; };
 		D25446862A7015F7007E582B /* AuthenticationPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPhoneViewController.swift; sourceTree = "<group>"; };
@@ -233,7 +233,7 @@
 				C1B86EB52A7D1BAF00F9A151 /* MusicSearchCollectionViewCell.swift */,
 				B39202462A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift */,
 				B39202482A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift */,
-				C1B86EBE2A7D1BFB00F9A151 /* HomeViewController.swift */,
+				C1B86ECA2A7E48A400F9A151 /* HomeViewController.swift */,
 				C1B86EC02A7D1C0A00F9A151 /* BestMunectorViewController.swift */,
 				C1B86EC42A7D1C1D00F9A151 /* MusicSearchViewController.swift */,
 				C1B86EC82A7D1C2D00F9A151 /* UploadViewController.swift */,
@@ -467,6 +467,7 @@
 				C1B86EC72A7D1C2400F9A151 /* PickViewController.swift in Sources */,
 				D272FA2E2A7CF8770087C392 /* ProfileTutorialViewController.swift in Sources */,
 				D2E345872A66BD7000922A1C /* ViewController.swift in Sources */,
+				C1B86ECB2A7E48A400F9A151 /* HomeViewController.swift in Sources */,
 				B39202472A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift in Sources */,
 				C1B86EC52A7D1C1D00F9A151 /* MusicSearchViewController.swift in Sources */,
 				C1B86EBD2A7D1BED00F9A151 /* SearchMusicTableViewCell.swift in Sources */,
@@ -476,7 +477,6 @@
 				D2E345832A66BD7000922A1C /* AppDelegate.swift in Sources */,
 				D272FA302A7CF88C0087C392 /* FinalTutorialViewController.swift in Sources */,
 				C1B86EC12A7D1C0A00F9A151 /* BestMunectorViewController.swift in Sources */,
-				C1B86EBF2A7D1BFB00F9A151 /* HomeViewController.swift in Sources */,
 				C1B86EB42A7D1BAA00F9A151 /* BestMunectorCollectionViewCell.swift in Sources */,
 				C1B86EB62A7D1BAF00F9A151 /* MusicSearchCollectionViewCell.swift in Sources */,
 				C1B86EB22A7D1B9400F9A151 /* MusicSearchData.swift in Sources */,
