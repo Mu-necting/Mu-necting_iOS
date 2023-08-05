@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Light300.ttf">
+            <string>Inter-Light</string>
+        </array>
+        <array key="Inter-SemiBold600.ttf">
+            <string>Inter-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Upload-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="UploadViewController" title="Upload" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="UploadViewController" customModule="Munecting_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="UploadViewController" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LF3-su-ca4">
+                                <rect key="frame" x="10" y="59" width="373" height="80"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="New Jeans Album Cover.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hkq-sI-Gfq">
+                                        <rect key="frame" x="10" y="10" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="87o-YR-2kZ"/>
+                                            <constraint firstAttribute="width" constant="60" id="a1S-Hq-OKW"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attention" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6I4-2Z-7dq">
+                                        <rect key="frame" x="80" y="20" width="293" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="fJg-a8-sbt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KtR-jd-eR1">
+                                        <rect key="frame" x="80" y="51" width="293" height="15"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NewJeans" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auG-I9-R6i">
+                                                <rect key="frame" x="0.0" y="0.0" width="293" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="a3y-Zg-9HB"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Inter-Light" family="Inter" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="KtR-jd-eR1" firstAttribute="top" secondItem="6I4-2Z-7dq" secondAttribute="bottom" constant="8" id="F1H-vd-ste"/>
+                                    <constraint firstItem="6I4-2Z-7dq" firstAttribute="leading" secondItem="hkq-sI-Gfq" secondAttribute="trailing" constant="10" id="Hdm-1r-EJ1"/>
+                                    <constraint firstAttribute="trailing" secondItem="6I4-2Z-7dq" secondAttribute="trailing" id="awh-qF-MIN"/>
+                                    <constraint firstItem="hkq-sI-Gfq" firstAttribute="leading" secondItem="LF3-su-ca4" secondAttribute="leading" constant="10" id="bxu-U2-Xgt"/>
+                                    <constraint firstItem="KtR-jd-eR1" firstAttribute="leading" secondItem="hkq-sI-Gfq" secondAttribute="trailing" constant="10" id="iEd-d5-qPN"/>
+                                    <constraint firstAttribute="height" constant="80" id="keo-M2-SdZ"/>
+                                    <constraint firstItem="hkq-sI-Gfq" firstAttribute="centerY" secondItem="LF3-su-ca4" secondAttribute="centerY" id="q9J-cI-nET"/>
+                                    <constraint firstItem="6I4-2Z-7dq" firstAttribute="top" secondItem="LF3-su-ca4" secondAttribute="top" constant="20" id="v0p-h1-8vf"/>
+                                    <constraint firstAttribute="trailing" secondItem="KtR-jd-eR1" secondAttribute="trailing" id="wps-hy-V8b"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장르 설정하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqS-0j-Wio">
+                                <rect key="frame" x="10" y="159" width="92.666666666666671" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업로드 시간 설정하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEJ-ne-iuW">
+                                <rect key="frame" x="10" y="260.33333333333331" width="141.33333333333334" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="W9J-op-TfC">
+                                <rect key="frame" x="30.666666666666657" y="199.33333333333334" width="332" height="18"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcW-Lr-tzJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="3PZ-n2-pPp"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="tHh-pP-qFW"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="힙합" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="hiphopButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6Q6-c2-X4V"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAt-Eh-A1Y">
+                                        <rect key="frame" x="68" y="0.0" width="60" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="eyQ-KD-9qP"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="pl0-qL-Q3m"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="락" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="hiphopButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7da-8w-DtX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EA1-Nr-Zvp">
+                                        <rect key="frame" x="136" y="0.0" width="60" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="Fnz-Ve-G0Z"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="nPB-j7-QOo"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="발라드" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="hiphopButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="QKY-mV-wdo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRi-cZ-tmO">
+                                        <rect key="frame" x="204" y="0.0" width="60" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="C94-aX-jHi"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="ouj-KF-P0W"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="클래식" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="hiphopButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="R6S-Oa-sEf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alr-V4-1Xd">
+                                        <rect key="frame" x="272" y="0.0" width="60" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="FWx-dQ-tch"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="wdk-MY-OMi"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="팝" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="hiphopButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uat-g9-dTE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="e97-ve-7tY">
+                                <rect key="frame" x="30.666666666666657" y="222.33333333333334" width="332" height="18"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svq-i6-w1J">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="1cN-pc-BNz"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="sNE-iB-3V4"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="블루스" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="hiphopButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TeM-To-6m8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRT-j3-WBo">
+                                        <rect key="frame" x="68" y="0.0" width="60" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="Ndo-zO-H1r"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="y1U-Sh-taa"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="R&amp;B" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="hiphopButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Kyr-Ju-NXq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkQ-yc-J2W">
+                                        <rect key="frame" x="136" y="0.0" width="60" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="1Fl-40-doS"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="JIW-Ic-N04"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="컨트리" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="hiphopButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bSU-O6-GzP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwa-k8-c4l">
+                                        <rect key="frame" x="204" y="0.0" width="60" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Rxy-T2-jW0"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="kJV-Ab-YHa"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="EDM" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="hiphopButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="h9k-Yn-JHg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abu-yo-tGc">
+                                        <rect key="frame" x="272" y="0.0" width="60" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="0fy-br-XsB"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="lLT-YY-1qf"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="K-POP" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="hiphopButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fhH-4M-aUv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsV-K5-2ya">
+                                <rect key="frame" x="50" y="738" width="293" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="DMU-3d-MZg"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus.app.fill" catalog="system" title="UPLOAD" cornerStyle="dynamic">
+                                    <backgroundConfiguration key="background" cornerRadius="20">
+                                        <color key="backgroundColor" red="0.29803921570000003" green="0.098039215690000001" blue="0.39607843139999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                        <color key="strokeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="Inter-Bold" family="Inter" pointSize="20"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유지 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmx-fN-jAs">
+                                <rect key="frame" x="29.999999999999996" y="310.66666666666669" width="48.666666666666657" height="15.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="72시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1go-hQ-eC1">
+                                <rect key="frame" x="325.33333333333331" y="357.66666666666669" width="37.666666666666686" height="15.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24시간 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeY-mC-eZ2">
+                                <rect key="frame" x="303" y="309.66666666666669" width="60" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="1mv-kK-ZQy"/>
+                                    <constraint firstAttribute="width" constant="60" id="S4B-Y6-T00"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHK-qs-6QY">
+                                <rect key="frame" x="30" y="357.66666666666669" width="30.666666666666671" height="15.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="36" minValue="0.0" maxValue="72" translatesAutoresizingMaskIntoConstraints="NO" id="hsB-u1-oKJ">
+                                <rect key="frame" x="28" y="327.66666666666669" width="337" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.29803921570000003" green="0.098039215690000001" blue="0.39607843139999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="timeSlider:" destination="Y6W-OH-hqX" eventType="valueChanged" id="1EZ-LX-Ewa"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xmx-fN-jAs" firstAttribute="top" secondItem="gEJ-ne-iuW" secondAttribute="bottom" constant="30" id="04Q-Xn-yYI"/>
+                            <constraint firstItem="Xmx-fN-jAs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="0IA-xu-j8h"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZsV-K5-2ya" secondAttribute="trailing" constant="50" id="0NB-Zg-zr5"/>
+                            <constraint firstItem="hsB-u1-oKJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="0Tm-20-Ru8"/>
+                            <constraint firstItem="W9J-op-TfC" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="0ZC-sa-j7M"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BeY-mC-eZ2" secondAttribute="trailing" constant="30" id="0vp-dl-ad4"/>
+                            <constraint firstItem="e97-ve-7tY" firstAttribute="top" secondItem="W9J-op-TfC" secondAttribute="bottom" constant="5" id="5T7-Yo-Lot"/>
+                            <constraint firstItem="ZsV-K5-2ya" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="86Y-u1-GF1"/>
+                            <constraint firstItem="dqS-0j-Wio" firstAttribute="top" secondItem="LF3-su-ca4" secondAttribute="bottom" constant="20" id="9DP-83-C2p"/>
+                            <constraint firstItem="LHK-qs-6QY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="Hlq-21-gTb"/>
+                            <constraint firstItem="1go-hQ-eC1" firstAttribute="top" secondItem="hsB-u1-oKJ" secondAttribute="bottom" id="IuT-Kc-2HG"/>
+                            <constraint firstItem="LF3-su-ca4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="L8i-sV-3ES"/>
+                            <constraint firstItem="W9J-op-TfC" firstAttribute="top" secondItem="dqS-0j-Wio" secondAttribute="bottom" constant="20" id="N6k-61-vpG"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ZsV-K5-2ya" secondAttribute="bottom" constant="30" id="Sg4-Tm-FM4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="LF3-su-ca4" secondAttribute="trailing" constant="10" id="UFI-6c-9W6"/>
+                            <constraint firstItem="gEJ-ne-iuW" firstAttribute="top" secondItem="e97-ve-7tY" secondAttribute="bottom" constant="20" id="WSk-dl-D2t"/>
+                            <constraint firstItem="e97-ve-7tY" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="YDy-zp-Tly"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1go-hQ-eC1" secondAttribute="trailing" constant="30" id="agq-5g-gEc"/>
+                            <constraint firstItem="gEJ-ne-iuW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="dqg-AZ-9Xy"/>
+                            <constraint firstItem="ZsV-K5-2ya" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="qqR-WK-llp"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hsB-u1-oKJ" secondAttribute="trailing" constant="30" id="u6p-U0-8f4"/>
+                            <constraint firstItem="BeY-mC-eZ2" firstAttribute="centerY" secondItem="Xmx-fN-jAs" secondAttribute="centerY" id="ukq-0W-WdA"/>
+                            <constraint firstItem="hsB-u1-oKJ" firstAttribute="top" secondItem="BeY-mC-eZ2" secondAttribute="bottom" id="vlM-1r-8y0"/>
+                            <constraint firstItem="dqS-0j-Wio" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="vtD-1F-X34"/>
+                            <constraint firstItem="LF3-su-ca4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="whL-o9-aFp"/>
+                            <constraint firstItem="LHK-qs-6QY" firstAttribute="top" secondItem="hsB-u1-oKJ" secondAttribute="bottom" id="ybw-96-hKa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="hiphopButton" destination="YcW-Lr-tzJ" id="ON1-Gr-lK5"/>
+                        <outlet property="musicView" destination="LF3-su-ca4" id="BE1-aq-1g3"/>
+                        <outlet property="timeLabel" destination="BeY-mC-eZ2" id="Jxd-HX-DS1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="121.37404580152672" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="New Jeans Album Cover.jpg" width="63.360000610351562" height="63.360000610351562"/>
+        <image name="plus.app.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
