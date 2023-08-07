@@ -12,6 +12,13 @@ class UploadViewController: UIViewController {
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var musicView: UIView!
     
+    static let NavWhite: UIColor = UIColor(named: "NavWhite")!
+
+    let cornerRadius: CGFloat = 12
+    var shadowColor: CGColor = UIColor.systemGray4.cgColor
+    var shadowOffset: CGSize = CGSize(width: 5, height: 5)
+    var shadowOpacity: Float = 0.7
+    var shadowRadius: CGFloat = 4.0
     
     let munectingPurple = UIColor(red: 0.298, green: 0.098, blue: 0.396, alpha: 0.85)
     override func viewDidLoad() {
@@ -22,6 +29,13 @@ class UploadViewController: UIViewController {
         musicView.layer.cornerRadius = 8
         musicView.layer.borderColor = UIColor.systemGray.cgColor
         musicView.layer.borderWidth = 1
+        
+        musicView.layer.shadowColor = self.shadowColor
+        musicView.layer.shadowOpacity = self.shadowOpacity
+        musicView.layer.shadowOffset = self.shadowOffset
+        musicView.layer.shadowRadius = self.cornerRadius
+        musicView.layer.masksToBounds = false
+       
     }
 
 
@@ -39,7 +53,11 @@ class UploadViewController: UIViewController {
             sender.backgroundColor = .white
         }
     }
-    
-    
-
 }
+/*
+ self.button?.layer.shadowColor = self.shadowColor
+ self.button?.layer.shadowOpacity = self.shadowOpacity
+ self.button?.layer.shadowOffset = self.shadowOffset
+ self.button?.layer.shadowRadius = self.shadowRadius
+ self.button?.layer.masksToBounds = false
+ */

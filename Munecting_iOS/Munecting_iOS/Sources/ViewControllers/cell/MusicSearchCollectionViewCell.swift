@@ -17,7 +17,9 @@ class MusicSearchCollectionViewCell: UICollectionViewCell {
         super.init(coder: coder)
         self.contentView.layer.cornerRadius = 10.0
         self.contentView.layer.borderWidth = 1.0
-        self.contentView.layer.borderColor = UIColor.systemGray.cgColor
+        self.contentView.layer.borderColor = UIColor.systemGray5.cgColor
+        self.contentView.layer.backgroundColor = UIColor.systemGray5.cgColor
+
     }
     
 }

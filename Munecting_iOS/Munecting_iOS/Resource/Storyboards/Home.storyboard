@@ -22,6 +22,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VuT-cd-Bnk">
+                                <rect key="frame" x="-0.66666666666665719" y="-6" width="394.33333333333326" height="864"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="394" id="O6A-K3-6jo"/>
+                                    <constraint firstAttribute="height" constant="864" id="ldc-tN-abf"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# 태그  # 태그  # 태그" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9l-AX-tKT">
                                 <rect key="frame" x="56.666666666666657" y="556.33333333333337" width="280" height="18"/>
                                 <constraints>
@@ -61,7 +70,6 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hng-4U-afV">
                                         <rect key="frame" x="0.0" y="0.0" width="279" height="35"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="UaH-iN-ePj"/>
                                         </constraints>
@@ -69,6 +77,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="play.rectangle.fill" catalog="system" title="" cornerStyle="dynamic">
                                             <backgroundConfiguration key="background" cornerRadius="10">
+                                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                                 <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
@@ -179,6 +188,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="left-chevron" title=""/>
+                                <connections>
+                                    <action selector="previousMusicButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="A1n-8g-x7L"/>
+                                </connections>
                             </button>
                             <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhm-3E-38s">
                                 <rect key="frame" x="300" y="271.33333333333331" width="35" height="279.99999999999994"/>
@@ -221,7 +233,7 @@
                                     <action selector="munectingMapButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gHk-aB-UQ7"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="V9d-yh-tQG">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="7" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="V9d-yh-tQG">
                                 <rect key="frame" x="69.666666666666686" y="171.33333333333334" width="254" height="31"/>
                                 <color key="tintColor" red="0.29803921570000003" green="0.098039215690000001" blue="0.39607843139999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -265,21 +277,25 @@
                             <constraint firstItem="peD-Rq-iHK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="57" id="fxk-uJ-47V"/>
                             <constraint firstItem="xzK-hn-Pqa" firstAttribute="top" secondItem="hzP-2L-8Gh" secondAttribute="bottom" constant="10" id="mmY-iO-AXH"/>
                             <constraint firstItem="IV4-YP-Us1" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="no1-zx-GTG"/>
+                            <constraint firstItem="VuT-cd-Bnk" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ntk-cp-bwZ"/>
                             <constraint firstItem="l9l-AX-tKT" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="rxT-Io-LgL"/>
                             <constraint firstItem="peD-Rq-iHK" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="tSh-Mo-Bm1"/>
+                            <constraint firstItem="VuT-cd-Bnk" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="uPR-44-Quf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ua7-E9-Br8"/>
                     <connections>
                         <outlet property="albumCoverImageView" destination="aiV-fa-Cnc" id="nxD-sQ-chg"/>
                         <outlet property="artistNameLabel" destination="sIQ-PM-0UR" id="9Ut-1N-o5O"/>
+                        <outlet property="backgroundImageView" destination="VuT-cd-Bnk" id="rIt-GM-Ys1"/>
                         <outlet property="distanceLabel" destination="or2-gG-vkq" id="yBW-f9-3zj"/>
                         <outlet property="genreLabel" destination="l9l-AX-tKT" id="u1I-ut-f53"/>
+                        <outlet property="musicTitle" destination="vNv-5T-wo4" id="GVG-s4-1eZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="715" y="1"/>
+            <point key="canvasLocation" x="713.74045801526711" y="0.70422535211267612"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TFX-IA-DKB">
@@ -308,6 +324,9 @@
         <image name="play.rectangle.fill" catalog="system" width="128" height="93"/>
         <image name="plus.app" catalog="system" width="128" height="114"/>
         <image name="right-chevron (1)" width="48" height="48"/>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
