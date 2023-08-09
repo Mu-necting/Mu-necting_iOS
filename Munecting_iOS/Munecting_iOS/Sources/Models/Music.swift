@@ -2,19 +2,13 @@ import Foundation
 import UIKit
 
 struct Music{
-    let previewURL: URL
-    let artworkURL: URL
-    let trackName:String?
-    let artistName:String?
-    
-    
-    init(artworkURL: URL, previewURL: URL, trackName: String, artistName: String){
-        self.previewURL = previewURL
-        self.artworkURL = artworkURL
-        self.trackName = trackName
-        self.artistName = artistName
-    }
-    
+    let name: String
+    let coverImage: String
+    let genre: String
+    let musicPre: String
+    let musicPull: String
+    let replyCnt: Int
+    let archiveId: Int
 }
 
 

@@ -18,23 +18,59 @@ class HomeViewController: UIViewController {
     @IBOutlet var genreLabel: UILabel!
     @IBOutlet var backgroundImageView: UIImageView!
     @IBOutlet var musicTitle: UILabel!
+    @IBOutlet var titleStackView: UIStackView!
     
-    var picker = UIPickerView()
     var audioPlayer: AVPlayer?
+    var musics: [Music?] = []
+    var curMusicNum: Int = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let musicURL = URL(string: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/fe/2a/9a/fe2a9a4e-8afd-a670-7b25-e7d03d1f5522/mzaf_10350104113929572724.plus.aac.p.m4a")
-        self.audioPlayer =  AVPlayer(url: musicURL!)
-        self.audioPlayer?.play()
-        let albumImage = getImage(url: URL(string: "https://is2-ssl.mzstatic.com/image/thumb/Music116/v4/26/fe/b2/26feb2d2-c11b-cf95-4b93-d57321103566/196871142090.jpg/100x100bb.jpg")!)
-        backgroundImageView.image = albumImage.applyBlur(radius: 3.0)
-        albumCoverImageView.image = albumImage
+        titleStackView.layer.cornerRadius = 10
+//        titleStackView.backgroundColor = .systemGray5
+//        titleStackView.alpha = 0.5
+        
+        //노래 갖고오기
+        self.getMusic()
+        
+        
+        if let music = musics[0]{
+            
+            //첫 번째 노래 재생
+            let musicURL = URL(string: music.musicPre)
+            self.audioPlayer = AVPlayer(url: musicURL!)
+            self.audioPlayer?.play()
+            
+            //첫 번재 노래 커버 이미지 설정
+            let albumImage = getImage(url: URL(string: music.coverImage)!)
+//            backgroundImageView.image = albumImage.applyBlur(radius: 2.0)
+            albumCoverImageView.image = albumImage
+            
+            //노래 타이틀, 아티스트, 장르 출력
+            self.musicTitle.text = "Attention"
+            self.artistNameLabel.text = music.name
+            self.genreLabel.text = music.genre
+
+        }
+        
+        //앨범 커버 원형으로 만들기
+        albumCoverImageView.layer.cornerRadius = albumCoverImageView.frame.size.width/2
+        albumCoverImageView.clipsToBounds = true
+        
+        //앨범 커버 360도 돌리기
+        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotationAnimation.toValue = NSNumber(value: Double.pi * 2) // 360도 회전 (2 * π 라디안)
+        rotationAnimation.duration = 5.0 // 애니메이션 지속 시간 (초)
+        rotationAnimation.repeatCount = .infinity // 무한 반복
+        albumCoverImageView.layer.add(rotationAnimation, forKey: "rotationAnimation")
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        //내비게이션 바 없애기
         self.navigationController?.navigationBar.isHidden = true
     }
+    
     
     //뮤넥터 맵 이동함수
     @IBAction func munectingMapButtonTapped(_ sender: Any) {
@@ -57,34 +93,88 @@ class HomeViewController: UIViewController {
     
     //다음 노래로 이동함수
     @IBAction func nextMusicButtonTapped(_ sender: Any) {
-        let musicURL = URL(string: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/13/79/51/13795136-c3d0-1191-cc43-dcc16579a2f2/mzaf_8604667655746746744.plus.aac.p.m4a")
-        self.audioPlayer =  AVPlayer(url: musicURL!)
-        self.audioPlayer?.play()
-        let albumImage = getImage(url: URL(string: "https://is4-ssl.mzstatic.com/image/thumb/Music112/v4/4e/64/34/4e64344b-3ac6-c503-2c41-257a15401416/192641873096_Cover.jpg/100x100bb.jpg")!)
-        self.albumCoverImageView.image = albumImage
-        self.backgroundImageView.image = albumImage.applyBlur(radius: 2.0)
-        self.musicTitle.text = "Attention"
-        self.artistNameLabel.text = "New Jeans"
-        self.genreLabel.text = "#K-POP"
+        
+        if self.curMusicNum < self.musics.count-1{
+            self.curMusicNum = self.curMusicNum + 1
+        }else{
+            self.curMusicNum = 0
+        }
+        
+        if let music = self.musics[self.curMusicNum] {
+            // 다음 노래 재생
+            let musicURL = URL(string: music.musicPre)
+            self.audioPlayer = AVPlayer(url: musicURL!)
+            self.audioPlayer?.play()
+            
+            //앨범 커버 이미지 설정
+            let albumImage = getImage(url: URL(string: music.coverImage)!)
+//            backgroundImageView.image = albumImage.applyBlur(radius: 2.0)
+            albumCoverImageView.image = albumImage
+            
+            //아티스트 이름, 장르 이름 설정
+            self.artistNameLabel.text = music.name
+            self.genreLabel.text = music.genre
+        }
+        
+        //멈췄다가 다시 360도 돌기
+        self.albumCoverImageView.layer.removeAnimation(forKey: "rotationAnimation")
+        
+        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotationAnimation.toValue = NSNumber(value: Double.pi * 2) // 360도 회전 (2 * π 라디안)
+        rotationAnimation.duration = 5.0 // 애니메이션 지속 시간 (초)
+        rotationAnimation.repeatCount = .infinity // 무한 반복
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.albumCoverImageView.layer.add(rotationAnimation, forKey: "rotationAnimation")
+        }
+        
+
     }
     
     //이전노래로 이동 함수
     @IBAction func previousMusicButtonTapped(_ sender: Any) {
-        let musicURL = URL(string: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/fe/2a/9a/fe2a9a4e-8afd-a670-7b25-e7d03d1f5522/mzaf_10350104113929572724.plus.aac.p.m4a")
-        self.audioPlayer =  AVPlayer(url: musicURL!)
-        self.audioPlayer?.play()
-        let albumImage = getImage(url: URL(string: "https://is2-ssl.mzstatic.com/image/thumb/Music116/v4/26/fe/b2/26feb2d2-c11b-cf95-4b93-d57321103566/196871142090.jpg/100x100bb.jpg")!)
-        self.albumCoverImageView.image = albumImage
-        self.backgroundImageView.image = albumImage.applyBlur(radius: 2.0)
-        self.musicTitle.text = "Attention"
-        self.artistNameLabel.text = "Doja Cat"
-        self.genreLabel.text = "#Hip POP"
+        if(self.curMusicNum > 0){
+            self.curMusicNum = self.curMusicNum - 1
+        }else{
+            self.curMusicNum = self.musics.count - 1
+        }
+        
+        if let music = self.musics[self.curMusicNum] {
+            // 이전 노래 재생
+            let musicURL = URL(string: music.musicPre)
+            self.audioPlayer = AVPlayer(url: musicURL!)
+            self.audioPlayer?.play()
+            
+            //앨범 커버 이미지 설정
+            let albumImage = getImage(url: URL(string: music.coverImage)!)
+//            backgroundImageView.image = albumImage.applyBlur(radius: 2.0)
+            albumCoverImageView.image = albumImage
+            
+            //아티스트 이름, 장르 이름 설정
+            self.artistNameLabel.text = music.name
+            self.genreLabel.text = music.genre
+        }
+        
+        //멈췄다가 다시 360도 돌기
+        self.albumCoverImageView.layer.removeAnimation(forKey: "rotationAnimation")
+        
+        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotationAnimation.toValue = NSNumber(value: Double.pi * 2) // 360도 회전 (2 * π 라디안)
+        rotationAnimation.duration = 5.0 // 애니메이션 지속 시간 (초)
+        rotationAnimation.repeatCount = .infinity // 무한 반복
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.albumCoverImageView.layer.add(rotationAnimation, forKey: "rotationAnimation")
+        }
+
     }
     
     //유튜브 화면 이동 함수
     @IBAction func youtubeButtonTapped(_ sender: Any) {
-        if let url = URL(string: "https://www.youtube.com/watch?v=o8RkbHv2_a0") {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        
+        self.audioPlayer?.pause()
+        
+        if let music = self.musics[self.curMusicNum] {
+            let musicPullURL = URL(string: music.musicPull)
+            UIApplication.shared.open(musicPullURL!, options: [:], completionHandler: nil)
         }
     }
     
@@ -104,6 +194,20 @@ class HomeViewController: UIViewController {
             return UIImage()
         }
         return UIImage()
+    }
+    
+    //music 갖고오기
+    func getMusic(){
+        let music1:Music = Music(name: "New Jeans", coverImage: "https://is4-ssl.mzstatic.com/image/thumb/Music112/v4/4e/64/34/4e64344b-3ac6-c503-2c41-257a15401416/192641873096_Cover.jpg/100x100bb.jpg", genre: "K-POP", musicPre: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/13/79/51/13795136-c3d0-1191-cc43-dcc16579a2f2/mzaf_8604667655746746744.plus.aac.p.m4a", musicPull: "https://www.youtube.com/watch?v=o8RkbHv2_a0", replyCnt: 1, archiveId: 1)
+        let music2:Music = Music(name: "Doja Cat", coverImage: "https://is2-ssl.mzstatic.com/image/thumb/Music116/v4/26/fe/b2/26feb2d2-c11b-cf95-4b93-d57321103566/196871142090.jpg/100x100bb.jpg", genre: "Hip Hop", musicPre: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/fe/2a/9a/fe2a9a4e-8afd-a670-7b25-e7d03d1f5522/mzaf_10350104113929572724.plus.aac.p.m4a", musicPull: "https://www.youtube.com/watch?v=XweT8chMepU", replyCnt: 1, archiveId: 1)
+        let music3:Music = Music(name: "Charlie Puth", coverImage: "https://is3-ssl.mzstatic.com/image/thumb/Music125/v4/a8/e2/1b/a8e21b3b-9c8d-2974-2318-6bcd4c9d2370/075679884336.jpg/100x100bb.jpg", genre: "Pop", musicPre: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/b5/32/d4/b532d45b-0e4d-6bf3-d7b5-e02007877318/mzaf_10109990520611630125.plus.aac.p.m4a", musicPull: "https://www.youtube.com/watch?v=6QYcd7RggNU", replyCnt: 1, archiveId: 1)
+        let music4:Music = Music(name: "Sebadoh", coverImage: "https://is2-ssl.mzstatic.com/image/thumb/Music/d5/80/bd/mzi.nybhumzg.tif/100x100bb.jpg", genre: "Pop", musicPre: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview71/v4/bc/ae/b4/bcaeb4a0-0127-65f2-4eb2-75e82b08a95c/mzaf_4222798042305173586.plus.aac.p.m4a", musicPull: "https://www.youtube.com/watch?v=r67UF7Wpl08", replyCnt: 1, archiveId: 1)
+        
+        self.musics.append(music1)
+        self.musics.append(music2)
+        self.musics.append(music3)
+        self.musics.append(music4)
+        
     }
 }
 
