@@ -30,6 +30,8 @@
 		C1B86EC92A7D1C2D00F9A151 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86EC82A7D1C2D00F9A151 /* UploadViewController.swift */; };
 		C1B86ECB2A7E48A400F9A151 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86ECA2A7E48A400F9A151 /* HomeViewController.swift */; };
 		C1B86ECD2A80BC0600F9A151 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86ECC2A80BC0600F9A151 /* Music.swift */; };
+		C1DA96F52A83A8000084CCC5 /* YoutubeModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA96F42A83A8000084CCC5 /* YoutubeModalViewController.swift */; };
+		C1DA96F72A83A8320084CCC5 /* Youtube.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1DA96F62A83A8320084CCC5 /* Youtube.storyboard */; };
 		D254462D2A6E5BFF007E582B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D254462C2A6E5BFF007E582B /* LoginViewController.swift */; };
 		D25446382A6E6C1A007E582B /* AuthenticationPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D25446372A6E6C1A007E582B /* AuthenticationPhone.storyboard */; };
 		D25446872A7015F7007E582B /* AuthenticationPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25446862A7015F7007E582B /* AuthenticationPhoneViewController.swift */; };
@@ -104,6 +106,8 @@
 		C1B86EC82A7D1C2D00F9A151 /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		C1B86ECA2A7E48A400F9A151 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C1B86ECC2A80BC0600F9A151 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		C1DA96F42A83A8000084CCC5 /* YoutubeModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeModalViewController.swift; sourceTree = "<group>"; };
+		C1DA96F62A83A8320084CCC5 /* Youtube.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Youtube.storyboard; sourceTree = "<group>"; };
 		D254462C2A6E5BFF007E582B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D25446372A6E6C1A007E582B /* AuthenticationPhone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthenticationPhone.storyboard; sourceTree = "<group>"; };
 		D25446862A7015F7007E582B /* AuthenticationPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPhoneViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 				C1B86EA72A7D1B4100F9A151 /* MunectingMap.storyboard */,
 				C1B86EA52A7D1B3D00F9A151 /* BestMunector.storyboard */,
 				B386372F2A765AC100BB4F61 /* ArchivePage.storyboard */,
+				C1DA96F62A83A8320084CCC5 /* Youtube.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 				D272FA2B2A7CA90D0087C392 /* TutorialViewController.swift */,
 				D272FA2D2A7CF8770087C392 /* ProfileTutorialViewController.swift */,
 				D272FA2F2A7CF88C0087C392 /* FinalTutorialViewController.swift */,
+				C1DA96F42A83A8000084CCC5 /* YoutubeModalViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -421,6 +427,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1DA96F72A83A8320084CCC5 /* Youtube.storyboard in Resources */,
 				D25446382A6E6C1A007E582B /* AuthenticationPhone.storyboard in Resources */,
 				D254468F2A702186007E582B /* Tutorial.storyboard in Resources */,
 				C1B86EAA2A7D1B4A00F9A151 /* MusicSearch.storyboard in Resources */,
@@ -464,6 +471,7 @@
 				C1B86EC72A7D1C2400F9A151 /* PickViewController.swift in Sources */,
 				D272FA2E2A7CF8770087C392 /* ProfileTutorialViewController.swift in Sources */,
 				D2E345872A66BD7000922A1C /* ViewController.swift in Sources */,
+				C1DA96F52A83A8000084CCC5 /* YoutubeModalViewController.swift in Sources */,
 				C1B86ECB2A7E48A400F9A151 /* HomeViewController.swift in Sources */,
 				B39202472A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift in Sources */,
 				C1B86EC52A7D1C1D00F9A151 /* MusicSearchViewController.swift in Sources */,

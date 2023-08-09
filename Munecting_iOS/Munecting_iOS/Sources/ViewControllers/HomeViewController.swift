@@ -44,13 +44,13 @@ class HomeViewController: UIViewController {
             
             //첫 번재 노래 커버 이미지 설정
             let albumImage = getImage(url: URL(string: music.coverImage)!)
-//            backgroundImageView.image = albumImage.applyBlur(radius: 2.0)
+            backgroundImageView.image = albumImage.applyBlur(radius: 5.0)
             albumCoverImageView.image = albumImage
             
             //노래 타이틀, 아티스트, 장르 출력
             self.musicTitle.text = "Attention"
             self.artistNameLabel.text = music.name
-            self.genreLabel.text = music.genre
+            self.genreLabel.text = "Genre : \(music.genre)"
 
         }
         
@@ -108,13 +108,12 @@ class HomeViewController: UIViewController {
             
             //앨범 커버 이미지 설정
             let albumImage = getImage(url: URL(string: music.coverImage)!)
-//            backgroundImageView.image = albumImage.applyBlur(radius: 2.0)
+            backgroundImageView.image = albumImage.applyBlur(radius: 5.0)
             albumCoverImageView.image = albumImage
             
             //아티스트 이름, 장르 이름 설정
             self.artistNameLabel.text = music.name
-            self.genreLabel.text = music.genre
-        }
+            self.genreLabel.text = "Genre : \(music.genre)"        }
         
         //멈췄다가 다시 360도 돌기
         self.albumCoverImageView.layer.removeAnimation(forKey: "rotationAnimation")
@@ -146,13 +145,12 @@ class HomeViewController: UIViewController {
             
             //앨범 커버 이미지 설정
             let albumImage = getImage(url: URL(string: music.coverImage)!)
-//            backgroundImageView.image = albumImage.applyBlur(radius: 2.0)
+            backgroundImageView.image = albumImage.applyBlur(radius: 5.0)
             albumCoverImageView.image = albumImage
             
             //아티스트 이름, 장르 이름 설정
             self.artistNameLabel.text = music.name
-            self.genreLabel.text = music.genre
-        }
+            self.genreLabel.text = "Genre : \(music.genre)"        }
         
         //멈췄다가 다시 360도 돌기
         self.albumCoverImageView.layer.removeAnimation(forKey: "rotationAnimation")
@@ -173,8 +171,11 @@ class HomeViewController: UIViewController {
         self.audioPlayer?.pause()
         
         if let music = self.musics[self.curMusicNum] {
-            let musicPullURL = URL(string: music.musicPull)
-            UIApplication.shared.open(musicPullURL!, options: [:], completionHandler: nil)
+            let musicPullURL = music.musicPull
+            let sb = UIStoryboard(name: "Youtube", bundle: nil)
+            guard let viewController = sb.instantiateViewController(identifier: "YoutubeModalViewController") as? YoutubeModalViewController else {return}
+            viewController.musicPull = musicPullURL
+            self.present(viewController, animated: true)
         }
     }
     
