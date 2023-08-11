@@ -82,7 +82,7 @@ extension MusicSearchViewController: UICollectionViewDataSource, UICollectionVie
 
 extension MusicSearchViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (UIScreen.main.bounds.width) - 40, height: 80)
+        return CGSize(width: (UIScreen.main.bounds.width) - 30, height: 80)
     }
 }
 

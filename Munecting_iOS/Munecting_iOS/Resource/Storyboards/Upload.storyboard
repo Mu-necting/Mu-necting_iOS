@@ -368,6 +368,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="albumCover" destination="hkq-sI-Gfq" id="enf-t9-erQ"/>
                         <outlet property="hiphopButton" destination="YcW-Lr-tzJ" id="ON1-Gr-lK5"/>
                         <outlet property="musicView" destination="LF3-su-ca4" id="BE1-aq-1g3"/>
                         <outlet property="timeLabel" destination="BeY-mC-eZ2" id="Jxd-HX-DS1"/>

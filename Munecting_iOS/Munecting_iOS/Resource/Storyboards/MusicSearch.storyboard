@@ -26,13 +26,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="노래 제목" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aep-Yf-yau">
-                                <rect key="frame" x="25" y="79" width="343" height="34"/>
+                            <textField opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="노래 제목" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aep-Yf-yau">
+                                <rect key="frame" x="15" y="59" width="363" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qA4-vQ-gy1">
-                                <rect key="frame" x="333" y="79" width="35" height="35"/>
+                                <rect key="frame" x="343" y="59" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="a1R-52-jFu"/>
                                     <constraint firstAttribute="width" constant="35" id="aug-Hw-SKV"/>
@@ -45,7 +46,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pRh-uZ-GqV">
-                                <rect key="frame" x="20" y="123" width="353" height="695"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O1P-Nh-Wcd">
                                     <size key="itemSize" width="353" height="100"/>
@@ -55,7 +56,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MusicSearchCollectionViewCell" reuseIdentifier="MusicSearchCollectionViewCell" id="WuA-aB-SDl" customClass="MusicSearchCollectionViewCell" customModule="Munecting_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="80"/>
+                                        <rect key="frame" x="20" y="0.0" width="353" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nQE-gn-9Ds">
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="80"/>
@@ -92,11 +93,12 @@
                                                 <constraint firstItem="50k-Rv-G2a" firstAttribute="top" secondItem="nQE-gn-9Ds" secondAttribute="top" constant="20" id="squ-Uy-itC"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="353" height="80"/>
                                         <connections>
-                                            <outlet property="albumImageView" destination="Rld-om-ReY" id="nBR-hy-Xhe"/>
-                                            <outlet property="artistLabel" destination="CIU-Ny-dzv" id="bth-8V-B3M"/>
-                                            <outlet property="musicTitleLabel" destination="50k-Rv-G2a" id="aKe-9Q-CNJ"/>
+                                            <outlet property="albumImageView" destination="Rld-om-ReY" id="9qb-Hs-mwz"/>
+                                            <outlet property="artistLabel" destination="CIU-Ny-dzv" id="zcq-TE-lV6"/>
+                                            <outlet property="musicTitleLabel" destination="50k-Rv-G2a" id="yJi-q3-Mr2"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -106,15 +108,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="pRh-uZ-GqV" secondAttribute="bottom" id="1id-KE-7vn"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pRh-uZ-GqV" secondAttribute="trailing" constant="20" id="IhT-4r-QLl"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aep-Yf-yau" secondAttribute="trailing" constant="25" id="SJk-bG-EDe"/>
-                            <constraint firstItem="pRh-uZ-GqV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="UUr-jk-zd7"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qA4-vQ-gy1" secondAttribute="trailing" constant="25" id="gbB-Kj-Lyd"/>
-                            <constraint firstItem="aep-Yf-yau" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="guH-WS-xUS"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pRh-uZ-GqV" secondAttribute="trailing" id="IhT-4r-QLl"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aep-Yf-yau" secondAttribute="trailing" constant="15" id="SJk-bG-EDe"/>
+                            <constraint firstItem="pRh-uZ-GqV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="UUr-jk-zd7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qA4-vQ-gy1" secondAttribute="trailing" constant="15" id="gbB-Kj-Lyd"/>
+                            <constraint firstItem="aep-Yf-yau" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="guH-WS-xUS"/>
                             <constraint firstItem="aep-Yf-yau" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="lFQ-O6-ffb"/>
-                            <constraint firstItem="qA4-vQ-gy1" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="uB1-1J-nWO"/>
+                            <constraint firstItem="qA4-vQ-gy1" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="uB1-1J-nWO"/>
                             <constraint firstItem="pRh-uZ-GqV" firstAttribute="top" secondItem="aep-Yf-yau" secondAttribute="bottom" constant="10" id="vKa-To-1Uk"/>
-                            <constraint firstItem="aep-Yf-yau" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="yYI-1C-IZf"/>
+                            <constraint firstItem="aep-Yf-yau" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="yYI-1C-IZf"/>
                         </constraints>
                     </view>
                     <connections>
@@ -133,6 +135,9 @@
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
