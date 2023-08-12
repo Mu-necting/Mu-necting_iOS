@@ -1,0 +1,6 @@
+framework module Pods_Munecting_iOS_Munecting_iOSUITests {
+  umbrella header "Pods-Munecting_iOS-Munecting_iOSUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
