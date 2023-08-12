@@ -8,7 +8,16 @@ import UIKit
 import AVFoundation
 import CoreImage
 
-
+//dummy 구조체
+struct Music: Codable{
+    let name: String
+    let coverImage: String
+    let genre: String
+    let musicPre: String
+    let musicPull: String
+    let replyCnt: Int
+    let archiveId: Int
+}
 
 class HomeViewController: UIViewController {
 
@@ -23,6 +32,7 @@ class HomeViewController: UIViewController {
     var audioPlayer: AVPlayer?
     var musics: [Music?] = []
     var curMusicNum: Int = 0
+    var arroundMusics: MusicSearchAround?
 
     
     override func viewDidLoad() {
@@ -31,25 +41,18 @@ class HomeViewController: UIViewController {
 //        titleStackView.backgroundColor = .systemGray5
 //        titleStackView.alpha = 0.5
         
-        //노래 갖고오기
+        //더미 노래 갖고오기
         self.getMusic()
         
+        //근처 노래 갖고오기
+        //self.getAroundMusicWithAPI()
         
         if let music = musics[0]{
-        
-            
             //첫 번째 노래 재생
             let musicURL = URL(string: music.musicPre)
             self.audioPlayer = AVPlayer(url: musicURL!)
             self.audioPlayer?.play()
 
-            
-            
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 35) {
-//                self.audioPlayer = AVPlayer(url: musicURL!)
-//                self.audioPlayer?.play()
-//            }
-//
             
             //첫 번재 노래 커버 이미지 설정
             let albumImage = getImage(url: URL(string: music.coverImage)!)
@@ -95,9 +98,11 @@ class HomeViewController: UIViewController {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
+    //slider
     @IBAction func distanceSlider(_ sender: UISlider) {
         let value = Int(sender.value)*100
         distanceLabel?.text = "\(value)m"
+        
     }
     
     //다음 노래로 이동함수
@@ -180,7 +185,6 @@ class HomeViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.albumCoverImageView.layer.add(rotationAnimation, forKey: "rotationAnimation")
         }
-
     }
     
     //유튜브 화면 이동 함수
@@ -204,6 +208,29 @@ class HomeViewController: UIViewController {
         guard let viewController = sb.instantiateViewController(identifier: "MusicSearchViewController") as? MusicSearchViewController else {return}
         self.navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    func getAroundMusicWithAPI(x: String, y: String, range: String){
+        MusicSearchAroundService.shared.searchAroundMusic(x: x, y: y, range: range, completion: {(networkResult) in
+            
+            switch networkResult{
+            case .success(let data):
+                if let arroundMusics = data as? MusicSearchAround{
+                    self.arroundMusics = arroundMusics
+                }
+            case .requestErr(let msg):
+                if let message = msg as? String { print(message) }
+            case .pathErr:
+                print("pathErr in getAroundMusicWithAPI")
+            case .serverErr:
+                print("serverErr in getAroundMusicWithAPI")
+            case .networkFail:
+                print("networkFail in getAroundMusicWithAPI")
+            }
+        })
+        
+        
+    }
+    
     
     //url기반 이미지 반환 코드
     func getImage(url: URL)-> UIImage{
@@ -240,7 +267,6 @@ class HomeViewController: UIViewController {
         self.musics.append(music8)
         self.musics.append(music9)
         self.musics.append(music10)
-        
     }
 }
 
