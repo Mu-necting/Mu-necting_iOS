@@ -11,6 +11,7 @@
 		A2DB3106C25D69EBD429EC3C /* Pods_Munecting_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 678789C83F1D154807D5D949 /* Pods_Munecting_iOSTests.framework */; };
 		B33B035D2A766583003D4531 /* ArchiveUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33B035C2A766583003D4531 /* ArchiveUploadViewController.swift */; };
 		B33B035F2A7665B0003D4531 /* ArchivePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33B035E2A7665B0003D4531 /* ArchivePickViewController.swift */; };
+		B35BE7012A890FA200E2ADAE /* ArchiveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35BE7002A890FA200E2ADAE /* ArchiveDetailViewController.swift */; };
 		B38637302A765AC100BB4F61 /* ArchivePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B386372F2A765AC100BB4F61 /* ArchivePage.storyboard */; };
 		B39202472A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39202462A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift */; };
 		B39202492A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39202482A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift */; };
@@ -90,6 +91,7 @@
 		8944C49454009BF0AD551C85 /* Pods-Munecting_iOS-Munecting_iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munecting_iOS-Munecting_iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Munecting_iOS-Munecting_iOSUITests/Pods-Munecting_iOS-Munecting_iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B33B035C2A766583003D4531 /* ArchiveUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveUploadViewController.swift; sourceTree = "<group>"; };
 		B33B035E2A7665B0003D4531 /* ArchivePickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivePickViewController.swift; sourceTree = "<group>"; };
+		B35BE7002A890FA200E2ADAE /* ArchiveDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveDetailViewController.swift; sourceTree = "<group>"; };
 		B38637262A76594000BB4F61 /* Inter-Regular400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular400.ttf"; sourceTree = "<group>"; };
 		B38637272A76594000BB4F61 /* Inter-ExtraLight200.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight200.ttf"; sourceTree = "<group>"; };
 		B38637282A76594000BB4F61 /* Inter-Bold700.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold700.ttf"; sourceTree = "<group>"; };
@@ -279,8 +281,9 @@
 				B3943B5B2A7CB91300317F2C /* ArchiveViewController.swift */,
 				B33B035E2A7665B0003D4531 /* ArchivePickViewController.swift */,
 				B33B035C2A766583003D4531 /* ArchiveUploadViewController.swift */,
-				B39202462A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift */,
 				B39202482A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift */,
+				B39202462A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift */,
+				B35BE7002A890FA200E2ADAE /* ArchiveDetailViewController.swift */,
 				C1B86ECA2A7E48A400F9A151 /* HomeViewController.swift */,
 				C1B86EC02A7D1C0A00F9A151 /* BestMunectorViewController.swift */,
 				C1B86EC42A7D1C1D00F9A151 /* MusicSearchViewController.swift */,
@@ -680,6 +683,7 @@
 				C1B86EB22A7D1B9400F9A151 /* MusicSearchData.swift in Sources */,
 				C1B86EC32A7D1C1500F9A151 /* MunectingMapViewController.swift in Sources */,
 				D272FA2C2A7CA90D0087C392 /* TutorialViewController.swift in Sources */,
+				B35BE7012A890FA200E2ADAE /* ArchiveDetailViewController.swift in Sources */,
 				D2E3458D2A66BD7000922A1C /* Munecting_iOS.xcdatamodeld in Sources */,
 				C185E0F92A87D55D00895C2D /* NetworkResult.swift in Sources */,
 				D272FA2A2A7C0F9E0087C392 /* SignUpResultViewController.swift in Sources */,
