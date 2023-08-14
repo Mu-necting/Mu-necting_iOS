@@ -16,6 +16,8 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
     @IBOutlet weak var latestBtn: UIButton!
     @IBOutlet weak var popularBtn: UIButton!
     
+    @IBOutlet weak var filterBtn: UIButton!
+    
     var images = [UIImage(named: "album1"), UIImage(named: "album2"), UIImage(named: "album3")]
     var selectedIndices: Set<Int> = []
     
@@ -226,6 +228,17 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
         } else {
             //backBtn.image = UIImage(named: "arrow") // 기본 이미지 이름 사용
         }
-        
     }
+    
+    @IBAction func filterBtnTapped(_ sender: UIButton) {
+    
+        let filterPopUpVC = UIStoryboard(name: "ArchivePage", bundle: nil).instantiateViewController(withIdentifier: "FilterPopUp") as! ArchiveFilterPopUpViewController
+        
+        filterPopUpVC.modalPresentationStyle = .overCurrentContext
+        filterPopUpVC.modalTransitionStyle = .crossDissolve
+        
+        self.present(filterPopUpVC, animated: true, completion: nil)
+
+    }
+    
 }

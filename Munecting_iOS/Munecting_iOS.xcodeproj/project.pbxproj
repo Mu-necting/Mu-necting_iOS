@@ -12,6 +12,7 @@
 		B33B035D2A766583003D4531 /* ArchiveUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33B035C2A766583003D4531 /* ArchiveUploadViewController.swift */; };
 		B33B035F2A7665B0003D4531 /* ArchivePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33B035E2A7665B0003D4531 /* ArchivePickViewController.swift */; };
 		B35BE7012A890FA200E2ADAE /* ArchiveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35BE7002A890FA200E2ADAE /* ArchiveDetailViewController.swift */; };
+		B35BE7032A89F4DC00E2ADAE /* ArchiveFilterPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35BE7022A89F4DC00E2ADAE /* ArchiveFilterPopUpViewController.swift */; };
 		B38637302A765AC100BB4F61 /* ArchivePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B386372F2A765AC100BB4F61 /* ArchivePage.storyboard */; };
 		B39202472A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39202462A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift */; };
 		B39202492A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39202482A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift */; };
@@ -93,6 +94,7 @@
 		B33B035C2A766583003D4531 /* ArchiveUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveUploadViewController.swift; sourceTree = "<group>"; };
 		B33B035E2A7665B0003D4531 /* ArchivePickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivePickViewController.swift; sourceTree = "<group>"; };
 		B35BE7002A890FA200E2ADAE /* ArchiveDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveDetailViewController.swift; sourceTree = "<group>"; };
+		B35BE7022A89F4DC00E2ADAE /* ArchiveFilterPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveFilterPopUpViewController.swift; sourceTree = "<group>"; };
 		B38637262A76594000BB4F61 /* Inter-Regular400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular400.ttf"; sourceTree = "<group>"; };
 		B38637272A76594000BB4F61 /* Inter-ExtraLight200.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight200.ttf"; sourceTree = "<group>"; };
 		B38637282A76594000BB4F61 /* Inter-Bold700.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold700.ttf"; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				D272FA2D2A7CF8770087C392 /* ProfileTutorialViewController.swift */,
 				D272FA2F2A7CF88C0087C392 /* FinalTutorialViewController.swift */,
 				C1DA96F42A83A8000084CCC5 /* YoutubeModalViewController.swift */,
+				B35BE7022A89F4DC00E2ADAE /* ArchiveFilterPopUpViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -680,6 +683,7 @@
 				D2E345832A66BD7000922A1C /* AppDelegate.swift in Sources */,
 				C1B86ECD2A80BC0600F9A151 /* MusicSearchAround.swift in Sources */,
 				D272FA302A7CF88C0087C392 /* FinalTutorialViewController.swift in Sources */,
+				B35BE7032A89F4DC00E2ADAE /* ArchiveFilterPopUpViewController.swift in Sources */,
 				C1B86EC12A7D1C0A00F9A151 /* BestMunectorViewController.swift in Sources */,
 				C1B86EB42A7D1BAA00F9A151 /* BestMunectorCollectionViewCell.swift in Sources */,
 				C1B86EB62A7D1BAF00F9A151 /* MusicSearchCollectionViewCell.swift in Sources */,
@@ -876,6 +880,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5KGCPRX2P8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Munecting_iOS/Resource/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
@@ -905,6 +910,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5KGCPRX2P8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Munecting_iOS/Resource/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
