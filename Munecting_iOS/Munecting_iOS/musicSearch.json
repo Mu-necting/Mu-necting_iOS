@@ -1,0 +1,110 @@
+{
+    "isSuccess": true,
+    "code": 1000,
+    "message": "요청에 성공하였습니다.",
+    "result": {
+        "musicSearchRes": [
+            {
+                "name": "Barbie World (with Aqua) [From Barbie The Album]",
+                "artist": "Nicki Minaj",
+                "coverImg": "https://i.scdn.co/image/ab67616d0000b2737e8f938c02fac3b564931116"
+            },
+            {
+                "name": "vampire",
+                "artist": "Olivia Rodrigo",
+                "coverImg": "https://i.scdn.co/image/ab67616d0000b2731e5e75dc1d878a0007cb6525"
+            },
+            {
+                "name": "Boy's a liar Pt. 2",
+                "artist": "PinkPantheress",
+                "coverImg": "https://i.scdn.co/image/ab67616d0000b27342c5ba689b2e7cbc208a8fa7"
+            },
+            {
+                "name": "Ella Baila Sola",
+                "artist": "Eslabon Armado",
+                "coverImg": "https://i.scdn.co/image/ab67616d0000b2732071a0c79802d9375a53bfef"
+            },
+            {
+                "name": "Baby",
+                "artist": "Anuel AA",
+                "coverImg": "https://i.scdn.co/image/ab67616d0000b27344a3914f7417519a304a514e"
+            },
+            {
+                "name": "1989",
+                "artist": "Taylor Swift",
+                "coverImg": "https://i.scdn.co/image/ab67616d0000b2739abdf14e6058bd3903686148"
+            },
+            {
+                "name": "La Bebe (Remix)",
+                "artist": "Yng Lvcas",
+                "coverImg": "https://i.scdn.co/image/ab67616d0000b273a04be3ad7c8c67f4109111a9"
+            },
+            {
+                "name": "Speak Now (Taylor's Version)",
+                "artist": "Taylor Swift",
+                "coverImg": "https://i.scdn.co/image/ab67616d0000b2730b04da4f224b51ff86e0a481"
+            },
+            {
+                "name": "I’m Just Ken (From Barbie The Album)",
+                "artist": "Ryan Gosling",
+                "coverImg": "https://i.scdn.co/image/ab67616d0000b27312b7b6e520d6ac082b520e64"
+            },
+            {
+                "name": "Buy Dirt",
+                "artist": "Jordan Davis",
+                "coverImg": "https://i.scdn.co/image/ab67616d0000b273dfdefe159fd457b152e9d367"
+            },
+            {
+                "name": "TQM",
+                "artist": "Fuerza Regida",
+                "coverImg": "https://i.scdn.co/image/ab67616d0000b273832ea5d2f8c10f95fc3cc66d"
+            },
+            {
+                "name": "This One's for You Too (Deluxe Edition)",
+                "artist": "Luke Combs",
+                "coverImg": "https://i.scdn.co/image/ab67616d0000b273ccba76fad1c624c09e72bc78"
+            },
+            {
+                "name": "Aquarium (Special Edition)",
+                "artist": "Aqua",
+                "coverImg": "https://i.scdn.co/image/ab67616d0000b273f5768db89dd8ac30fd0e414f"
+            },
+            {
+                "name": "Speak Now (Taylor's Version)",
+                "artist": "Taylor Swift",
+                "coverImg": "https://i.scdn.co/image/ab67616d0000b2730b04da4f224b51ff86e0a481"
+            },
+            {
+                "name": "Pinkfong Animal Songs",
+                "artist": "Pinkfong",
+                "coverImg": "https://i.scdn.co/image/ab67616d0000b27311723f2867f29b2134ae47e4"
+            },
+            {
+                "name": "Burn, Burn, Burn",
+                "artist": "Zach Bryan",
+                "coverImg": "https://i.scdn.co/image/ab67616d0000b273d66d5ec15dc03aa57b78f5ff"
+            },
+            {
+                "name": "un x100to",
+                "artist": "Grupo Frontera",
+                "coverImg": "https://i.scdn.co/image/ab67616d0000b273716c0b0ad51594ff788b5f06"
+            },
+            {
+                "name": "Bye",
+                "artist": "Peso Pluma",
+                "coverImg": "https://i.scdn.co/image/ab67616d0000b27310c8a001a18fd9f1b3552a9d"
+            },
+            {
+                "name": "Dance The Night (From Barbie The Album)",
+                "artist": "Dua Lipa",
+                "coverImg": "https://i.scdn.co/image/ab67616d0000b2737dd3ba455ee3390cb55b0192"
+            },
+            {
+                "name": "Yeezus",
+                "artist": "Kanye West",
+                "coverImg": "https://i.scdn.co/image/ab67616d0000b2731dacfbc31cc873d132958af9"
+            }
+        ],
+        "totalPage": 37
+    }
+}

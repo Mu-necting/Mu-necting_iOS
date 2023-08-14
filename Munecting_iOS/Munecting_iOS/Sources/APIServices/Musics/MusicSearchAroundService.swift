@@ -43,7 +43,7 @@ struct MusicSearchAroundService{
         
         switch status {
         case 1000:
-            return .success(decodedData.data)
+            return .success(decodedData.result)
         default:
             return .networkFail
         }

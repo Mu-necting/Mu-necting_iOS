@@ -31,8 +31,8 @@
                                     <constraint firstAttribute="height" constant="864" id="ldc-tN-abf"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hzP-2L-8Gh">
-                                <rect key="frame" x="71.666666666666686" y="206.33333333333334" width="250" height="25"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hzP-2L-8Gh">
+                                <rect key="frame" x="71.666666666666686" y="206.33333333333334" width="250" height="50.333333333333343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="노래 제목" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNv-5T-wo4">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="25"/>
@@ -45,10 +45,16 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아티스트 이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvG-yd-xE6">
+                                        <rect key="frame" x="0.0" y="30" width="250" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="peD-Rq-iHK">
-                                <rect key="frame" x="57" y="614.33333333333337" width="279" height="127"/>
+                                <rect key="frame" x="57" y="639.66666666666663" width="279" height="127"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hng-4U-afV">
                                         <rect key="frame" x="0.0" y="0.0" width="279" height="35"/>
@@ -109,7 +115,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="tFW-QR-HKz">
-                                <rect key="frame" x="106" y="574.33333333333337" width="181" height="30"/>
+                                <rect key="frame" x="106" y="599.66666666666663" width="181" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tL6-vG-2C2">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
@@ -156,14 +162,14 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DojaCatAlbumCover.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="aiV-fa-Cnc">
-                                <rect key="frame" x="46.666666666666657" y="241.33333333333337" width="300" height="300"/>
+                                <rect key="frame" x="46.666666666666657" y="266.66666666666669" width="300" height="300.00000000000006"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="MMH-4z-Zdh"/>
                                     <constraint firstAttribute="width" constant="300" id="fGm-M5-h1n"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzK-hn-Pqa">
-                                <rect key="frame" x="46" y="241.33333333333337" width="35" height="300"/>
+                                <rect key="frame" x="46" y="266.66666666666669" width="35" height="300.00000000000006"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="bpq-uo-FoV"/>
                                     <constraint firstAttribute="width" constant="35" id="fhz-sT-sq5"/>
@@ -175,7 +181,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhm-3E-38s">
-                                <rect key="frame" x="311.66666666666669" y="241.33333333333337" width="35" height="300"/>
+                                <rect key="frame" x="311.66666666666669" y="266.66666666666669" width="35" height="300.00000000000006"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="Z6G-7e-vx2"/>
                                     <constraint firstAttribute="height" constant="300" id="sGF-o7-YtO"/>
@@ -232,7 +238,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUT-bg-gLU">
-                                <rect key="frame" x="171.66666666666666" y="374.33333333333331" width="49.666666666666657" height="34.333333333333314"/>
+                                <rect key="frame" x="171.66666666666666" y="399.66666666666669" width="49.666666666666657" height="34.333333333333314"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="circle.fill" catalog="system" title=""/>
@@ -285,6 +291,7 @@
                     <navigationItem key="navigationItem" id="Ua7-E9-Br8"/>
                     <connections>
                         <outlet property="albumCoverImageView" destination="aiV-fa-Cnc" id="nxD-sQ-chg"/>
+                        <outlet property="artistNameLabel" destination="bvG-yd-xE6" id="bRj-2g-wpN"/>
                         <outlet property="backgroundImageView" destination="VuT-cd-Bnk" id="rIt-GM-Ys1"/>
                         <outlet property="distanceLabel" destination="or2-gG-vkq" id="yBW-f9-3zj"/>
                         <outlet property="genreLabel" destination="l9l-AX-tKT" id="u1I-ut-f53"/>

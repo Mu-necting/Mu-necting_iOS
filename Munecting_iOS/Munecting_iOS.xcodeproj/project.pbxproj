@@ -19,6 +19,7 @@
 		C185E0F72A87D34F00895C2D /* MusicSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185E0F62A87D34F00895C2D /* MusicSearchService.swift */; };
 		C185E0F92A87D55D00895C2D /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185E0F82A87D55D00895C2D /* NetworkResult.swift */; };
 		C185E0FB2A87D8A000895C2D /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185E0FA2A87D8A000895C2D /* GenericResponse.swift */; };
+		C185E1022A89BB0F00895C2D /* musicSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = C185E1012A89BB0F00895C2D /* musicSearch.json */; };
 		C1AC80A72A860379005E1AE6 /* MusicSearchAroundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AC80A62A860379005E1AE6 /* MusicSearchAroundService.swift */; };
 		C1B86EA42A7D1B2400F9A151 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B86EA32A7D1B2400F9A151 /* Home.storyboard */; };
 		C1B86EA62A7D1B3D00F9A151 /* BestMunector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B86EA52A7D1B3D00F9A151 /* BestMunector.storyboard */; };
@@ -108,6 +109,7 @@
 		C185E0F62A87D34F00895C2D /* MusicSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchService.swift; sourceTree = "<group>"; };
 		C185E0F82A87D55D00895C2D /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		C185E0FA2A87D8A000895C2D /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
+		C185E1012A89BB0F00895C2D /* musicSearch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = musicSearch.json; sourceTree = "<group>"; };
 		C1AC80A62A860379005E1AE6 /* MusicSearchAroundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchAroundService.swift; sourceTree = "<group>"; };
 		C1B86EA32A7D1B2400F9A151 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		C1B86EA52A7D1B3D00F9A151 /* BestMunector.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BestMunector.storyboard; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 		D2E345812A66BD7000922A1C /* Munecting_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				C185E1012A89BB0F00895C2D /* musicSearch.json */,
 				C17DBB372A6E3C15007F45BD /* Sources */,
 				C17DBB352A6E3BE0007F45BD /* Resource */,
 				D2E3458B2A66BD7000922A1C /* Munecting_iOS.xcdatamodeld */,
@@ -529,6 +532,7 @@
 				C1B86EA62A7D1B3D00F9A151 /* BestMunector.storyboard in Resources */,
 				B38637302A765AC100BB4F61 /* ArchivePage.storyboard in Resources */,
 				C1B86EA82A7D1B4100F9A151 /* MunectingMap.storyboard in Resources */,
+				C185E1022A89BB0F00895C2D /* musicSearch.json in Resources */,
 				D2E3458A2A66BD7000922A1C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
