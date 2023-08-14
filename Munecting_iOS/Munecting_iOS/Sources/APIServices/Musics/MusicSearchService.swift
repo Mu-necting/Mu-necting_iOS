@@ -39,11 +39,11 @@ struct MusicSearchService{
     
     func judgeSearchMusic(status: Int, data: Data) -> NetworkResult<Any>{
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(GenericResponse<MusicSearchData>.self, from: data) else {return .pathErr}
+        guard let decodedData = try? decoder.decode(GenericResponse<MusicSearchResult>.self, from: data) else {return .pathErr}
         
         switch status {
         case 1000:
-            return .success(decodedData.data)
+            return .success(decodedData.result)
         default:
             return .networkFail
         }

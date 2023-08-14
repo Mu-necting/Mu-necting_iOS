@@ -43,6 +43,7 @@ class HomeViewController: UIViewController {
         
         //더미 노래 갖고오기
         self.getMusic()
+        self.loadJSON()
         
         //근처 노래 갖고오기
         //self.getAroundMusicWithAPI()
@@ -76,6 +77,27 @@ class HomeViewController: UIViewController {
         rotationAnimation.duration = 5.0 // 애니메이션 지속 시간 (초)
         rotationAnimation.repeatCount = .infinity // 무한 반복
         albumCoverImageView.layer.add(rotationAnimation, forKey: "rotationAnimation")
+    }
+    
+    func loadJSON(){
+        if let path = Bundle.main.path(forResource: "musicSearch", ofType: "json") {
+            do {
+                let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                
+                let decoder = JSONDecoder()
+                let response = try decoder.decode(GenericResponse<MusicSearchResult>.self, from: jsonData)
+                
+                print("Is Success:", response.isSuccess)
+                print("Code:", response.code)
+                print("Message:", response.message)
+                print("Total Page:", response.result.totalPage)
+                print("Music Items:", response.result.musicSearchRes[0])
+            } catch {
+                print("Error:", error)
+            }
+        } else {
+            print("JSON file not found.")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -268,6 +290,8 @@ class HomeViewController: UIViewController {
         self.musics.append(music9)
         self.musics.append(music10)
     }
+    
+
 }
 
 //이미지 Blur 처리 함수

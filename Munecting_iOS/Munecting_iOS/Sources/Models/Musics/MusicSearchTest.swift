@@ -14,13 +14,13 @@ struct MusicSearchDataDummy{
 }
 
 
-class MusicSearchViewController: UIViewController {
+class MusicSearchTest: UIViewController {
 
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var searchButton: UIButton!
     @IBOutlet var searchTextField: UITextField!
     var searchDataListDummy:[MusicSearchDataDummy] = []
-    var searchMusicDatas: MusicSearchResult?
+    var searchMusicDatas: MusicSearchData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +74,7 @@ class MusicSearchViewController: UIViewController {
             
             switch networkResult {
             case.success(let data):
-                if let musicSearchData = data as? MusicSearchResult {
+                if let musicSearchData = data as? MusicSearchData {
                     self.searchMusicDatas = musicSearchData
                     self.collectionView.reloadData()
                 }
