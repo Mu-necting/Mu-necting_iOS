@@ -428,6 +428,7 @@
 				D2E3457C2A66BD7000922A1C /* Frameworks */,
 				D2E3457D2A66BD7000922A1C /* Resources */,
 				32FC31CC8F23BC06BDBFC0DF /* [CP] Embed Pods Frameworks */,
+				5B2F547D919A5BAB22672256 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -466,6 +467,7 @@
 				D2E3459F2A66BD7200922A1C /* Frameworks */,
 				D2E345A02A66BD7200922A1C /* Resources */,
 				8F4FE0EBF6CCAF633BCEF1C9 /* [CP] Embed Pods Frameworks */,
+				980B77FA965476516D82E574 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -621,6 +623,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5B2F547D919A5BAB22672256 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Munecting_iOS/Pods-Munecting_iOS-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Munecting_iOS/Pods-Munecting_iOS-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Munecting_iOS/Pods-Munecting_iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		66425164AE0E99F4BF137F5D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -658,6 +677,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Munecting_iOS-Munecting_iOSUITests/Pods-Munecting_iOS-Munecting_iOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		980B77FA965476516D82E574 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Munecting_iOS-Munecting_iOSUITests/Pods-Munecting_iOS-Munecting_iOSUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Munecting_iOS-Munecting_iOSUITests/Pods-Munecting_iOS-Munecting_iOSUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Munecting_iOS-Munecting_iOSUITests/Pods-Munecting_iOS-Munecting_iOSUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -884,6 +920,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Munecting_iOS/Resource/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 정보 필요";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -914,6 +951,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Munecting_iOS/Resource/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 정보 필요";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

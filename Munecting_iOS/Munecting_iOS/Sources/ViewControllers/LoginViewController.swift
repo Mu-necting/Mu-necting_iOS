@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import KakaoSDKUser
 
 class LoginViewController: UIViewController {
     
@@ -154,6 +155,21 @@ class LoginViewController: UIViewController {
     @objc private func onTouchSignUpWithKakao() {
     // 버튼 액션 처리
         print("카카오 회원가입 버튼")
+        
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoTalk() success.")
+                    print(oauthToken)
+
+                    //do something
+                    _ = oauthToken
+                }
+            }
+        }
     }
 
 }
