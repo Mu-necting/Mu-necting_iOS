@@ -10,7 +10,7 @@ struct APIConstants {
     //임시
 
     // MARK: - Users
-    
+    static let loginWithSocialURL = baseURL + "/oauth2/kakao"
     
     // MARK: - Musics
     

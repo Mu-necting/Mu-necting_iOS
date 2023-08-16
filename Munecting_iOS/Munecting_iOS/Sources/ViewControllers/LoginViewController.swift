@@ -28,22 +28,11 @@ class LoginViewController: UIViewController {
     }
     
     @objc func onTapKakaoLogin(_ sender: UITapGestureRecognizer) {
-        print("클릭됨")
+        onTouchSignUpWithKakao()
     }
     
     @IBAction func onTapLogin(_ sender: Any) {
-        
-        if(isFirst){            
-            let tutorialVC =  UIStoryboard(name: "Tutorial", bundle: nil)
-                .instantiateViewController(withIdentifier: "TutorialViewController")
-            
-            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(tutorialVC, animated: true)
-            
-            
-        }else{
-            
-        }
-        
+        goToMainPage()
     }
     
     
@@ -163,13 +152,44 @@ class LoginViewController: UIViewController {
                 }
                 else {
                     print("loginWithKakaoTalk() success.")
-                    print(oauthToken)
-
-                    //do something
-                    _ = oauthToken
+                  
+                    LoginService.loginWithSocial(accessToken: oauthToken!.accessToken){
+                        (networkResult) in
+                        switch networkResult{
+                        case .success(let data):
+                            let user : User = data as! User
+                            // 유저 정보 저장해놓는 로직 넣기
+                            UserManager.shared.setUser(user)
+                            self.goToMainPage()
+                            
+                        case .requestErr(let msg):
+                            if let message = msg as? String { print(message) }
+                        case .pathErr:
+                            print("pathErr in loginWithSocialAPI")
+                        case .serverErr:
+                            print("serverErr in loginWithSocialAPI")
+                        case .networkFail:
+                            print("networkFail in loginWithSocialAPI")
+                        }
+                    }
                 }
             }
         }
+    }
+    
+    @objc private func goToMainPage(){
+        if(isFirst){
+            // 처음이면 튜토리얼 페이지로
+            let tutorialVC =  UIStoryboard(name: "Tutorial", bundle: nil)
+                .instantiateViewController(withIdentifier: "TutorialViewController")
+            
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(tutorialVC, animated: true)
+            
+        }else{
+            // 처음이 아니면 홈화면으로
+            
+        }
+        
     }
 
 }
