@@ -63,6 +63,7 @@
 		D2E3459D2A66BD7200922A1C /* Munecting_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3459C2A66BD7200922A1C /* Munecting_iOSTests.swift */; };
 		D2E345A72A66BD7200922A1C /* Munecting_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E345A62A66BD7200922A1C /* Munecting_iOSUITests.swift */; };
 		D2E345A92A66BD7200922A1C /* Munecting_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E345A82A66BD7200922A1C /* Munecting_iOSUITestsLaunchTests.swift */; };
+		D2EBDD912A89FF310046A5A7 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EBDD902A89FF310046A5A7 /* LoginService.swift */; };
 		E01CA29B6B66C0BA27EBA11C /* Pods_Munecting_iOS_Munecting_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB395D54BE1B8E149F591AFC /* Pods_Munecting_iOS_Munecting_iOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -144,7 +145,7 @@
 		D272FA2D2A7CF8770087C392 /* ProfileTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTutorialViewController.swift; sourceTree = "<group>"; };
 		D272FA2F2A7CF88C0087C392 /* FinalTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalTutorialViewController.swift; sourceTree = "<group>"; };
 		D2913F2B2A6E5A4300B6174F /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
-		D2913F2D2A6E5BA700B6174F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = Munecting_iOS/Sources/Models/User.swift; sourceTree = SOURCE_ROOT; };
+		D2913F2D2A6E5BA700B6174F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = Munecting_iOS/Sources/Models/User/User.swift; sourceTree = SOURCE_ROOT; };
 		D2E3457F2A66BD7000922A1C /* Munecting_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Munecting_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E345822A66BD7000922A1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2E345842A66BD7000922A1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +160,7 @@
 		D2E345A22A66BD7200922A1C /* Munecting_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Munecting_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E345A62A66BD7200922A1C /* Munecting_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Munecting_iOSUITests.swift; sourceTree = "<group>"; };
 		D2E345A82A66BD7200922A1C /* Munecting_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Munecting_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D2EBDD902A89FF310046A5A7 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		DA83446B9B9F06550DF0C449 /* Pods_Munecting_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Munecting_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -333,6 +335,7 @@
 		C1AC80A52A860339005E1AE6 /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				D2EBDD8F2A89FF110046A5A7 /* Login */,
 				C185E0F22A87D0FC00895C2D /* Musics */,
 				C185E0F82A87D55D00895C2D /* NetworkResult.swift */,
 				C185E0FA2A87D8A000895C2D /* GenericResponse.swift */,
@@ -352,8 +355,8 @@
 		D25446302A6E64A8007E582B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D2EBDD922A8B9C580046A5A7 /* User */,
 				C185E0FC2A87E0FE00895C2D /* Musics */,
-				D2913F2D2A6E5BA700B6174F /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -414,6 +417,22 @@
 				D2E345A82A66BD7200922A1C /* Munecting_iOSUITestsLaunchTests.swift */,
 			);
 			path = Munecting_iOSUITests;
+			sourceTree = "<group>";
+		};
+		D2EBDD8F2A89FF110046A5A7 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D2EBDD902A89FF310046A5A7 /* LoginService.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D2EBDD922A8B9C580046A5A7 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D2913F2D2A6E5BA700B6174F /* User.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -735,6 +754,7 @@
 				D254468D2A701803007E582B /* SignUpWithEmailViewController.swift in Sources */,
 				D2913F2E2A6E5BA700B6174F /* User.swift in Sources */,
 				D2E345852A66BD7000922A1C /* SceneDelegate.swift in Sources */,
+				D2EBDD912A89FF310046A5A7 /* LoginService.swift in Sources */,
 				C185E0FB2A87D8A000895C2D /* GenericResponse.swift in Sources */,
 				D25446922A716077007E582B /* UIColor.swift in Sources */,
 				B39202492A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift in Sources */,
