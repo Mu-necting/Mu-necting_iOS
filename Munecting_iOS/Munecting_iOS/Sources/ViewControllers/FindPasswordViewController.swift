@@ -15,7 +15,7 @@ class FindPasswordViewController: UIViewController {
     
     var isVerified = false
     
-    private var verifyNumber : String
+    private var verifyNumber : String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()

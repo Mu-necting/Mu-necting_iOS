@@ -10,7 +10,7 @@ import Alamofire
 
 struct LoginService{
     
-    static func loginWithSocial(accessToken: String, completion: @escaping (NetworkResult<Any>) -> Void){
+    static func loginWithSocial(accessToken: String, completion: @escaping (NetworkResult<User>) -> Void){
         let url = APIConstants.loginWithSocialURL
         let header: HTTPHeaders = [
             "Content-Type": "application/json"
@@ -48,4 +48,6 @@ struct LoginService{
             }
         })
     }
+    
+    
 }

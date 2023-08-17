@@ -154,7 +154,7 @@ class LoginViewController: UIViewController {
                         (networkResult) in
                         switch networkResult{
                         case .success(let data):
-                            let user : User = data as! User
+                            let user : User = data 
                             // 유저 정보 저장해놓는 로직 넣기
                             UserManager.shared.setUser(user)
                             self.goToMainPage()
