@@ -47,6 +47,7 @@
                                     <segment title="PICK"/>
                                     <segment title="UPLOAD"/>
                                 </segments>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="switchViews:" destination="hek-gb-gOq" eventType="valueChanged" id="WjG-21-FBV"/>
                                 </connections>
@@ -68,6 +69,7 @@
                             <constraint firstItem="v4B-U9-ula" firstAttribute="top" secondItem="ebb-HN-CVs" secondAttribute="top" id="pmI-LN-BMf"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="22r-6J-swA"/>
                     <connections>
                         <outlet property="pickView" destination="Jwn-7Y-t18" id="KgQ-RN-ADX"/>
                         <outlet property="segmentedControl" destination="Byf-mo-5Eb" id="28w-J8-fmx"/>
@@ -76,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nv0-r2-ftN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3700" y="-614.08450704225356"/>
+            <point key="canvasLocation" x="4626.7175572519081" y="-614.08450704225356"/>
         </scene>
         <!--Archive Pick View Controller-->
         <scene sceneID="9vT-It-Kzn">
@@ -86,12 +88,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMa-x0-fnG">
-                                <rect key="frame" x="15.999999999999996" y="55" width="36.666666666666657" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="arrow"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq9-cM-A0v">
                                 <rect key="frame" x="153" y="279" width="86" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -101,24 +97,6 @@
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="R2V-WM-WvA">
                                 <rect key="frame" x="121" y="121" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MU:NECTING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEq-BV-2uf">
-                                <rect key="frame" x="131" y="20" width="131" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="18"/>
-                                <color key="textColor" red="0.29803921570000003" green="0.098039215690000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Archive" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgU-aN-kUc">
-                                <rect key="frame" x="147.33333333333334" y="63" width="99.333333333333343" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="6aH-CX-xFS">
-                                <rect key="frame" x="21.666666666666657" y="88" width="350" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="twg-dO-CVt">
@@ -143,29 +121,26 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2E-wX-vva">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1Gx-9x-YNN">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="mEH-8Q-GFh"/>
-                                                        <constraint firstAttribute="height" constant="100" id="owE-Bw-ecu"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="heart"/>
-                                                    <connections>
-                                                        <segue destination="mpc-5c-4ve" kind="presentation" id="TpX-gi-aDN"/>
-                                                    </connections>
-                                                </button>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8y-Ci-tn5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="o2E-wX-vva" firstAttribute="top" secondItem="6bO-nW-Xbl" secondAttribute="top" id="4LV-cf-Ru9"/>
-                                                <constraint firstAttribute="bottom" secondItem="o2E-wX-vva" secondAttribute="bottom" id="6vC-hA-rOG"/>
-                                                <constraint firstAttribute="trailing" secondItem="o2E-wX-vva" secondAttribute="trailing" id="9ua-zs-Yeg"/>
-                                                <constraint firstItem="o2E-wX-vva" firstAttribute="leading" secondItem="6bO-nW-Xbl" secondAttribute="leading" id="sxs-ah-0SM"/>
+                                                <constraint firstItem="s8y-Ci-tn5" firstAttribute="leading" secondItem="6bO-nW-Xbl" secondAttribute="leading" id="37F-IT-MOh"/>
+                                                <constraint firstItem="s8y-Ci-tn5" firstAttribute="top" secondItem="6bO-nW-Xbl" secondAttribute="top" id="lMX-rt-vo8"/>
+                                                <constraint firstAttribute="bottom" secondItem="s8y-Ci-tn5" secondAttribute="bottom" id="rhQ-g5-UCL"/>
+                                                <constraint firstAttribute="trailing" secondItem="s8y-Ci-tn5" secondAttribute="trailing" id="wrt-fF-smh"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="100" height="100"/>
                                         <connections>
-                                            <outlet property="button" destination="o2E-wX-vva" id="Ga3-Fu-3Uh"/>
+                                            <outlet property="albumImg" destination="1Gx-9x-YNN" id="dVS-rs-wNb"/>
+                                            <outlet property="highlightView" destination="s8y-Ci-tn5" id="JX6-es-vNH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -176,12 +151,6 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="setting" title=""/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Be-MT-DVD">
-                                <rect key="frame" x="315" y="94" width="49" height="38.333333333333343"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="edit" title=""/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8F-VB-8lq">
                                 <rect key="frame" x="29" y="324" width="64" height="31.666666666666686"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -190,6 +159,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="최신순">
                                     <fontDescription key="titleFontDescription" name="Inter-Bold" family="Inter" pointSize="15"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="latestButtonTapped:" destination="Z6p-Pd-In2" eventType="touchUpInside" id="4NQ-ke-iiU"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line 2" translatesAutoresizingMaskIntoConstraints="NO" id="O8h-nB-dyd">
                                 <rect key="frame" x="91" y="331" width="1" height="18"/>
@@ -203,6 +175,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="인기순">
                                     <fontDescription key="titleFontDescription" name="Inter-Bold" family="Inter" pointSize="15"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="popularButtonTapped:" destination="Z6p-Pd-In2" eventType="touchUpInside" id="xEZ-eV-bhn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfu-nD-4Bd">
                                 <rect key="frame" x="294" y="331" width="70" height="26"/>
@@ -212,18 +187,217 @@
                                 <buttonConfiguration key="configuration" style="plain" image="filter" title="필터" imagePadding="5">
                                     <fontDescription key="titleFontDescription" name="Inter-Bold" family="Inter" pointSize="15"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="filterBtnTapped:" destination="Z6p-Pd-In2" eventType="touchUpInside" id="8qF-Sk-fOI"/>
+                                </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LaJ-Xe-EWD">
+                                <rect key="frame" x="1" y="59" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <items>
+                                    <navigationItem title="My Archive" id="sE0-4J-5D4">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="wBO-3j-s0d">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="backBtnTapped:" destination="Z6p-Pd-In2" id="RDP-3k-h6u"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="mXn-4x-gfQ">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="editButtonTapped:" destination="Z6p-Pd-In2" id="vOo-q5-jFw"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Exf-8O-xIe">
+                                <rect key="frame" x="91" y="15" width="213" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3b3-4v-bw4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="wBO-3j-s0d" id="hMR-3r-03q"/>
                         <outlet property="collectionView" destination="fCr-7m-m6H" id="XEA-XV-ur9"/>
+                        <outlet property="editBtn" destination="mXn-4x-gfQ" id="mLf-Ec-dKn"/>
+                        <outlet property="filterBtn" destination="bfu-nD-4Bd" id="plJ-cC-lVH"/>
+                        <outlet property="latestBtn" destination="J8F-VB-8lq" id="yYZ-Kr-PY6"/>
+                        <outlet property="popularBtn" destination="YHf-Aw-jRK" id="Rxt-gY-HmW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aix-Ug-msN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3700" y="251.7605633802817"/>
+            <point key="canvasLocation" x="4623.6641221374048" y="250.35211267605635"/>
+        </scene>
+        <!--Archive Filter Pop Up View Controller-->
+        <scene sceneID="cEk-7S-Lt0">
+            <objects>
+                <viewController storyboardIdentifier="FilterPopUp" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LtY-Gh-Aeo" customClass="ArchiveFilterPopUpViewController" customModule="Munecting_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xcJ-e5-Q5x">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VN5-6x-kxN">
+                                <rect key="frame" x="76" y="284" width="240" height="291"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Lh-ya-Gkg">
+                                        <rect key="frame" x="43" y="101" width="60" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="R&amp;B" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V31-MQ-PLz">
+                                        <rect key="frame" x="43" y="75" width="60" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="블루스" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHC-8K-VbV">
+                                        <rect key="frame" x="44" y="127" width="60" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="컨트리" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKt-tc-IaB">
+                                        <rect key="frame" x="43" y="162" width="60" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="EDM" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFa-pn-bRV">
+                                        <rect key="frame" x="44" y="188" width="60" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="K-POP" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="장르선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ujm-cj-OXG">
+                                        <rect key="frame" x="21" y="23" width="59" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9CB-ha-dHY">
+                                        <rect key="frame" x="94" y="243" width="54" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="확인"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSk-3e-E2K">
+                                        <rect key="frame" x="136" y="75" width="60" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="발라드" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6E-Q2-uCu">
+                                        <rect key="frame" x="136" y="110" width="60" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="팝" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6q-zi-RzW">
+                                        <rect key="frame" x="136" y="136" width="60" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="클래식" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7y-Bd-by7">
+                                        <rect key="frame" x="136" y="162" width="60" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="힙합" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euI-8E-5QV">
+                                        <rect key="frame" x="136" y="188" width="60" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="락" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6gB-5d-YMn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KK5-TH-B3J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5365.6488549618316" y="251.40845070422537"/>
         </scene>
         <!--Archive Upload View Controller-->
         <scene sceneID="3kV-4X-Q94">
@@ -250,12 +424,6 @@
                                 <rect key="frame" x="21.666666666666657" y="88" width="350" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpr-mC-bgc">
-                                <rect key="frame" x="339" y="94" width="25" height="38.333333333333343"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="edit" title=""/>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="DBD-b5-IVx">
                                 <rect key="frame" x="93" y="154" width="50" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -286,29 +454,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMt-B7-4mG">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dg2-aH-kbh">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="100" id="HSW-As-UgK"/>
-                                                        <constraint firstAttribute="width" constant="100" id="YPh-PS-kd5"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="heart"/>
-                                                    <connections>
-                                                        <segue destination="cIJ-cx-2hU" kind="presentation" id="PKX-Kb-enX"/>
-                                                    </connections>
-                                                </button>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zhr-H6-kCM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="fMt-B7-4mG" secondAttribute="trailing" id="NeE-JI-Owa"/>
-                                                <constraint firstItem="fMt-B7-4mG" firstAttribute="leading" secondItem="MLy-g0-q0R" secondAttribute="leading" id="d6N-46-keQ"/>
-                                                <constraint firstItem="fMt-B7-4mG" firstAttribute="top" secondItem="MLy-g0-q0R" secondAttribute="top" id="rtN-E9-Qqe"/>
-                                                <constraint firstAttribute="bottom" secondItem="fMt-B7-4mG" secondAttribute="bottom" id="yqa-kM-r3s"/>
-                                            </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="100" height="100"/>
                                         <connections>
-                                            <outlet property="button" destination="fMt-B7-4mG" id="xiJ-dL-xmg"/>
+                                            <outlet property="albumImg" destination="dg2-aH-kbh" id="MdS-wA-4dj"/>
+                                            <outlet property="highlightView" destination="zhr-H6-kCM" id="cYi-8p-4Jf"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -321,6 +481,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="인기순">
                                     <fontDescription key="titleFontDescription" name="Inter-Bold" family="Inter" pointSize="15"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="popularButtonTapped:" destination="BKj-vx-3k7" eventType="touchUpInside" id="nF8-bR-Rmt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvD-Z3-EKb">
                                 <rect key="frame" x="29" y="261" width="63" height="33"/>
@@ -330,6 +493,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="최신순">
                                     <fontDescription key="titleFontDescription" name="Inter-Bold" family="Inter" pointSize="15"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="latestButtonTapped:" destination="BKj-vx-3k7" eventType="touchUpInside" id="H3a-16-fEY"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line 2" translatesAutoresizingMaskIntoConstraints="NO" id="fN8-Lv-3Ka">
                                 <rect key="frame" x="86" y="269" width="1" height="18"/>
@@ -358,70 +524,92 @@
                                     <fontDescription key="titleFontDescription" name="Inter-Bold" family="Inter" pointSize="15"/>
                                 </buttonConfiguration>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MU:NECTING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lk8-XR-7Rt">
-                                <rect key="frame" x="138" y="20" width="117" height="19"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MuS-9u-OUU">
+                                <rect key="frame" x="2" y="50" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <items>
+                                    <navigationItem title="My Archive" id="fRU-Nd-AZg">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="a21-dX-6iw">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="backBtnTapped:" destination="BKj-vx-3k7" id="xce-aU-bv6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="yx6-O1-hdd">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="editButtonTapped:" destination="BKj-vx-3k7" id="bYe-KI-xs7"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="csz-fK-G8i">
+                                <rect key="frame" x="90" y="11" width="213" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="18"/>
-                                <color key="textColor" red="0.29803921570000003" green="0.098039215690000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mUb-gh-JdC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="a21-dX-6iw" id="uQn-e6-IpP"/>
                         <outlet property="collectionView" destination="2yk-JM-7Jm" id="QUT-x3-5Uu"/>
+                        <outlet property="editBtn" destination="yx6-O1-hdd" id="Y14-LH-dbw"/>
+                        <outlet property="latestBtn" destination="pvD-Z3-EKb" id="xwo-37-3Sd"/>
+                        <outlet property="popularBtn" destination="Sdy-KK-Yp0" id="TzO-Cd-eD5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdR-qq-rVk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4782" y="-614"/>
+            <point key="canvasLocation" x="5707.6335877862593" y="-614.43661971830988"/>
         </scene>
-        <!--View Controller-->
+        <!--Archive Detail View Controller-->
         <scene sceneID="1uR-wF-cvN">
             <objects>
-                <viewController id="mpc-5c-4ve" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArchiveDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mpc-5c-4ve" customClass="ArchiveDetailViewController" customModule="Munecting_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UDC-jE-WLG">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="749"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="purpleBg" translatesAutoresizingMaskIntoConstraints="NO" id="8IR-Kx-5gm">
                                 <rect key="frame" x="0.0" y="240" width="390" height="509"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="New Jeans Album Cover" highlightedImage="New Jeans Album Cover" translatesAutoresizingMaskIntoConstraints="NO" id="jrm-jr-fwu">
-                                <rect key="frame" x="145" y="170.33333333333334" width="100" height="100.00000000000003"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jrm-jr-fwu">
+                                <rect key="frame" x="145" y="230.33333333333337" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="a2O-kc-Rho"/>
                                     <constraint firstAttribute="width" constant="100" id="vzG-c2-G7q"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000.00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18c-zd-GOO">
-                                <rect key="frame" x="0.0" y="278.33333333333331" width="393" height="17.666666666666686"/>
+                                <rect key="frame" x="0.0" y="338.33333333333331" width="393" height="17.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8O-sD-hgK">
-                                <rect key="frame" x="0.0" y="58.000000000000007" width="393" height="23.333333333333336"/>
+                                <rect key="frame" x="0.0" y="116.99999999999999" width="393" height="24.333333333333329"/>
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYq-md-gUS">
-                                <rect key="frame" x="0.0" y="101.33333333333333" width="393" height="20"/>
+                                <rect key="frame" x="0.0" y="161.33333333333334" width="393" height="20"/>
                                 <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="작성내용" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1R4-nr-ttG">
-                                <rect key="frame" x="39" y="350" width="315" height="388"/>
+                                <rect key="frame" x="39" y="410" width="315" height="397"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69G-5a-cRI">
-                                <rect key="frame" x="343" y="201.33333333333334" width="25" height="38.333333333333343"/>
+                                <rect key="frame" x="343" y="261.33333333333331" width="25" height="38.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="17a-e2-kzf"/>
                                     <constraint firstAttribute="height" constant="38.329999999999998" id="hFI-tq-Jfh"/>
@@ -455,17 +643,20 @@
                             <constraint firstItem="1R4-nr-ttG" firstAttribute="leading" secondItem="cXY-4j-C7b" secondAttribute="leading" constant="39" id="znO-X8-aJM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="albumImg" destination="jrm-jr-fwu" id="9bI-VG-cFf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1nf-H3-nBv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4781" y="252"/>
+            <point key="canvasLocation" x="6341" y="250"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dAa-6e-XWB">
             <objects>
                 <viewController id="cIJ-cx-2hU" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eOi-R3-YxK">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="749"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="purpleBg" translatesAutoresizingMaskIntoConstraints="NO" id="9ML-O9-7vK">
@@ -473,38 +664,38 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="New Jeans Album Cover" translatesAutoresizingMaskIntoConstraints="NO" id="kJH-Z9-NIN">
-                                <rect key="frame" x="145" y="170.33333333333334" width="100" height="100.00000000000003"/>
+                                <rect key="frame" x="145" y="229.33333333333337" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="dBI-Nm-ZcT"/>
                                     <constraint firstAttribute="width" constant="100" id="mX1-5A-Ll7"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000.00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvn-br-1BS">
-                                <rect key="frame" x="0.0" y="278.33333333333331" width="393" height="17.666666666666686"/>
+                                <rect key="frame" x="0.0" y="337.33333333333331" width="393" height="17.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbl-Uh-mYe">
-                                <rect key="frame" x="0.0" y="58.000000000000007" width="393" height="23.333333333333336"/>
+                                <rect key="frame" x="0.0" y="116.99999999999999" width="393" height="23.333333333333329"/>
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2r-kB-7NY">
-                                <rect key="frame" x="0.0" y="101.33333333333333" width="393" height="20"/>
+                                <rect key="frame" x="0.0" y="160.33333333333334" width="393" height="20"/>
                                 <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="작성내용" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eoH-V7-3T7">
-                                <rect key="frame" x="39" y="350" width="315" height="388"/>
+                                <rect key="frame" x="39" y="409" width="315" height="398"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uft-DQ-BBY">
-                                <rect key="frame" x="343" y="201.33333333333334" width="25" height="38.333333333333343"/>
+                                <rect key="frame" x="343" y="260.33333333333331" width="25" height="38.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38.329999999999998" id="oft-DX-vj0"/>
                                     <constraint firstAttribute="width" constant="25" id="qSQ-Fp-pOM"/>
@@ -541,7 +732,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xcr-hb-4l9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5892" y="-614"/>
+            <point key="canvasLocation" x="6817.5572519083971" y="-614.43661971830988"/>
         </scene>
     </scenes>
     <resources>
@@ -553,6 +744,7 @@
         <image name="heart" width="50" height="42.666667938232422"/>
         <image name="line" width="350" height="1"/>
         <image name="line 2" width="1" height="18"/>
+        <image name="logo" width="180" height="32.666667938232422"/>
         <image name="profile" width="150" height="150"/>
         <image name="purpleBg" width="358" height="469"/>
         <image name="setting" width="30" height="30.666666030883789"/>

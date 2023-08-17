@@ -7,6 +7,9 @@
 
 import UIKit
 import CoreData
+import KakaoSDKCommon
+import KakaoSDKAuth
+import KakaoSDKUser
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +18,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        KakaoSDK.initSDK(appKey: "755c8f13785ee882d8b39d1f05019ac1")
+        
+        if (AuthApi.hasToken()) {
+            UserApi.shared.accessTokenInfo { (accessTokenInfo, error) in
+                if let error = error {
+                    if let sdkError = error as? SdkError, sdkError.isInvalidTokenError() == true  {
+                        //로그인 필요
+                    }
+                    else {
+                        //기타 에러
+                    }
+                }
+                else {
+                    //토큰 유효성 체크 성공(필요 시 토큰 갱신됨)
+                    // 유저 정보 가져오는 로직 넣기
+                    // 여기 수정해야함
+                    LoginService.loginWithSocial(accessToken: "accessTokenInfo?.id"){
+                        (networkResult) in
+                        switch networkResult{
+                        case .success(let data):
+                            let user : User = data as! User
+                            // 유저 정보 저장해놓는 로직 넣기
+                            UserManager.shared.setUser(user)
+                        case .requestErr(let msg):
+                            if let message = msg as? String { print(message) }
+                        case .pathErr:
+                            print("pathErr in loginWithSocialAPI")
+                        case .serverErr:
+                            print("serverErr in loginWithSocialAPI")
+                        case .networkFail:
+                            print("networkFail in loginWithSocialAPI")
+                        }
+                    }
+                }
+            }
+        }
+        
         return true
     }
 

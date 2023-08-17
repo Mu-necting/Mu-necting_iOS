@@ -11,6 +11,8 @@
 		A2DB3106C25D69EBD429EC3C /* Pods_Munecting_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 678789C83F1D154807D5D949 /* Pods_Munecting_iOSTests.framework */; };
 		B33B035D2A766583003D4531 /* ArchiveUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33B035C2A766583003D4531 /* ArchiveUploadViewController.swift */; };
 		B33B035F2A7665B0003D4531 /* ArchivePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33B035E2A7665B0003D4531 /* ArchivePickViewController.swift */; };
+		B35BE7012A890FA200E2ADAE /* ArchiveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35BE7002A890FA200E2ADAE /* ArchiveDetailViewController.swift */; };
+		B35BE7032A89F4DC00E2ADAE /* ArchiveFilterPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35BE7022A89F4DC00E2ADAE /* ArchiveFilterPopUpViewController.swift */; };
 		B38637302A765AC100BB4F61 /* ArchivePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B386372F2A765AC100BB4F61 /* ArchivePage.storyboard */; };
 		B39202472A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39202462A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift */; };
 		B39202492A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39202482A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift */; };
@@ -37,14 +39,10 @@
 		C1B86EC92A7D1C2D00F9A151 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86EC82A7D1C2D00F9A151 /* UploadViewController.swift */; };
 		C1B86ECB2A7E48A400F9A151 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86ECA2A7E48A400F9A151 /* HomeViewController.swift */; };
 		C1B86ECD2A80BC0600F9A151 /* MusicSearchAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86ECC2A80BC0600F9A151 /* MusicSearchAround.swift */; };
-		C1D1E6872A8E03EC00DF7207 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1E6862A8E03EC00DF7207 /* PageViewController.swift */; };
-		C1D1E6892A8E041500DF7207 /* HomeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1E6882A8E041500DF7207 /* HomeNavigationViewController.swift */; };
-		C1D1E68B2A8E07A100DF7207 /* MusicSearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1E68A2A8E07A100DF7207 /* MusicSearchNavigationController.swift */; };
 		C1DA96F52A83A8000084CCC5 /* YoutubeModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA96F42A83A8000084CCC5 /* YoutubeModalViewController.swift */; };
 		C1DA96F72A83A8320084CCC5 /* Youtube.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1DA96F62A83A8320084CCC5 /* Youtube.storyboard */; };
 		D254462D2A6E5BFF007E582B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D254462C2A6E5BFF007E582B /* LoginViewController.swift */; };
-		D25446382A6E6C1A007E582B /* AuthenticationPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D25446372A6E6C1A007E582B /* AuthenticationPhone.storyboard */; };
-		D25446872A7015F7007E582B /* AuthenticationPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25446862A7015F7007E582B /* AuthenticationPhoneViewController.swift */; };
+		D25446872A7015F7007E582B /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25446862A7015F7007E582B /* FindPasswordViewController.swift */; };
 		D254468D2A701803007E582B /* SignUpWithEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D254468C2A701803007E582B /* SignUpWithEmailViewController.swift */; };
 		D254468F2A702186007E582B /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D254468E2A702186007E582B /* Tutorial.storyboard */; };
 		D25446922A716077007E582B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25446912A716077007E582B /* UIColor.swift */; };
@@ -64,6 +62,8 @@
 		D2E3459D2A66BD7200922A1C /* Munecting_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3459C2A66BD7200922A1C /* Munecting_iOSTests.swift */; };
 		D2E345A72A66BD7200922A1C /* Munecting_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E345A62A66BD7200922A1C /* Munecting_iOSUITests.swift */; };
 		D2E345A92A66BD7200922A1C /* Munecting_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E345A82A66BD7200922A1C /* Munecting_iOSUITestsLaunchTests.swift */; };
+		D2EBDD912A89FF310046A5A7 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EBDD902A89FF310046A5A7 /* LoginService.swift */; };
+		D2EBDD942A8DB9690046A5A7 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EBDD932A8DB9690046A5A7 /* ChangePasswordViewController.swift */; };
 		E01CA29B6B66C0BA27EBA11C /* Pods_Munecting_iOS_Munecting_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB395D54BE1B8E149F591AFC /* Pods_Munecting_iOS_Munecting_iOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +94,8 @@
 		8944C49454009BF0AD551C85 /* Pods-Munecting_iOS-Munecting_iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munecting_iOS-Munecting_iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Munecting_iOS-Munecting_iOSUITests/Pods-Munecting_iOS-Munecting_iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B33B035C2A766583003D4531 /* ArchiveUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveUploadViewController.swift; sourceTree = "<group>"; };
 		B33B035E2A7665B0003D4531 /* ArchivePickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivePickViewController.swift; sourceTree = "<group>"; };
+		B35BE7002A890FA200E2ADAE /* ArchiveDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveDetailViewController.swift; sourceTree = "<group>"; };
+		B35BE7022A89F4DC00E2ADAE /* ArchiveFilterPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveFilterPopUpViewController.swift; sourceTree = "<group>"; };
 		B38637262A76594000BB4F61 /* Inter-Regular400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular400.ttf"; sourceTree = "<group>"; };
 		B38637272A76594000BB4F61 /* Inter-ExtraLight200.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight200.ttf"; sourceTree = "<group>"; };
 		B38637282A76594000BB4F61 /* Inter-Bold700.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold700.ttf"; sourceTree = "<group>"; };
@@ -130,14 +132,10 @@
 		C1B86EC82A7D1C2D00F9A151 /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		C1B86ECA2A7E48A400F9A151 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C1B86ECC2A80BC0600F9A151 /* MusicSearchAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchAround.swift; sourceTree = "<group>"; };
-		C1D1E6862A8E03EC00DF7207 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		C1D1E6882A8E041500DF7207 /* HomeNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationViewController.swift; sourceTree = "<group>"; };
-		C1D1E68A2A8E07A100DF7207 /* MusicSearchNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchNavigationController.swift; sourceTree = "<group>"; };
 		C1DA96F42A83A8000084CCC5 /* YoutubeModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeModalViewController.swift; sourceTree = "<group>"; };
 		C1DA96F62A83A8320084CCC5 /* Youtube.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Youtube.storyboard; sourceTree = "<group>"; };
 		D254462C2A6E5BFF007E582B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		D25446372A6E6C1A007E582B /* AuthenticationPhone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthenticationPhone.storyboard; sourceTree = "<group>"; };
-		D25446862A7015F7007E582B /* AuthenticationPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPhoneViewController.swift; sourceTree = "<group>"; };
+		D25446862A7015F7007E582B /* FindPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
 		D254468C2A701803007E582B /* SignUpWithEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailViewController.swift; sourceTree = "<group>"; };
 		D254468E2A702186007E582B /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		D25446912A716077007E582B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -146,7 +144,7 @@
 		D272FA2D2A7CF8770087C392 /* ProfileTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTutorialViewController.swift; sourceTree = "<group>"; };
 		D272FA2F2A7CF88C0087C392 /* FinalTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalTutorialViewController.swift; sourceTree = "<group>"; };
 		D2913F2B2A6E5A4300B6174F /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
-		D2913F2D2A6E5BA700B6174F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = Munecting_iOS/Sources/Models/User.swift; sourceTree = SOURCE_ROOT; };
+		D2913F2D2A6E5BA700B6174F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = Munecting_iOS/Sources/Models/User/User.swift; sourceTree = SOURCE_ROOT; };
 		D2E3457F2A66BD7000922A1C /* Munecting_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Munecting_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E345822A66BD7000922A1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2E345842A66BD7000922A1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +159,8 @@
 		D2E345A22A66BD7200922A1C /* Munecting_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Munecting_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E345A62A66BD7200922A1C /* Munecting_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Munecting_iOSUITests.swift; sourceTree = "<group>"; };
 		D2E345A82A66BD7200922A1C /* Munecting_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Munecting_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D2EBDD902A89FF310046A5A7 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		D2EBDD932A8DB9690046A5A7 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		DA83446B9B9F06550DF0C449 /* Pods_Munecting_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Munecting_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -251,7 +251,6 @@
 				C1B86EAD2A7D1B5900F9A151 /* Upload.storyboard */,
 				C1B86EA32A7D1B2400F9A151 /* Home.storyboard */,
 				D2913F2B2A6E5A4300B6174F /* LoginPage.storyboard */,
-				D25446372A6E6C1A007E582B /* AuthenticationPhone.storyboard */,
 				D254468E2A702186007E582B /* Tutorial.storyboard */,
 				C1B86EAB2A7D1B5100F9A151 /* Pick.storyboard */,
 				C1B86EA92A7D1B4A00F9A151 /* MusicSearch.storyboard */,
@@ -282,13 +281,14 @@
 				C1B86EB92A7D1BE200F9A151 /* cell */,
 				D2E345862A66BD7000922A1C /* ViewController.swift */,
 				D254462C2A6E5BFF007E582B /* LoginViewController.swift */,
-				D25446862A7015F7007E582B /* AuthenticationPhoneViewController.swift */,
+				D25446862A7015F7007E582B /* FindPasswordViewController.swift */,
 				D254468C2A701803007E582B /* SignUpWithEmailViewController.swift */,
 				B3943B5B2A7CB91300317F2C /* ArchiveViewController.swift */,
 				B33B035E2A7665B0003D4531 /* ArchivePickViewController.swift */,
 				B33B035C2A766583003D4531 /* ArchiveUploadViewController.swift */,
-				B39202462A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift */,
 				B39202482A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift */,
+				B39202462A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift */,
+				B35BE7002A890FA200E2ADAE /* ArchiveDetailViewController.swift */,
 				C1B86ECA2A7E48A400F9A151 /* HomeViewController.swift */,
 				C1B86EC02A7D1C0A00F9A151 /* BestMunectorViewController.swift */,
 				C1B86EC42A7D1C1D00F9A151 /* MusicSearchViewController.swift */,
@@ -300,9 +300,8 @@
 				D272FA2D2A7CF8770087C392 /* ProfileTutorialViewController.swift */,
 				D272FA2F2A7CF88C0087C392 /* FinalTutorialViewController.swift */,
 				C1DA96F42A83A8000084CCC5 /* YoutubeModalViewController.swift */,
-				C1D1E6862A8E03EC00DF7207 /* PageViewController.swift */,
-				C1D1E6882A8E041500DF7207 /* HomeNavigationViewController.swift */,
-				C1D1E68A2A8E07A100DF7207 /* MusicSearchNavigationController.swift */,
+				B35BE7022A89F4DC00E2ADAE /* ArchiveFilterPopUpViewController.swift */,
+				D2EBDD932A8DB9690046A5A7 /* ChangePasswordViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -336,6 +335,7 @@
 		C1AC80A52A860339005E1AE6 /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				D2EBDD8F2A89FF110046A5A7 /* Login */,
 				C185E0F22A87D0FC00895C2D /* Musics */,
 				C185E0F82A87D55D00895C2D /* NetworkResult.swift */,
 				C185E0FA2A87D8A000895C2D /* GenericResponse.swift */,
@@ -355,8 +355,8 @@
 		D25446302A6E64A8007E582B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D2EBDD922A8B9C580046A5A7 /* User */,
 				C185E0FC2A87E0FE00895C2D /* Musics */,
-				D2913F2D2A6E5BA700B6174F /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -419,6 +419,22 @@
 			path = Munecting_iOSUITests;
 			sourceTree = "<group>";
 		};
+		D2EBDD8F2A89FF110046A5A7 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D2EBDD902A89FF310046A5A7 /* LoginService.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D2EBDD922A8B9C580046A5A7 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D2913F2D2A6E5BA700B6174F /* User.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -431,6 +447,7 @@
 				D2E3457C2A66BD7000922A1C /* Frameworks */,
 				D2E3457D2A66BD7000922A1C /* Resources */,
 				32FC31CC8F23BC06BDBFC0DF /* [CP] Embed Pods Frameworks */,
+				5B2F547D919A5BAB22672256 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -469,6 +486,7 @@
 				D2E3459F2A66BD7200922A1C /* Frameworks */,
 				D2E345A02A66BD7200922A1C /* Resources */,
 				8F4FE0EBF6CCAF633BCEF1C9 /* [CP] Embed Pods Frameworks */,
+				980B77FA965476516D82E574 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -529,7 +547,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1DA96F72A83A8320084CCC5 /* Youtube.storyboard in Resources */,
-				D25446382A6E6C1A007E582B /* AuthenticationPhone.storyboard in Resources */,
 				D254468F2A702186007E582B /* Tutorial.storyboard in Resources */,
 				C1B86EAA2A7D1B4A00F9A151 /* MusicSearch.storyboard in Resources */,
 				D2E345922A66BD7100922A1C /* LaunchScreen.storyboard in Resources */,
@@ -624,6 +641,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5B2F547D919A5BAB22672256 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Munecting_iOS/Pods-Munecting_iOS-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Munecting_iOS/Pods-Munecting_iOS-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Munecting_iOS/Pods-Munecting_iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		66425164AE0E99F4BF137F5D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -663,6 +697,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Munecting_iOS-Munecting_iOSUITests/Pods-Munecting_iOS-Munecting_iOSUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		980B77FA965476516D82E574 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Munecting_iOS-Munecting_iOSUITests/Pods-Munecting_iOS-Munecting_iOSUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Munecting_iOS-Munecting_iOSUITests/Pods-Munecting_iOS-Munecting_iOSUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Munecting_iOS-Munecting_iOSUITests/Pods-Munecting_iOS-Munecting_iOSUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -671,12 +722,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D254462D2A6E5BFF007E582B /* LoginViewController.swift in Sources */,
-				C1D1E6872A8E03EC00DF7207 /* PageViewController.swift in Sources */,
-				C1D1E68B2A8E07A100DF7207 /* MusicSearchNavigationController.swift in Sources */,
 				C1B86EC92A7D1C2D00F9A151 /* UploadViewController.swift in Sources */,
 				C1B86EC72A7D1C2400F9A151 /* PickViewController.swift in Sources */,
 				C185E0F72A87D34F00895C2D /* MusicSearchService.swift in Sources */,
 				D272FA2E2A7CF8770087C392 /* ProfileTutorialViewController.swift in Sources */,
+				D2EBDD942A8DB9690046A5A7 /* ChangePasswordViewController.swift in Sources */,
 				D2E345872A66BD7000922A1C /* ViewController.swift in Sources */,
 				C1DA96F52A83A8000084CCC5 /* YoutubeModalViewController.swift in Sources */,
 				C1B86ECB2A7E48A400F9A151 /* HomeViewController.swift in Sources */,
@@ -688,6 +738,7 @@
 				D2E345832A66BD7000922A1C /* AppDelegate.swift in Sources */,
 				C1B86ECD2A80BC0600F9A151 /* MusicSearchAround.swift in Sources */,
 				D272FA302A7CF88C0087C392 /* FinalTutorialViewController.swift in Sources */,
+				B35BE7032A89F4DC00E2ADAE /* ArchiveFilterPopUpViewController.swift in Sources */,
 				C1B86EC12A7D1C0A00F9A151 /* BestMunectorViewController.swift in Sources */,
 				C1B86EB42A7D1BAA00F9A151 /* BestMunectorCollectionViewCell.swift in Sources */,
 				C1B86EB62A7D1BAF00F9A151 /* MusicSearchCollectionViewCell.swift in Sources */,
@@ -695,16 +746,17 @@
 				C1B86EB22A7D1B9400F9A151 /* MusicSearchData.swift in Sources */,
 				C1B86EC32A7D1C1500F9A151 /* MunectingMapViewController.swift in Sources */,
 				D272FA2C2A7CA90D0087C392 /* TutorialViewController.swift in Sources */,
+				B35BE7012A890FA200E2ADAE /* ArchiveDetailViewController.swift in Sources */,
 				D2E3458D2A66BD7000922A1C /* Munecting_iOS.xcdatamodeld in Sources */,
 				C185E0F92A87D55D00895C2D /* NetworkResult.swift in Sources */,
 				D272FA2A2A7C0F9E0087C392 /* SignUpResultViewController.swift in Sources */,
-				D25446872A7015F7007E582B /* AuthenticationPhoneViewController.swift in Sources */,
+				D25446872A7015F7007E582B /* FindPasswordViewController.swift in Sources */,
 				D254468D2A701803007E582B /* SignUpWithEmailViewController.swift in Sources */,
 				D2913F2E2A6E5BA700B6174F /* User.swift in Sources */,
 				D2E345852A66BD7000922A1C /* SceneDelegate.swift in Sources */,
+				D2EBDD912A89FF310046A5A7 /* LoginService.swift in Sources */,
 				C185E0FB2A87D8A000895C2D /* GenericResponse.swift in Sources */,
 				D25446922A716077007E582B /* UIColor.swift in Sources */,
-				C1D1E6892A8E041500DF7207 /* HomeNavigationViewController.swift in Sources */,
 				B39202492A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift in Sources */,
 				B3943B5C2A7CB91300317F2C /* ArchiveViewController.swift in Sources */,
 			);
@@ -884,9 +936,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5KGCPRX2P8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Munecting_iOS/Resource/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 정보 필요";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -913,9 +967,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5KGCPRX2P8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Munecting_iOS/Resource/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 정보 필요";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

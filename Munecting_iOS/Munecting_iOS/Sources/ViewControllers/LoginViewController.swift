@@ -7,12 +7,18 @@
 
 import Foundation
 import UIKit
+import KakaoSDKUser
 
 class LoginViewController: UIViewController {
     
     // 나중에는 값 받아오는 걸로 수정해야함
     var isFirst : Bool = true
 
+    @IBOutlet weak var idTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
     @IBOutlet weak var kakaoLoginButton: UIImageView!
     let loginPageStoryboard : UIStoryboard = UIStoryboard(name: "LoginPage", bundle: nil)
     
@@ -27,22 +33,47 @@ class LoginViewController: UIViewController {
     }
     
     @objc func onTapKakaoLogin(_ sender: UITapGestureRecognizer) {
-        print("클릭됨")
+        onTouchSignUpWithKakao()
     }
     
     @IBAction func onTapLogin(_ sender: Any) {
         
-        if(isFirst){            
-            let tutorialVC =  UIStoryboard(name: "Tutorial", bundle: nil)
-                .instantiateViewController(withIdentifier: "TutorialViewController")
-            
-            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(tutorialVC, animated: true)
-            
-            
-        }else{
-            
+        let email : String = idTextField.text ?? ""
+        let password : String = passwordTextField.text ?? ""
+        
+        if(email == "" || password == ""){
+            showAlert(title: "로그인 요청 오류", message: "아이디 혹은 패스워드를 입력해주세요")
+            return
         }
         
+        LoginService.login(email: email, password: password){
+            (networkResult) in
+            switch networkResult{
+            case .success(let data):
+                let user : User = data
+                // 유저 정보 저장해놓는 로직 넣기
+                UserManager.shared.setUser(user)
+                self.goToMainPage()
+                
+            case .requestErr(let msg):
+                if let message = msg as? String {
+                    print(message)
+                    self.showAlert(title: "Error", message: message)
+                    break
+                }
+            case .pathErr:
+                print("pathErr in loginAPI")
+                break
+            case .serverErr:
+                self.showAlert(title: "내부 서버 오류", message: "잠시 후 다시 시도해주세요")
+                print("serverErr in loginAPI")
+                break
+            case .networkFail:
+                self.showAlert(title: "네트워크 오류", message: "네트워크 연결 상태를 확인해주세요")
+                print("networkFail in loginAPI")
+                break
+            }
+        }
     }
     
     
@@ -51,12 +82,9 @@ class LoginViewController: UIViewController {
     }
     
     
-    @IBAction func onTapFindEmail(_ sender: Any) {
-        print("이메일 찾기")
-    }
-    
     @IBAction func onTapFindPwd(_ sender: Any) {
-        print("비밀번호 찾기")
+        let findPasswordPage = loginPageStoryboard.instantiateViewController(withIdentifier: "FindPasswordViewController")
+        self.show(findPasswordPage, sender: self)
     }
     
     @objc private func presentSignUpModal() {
@@ -153,7 +181,65 @@ class LoginViewController: UIViewController {
 
     @objc private func onTouchSignUpWithKakao() {
     // 버튼 액션 처리
-        print("카카오 회원가입 버튼")
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoTalk() success.")
+                  
+                    LoginService.loginWithSocial(accessToken: oauthToken!.accessToken){
+                        (networkResult) in
+                        switch networkResult{
+                        case .success(let data):
+                            let user : User = data 
+                            // 유저 정보 저장해놓는 로직 넣기
+                            UserManager.shared.setUser(user)
+                            self.goToMainPage()
+                            
+                        case .requestErr(let msg):
+                            if let message = msg as? String { print(message) }
+                        case .pathErr:
+                            print("pathErr in loginWithSocialAPI")
+                        case .serverErr:
+                            print("serverErr in loginWithSocialAPI")
+                        case .networkFail:
+                            print("networkFail in loginWithSocialAPI")
+                        }
+                    }
+                }
+            }
+        }else{
+            if let presentedViewController = self.presentedViewController {
+                dismiss(animated: false)
+            }
+            showAlert(title: "카카오 로그인 오류", message: "카카오톡을 설치해주세요.")
+        }
+    }
+    
+    @objc private func goToMainPage(){
+        if(isFirst){
+            // 처음이면 튜토리얼 페이지로
+            let tutorialVC =  UIStoryboard(name: "Tutorial", bundle: nil)
+                .instantiateViewController(withIdentifier: "TutorialViewController")
+            
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(tutorialVC, animated: true)
+            
+        }else{
+            // 처음이 아니면 홈화면으로
+            
+        }
+        
+    }
+    
+    func showAlert(title: String, message : String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert )
+        let confirm = UIAlertAction(title: "확인", style: .default, handler: nil)
+        
+        alert.addAction(confirm)
+        
+        present(alert, animated: true, completion: nil)
     }
 
 }

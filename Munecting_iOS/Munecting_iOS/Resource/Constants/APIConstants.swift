@@ -10,7 +10,13 @@ struct APIConstants {
     //임시
 
     // MARK: - Users
+    static let signUp = baseURL + "/join"
     
+    static let login = baseURL + "/login"
+    
+    static let loginWithSocialURL = baseURL + "/oauth2/kakao"
+    
+    static let mailCheck = baseURL + "/mailCheck"
     
     // MARK: - Musics
     
