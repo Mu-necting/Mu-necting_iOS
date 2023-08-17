@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sys-Hf-mQ0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vw3-7p-ghd">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -22,14 +22,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VuT-cd-Bnk">
-                                <rect key="frame" x="-0.66666666666665719" y="-6" width="394.33333333333326" height="864"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VuT-cd-Bnk">
+                                <rect key="frame" x="-2" y="-6" width="394.33333333333326" height="864"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="394" id="O6A-K3-6jo"/>
                                     <constraint firstAttribute="height" constant="864" id="ldc-tN-abf"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="zop-Yv-tRi" appends="YES" id="qxu-us-SKo"/>
+                                </connections>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hzP-2L-8Gh">
                                 <rect key="frame" x="71.666666666666686" y="206.33333333333334" width="250" height="50.333333333333343"/>
@@ -93,13 +97,13 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="plus.app" catalog="system" title="">
+                                        <buttonConfiguration key="configuration" style="plain" image="heart.fill" catalog="system" title="">
                                             <backgroundConfiguration key="background" cornerRadius="10">
-                                                <color key="backgroundColor" red="0.29803921570000003" green="0.098039215690000001" blue="0.39607843139999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.26274509800000001" green="0.12549019610000001" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="uploadButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="aHF-xQ-QeT"/>
+                                            <action selector="likeButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zab-Ed-FsN"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -126,9 +130,12 @@
                                                     <constraint firstAttribute="height" constant="30" id="Iz0-Sg-NBg"/>
                                                     <constraint firstAttribute="width" constant="30" id="XKB-sO-FFx"/>
                                                 </constraints>
-                                                <color key="tintColor" systemColor="systemRedColor"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="heart.fill" catalog="system" title=""/>
+                                                <connections>
+                                                    <action selector="likeButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KbS-5i-cyg"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="522" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5m-qd-wfD">
                                                 <rect key="frame" x="40" y="0.0" width="30" height="30"/>
@@ -295,18 +302,37 @@
                         <outlet property="backgroundImageView" destination="VuT-cd-Bnk" id="rIt-GM-Ys1"/>
                         <outlet property="distanceLabel" destination="or2-gG-vkq" id="yBW-f9-3zj"/>
                         <outlet property="genreLabel" destination="l9l-AX-tKT" id="u1I-ut-f53"/>
+                        <outlet property="likeBarButton" destination="1Ax-qW-2ZN" id="sS0-av-GUb"/>
+                        <outlet property="likeButton" destination="1Yk-m7-rvW" id="gz7-Lv-gCF"/>
                         <outlet property="musicTitle" destination="vNv-5T-wo4" id="GVG-s4-1eZ"/>
                         <outlet property="titleStackView" destination="hzP-2L-8Gh" id="CTv-S2-8jB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="zop-Yv-tRi"/>
             </objects>
-            <point key="canvasLocation" x="713.74045801526711" y="0.70422535211267612"/>
+            <point key="canvasLocation" x="569" y="1"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--PageViewController-->
+        <scene sceneID="vpl-YA-TPx">
+            <objects>
+                <viewController storyboardIdentifier="PageViewController" title="PageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vw3-7p-ghd" customClass="PageViewController" customModule="Munecting_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3xT-Gp-BCm">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6GR-nP-Mmj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IJQ-iW-TZA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1298" y="1"/>
+        </scene>
+        <!--HomeNavigationViewController-->
         <scene sceneID="TFX-IA-DKB">
             <objects>
-                <navigationController id="Sys-Hf-mQ0" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeNavigationViewController" title="HomeNavigationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Sys-Hf-mQ0" customClass="HomeNavigationViewController" customModule="Munecting_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" selectedImage="house.fill" catalog="system" id="6C2-2y-Xjm"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7xw-q6-mS5">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -325,11 +351,11 @@
         <image name="circle.fill" catalog="system" width="128" height="123"/>
         <image name="globe.europe.africa.fill" catalog="system" width="128" height="123"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="left-chevron" width="48" height="48"/>
         <image name="medal.fill" catalog="system" width="121" height="128"/>
         <image name="music.note.list" catalog="system" width="128" height="115"/>
         <image name="play.rectangle.fill" catalog="system" width="128" height="93"/>
-        <image name="plus.app" catalog="system" width="128" height="114"/>
         <image name="right-chevron (1)" width="48" height="48"/>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

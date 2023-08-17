@@ -18,10 +18,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Archive View Controller-->
+        <!--ArchiveViewController-->
         <scene sceneID="npZ-BQ-hLX">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="hek-gb-gOq" customClass="ArchiveViewController" customModule="Munecting_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArchiveViewController" title="ArchiveViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hek-gb-gOq" customClass="ArchiveViewController" customModule="Munecting_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ErS-hu-72c">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

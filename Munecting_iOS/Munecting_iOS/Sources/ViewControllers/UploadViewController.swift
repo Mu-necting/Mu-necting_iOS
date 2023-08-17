@@ -42,8 +42,10 @@ class UploadViewController: UIViewController {
         musicView.layer.shadowOffset = self.shadowOffset
         musicView.layer.shadowRadius = self.cornerRadius
         musicView.layer.masksToBounds = false
-
-       
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
     }
 
 

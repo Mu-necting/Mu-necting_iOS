@@ -27,13 +27,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="노래 제목" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aep-Yf-yau">
-                                <rect key="frame" x="15" y="59" width="363" height="34"/>
+                                <rect key="frame" x="15" y="123" width="363" height="34"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qA4-vQ-gy1">
-                                <rect key="frame" x="343" y="59" width="35" height="35"/>
+                                <rect key="frame" x="343" y="123" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="a1R-52-jFu"/>
                                     <constraint firstAttribute="width" constant="35" id="aug-Hw-SKV"/>
@@ -46,7 +46,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pRh-uZ-GqV">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="167" width="393" height="651"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O1P-Nh-Wcd">
                                     <size key="itemSize" width="353" height="100"/>
@@ -112,13 +112,14 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aep-Yf-yau" secondAttribute="trailing" constant="15" id="SJk-bG-EDe"/>
                             <constraint firstItem="pRh-uZ-GqV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="UUr-jk-zd7"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qA4-vQ-gy1" secondAttribute="trailing" constant="15" id="gbB-Kj-Lyd"/>
-                            <constraint firstItem="aep-Yf-yau" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="guH-WS-xUS"/>
+                            <constraint firstItem="aep-Yf-yau" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="guH-WS-xUS"/>
                             <constraint firstItem="aep-Yf-yau" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="lFQ-O6-ffb"/>
-                            <constraint firstItem="qA4-vQ-gy1" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="uB1-1J-nWO"/>
+                            <constraint firstItem="qA4-vQ-gy1" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="uB1-1J-nWO"/>
                             <constraint firstItem="pRh-uZ-GqV" firstAttribute="top" secondItem="aep-Yf-yau" secondAttribute="bottom" constant="10" id="vKa-To-1Uk"/>
                             <constraint firstItem="aep-Yf-yau" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="yYI-1C-IZf"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="m56-og-LcC"/>
                     <connections>
                         <outlet property="collectionView" destination="pRh-uZ-GqV" id="8h3-0Y-YE3"/>
                         <outlet property="searchButton" destination="qA4-vQ-gy1" id="zrq-mo-agy"/>
@@ -128,6 +129,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+        </scene>
+        <!--MusicSearchNavigationController-->
+        <scene sceneID="SRe-rc-T3k">
+            <objects>
+                <navigationController storyboardIdentifier="MusicSearchNavigationController" title="MusicSearchNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vxg-g3-xUu" customClass="MusicSearchNavigationController" customModule="Munecting_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0BV-iJ-gei">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="91V-xM-Auk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w6E-ss-PrN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-695" y="-27"/>
         </scene>
     </scenes>
     <resources>

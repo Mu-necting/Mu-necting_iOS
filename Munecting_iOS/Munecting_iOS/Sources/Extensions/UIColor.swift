@@ -10,6 +10,23 @@ import UIKit
 
 extension UIColor {
     
+    static var munectingBlue: UIColor {
+        let red = CGFloat((432066 >> 16) & 0xFF) / 255.0
+        let green = CGFloat((432066 >> 8) & 0xFF) / 255.0
+        let blue = CGFloat(432066 & 0xFF) / 255.0
+        
+        return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+    }
+    
+    static var munectingPurple: UIColor {
+        let hexColor: UInt32 = 0x432066
+        let red = CGFloat((hexColor & 0xFF0000) >> 16) / 255.0
+        let green = CGFloat((hexColor & 0x00FF00) >> 8) / 255.0
+        let blue = CGFloat(hexColor & 0x0000FF) / 255.0
+
+       return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+    }
+    
     convenience init(hexCode: String, alpha: CGFloat = 1.0) {
         var hexFormatted: String = hexCode.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
         
@@ -28,3 +45,4 @@ extension UIColor {
                   alpha: alpha)
     }
 }
+

@@ -28,23 +28,29 @@ class HomeViewController: UIViewController {
     @IBOutlet var backgroundImageView: UIImageView!
     @IBOutlet var musicTitle: UILabel!
     @IBOutlet var titleStackView: UIStackView!
+    @IBOutlet var likeBarButton: UIButton!
+    @IBOutlet var likeButton: UIButton!
+
     
     var audioPlayer: AVPlayer?
     var musics: [Music?] = []
     var curMusicNum: Int = 0
     var arroundMusics: MusicSearchAround?
+    var isLike: Bool = false
+
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         titleStackView.layer.cornerRadius = 10
-//        titleStackView.backgroundColor = .systemGray5
-//        titleStackView.alpha = 0.5
+            
+        
+        
         
         //더미 노래 갖고오기
         self.getMusic()
         self.loadJSON()
-        
+
         //근처 노래 갖고오기
         //self.getAroundMusicWithAPI()
         
@@ -79,6 +85,7 @@ class HomeViewController: UIViewController {
         albumCoverImageView.layer.add(rotationAnimation, forKey: "rotationAnimation")
     }
     
+    //임시 함수_JSON 디코딩
     func loadJSON(){
         if let path = Bundle.main.path(forResource: "musicSearch", ofType: "json") {
             do {
@@ -106,6 +113,16 @@ class HomeViewController: UIViewController {
     }
     
     
+    @IBAction func likeButtonTapped(_ sender: Any) {
+        if isLike == false{
+            self.isLike = true
+            self.likeButton.tintColor = .red
+        }else{
+            self.isLike = false
+            self.likeButton.tintColor = .white
+        }
+    }
+    
     //뮤넥터 맵 이동함수
     @IBAction func munectingMapButtonTapped(_ sender: Any) {
         let sb = UIStoryboard(name: "MunectingMap", bundle: nil)
@@ -124,7 +141,6 @@ class HomeViewController: UIViewController {
     @IBAction func distanceSlider(_ sender: UISlider) {
         let value = Int(sender.value)*100
         distanceLabel?.text = "\(value)m"
-        
     }
     
     //다음 노래로 이동함수
