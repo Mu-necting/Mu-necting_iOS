@@ -112,7 +112,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="8fg-nq-3St"/>
                     <connections>
+                        <outlet property="idTextField" destination="5iq-15-QbH" id="4vt-oy-Cxw"/>
                         <outlet property="kakaoLoginButton" destination="6Si-LI-3FJ" id="5Jx-L0-ylj"/>
+                        <outlet property="passwordTextField" destination="Gng-c9-3rB" id="XJg-Nh-2WJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -14,6 +14,11 @@ class LoginViewController: UIViewController {
     // 나중에는 값 받아오는 걸로 수정해야함
     var isFirst : Bool = true
 
+    @IBOutlet weak var idTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
     @IBOutlet weak var kakaoLoginButton: UIImageView!
     let loginPageStoryboard : UIStoryboard = UIStoryboard(name: "LoginPage", bundle: nil)
     
@@ -32,7 +37,43 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func onTapLogin(_ sender: Any) {
-        goToMainPage()
+        
+        let email : String = idTextField.text ?? ""
+        let password : String = passwordTextField.text ?? ""
+        
+        if(email == "" || password == ""){
+            showAlert(title: "로그인 요청 오류", message: "아이디 혹은 패스워드를 입력해주세요")
+            return
+        }
+        
+        LoginService.login(email: email, password: password){
+            (networkResult) in
+            switch networkResult{
+            case .success(let data):
+                let user : User = data
+                // 유저 정보 저장해놓는 로직 넣기
+                UserManager.shared.setUser(user)
+                self.goToMainPage()
+                
+            case .requestErr(let msg):
+                if let message = msg as? String {
+                    print(message)
+                    self.showAlert(title: "Error", message: message)
+                    break
+                }
+            case .pathErr:
+                print("pathErr in loginAPI")
+                break
+            case .serverErr:
+                self.showAlert(title: "내부 서버 오류", message: "잠시 후 다시 시도해주세요")
+                print("serverErr in loginAPI")
+                break
+            case .networkFail:
+                self.showAlert(title: "네트워크 오류", message: "네트워크 연결 상태를 확인해주세요")
+                print("networkFail in loginAPI")
+                break
+            }
+        }
     }
     
     
@@ -140,8 +181,6 @@ class LoginViewController: UIViewController {
 
     @objc private func onTouchSignUpWithKakao() {
     // 버튼 액션 처리
-        print("카카오 회원가입 버튼")
-        
         if (UserApi.isKakaoTalkLoginAvailable()) {
             UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
                 if let error = error {
@@ -171,6 +210,11 @@ class LoginViewController: UIViewController {
                     }
                 }
             }
+        }else{
+            if let presentedViewController = self.presentedViewController {
+                dismiss(animated: false)
+            }
+            showAlert(title: "카카오 로그인 오류", message: "카카오톡을 설치해주세요.")
         }
     }
     
@@ -187,6 +231,15 @@ class LoginViewController: UIViewController {
             
         }
         
+    }
+    
+    func showAlert(title: String, message : String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert )
+        let confirm = UIAlertAction(title: "확인", style: .default, handler: nil)
+        
+        alert.addAction(confirm)
+        
+        present(alert, animated: true, completion: nil)
     }
 
 }
