@@ -50,7 +50,7 @@ class MunectingMapViewController: UIViewController {
         // 정확도 설정 - 최고로 높은 정확도
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         // 위치 데이터 승인 요구
-        locationManager.requestWhenInUseAuthorization()
+//        locationManager.requestWhenInUseAuthorization()
         // 위치 업데이트 시작
         locationManager.startUpdatingLocation()
         // 사용자 위치 보기 설정

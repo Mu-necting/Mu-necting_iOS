@@ -5,7 +5,7 @@ import Alamofire
 struct MusicSearchAroundService{
     static let shared = MusicSearchAroundService()
     
-    func searchAroundMusic(x: String, y: String, range: String, completion: @escaping (NetworkResult<Any>) -> Void){
+    func searchAroundMusic(x: Double, y: Double, range: Int, completion: @escaping (NetworkResult<Any>) -> Void){
         let url = APIConstants.searchAroundMusicURL
         let header: HTTPHeaders = [
             "Content-Type": "application/json"

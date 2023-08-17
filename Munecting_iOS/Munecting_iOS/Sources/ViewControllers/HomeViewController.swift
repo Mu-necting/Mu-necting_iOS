@@ -7,6 +7,8 @@
 import UIKit
 import AVFoundation
 import CoreImage
+import MapKit
+
 
 //dummy 구조체
 struct Music: Codable{
@@ -37,22 +39,31 @@ class HomeViewController: UIViewController {
     var curMusicNum: Int = 0
     var arroundMusics: MusicSearchAround?
     var isLike: Bool = false
+    var locationManager: CLLocationManager!
+    var latitude: Double?
+    var longitude: Double?
 
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         titleStackView.layer.cornerRadius = 10
+        
+        //CLLocationManager 설정
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        // 위치 데이터 승인 요구
+        locationManager.requestWhenInUseAuthorization()
+        //배터리에 맞게 권장되는 최적의 정확도
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
             
-        
-        
         
         //더미 노래 갖고오기
         self.getMusic()
         self.loadJSON()
 
         //근처 노래 갖고오기
-        //self.getAroundMusicWithAPI()
+//        self.getAroundMusicWithAPI(x: latitude!, y: longitude!, range: 100)
         
         if let music = musics[0]{
             //첫 번째 노래 재생
@@ -139,8 +150,10 @@ class HomeViewController: UIViewController {
     
     //slider
     @IBAction func distanceSlider(_ sender: UISlider) {
-        let value = Int(sender.value)*100
-        distanceLabel?.text = "\(value)m"
+        let range = Int(sender.value)*100
+        distanceLabel?.text = "\(range)m"
+        
+        
     }
     
     //다음 노래로 이동함수
@@ -247,7 +260,7 @@ class HomeViewController: UIViewController {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
-    func getAroundMusicWithAPI(x: String, y: String, range: String){
+    func getAroundMusicWithAPI(x: Double, y: Double, range: Int){
         MusicSearchAroundService.shared.searchAroundMusic(x: x, y: y, range: range, completion: {(networkResult) in
             
             switch networkResult{
@@ -306,28 +319,17 @@ class HomeViewController: UIViewController {
         self.musics.append(music9)
         self.musics.append(music10)
     }
-    
-
 }
 
-//이미지 Blur 처리 함수
-extension UIImage {
-    func applyBlur(radius: CGFloat) -> UIImage? {
-        let context = CIContext(options: nil)
-        guard let inputImage = CIImage(image: self) else { return nil }
-
-        let filter = CIFilter(name: "CIGaussianBlur")
-        filter?.setValue(inputImage, forKey: kCIInputImageKey)
-        filter?.setValue(radius, forKey: kCIInputRadiusKey)
-
-        if let outputImage = filter?.outputImage,
-           let cgImage = context.createCGImage(outputImage, from: inputImage.extent) {
-            return UIImage(cgImage: cgImage)
-        }
-
-        return nil
+extension HomeViewController: CLLocationManagerDelegate{
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else {return}
+        self.latitude = locValue.latitude
+        self.longitude = locValue.longitude
     }
 }
+
+
 
 
 
