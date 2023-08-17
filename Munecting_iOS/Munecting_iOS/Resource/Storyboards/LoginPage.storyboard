@@ -496,7 +496,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="다음">
+                                        <fragment content="확인">
                                             <attributes>
                                                 <font key="NSFont" size="14" name="AppleSDGothicNeo-Bold"/>
                                                 <font key="NSOriginalFont" size="12" name="Helvetica"/>
@@ -533,8 +533,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="confirmButton" destination="dat-4a-ZNb" id="zpT-Df-BSV"/>
                         <outlet property="emailTextField" destination="H3M-Is-joV" id="roE-Ek-RU3"/>
-                        <outlet property="nextButton" destination="dat-4a-ZNb" id="zpT-Df-BSV"/>
                         <outlet property="verifyNumberTextField" destination="Nk4-cT-Uug" id="4hm-1f-Vnl"/>
                     </connections>
                 </viewController>
@@ -595,20 +595,20 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="비밀번호">
                                             <attributes>
-                                                <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Bold"/>
                                                 <font key="NSOriginalFont" size="12" name="Helvetica"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                         <fragment content=" ">
                                             <attributes>
-                                                <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                         <fragment content="변경하기">
                                             <attributes>
-                                                <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Bold"/>
                                                 <font key="NSOriginalFont" size="12" name="Helvetica"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>

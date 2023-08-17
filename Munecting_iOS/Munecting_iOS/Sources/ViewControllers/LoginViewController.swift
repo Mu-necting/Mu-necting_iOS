@@ -199,12 +199,17 @@ class LoginViewController: UIViewController {
                             self.goToMainPage()
                             
                         case .requestErr(let msg):
-                            if let message = msg as? String { print(message) }
+                            if let message = msg as? String {
+                                print(message)
+                                self.showAlert(title: "Error", message: message)
+                            }
                         case .pathErr:
                             print("pathErr in loginWithSocialAPI")
                         case .serverErr:
+                            self.showAlert(title: "내부 서버 오류", message: "잠시 후 다시 시도해주세요")
                             print("serverErr in loginWithSocialAPI")
                         case .networkFail:
+                            self.showAlert(title: "네트워크 오류", message: "네트워크 연결 상태를 확인해주세요")
                             print("networkFail in loginWithSocialAPI")
                         }
                     }

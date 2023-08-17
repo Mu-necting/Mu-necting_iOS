@@ -18,6 +18,8 @@ struct APIConstants {
     
     static let mailCheck = baseURL + "/mailCheck"
     
+    static let issueTempPassword = baseURL + "/findpw"
+    
     // MARK: - Musics
     
     //업로드할 곡 검색(get)
