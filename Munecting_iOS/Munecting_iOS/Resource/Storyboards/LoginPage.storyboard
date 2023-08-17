@@ -178,6 +178,9 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="onTapVerify:" destination="Z2B-sp-H31" eventType="touchUpInside" id="zyv-k1-ks3"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HDL-he-UVi">
                                 <rect key="frame" x="48" y="519" width="297" height="42"/>
@@ -245,12 +248,17 @@
                                     <action selector="onTapSignUp:" destination="Z2B-sp-H31" eventType="touchUpInside" id="CLK-dF-DgD"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Bru-FZ-FxU">
+                                <rect key="frame" x="121" y="315" width="27" height="22"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="p8X-d3-T91"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="iFg-8K-1AB" firstAttribute="top" secondItem="wdT-z8-kbI" secondAttribute="bottom" constant="12" id="10M-P7-4do"/>
                             <constraint firstItem="p8X-d3-T91" firstAttribute="trailing" secondItem="fZG-Pc-cf4" secondAttribute="trailing" constant="48" id="33w-zb-S9l"/>
+                            <constraint firstItem="Bru-FZ-FxU" firstAttribute="leading" secondItem="9Tx-gy-NTg" secondAttribute="trailing" constant="3" id="36o-GK-OJb"/>
                             <constraint firstItem="p8X-d3-T91" firstAttribute="trailing" secondItem="tpe-WP-Lhy" secondAttribute="trailing" constant="48" id="3sZ-Ur-gzV"/>
                             <constraint firstItem="p8X-d3-T91" firstAttribute="trailing" secondItem="8zH-7t-V0y" secondAttribute="trailing" constant="48" id="5dK-8k-Rpn"/>
                             <constraint firstItem="UAH-Vo-LmP" firstAttribute="top" secondItem="qfi-0U-Abx" secondAttribute="bottom" constant="12" id="8zc-dv-U9S"/>
@@ -268,6 +276,7 @@
                             <constraint firstItem="HDL-he-UVi" firstAttribute="top" secondItem="VFD-nF-Nb6" secondAttribute="bottom" constant="12" id="egS-04-CnF"/>
                             <constraint firstItem="9Ki-mG-nrl" firstAttribute="top" secondItem="p8X-d3-T91" secondAttribute="top" constant="78" id="h5A-lL-o9V"/>
                             <constraint firstItem="8zH-7t-V0y" firstAttribute="leading" secondItem="p8X-d3-T91" secondAttribute="leading" constant="48" id="kDW-xv-qCK"/>
+                            <constraint firstItem="Bru-FZ-FxU" firstAttribute="centerY" secondItem="9Tx-gy-NTg" secondAttribute="centerY" id="m66-81-gIA"/>
                             <constraint firstItem="fZG-Pc-cf4" firstAttribute="top" secondItem="UAH-Vo-LmP" secondAttribute="bottom" constant="26" id="mmw-jO-vmn"/>
                             <constraint firstItem="UAH-Vo-LmP" firstAttribute="leading" secondItem="p8X-d3-T91" secondAttribute="leading" constant="48" id="o4R-E2-YwN"/>
                             <constraint firstItem="VFD-nF-Nb6" firstAttribute="leading" secondItem="HDL-he-UVi" secondAttribute="leading" constant="8" id="p6A-wH-GLL"/>
@@ -278,6 +287,13 @@
                             <constraint firstItem="9Tx-gy-NTg" firstAttribute="leading" secondItem="wdT-z8-kbI" secondAttribute="leading" id="wB5-dQ-gfg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="iFg-8K-1AB" id="yyu-K2-Vlh"/>
+                        <outlet property="passwordCheckTextField" destination="UAH-Vo-LmP" id="8vw-P0-X9T"/>
+                        <outlet property="passwordTextField" destination="HDL-he-UVi" id="xNZ-c7-3da"/>
+                        <outlet property="verifiedMark" destination="Bru-FZ-FxU" id="Wt0-Z4-QMr"/>
+                        <outlet property="verifyNumberTextField" destination="8zH-7t-V0y" id="Rsi-N5-IYs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CTE-yP-5ZI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="xc6-bE-pys" userLabel="Exit" sceneMemberID="exit"/>
@@ -515,7 +531,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="H3M-Is-joV" id="roE-Ek-RU3"/>
                         <outlet property="nextButton" destination="dat-4a-ZNb" id="zpT-Df-BSV"/>
+                        <outlet property="verifyNumberTextField" destination="Nk4-cT-Uug" id="4hm-1f-Vnl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="97u-Xc-XxH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -573,15 +591,31 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="다음">
+                                        <fragment content="비밀번호">
                                             <attributes>
-                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="변경하기">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
                                                 <font key="NSOriginalFont" size="12" name="Helvetica"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="onTapNextButton:" destination="LG4-KA-qTQ" eventType="touchUpInside" id="uWv-d7-wO4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bgj-f7-vmX"/>
@@ -604,6 +638,11 @@
                             <constraint firstItem="aZQ-6C-hXK" firstAttribute="top" secondItem="asv-U2-cGS" secondAttribute="bottom" constant="12" id="opN-oM-Kka"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nextButton" destination="cUe-kz-JWh" id="DWs-58-G5w"/>
+                        <outlet property="passwordCheckTextField" destination="fNf-Fm-yLX" id="iYP-Yn-3Bg"/>
+                        <outlet property="passwordTextField" destination="aZQ-6C-hXK" id="N1S-Gh-9Ep"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qyW-Jy-Kdc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -611,6 +650,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="kakao_login" width="100" height="15"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -620,6 +660,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

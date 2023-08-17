@@ -13,13 +13,12 @@ class SignUpResultViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.navigationItem.hidesBackButton = true
     }
     @IBAction func onTapGoToLogin(_ sender: Any) {
         print("로그인 페이지로 돌아가기")
         
         self.navigationController?.popToRootViewController(animated: false)
     }
-    
 }
 
