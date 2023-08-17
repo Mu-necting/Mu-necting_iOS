@@ -18,8 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B8g-ST-UcK">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="-1.6666666666666572" y="74" width="396.33333333333326" height="778"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="778" id="IZj-Vg-OpC"/>
+                                    <constraint firstAttribute="width" constant="396" id="QSu-OX-2hP"/>
+                                </constraints>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -27,26 +31,26 @@
                             </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="linkColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="B8g-ST-UcK" secondAttribute="bottom" id="2wz-8G-0bF"/>
-                            <constraint firstItem="B8g-ST-UcK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="QQY-QS-RoX"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="B8g-ST-UcK" secondAttribute="trailing" id="itC-vr-s9Z"/>
-                            <constraint firstItem="B8g-ST-UcK" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="lXY-dZ-sj0"/>
+                            <constraint firstItem="B8g-ST-UcK" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="N4P-cL-zyl"/>
+                            <constraint firstItem="B8g-ST-UcK" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="lXY-dZ-sj0"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="thisView" destination="5EZ-qb-Rvc" id="FV9-n3-Lbu"/>
                         <outlet property="webView" destination="B8g-ST-UcK" id="2cV-Cv-ZUh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-28"/>
+            <point key="canvasLocation" x="130.53435114503816" y="-28.169014084507044"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

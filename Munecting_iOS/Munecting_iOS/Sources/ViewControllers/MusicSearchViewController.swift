@@ -28,7 +28,7 @@ class MusicSearchViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     @IBAction func searchButtonTapped(_ sender: Any) {
