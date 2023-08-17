@@ -41,12 +41,9 @@ class LoginViewController: UIViewController {
     }
     
     
-    @IBAction func onTapFindEmail(_ sender: Any) {
-        print("이메일 찾기")
-    }
-    
     @IBAction func onTapFindPwd(_ sender: Any) {
-        print("비밀번호 찾기")
+        let findPasswordPage = loginPageStoryboard.instantiateViewController(withIdentifier: "FindPasswordViewController")
+        self.show(findPasswordPage, sender: self)
     }
     
     @objc private func presentSignUpModal() {

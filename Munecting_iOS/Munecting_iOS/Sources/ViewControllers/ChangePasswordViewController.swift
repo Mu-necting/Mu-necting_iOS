@@ -1,13 +1,15 @@
 //
-//   AuthenticationPhoneViewController.swift
+//  ChangePasswordViewController.swift
 //  Munecting_iOS
 //
-//  Created by seonwoo on 2023/07/25.
+//  Created by seonwoo on 2023/08/17.
 //
+
+import Foundation
 
 import UIKit
 
-class AuthenticationPhoneViewController: UIViewController {
+class ChangePasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
