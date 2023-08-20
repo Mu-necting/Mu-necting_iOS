@@ -145,7 +145,7 @@ class HomeViewController: UIViewController {
     @IBAction func bestMunectorButtonTapped(_ sender: Any) {
         let sb = UIStoryboard(name: "BestMunector", bundle: nil)
         guard let viewController = sb.instantiateViewController(identifier: "BestMunectorViewController") as? BestMunectorViewController else {return}
-        self.navigationController?.pushViewController(viewController, animated: true)
+        self.navigationController?.pushViewController(viewController, animated: false)
     }
     
     //slider
