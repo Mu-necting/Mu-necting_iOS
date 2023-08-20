@@ -17,6 +17,9 @@
 		B39202472A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39202462A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift */; };
 		B39202492A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39202482A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift */; };
 		B3943B5C2A7CB91300317F2C /* ArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3943B5B2A7CB91300317F2C /* ArchiveViewController.swift */; };
+		C1415DE02A92D1E50038597F /* MusicAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415DDF2A92D1E50038597F /* MusicAnnotation.swift */; };
+		C1415DE22A92D1F20038597F /* MusicAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415DE12A92D1F20038597F /* MusicAnnotationView.swift */; };
+		C1415DE42A92D2020038597F /* MusicClusterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415DE32A92D2020038597F /* MusicClusterAnnotationView.swift */; };
 		C185E0F52A87D16200895C2D /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185E0F42A87D16200895C2D /* APIConstants.swift */; };
 		C185E0F72A87D34F00895C2D /* MusicSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185E0F62A87D34F00895C2D /* MusicSearchService.swift */; };
 		C185E0F92A87D55D00895C2D /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185E0F82A87D55D00895C2D /* NetworkResult.swift */; };
@@ -32,7 +35,7 @@
 		C1B86EB22A7D1B9400F9A151 /* MusicSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86EB12A7D1B9400F9A151 /* MusicSearchData.swift */; };
 		C1B86EB42A7D1BAA00F9A151 /* BestMunectorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86EB32A7D1BAA00F9A151 /* BestMunectorCollectionViewCell.swift */; };
 		C1B86EB62A7D1BAF00F9A151 /* MusicSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86EB52A7D1BAF00F9A151 /* MusicSearchCollectionViewCell.swift */; };
-		C1B86EC12A7D1C0A00F9A151 /* BestMunectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86EC02A7D1C0A00F9A151 /* BestMunectorViewController.swift */; };
+		C1B86EC12A7D1C0A00F9A151 /* BestMunectorViewController_Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86EC02A7D1C0A00F9A151 /* BestMunectorViewController_Temp.swift */; };
 		C1B86EC32A7D1C1500F9A151 /* MunectingMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86EC22A7D1C1500F9A151 /* MunectingMapViewController.swift */; };
 		C1B86EC52A7D1C1D00F9A151 /* MusicSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86EC42A7D1C1D00F9A151 /* MusicSearchViewController.swift */; };
 		C1B86EC72A7D1C2400F9A151 /* PickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B86EC62A7D1C2400F9A151 /* PickViewController.swift */; };
@@ -45,6 +48,8 @@
 		C1FC05C42A8E19CB00E0CD26 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC05C32A8E19CB00E0CD26 /* PageViewController.swift */; };
 		C1FC05C62A8E19E400E0CD26 /* MusicSearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC05C52A8E19E400E0CD26 /* MusicSearchNavigationController.swift */; };
 		C1FC05C82A8E19ED00E0CD26 /* HomeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC05C72A8E19ED00E0CD26 /* HomeNavigationViewController.swift */; };
+		C1FC05CA2A8E317000E0CD26 /* BestMunectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC05C92A8E317000E0CD26 /* BestMunectorViewController.swift */; };
+		C1FC05CC2A8E3F4C00E0CD26 /* BestMunectorTestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC05CB2A8E3F4C00E0CD26 /* BestMunectorTestCollectionViewCell.swift */; };
 		D254462D2A6E5BFF007E582B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D254462C2A6E5BFF007E582B /* LoginViewController.swift */; };
 		D25446872A7015F7007E582B /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25446862A7015F7007E582B /* FindPasswordViewController.swift */; };
 		D254468D2A701803007E582B /* SignUpWithEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D254468C2A701803007E582B /* SignUpWithEmailViewController.swift */; };
@@ -114,6 +119,9 @@
 		B39202482A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveUploadCollectionViewCell.swift; sourceTree = "<group>"; };
 		B3943B5B2A7CB91300317F2C /* ArchiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveViewController.swift; sourceTree = "<group>"; };
 		BB395D54BE1B8E149F591AFC /* Pods_Munecting_iOS_Munecting_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Munecting_iOS_Munecting_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1415DDF2A92D1E50038597F /* MusicAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAnnotation.swift; sourceTree = "<group>"; };
+		C1415DE12A92D1F20038597F /* MusicAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAnnotationView.swift; sourceTree = "<group>"; };
+		C1415DE32A92D2020038597F /* MusicClusterAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicClusterAnnotationView.swift; sourceTree = "<group>"; };
 		C185E0F42A87D16200895C2D /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		C185E0F62A87D34F00895C2D /* MusicSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchService.swift; sourceTree = "<group>"; };
 		C185E0F82A87D55D00895C2D /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
@@ -129,7 +137,7 @@
 		C1B86EB12A7D1B9400F9A151 /* MusicSearchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicSearchData.swift; sourceTree = "<group>"; };
 		C1B86EB32A7D1BAA00F9A151 /* BestMunectorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestMunectorCollectionViewCell.swift; sourceTree = "<group>"; };
 		C1B86EB52A7D1BAF00F9A151 /* MusicSearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicSearchCollectionViewCell.swift; sourceTree = "<group>"; };
-		C1B86EC02A7D1C0A00F9A151 /* BestMunectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestMunectorViewController.swift; sourceTree = "<group>"; };
+		C1B86EC02A7D1C0A00F9A151 /* BestMunectorViewController_Temp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestMunectorViewController_Temp.swift; sourceTree = "<group>"; };
 		C1B86EC22A7D1C1500F9A151 /* MunectingMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MunectingMapViewController.swift; sourceTree = "<group>"; };
 		C1B86EC42A7D1C1D00F9A151 /* MusicSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicSearchViewController.swift; sourceTree = "<group>"; };
 		C1B86EC62A7D1C2400F9A151 /* PickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +150,8 @@
 		C1FC05C32A8E19CB00E0CD26 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		C1FC05C52A8E19E400E0CD26 /* MusicSearchNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicSearchNavigationController.swift; sourceTree = "<group>"; };
 		C1FC05C72A8E19ED00E0CD26 /* HomeNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNavigationViewController.swift; sourceTree = "<group>"; };
+		C1FC05C92A8E317000E0CD26 /* BestMunectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestMunectorViewController.swift; sourceTree = "<group>"; };
+		C1FC05CB2A8E3F4C00E0CD26 /* BestMunectorTestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestMunectorTestCollectionViewCell.swift; sourceTree = "<group>"; };
 		D254462C2A6E5BFF007E582B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D25446862A7015F7007E582B /* FindPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
 		D254468C2A701803007E582B /* SignUpWithEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +249,16 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		C1415DDE2A92D1BB0038597F /* Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				C1415DDF2A92D1E50038597F /* MusicAnnotation.swift */,
+				C1415DE12A92D1F20038597F /* MusicAnnotationView.swift */,
+				C1415DE32A92D2020038597F /* MusicClusterAnnotationView.swift */,
+			);
+			path = Annotation;
+			sourceTree = "<group>";
+		};
 		C17DBB352A6E3BE0007F45BD /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +306,7 @@
 		C17DBB382A6E3C25007F45BD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C1415DDE2A92D1BB0038597F /* Annotation */,
 				C1B86EB92A7D1BE200F9A151 /* cell */,
 				D2E345862A66BD7000922A1C /* ViewController.swift */,
 				D254462C2A6E5BFF007E582B /* LoginViewController.swift */,
@@ -298,7 +319,7 @@
 				B39202462A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift */,
 				B35BE7002A890FA200E2ADAE /* ArchiveDetailViewController.swift */,
 				C1B86ECA2A7E48A400F9A151 /* HomeViewController.swift */,
-				C1B86EC02A7D1C0A00F9A151 /* BestMunectorViewController.swift */,
+				C1B86EC02A7D1C0A00F9A151 /* BestMunectorViewController_Temp.swift */,
 				C1B86EC42A7D1C1D00F9A151 /* MusicSearchViewController.swift */,
 				C1B86EC82A7D1C2D00F9A151 /* UploadViewController.swift */,
 				C1FC05C72A8E19ED00E0CD26 /* HomeNavigationViewController.swift */,
@@ -313,6 +334,7 @@
 				C1DA96F42A83A8000084CCC5 /* YoutubeModalViewController.swift */,
 				B35BE7022A89F4DC00E2ADAE /* ArchiveFilterPopUpViewController.swift */,
 				D2EBDD932A8DB9690046A5A7 /* ChangePasswordViewController.swift */,
+				C1FC05C92A8E317000E0CD26 /* BestMunectorViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -359,6 +381,7 @@
 			children = (
 				C1B86EB52A7D1BAF00F9A151 /* MusicSearchCollectionViewCell.swift */,
 				C1B86EB32A7D1BAA00F9A151 /* BestMunectorCollectionViewCell.swift */,
+				C1FC05CB2A8E3F4C00E0CD26 /* BestMunectorTestCollectionViewCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -733,7 +756,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1FC05CA2A8E317000E0CD26 /* BestMunectorViewController.swift in Sources */,
+				C1415DE42A92D2020038597F /* MusicClusterAnnotationView.swift in Sources */,
 				D254462D2A6E5BFF007E582B /* LoginViewController.swift in Sources */,
+				C1415DE02A92D1E50038597F /* MusicAnnotation.swift in Sources */,
 				C1B86EC92A7D1C2D00F9A151 /* UploadViewController.swift in Sources */,
 				C1B86EC72A7D1C2400F9A151 /* PickViewController.swift in Sources */,
 				C185E0F72A87D34F00895C2D /* MusicSearchService.swift in Sources */,
@@ -745,14 +771,16 @@
 				B39202472A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift in Sources */,
 				C1B86EC52A7D1C1D00F9A151 /* MusicSearchViewController.swift in Sources */,
 				C1AC80A72A860379005E1AE6 /* MusicSearchAroundService.swift in Sources */,
+				C1FC05CC2A8E3F4C00E0CD26 /* BestMunectorTestCollectionViewCell.swift in Sources */,
 				B33B035F2A7665B0003D4531 /* ArchivePickViewController.swift in Sources */,
 				B33B035D2A766583003D4531 /* ArchiveUploadViewController.swift in Sources */,
 				D2E345832A66BD7000922A1C /* AppDelegate.swift in Sources */,
 				C1B86ECD2A80BC0600F9A151 /* MusicSearchAround.swift in Sources */,
 				D272FA302A7CF88C0087C392 /* FinalTutorialViewController.swift in Sources */,
 				B35BE7032A89F4DC00E2ADAE /* ArchiveFilterPopUpViewController.swift in Sources */,
-				C1B86EC12A7D1C0A00F9A151 /* BestMunectorViewController.swift in Sources */,
+				C1B86EC12A7D1C0A00F9A151 /* BestMunectorViewController_Temp.swift in Sources */,
 				C1B86EB42A7D1BAA00F9A151 /* BestMunectorCollectionViewCell.swift in Sources */,
+				C1415DE22A92D1F20038597F /* MusicAnnotationView.swift in Sources */,
 				C1B86EB62A7D1BAF00F9A151 /* MusicSearchCollectionViewCell.swift in Sources */,
 				C1FC05C62A8E19E400E0CD26 /* MusicSearchNavigationController.swift in Sources */,
 				C185E0F52A87D16200895C2D /* APIConstants.swift in Sources */,
