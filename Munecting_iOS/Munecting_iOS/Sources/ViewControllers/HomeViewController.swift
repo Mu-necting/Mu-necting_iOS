@@ -45,6 +45,7 @@ class HomeViewController: UIViewController {
     var tapGesture: UITapGestureRecognizer? = nil
     var pausedTime: CFTimeInterval = 0
     var savedTransform = UIImageView().layer.presentation()?.transform
+    var startTransform = UIImageView().layer.presentation()?.transform
 
 
    
@@ -63,6 +64,8 @@ class HomeViewController: UIViewController {
         //배터리에 맞게 권장되는 최적의 정확도
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         savedTransform = albumCoverImageView.layer.presentation()?.transform
+        startTransform = albumCoverImageView.layer.presentation()?.transform
+
 
             
         
@@ -103,6 +106,10 @@ class HomeViewController: UIViewController {
         rotationAnimation.toValue = NSNumber(value: Double.pi * 2) // 360도 회전 (2 * π 라디안)
         rotationAnimation.duration = 5.0 // 애니메이션 지속 시간 (초)
         rotationAnimation.repeatCount = .infinity // 무한 반복
+        
+        if let presentationLayer = albumCoverImageView.layer.presentation() {
+            self.startTransform = presentationLayer.transform
+        }
         albumCoverImageView.layer.add(rotationAnimation, forKey: "rotationAnimation")
         
     }
@@ -119,37 +126,36 @@ class HomeViewController: UIViewController {
 //            self.resumeRotationAnimation()
             self.audioPlayer?.play()
         }
-    
-        
-
     }
-    
-    func pauseRotationAnimation() {
-          // Get the current presentation layer's transform
-          if let presentationLayer = albumCoverImageView.layer.presentation() {
-              self.savedTransform = presentationLayer.transform
-          }
-          // Remove the animation
-          albumCoverImageView.layer.removeAnimation(forKey: "rotationAnimation")
-      }
-
-      func resumeRotationAnimation() {
-          guard let transform = savedTransform else {
-              return
-          }
-
-          let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-          rotationAnimation.toValue = NSNumber(value: Double.pi * 2) // 360 degrees rotation (2 * π radians)
-          rotationAnimation.duration = 5.0 // animation duration in seconds
-          rotationAnimation.repeatCount = .infinity // repeat infinitely
-
-          // Apply the saved transform to the view's layer
-          albumCoverImageView.layer.transform = transform
-
-          DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-              self.albumCoverImageView.layer.add(rotationAnimation, forKey: "rotationAnimation")
-          }
-      }
+//
+//    func pauseRotationAnimation() {
+//          // Get the current presentation layer's transform
+//          if let presentationLayer = albumCoverImageView.layer.presentation() {
+//              self.savedTransform = presentationLayer.transform
+//          }
+//        albumCoverImageView.layer.transform = self.startTransform ?? self.savedTransform!
+//
+//          // Remove the animation
+//          albumCoverImageView.layer.removeAnimation(forKey: "rotationAnimation")
+//      }
+//
+//      func resumeRotationAnimation() {
+//          guard let transform = savedTransform else {
+//              return
+//          }
+//
+//          let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+//          rotationAnimation.toValue = NSNumber(value: Double.pi * 2) // 360 degrees rotation (2 * π radians)
+//          rotationAnimation.duration = 5.0 // animation duration in seconds
+//          rotationAnimation.repeatCount = .infinity // repeat infinitely
+//
+//          // Apply the saved transform to the view's layer
+//          albumCoverImageView.layer.transform = transform
+//
+//          DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//              self.albumCoverImageView.layer.add(rotationAnimation, forKey: "rotationAnimation")
+//          }
+//      }
     
 
 //    func pauseRotationAnimation() {

@@ -108,8 +108,8 @@ extension BestMunectorViewController: UICollectionViewDataSource, UICollectionVi
         cell.rankingLabel.text = "\(indexPath.row+4)"
         
 //        cell.userImage = self.collectionViewData[indexPath.row].profile
-        cell.userIDLabel.text = self.collectionViewData[indexPath.row].nick
-        cell.replyCntLabel.text = "\(self.collectionViewData[indexPath.row].allReplyCnt)"
+//        cell.userIDLabel.text = self.collectionViewData[indexPath.row].nick
+//        cell.replyCntLabel.text = "\(self.collectionViewData[indexPath.row].allReplyCnt)"
  
         return cell
     }
@@ -117,6 +117,6 @@ extension BestMunectorViewController: UICollectionViewDataSource, UICollectionVi
 
 extension BestMunectorViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (UIScreen.main.bounds.width) - 40, height: 80)
+        return CGSize(width: (UIScreen.main.bounds.width), height: 80)
     }
 }

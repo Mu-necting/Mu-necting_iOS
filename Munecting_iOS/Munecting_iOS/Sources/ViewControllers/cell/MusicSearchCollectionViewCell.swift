@@ -12,6 +12,7 @@ class MusicSearchCollectionViewCell: UICollectionViewCell {
     @IBOutlet var musicTitleLabel: UILabel!
     @IBOutlet var artistLabel: UILabel!
     @IBOutlet var albumImageView: UIImageView!
+    @IBOutlet var backView: UIView!
     
     let cornerRadius: CGFloat = 12
     var shadowOffset: CGSize = CGSize(width: 0, height: 0)
@@ -22,25 +23,26 @@ class MusicSearchCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        setupCell()
+        setupCell()
     }
     
     required init?(coder: NSCoder){
         super.init(coder: coder)
-        setupCell()
+        
 
 
     }
     
-    private func setupCell(){
-        layer.cornerRadius = 8
-        layer.borderWidth = 1.0
-        layer.borderColor = UIColor.systemGray.cgColor
-        layer.shadowColor = UIColor.navWhiteColor.cgColor
-        layer.shadowOpacity = self.shadowOpacity
-        layer.shadowOffset = self.shadowOffset
-        layer.shadowRadius = self.cornerRadius
-        layer.masksToBounds = false
+    func setupCell(){
+        backView.layer.cornerRadius = 8
+        backView.layer.borderWidth = 1.0
+        backView.layer.borderColor = UIColor.white.cgColor
+        backView.layer.shadowColor = UIColor.navWhiteColor.cgColor
+        backView.layer.shadowOpacity = self.shadowOpacity
+        backView.layer.shadowOffset = self.shadowOffset
+        backView.layer.shadowRadius = self.cornerRadius
+        backView.layer.masksToBounds = false
+        albumImageView.layer.cornerRadius = 8
     }
     
 }

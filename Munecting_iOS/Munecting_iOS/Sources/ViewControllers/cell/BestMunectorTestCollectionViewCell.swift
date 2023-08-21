@@ -15,8 +15,9 @@ class BestMunectorTestCollectionViewCell: UICollectionViewCell {
     @IBOutlet var pickCntLabel: UILabel!
     @IBOutlet var coverBackgroundView: UIView!
     
-    var shadowOffset: CGSize = CGSize(width: 5, height: 5)
-    var shadowOpacity: Float = 0.7
+    let cornerRadius: CGFloat = 12
+    var shadowOffset: CGSize = CGSize(width: 0, height: 0)
+    var shadowOpacity: Float = 0.5
     var shadowRadius: CGFloat = 4.0
     
     override init(frame: CGRect) {
@@ -30,13 +31,12 @@ class BestMunectorTestCollectionViewCell: UICollectionViewCell {
     }
     
     func commmonInit(){
-        self.userImage.layer.cornerRadius = 10
-        self.coverBackgroundView.layer.cornerRadius = 10
-//        self.coverBackgroundView.layer.borderWidth = 1
-//        self.coverBackgroundView.layer.borderColor = UIColor.munectingPink.cgColor
-//        self.coverBackgroundView.layer.shadowColor = UIColor.black.cgColor
-//        self.coverBackgroundView.layer.shadowOpacity = self.shadowOpacity
-//        self.coverBackgroundView.layer.shadowOffset = self.shadowOffset
+        self.userImage.layer.cornerRadius = 8
+        self.coverBackgroundView.layer.cornerRadius = 8
+        self.coverBackgroundView.layer.shadowColor = UIColor.navWhiteColor.cgColor
+        self.coverBackgroundView.layer.shadowOpacity = self.shadowOpacity
+        self.coverBackgroundView.layer.shadowOffset = self.shadowOffset
+        self.coverBackgroundView.layer.shadowRadius = self.cornerRadius
 //        layer.borderColor = UIColor.systemGray.cgColor
 
         
