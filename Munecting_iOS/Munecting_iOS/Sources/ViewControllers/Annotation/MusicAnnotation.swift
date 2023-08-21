@@ -1,13 +1,6 @@
 import MapKit
 
-enum Genre: Int, Decodable, CaseIterable{
-//    case hiphop = "hiphop"
-//    case balad = "balad"
-//    case kpop = "kpop"
-    case hiphop
-    case balad
-    case kpop
-}
+
 
 class MusicAnnotation: NSObject, Decodable, MKAnnotation{
 

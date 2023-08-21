@@ -14,6 +14,8 @@ struct MusicSearchDataDummy{
 }
 
 
+
+
 class MusicSearchViewController: UIViewController {
 
     @IBOutlet var collectionView: UICollectionView!
@@ -29,6 +31,8 @@ class MusicSearchViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
+        self.searchDataListDummy = []
+        self.collectionView.reloadData()
     }
     
     @IBAction func searchButtonTapped(_ sender: Any) {
@@ -67,6 +71,7 @@ class MusicSearchViewController: UIViewController {
     }
     
     
+    //MusicData 호출
     func searchMusicWithAPI(searchKeyword: String){
         self.attachActivityIndicator()
         MusicSearchService.shared.searchMusic(searchKeyword: searchKeyword, completion: {(networkResult) in
@@ -90,6 +95,10 @@ class MusicSearchViewController: UIViewController {
                 print("networkFail in searchMusicWithAPI")
             }
         })
+    }
+    //musicPull 호출
+    func searchMusicpullWithAPI(){
+        
     }
     
     
@@ -130,9 +139,12 @@ extension MusicSearchViewController: UICollectionViewDataSource, UICollectionVie
         cell.musicTitleLabel.text = searchDataListDummy[indexPath.row].albumTitle
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let music = MusicForUpload(name: , coverImg: <#T##String#>, musicPre: <#T##String#>, artist: <#T##String#>, musicPull: <#T##String#>)
         let sb = UIStoryboard(name: "Upload", bundle: nil)
         guard let viewController = sb.instantiateViewController(identifier: "UploadViewController") as? UploadViewController else {return}
+//        viewController.music = music
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

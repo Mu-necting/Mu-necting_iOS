@@ -22,6 +22,7 @@ class MunectingMapViewController: UIViewController {
         locationManager.delegate = self
         registerAnnotationViewClasses()
         makeDummyAnnotation()
+        
 
         // 정확도 설정 - 최고로 높은 정확도
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -41,6 +42,40 @@ class MunectingMapViewController: UIViewController {
     //서울로 이동
     @IBAction func tappedSeoulButton(_ sender: Any) {
         moveLocation(latitudeValue: 37.5207945, longtudeValue: 127.0204729, delta: 0.01)
+    }
+    
+    func searchMunectingMapDataWithAPI(x: Double, y: Double, range: Int){
+        MunectingMapService.shared.searchMunectingMap(x: x, y: y, range: range, completion: {(networkResult) in
+            
+            switch networkResult {
+            case.success(let data):
+                if let munectingMapData = data as? [MunectingMapData] {
+                    munectingMapData.forEach{
+                        let lat = $0.pointX
+                        let log = $0.pointY
+                        let loc = CLLocationCoordinate2DMake(lat, log)
+                        let genre: Genre = $0.genre
+                        let music: MusicAnnotation = MusicAnnotation()
+                        music.coordinate = loc
+                        music.genre = genre
+                        music.title = $0.name
+                        music.subtitle = $0.artist
+                        self.mapkit.addAnnotation(music)
+                    }
+                }
+            case .requestErr(let msg):
+                if let message = msg as? String {
+                    print(message)
+                }
+            case .pathErr:
+                print("pathErr in searchMusicWithAPI")
+            case .serverErr:
+                print("serverErr in searchMusicWithAPI")
+            case .networkFail:
+                print("networkFail in searchMusicWithAPI")
+            }
+            
+        })
     }
     
     
@@ -120,6 +155,7 @@ extension MunectingMapViewController: MKMapViewDelegate, CLLocationManagerDelega
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let pLocation = locations.last
         moveLocation(latitudeValue: (pLocation?.coordinate.latitude)!, longtudeValue: (pLocation?.coordinate.longitude)!, delta: 0.01)
+//        searchMunectingMapDataWithAPI(x: (pLocation?.coordinate.latitude)!, y: (pLocation?.coordinate.longitude)!, range: 1000)
         locationManager.stopUpdatingLocation()
     }
     

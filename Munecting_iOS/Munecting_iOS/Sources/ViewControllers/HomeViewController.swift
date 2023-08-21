@@ -42,12 +42,18 @@ class HomeViewController: UIViewController {
     var locationManager: CLLocationManager!
     var latitude: Double?
     var longitude: Double?
+    var tapGesture: UITapGestureRecognizer? = nil
+    var pausedTime: CFTimeInterval = 0
+    var savedTransform = UIImageView().layer.presentation()?.transform
 
+
+   
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         titleStackView.layer.cornerRadius = 10
+        albumCoverImageView.isUserInteractionEnabled = true
         
         //CLLocationManager 설정
         locationManager = CLLocationManager()
@@ -56,11 +62,15 @@ class HomeViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         //배터리에 맞게 권장되는 최적의 정확도
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        savedTransform = albumCoverImageView.layer.presentation()?.transform
+
             
         
         //더미 노래 갖고오기
         self.getMusic()
         self.loadJSON()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(_:)))
+        self.albumCoverImageView.addGestureRecognizer(tapGesture)
 
         //근처 노래 갖고오기
 //        self.getAroundMusicWithAPI(x: latitude!, y: longitude!, range: 100)
@@ -94,7 +104,74 @@ class HomeViewController: UIViewController {
         rotationAnimation.duration = 5.0 // 애니메이션 지속 시간 (초)
         rotationAnimation.repeatCount = .infinity // 무한 반복
         albumCoverImageView.layer.add(rotationAnimation, forKey: "rotationAnimation")
+        
     }
+    
+    @objc func imageViewTapped(_ gesture: UITapGestureRecognizer){
+        print("============================imageViewTapped Gesture Recognized!!!============================")
+        guard let currentTime = audioPlayer?.currentTime().seconds else {return}
+        guard let music = musics[curMusicNum] else {return}
+        
+        if(audioPlayer?.rate == 1.0){
+            self.audioPlayer?.pause()
+//            self.pauseRotationAnimation()
+        }else{
+//            self.resumeRotationAnimation()
+            self.audioPlayer?.play()
+        }
+    
+        
+
+    }
+    
+    func pauseRotationAnimation() {
+          // Get the current presentation layer's transform
+          if let presentationLayer = albumCoverImageView.layer.presentation() {
+              self.savedTransform = presentationLayer.transform
+          }
+          // Remove the animation
+          albumCoverImageView.layer.removeAnimation(forKey: "rotationAnimation")
+      }
+
+      func resumeRotationAnimation() {
+          guard let transform = savedTransform else {
+              return
+          }
+
+          let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+          rotationAnimation.toValue = NSNumber(value: Double.pi * 2) // 360 degrees rotation (2 * π radians)
+          rotationAnimation.duration = 5.0 // animation duration in seconds
+          rotationAnimation.repeatCount = .infinity // repeat infinitely
+
+          // Apply the saved transform to the view's layer
+          albumCoverImageView.layer.transform = transform
+
+          DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+              self.albumCoverImageView.layer.add(rotationAnimation, forKey: "rotationAnimation")
+          }
+      }
+    
+
+//    func pauseRotationAnimation() {
+//        // Get the current presentation layer's transform
+//        if let presentationLayer = albumCoverImageView.layer.presentation() {
+//            let currentTransform = presentationLayer.transform
+//            self.albumCoverImageView.layer.transform = currentTransform
+//        }
+//        // Remove the animation
+//        self.albumCoverImageView.layer.removeAnimation(forKey: "rotationAnimation")
+//    }
+//
+//    func resumeRotationAnimation() {
+//        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+//        rotationAnimation.toValue = NSNumber(value: Double.pi * 2) // 360도 회전 (2 * π 라디안)
+//        rotationAnimation.duration = 5.0 // 애니메이션 지속 시간 (초)
+//        rotationAnimation.repeatCount = .infinity // 무한 반복
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//            self.albumCoverImageView.layer.add(rotationAnimation, forKey: "rotationAnimation")
+//        }
+//    }
+
     
     //임시 함수_JSON 디코딩
     func loadJSON(){
@@ -229,13 +306,13 @@ class HomeViewController: UIViewController {
         //멈췄다가 다시 360도 돌기
         self.albumCoverImageView.layer.removeAnimation(forKey: "rotationAnimation")
         
-        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotationAnimation.toValue = NSNumber(value: Double.pi * 2) // 360도 회전 (2 * π 라디안)
-        rotationAnimation.duration = 5.0 // 애니메이션 지속 시간 (초)
-        rotationAnimation.repeatCount = .infinity // 무한 반복
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.albumCoverImageView.layer.add(rotationAnimation, forKey: "rotationAnimation")
-        }
+//        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+//        rotationAnimation.toValue = NSNumber(value: Double.pi * 2) // 360도 회전 (2 * π 라디안)
+//        rotationAnimation.duration = 5.0 // 애니메이션 지속 시간 (초)
+//        rotationAnimation.repeatCount = .infinity // 무한 반복
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//            self.albumCoverImageView.layer.add(rotationAnimation, forKey: "rotationAnimation")
+//        }
     }
     
     //유튜브 화면 이동 함수
@@ -250,6 +327,22 @@ class HomeViewController: UIViewController {
             viewController.musicPull = musicPullURL
             self.present(viewController, animated: true)
         }
+    }
+    @IBAction func pickButtonTapped(_ sender: Any) {
+        self.audioPlayer?.pause()
+        if let music = self.musics[self.curMusicNum] {
+            let albumCoverImage = music.coverImage
+            let archiveID = music.archiveId
+            let sb = UIStoryboard(name: "Pick", bundle: nil)
+            guard let viewController = sb.instantiateViewController(identifier: "PickViewController") as? PickViewController else {return}
+//            viewController.albumCoverImageView.image = self.getImage(url: URL(string: music.coverImage)!)
+//            viewController.artistName.text = music.name
+//            viewController.archievID = music.archiveId
+            //수정 필요 -> MusicSearchArount 구조체 artist 추가 필요
+//            viewController.trackNameLabel.text = music.name
+            self.present(viewController, animated: true)
+        }
+
     }
     
     //UpLoad 화면 이동 함수

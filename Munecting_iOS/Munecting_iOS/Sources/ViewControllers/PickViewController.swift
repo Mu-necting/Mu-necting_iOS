@@ -2,45 +2,51 @@
 //  PickViewController.swift
 //  Munecting_iOS
 //
-//  Created by 이현호 on 2023/08/04.
+//  Created by 이현호 on 2023/08/21.
 //
 
 import UIKit
 
 class PickViewController: UIViewController {
 
-    @IBOutlet var musicView: UIView!
-    @IBOutlet var textView: UITextView!
+    @IBOutlet var trackNameLabel: UILabel!
+    @IBOutlet var artistName: UILabel!
+    @IBOutlet var albumCoverImageView: UIImageView!
+    @IBOutlet var writingTextView: UITextView!
+    var archievID: Int?
+    var memberID: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
-        textView.layer.cornerRadius = 8
-        textView.layer.borderWidth = 0.8
-        textView.layer.borderColor = UIColor.gray.cgColor
-        musicView.layer.cornerRadius = 8
-        musicView.layer.borderWidth = 0.8
-        musicView.layer.borderColor = UIColor.gray.cgColor
-        
-        textView.text = "내용을 입력하세요"
-        textView.textColor = UIColor.lightGray
-        textView.delegate = self
+        self.sheetPresentationController?.prefersGrabberVisible = true
+        self.albumCoverImageView.layer.cornerRadius = 10
+        self.memberID = UserManager.shared.getUser()?.userID
     }
     
-    @IBAction func pickButtonTapped(_ sender: Any) {
-        dismiss(animated: true)
-    }
-}
-extension PickViewController: UITextViewDelegate {
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.lightGray {
-            textView.text = nil
-            textView.textColor = UIColor.black
-        }
+    @IBAction func tappedWritingButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            textView.text = "Enter your text here"
-            textView.textColor = UIColor.lightGray
-        }
+    func pickWithAPI(writing: String, memberId: Int, archiveId: Int){
+        PickService.shared.PickMusic(writing: writing, memberId: memberId, archievId: archiveId, completion: {(networkResult) in
+            
+            switch networkResult {
+            case.success(_):
+                self.dismiss(animated: true, completion: nil)
+            case .requestErr(let msg):
+                if let message = msg as? String {
+                    print(message)
+                }
+            case .pathErr:
+                print("pathErr in searchMusicWithAPI")
+            case .serverErr:
+                print("serverErr in searchMusicWithAPI")
+            case .networkFail:
+                print("networkFail in searchMusicWithAPI")
+            }
+            
+        })
     }
+    
+
+
 }

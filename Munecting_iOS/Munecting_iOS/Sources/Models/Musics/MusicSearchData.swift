@@ -11,6 +11,7 @@ struct MusicItem: Codable {
     var name: String
     var artist: String
     var coverImg: String
+    var musicPre: String
 }
 
 
