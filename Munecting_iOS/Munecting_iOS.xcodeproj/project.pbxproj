@@ -181,6 +181,7 @@
 		D26EEA582A932BDD009F673E /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		D26EEA5A2A932E1B009F673E /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		D26EEA602A93570B009F673E /* LoginNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationViewController.swift; sourceTree = "<group>"; };
+		D26EEA632A9367EC009F673E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		D272FA292A7C0F9E0087C392 /* SignUpResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResultViewController.swift; sourceTree = "<group>"; };
 		D272FA2B2A7CA90D0087C392 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		D272FA2D2A7CF8770087C392 /* ProfileTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTutorialViewController.swift; sourceTree = "<group>"; };
@@ -508,6 +509,7 @@
 				C17DBB372A6E3C15007F45BD /* Sources */,
 				C17DBB352A6E3BE0007F45BD /* Resource */,
 				D2E3458B2A66BD7000922A1C /* Munecting_iOS.xcdatamodeld */,
+				D26EEA632A9367EC009F673E /* Config.xcconfig */,
 			);
 			path = Munecting_iOS;
 			sourceTree = "<group>";
@@ -949,6 +951,7 @@
 /* Begin XCBuildConfiguration section */
 		D2E345AA2A66BD7200922A1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D26EEA632A9367EC009F673E /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1009,6 +1012,7 @@
 		};
 		D2E345AB2A66BD7200922A1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D26EEA632A9367EC009F673E /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1074,6 +1078,7 @@
 				INFOPLIST_FILE = Munecting_iOS/Resource/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 정보 필요";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨범에서 사진선택";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1105,6 +1110,7 @@
 				INFOPLIST_FILE = Munecting_iOS/Resource/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치 정보 필요";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨범에서 사진선택";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
