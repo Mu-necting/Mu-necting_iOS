@@ -11,10 +11,9 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
         
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var backBtn: UIBarButtonItem!
-    @IBOutlet weak var editBtn: UIBarButtonItem!
     
     @IBOutlet weak var latestBtn: UIButton!
-    @IBOutlet weak var popularBtn: UIButton!
+    @IBOutlet weak var editBtn: UIButton!
     
     @IBOutlet weak var filterBtn: UIButton!
     
@@ -22,6 +21,7 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
     var selectedIndices: Set<Int> = []
     
     var isLatestSorted = true // 최신순으로 정렬되었는지 여부
+    var buttonNum = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,24 +33,25 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
         layout.minimumLineSpacing = 10 // 행 사이의 간격
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10) // 섹션 주위 여백
         layout.itemSize = CGSize(width: 100, height: 100) // 각 아이템의 크기
-        //layout.textAlignment = .left // 아이템을 왼쪽 정렬
         collectionView.collectionViewLayout = layout
            
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        // eMode를 .view로 초기화
+        //eMode를 .view로 초기화
         eMode = .view
         
-        //정렬 초기화 (최신순 기본 선택)
-        latestBtn.isEnabled = !isLatestSorted
-        popularBtn.isEnabled = isLatestSorted
-        
-        // 최신순 버튼의 글씨 색을 설정
-        latestBtn.setTitleColor(.gray, for: .disabled)
-                
-        // 인기순 버튼의 글씨 색을 설정
-        popularBtn.setTitleColor(.black, for: .normal)
+        // 최신순 초기 설정
+        if isLatestSorted {
+            latestBtn.setTitle("최신순", for: .normal)
+            latestBtn.setImage(nil, for: .normal)
+            images.sort { image1, image2 in
+                // 최신순으로 정렬 비교 로직
+                return true // 최신순으로 정렬되었다고 가정
+            }
+            collectionView.reloadData()
+            isLatestSorted = false
+        }
         
     }
     
@@ -70,16 +71,25 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
                     }
                 }
                 dictionarySelectedIndexPath.removeAll()
-                   
-                editBtn.image = UIImage(named: "edit")
-                backBtn.image = UIImage(named: "arrow")
-                //backBtn.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "arrow"))
+                
+                if isLatestSorted {
+                    latestBtn.setTitle("최신순", for: .normal)
+                    latestBtn.setImage(nil, for: .normal)
+                } else {
+                    latestBtn.setTitle("인기순", for: .normal)
+                    latestBtn.setImage(nil, for: .normal)
+                }
+                
+                editBtn.setImage(UIImage(named: "edit"), for: .normal)
                 
                 collectionView.allowsMultipleSelection = false
                 
             case .select:
-                editBtn.image = UIImage(named: "cancel")
-                backBtn.image = UIImage(named: "trash")
+                latestBtn.setImage(UIImage(named: "trash"), for: .normal)
+                latestBtn.setTitle(nil, for: .normal)
+                editBtn.setImage(UIImage(named: "cancel"), for: .normal)
+                editBtn.setTitle(nil, for: .normal)
+                
                 collectionView.allowsMultipleSelection = true
             }
         }
@@ -87,12 +97,15 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
        
     var dictionarySelectedIndexPath: [IndexPath: Bool] = [:]
        
-    lazy var deleteBarButton: UIBarButtonItem = {
-        let barButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(didDeleteButtonClicked(_:)))
-        return barButtonItem
+    lazy var deleteButton: UIButton = {
+        let button = UIButton(type: .system) // UIButton 초기화
+        button.setImage(UIImage(systemName: "trash"), for: .normal) // 이미지 설정
+        button.setTitle(nil, for: .normal)
+        button.addTarget(self, action: #selector(didDeleteButtonClicked(_:)), for: .touchUpInside) // 동작 추가
+        return button
     }()
        
-    @objc func didDeleteButtonClicked(_ sender: UIBarButtonItem) {
+    @objc func didDeleteButtonClicked(_ sender: UIButton) {
         var deleteNeededIndexPaths: [IndexPath] = []
                 
         for (key,value) in dictionarySelectedIndexPath {
@@ -110,7 +123,7 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
         collectionView.reloadData()
     }
        
-    @IBAction func editButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction func editButtonTapped(_ sender: UIButton) {
         eMode = eMode == .view ? .select : .view
         collectionView.reloadData() // 추가된 부분
         
@@ -163,47 +176,6 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
     
     //<최신순, 인기순 정렬>
     @IBAction func latestButtonTapped(_ sender: UIButton) {
-        isLatestSorted = true
-        
-        images.sort { image1, image2 in
-            // 최신순으로 정렬 비교 로직
-            return true // 최신순으로 정렬되었다고 가정
-        }
-        
-        // 최신순 버튼의 글씨 색을 설정
-        latestBtn.setTitleColor(.gray, for: .disabled)
-                
-        // 인기순 버튼의 글씨 색을 설정
-        popularBtn.setTitleColor(.black, for: .normal)
-        
-        latestBtn.isEnabled = !isLatestSorted
-        popularBtn.isEnabled = isLatestSorted
-        
-        collectionView.reloadData()
-    }
-        
-    @IBAction func popularButtonTapped(_ sender: UIButton) {
-        isLatestSorted = false
-        
-        images.sort { image1, image2 in
-            // 인기순으로 정렬 비교 로직
-            return true // 인기순으로 정렬되었다고 가정
-        }
-        
-        // 최신순 버튼의 글씨 색을 설정
-        latestBtn.setTitleColor(.black, for: .normal)
-                
-        // 인기순 버튼의 글씨 색을 설정
-        popularBtn.setTitleColor(.gray, for: .disabled)
-            
-        latestBtn.isEnabled = !isLatestSorted
-        popularBtn.isEnabled = isLatestSorted
-            
-        collectionView.reloadData()
-    }
-    
-    //<뒤로가기 버튼 구현>
-    @IBAction func backBtnTapped(_ sender: UIBarButtonItem) {
         // 버튼 이미지 변경
         if eMode == .select {
             //backBtn.image = UIImage(named: "heart")
@@ -226,19 +198,47 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
             eMode = .view
             
         } else {
-            //backBtn.image = UIImage(named: "arrow") // 기본 이미지 이름 사용
+            if isLatestSorted {
+                latestBtn.setTitle("최신순", for: .normal)
+                latestBtn.setImage(nil, for: .normal)
+                
+                images.sort { image1, image2 in
+                    // 최신순으로 정렬 비교 로직
+                    return true // 최신순으로 정렬되었다고 가정
+                }
+                
+                collectionView.reloadData()
+                
+            } else {
+                latestBtn.setTitle("인기순", for: .normal)
+                latestBtn.setImage(nil, for: .normal)
+
+                images.sort { image1, image2 in
+                    // 최신순으로 정렬 비교 로직
+                    return true // 최신순으로 정렬되었다고 가정
+                }
+                
+                collectionView.reloadData()
+            }
         }
+        
+        isLatestSorted = !isLatestSorted
     }
     
-    @IBAction func filterBtnTapped(_ sender: UIButton) {
+    //<뒤로가기 버튼 구현>
+    @IBAction func backBtnTapped(_ sender: UIBarButtonItem) {
+        
+    }
     
+    //필터 버튼 구현
+    @IBAction func filterBtnTapped(_ sender: UIButton) {
         let filterPopUpVC = UIStoryboard(name: "ArchivePage", bundle: nil).instantiateViewController(withIdentifier: "FilterPopUp") as! ArchiveFilterPopUpViewController
         
         filterPopUpVC.modalPresentationStyle = .overCurrentContext
         filterPopUpVC.modalTransitionStyle = .crossDissolve
         
         self.present(filterPopUpVC, animated: true, completion: nil)
-
     }
     
 }
+

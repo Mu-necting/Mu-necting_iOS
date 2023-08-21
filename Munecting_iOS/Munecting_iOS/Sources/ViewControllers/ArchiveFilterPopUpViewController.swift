@@ -9,13 +9,41 @@ import UIKit
 
 class ArchiveFilterPopUpViewController: UIViewController {
 
+    @IBOutlet weak var popBtn: UIButton!
+    
+    @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var bgBtn: UIButton!
+    
+    var tapped = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func popBtnTapped(_ sender: UIButton) {
+        
+        if tapped {
+            popBtn.backgroundColor = UIColor.black // 원하는 배경색으로 변경
+            
+            tapped = false
+        }
+        else {
+            popBtn.backgroundColor = UIColor.red
+            
+            tapped = true
+        }
+    }
+    
+    @IBAction func saveBtnTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func bgBtnTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

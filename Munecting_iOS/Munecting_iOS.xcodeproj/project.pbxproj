@@ -297,6 +297,7 @@
 				B39202482A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift */,
 				B39202462A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift */,
 				B35BE7002A890FA200E2ADAE /* ArchiveDetailViewController.swift */,
+				B35BE7022A89F4DC00E2ADAE /* ArchiveFilterPopUpViewController.swift */,
 				C1B86ECA2A7E48A400F9A151 /* HomeViewController.swift */,
 				C1B86EC02A7D1C0A00F9A151 /* BestMunectorViewController.swift */,
 				C1B86EC42A7D1C1D00F9A151 /* MusicSearchViewController.swift */,
@@ -311,7 +312,6 @@
 				D272FA2D2A7CF8770087C392 /* ProfileTutorialViewController.swift */,
 				D272FA2F2A7CF88C0087C392 /* FinalTutorialViewController.swift */,
 				C1DA96F42A83A8000084CCC5 /* YoutubeModalViewController.swift */,
-				B35BE7022A89F4DC00E2ADAE /* ArchiveFilterPopUpViewController.swift */,
 				D2EBDD932A8DB9690046A5A7 /* ChangePasswordViewController.swift */,
 			);
 			path = ViewControllers;
