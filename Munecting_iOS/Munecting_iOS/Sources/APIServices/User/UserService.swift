@@ -22,7 +22,8 @@ struct UserService {
         
         let url = APIConstants.changeProfile
         let header: HTTPHeaders = [
-            "Content-Type" : "multipart/form-data"
+            "Content-Type" : "multipart/form-data",
+            "atk": KeyChain().read(key: "atk")!,
         ]
         
         let body : Parameters = ["name" : name]
@@ -66,7 +67,8 @@ struct UserService {
     static func getProfile(completion: @escaping (NetworkResult<Any>) -> Void){
         let url = APIConstants.getProfile
         let header: HTTPHeaders = [
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "atk": KeyChain().read(key: "atk")!,
         ]
         
         let request = AF.request(url,method: .get,headers: header)
