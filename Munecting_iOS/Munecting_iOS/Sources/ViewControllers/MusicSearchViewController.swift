@@ -137,6 +137,7 @@ extension MusicSearchViewController: UICollectionViewDataSource, UICollectionVie
         cell.albumImageView.image = searchDataListDummy[indexPath.row].albumImage
         cell.artistLabel.text = searchDataListDummy[indexPath.row].artist
         cell.musicTitleLabel.text = searchDataListDummy[indexPath.row].albumTitle
+        cell.setupCell()
         return cell
     }
     
@@ -151,7 +152,7 @@ extension MusicSearchViewController: UICollectionViewDataSource, UICollectionVie
 
 extension MusicSearchViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (UIScreen.main.bounds.width) - 30, height: 80)
+        return CGSize(width: (UIScreen.main.bounds.width), height: 80)
     }
 }
 
