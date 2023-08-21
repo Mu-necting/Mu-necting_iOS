@@ -11,8 +11,8 @@ import KakaoSDKUser
 
 class LoginViewController: UIViewController {
     
-    // 나중에는 값 받아오는 걸로 수정해야함
-    var isFirst : Bool = true
+    // 튜토리얼 봤었는지 확인
+    var isShownTutorial : Bool = false
 
     @IBOutlet weak var idTextField: UITextField!
     
@@ -29,6 +29,8 @@ class LoginViewController: UIViewController {
         let tapKakaoButton = UITapGestureRecognizer(target: self, action: #selector(onTapKakaoLogin))
         kakaoLoginButton.addGestureRecognizer(tapKakaoButton)
         kakaoLoginButton.isUserInteractionEnabled = true
+        
+        isShownTutorial = UserDefaults.standard.bool(forKey: "isShownTutorial")
         
     }
     
@@ -50,9 +52,13 @@ class LoginViewController: UIViewController {
             (networkResult) in
             switch networkResult{
             case .success(let data):
-                let user : User = data
-                // 유저 정보 저장해놓는 로직 넣기
-                UserManager.shared.setUser(user)
+                let tokens : Tokens = data as! Tokens
+                
+                for token : Token in tokens.tokens {
+                    KeyChain().create(key: token.types, token: token.token)
+                }
+                
+                UserManager.shared.setUser(User(userID: 0, userName: ""))
                 self.goToMainPage()
                 
             case .requestErr(let msg):
@@ -83,8 +89,9 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func onTapFindPwd(_ sender: Any) {
-        let findPasswordPage = loginPageStoryboard.instantiateViewController(withIdentifier: "FindPasswordViewController")
-        self.show(findPasswordPage, sender: self)
+        guard let viewController = loginPageStoryboard.instantiateViewController(identifier: "FindPasswordViewController") as? FindPasswordViewController else {return}
+        print(self.navigationController)
+         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc private func presentSignUpModal() {
@@ -173,10 +180,9 @@ class LoginViewController: UIViewController {
     @objc private func onTouchSignUpWithEmail() {
     // 버튼 액션 처리
         dismiss(animated: false)
-        
-        let signUpWithEmailPage = loginPageStoryboard.instantiateViewController(withIdentifier: "SignUpWithEmailViewController")
-        self.show(signUpWithEmailPage, sender: self)
-        
+                
+        guard let viewController = loginPageStoryboard.instantiateViewController(identifier: "SignUpWithEmailViewController") as? SignUpWithEmailViewController else {return}
+         self.navigationController?.pushViewController(viewController, animated: true)
     }
 
     @objc private func onTouchSignUpWithKakao() {
@@ -193,9 +199,13 @@ class LoginViewController: UIViewController {
                         (networkResult) in
                         switch networkResult{
                         case .success(let data):
-                            let user : User = data 
-                            // 유저 정보 저장해놓는 로직 넣기
-                            UserManager.shared.setUser(user)
+                            let tokens : Tokens = data as! Tokens
+                            
+                            for token : Token in tokens.tokens {
+                                KeyChain().create(key: token.types, token: token.token)
+                            }
+                            
+                            UserManager.shared.setUser(User(userID: 0, userName: ""))
                             self.goToMainPage()
                             
                         case .requestErr(let msg):
@@ -224,15 +234,16 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func goToMainPage(){
-        if(isFirst){
+        if(isShownTutorial){
+            // 튜토리얼 봤었으면 메인페이지로
+            
+        }else{
             // 처음이면 튜토리얼 페이지로
+            UserDefaults.standard.set(true, forKey: "isShownTutorial")
             let tutorialVC =  UIStoryboard(name: "Tutorial", bundle: nil)
                 .instantiateViewController(withIdentifier: "TutorialViewController")
             
             (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(tutorialVC, animated: true)
-            
-        }else{
-            // 처음이 아니면 홈화면으로
             
         }
         

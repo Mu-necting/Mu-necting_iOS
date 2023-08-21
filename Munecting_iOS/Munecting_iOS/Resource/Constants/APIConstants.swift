@@ -20,6 +20,10 @@ struct APIConstants {
     
     static let issueTempPassword = baseURL + "/findpw"
     
+    static let changeProfile = baseURL + "/members"
+    
+    static let getProfile = baseURL + "/members"
+    
     // MARK: - Musics
     
     //업로드할 곡 검색(get)

@@ -11,7 +11,7 @@ import Alamofire
 struct LoginService{
     
     static func signUp(email:String, password:String, completion: @escaping (NetworkResult<Bool>)->Void){
-        let url = APIConstants.loginWithSocialURL
+        let url = APIConstants.signUp
         let header: HTTPHeaders = [
             "Content-Type": "application/json"
         ]
@@ -51,7 +51,7 @@ struct LoginService{
         
     }
     
-    static func login(email: String, password: String, completion: @escaping (NetworkResult<User>) -> Void){
+    static func login(email: String, password: String, completion: @escaping (NetworkResult<Any>) -> Void){
         let url = APIConstants.login
         let header: HTTPHeaders = [
             "Content-Type": "application/json"
@@ -75,7 +75,7 @@ struct LoginService{
                 }
                 
                 let decoder = JSONDecoder()
-                guard let decodedData = try? decoder.decode(GenericResponse<User>.self, from: data) else {return}
+                guard let decodedData = try? decoder.decode(GenericResponse<Tokens>.self, from: data) else {return}
                 
                 switch statusCode {
                 case 1000:
@@ -90,7 +90,7 @@ struct LoginService{
         })
     }
     
-    static func loginWithSocial(accessToken: String, completion: @escaping (NetworkResult<User>) -> Void){
+    static func loginWithSocial(accessToken: String, completion: @escaping (NetworkResult<Any>) -> Void){
         let url = APIConstants.loginWithSocialURL
         let header: HTTPHeaders = [
             "Content-Type": "application/json"
@@ -114,7 +114,7 @@ struct LoginService{
                 }
                 
                 let decoder = JSONDecoder()
-                guard let decodedData = try? decoder.decode(GenericResponse<User>.self, from: data) else {return}
+                guard let decodedData = try? decoder.decode(GenericResponse<Tokens>.self, from: data) else {return}
                 
                 switch statusCode {
                 case 1000:

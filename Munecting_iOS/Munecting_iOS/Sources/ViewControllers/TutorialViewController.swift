@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 import UIKit
 
 class TutorialViewController: UIViewController{
@@ -36,7 +35,6 @@ class TutorialViewController: UIViewController{
         pageViewController.delegate = self
         pageViewController.dataSource = self
         super.viewDidLoad()
- 
         // Do any additional setup after loading the view.
         
         if let firstvc = viewsList.first{
@@ -52,9 +50,31 @@ class TutorialViewController: UIViewController{
     }
     
     
+    
     @IBAction func nextPage(_ sender: Any) {
         if(currentPage == (viewsList.count - 1)){
             // 업로드 페이지로 이동
+            let user: User = UserManager.shared.getUser()!
+            UserService.changeProfile(name: user.userName, profileImage: user.prevSaveImage){
+                (networkResult) in
+                switch networkResult{
+                case .success(let data):
+                    let user : User = data as! User
+                    UserManager.shared.setUser(user)
+                    
+                case .requestErr(let msg):
+                    if let message = msg as? String {
+                        print(message)
+                    }
+                case .pathErr:
+                    print("pathErr in loginWithSocialAPI")
+                case .serverErr:
+                    print("serverErr in loginWithSocialAPI")
+                case .networkFail:
+                    print("networkFail in loginWithSocialAPI")
+                }
+            }
+            
         }else{
             let nextPage = currentPage + 1
             //화면 이동 (지금 페이지에서 -1 페이지로 setView 합니다.)

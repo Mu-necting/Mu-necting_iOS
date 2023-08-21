@@ -63,6 +63,9 @@
 		D254468D2A701803007E582B /* SignUpWithEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D254468C2A701803007E582B /* SignUpWithEmailViewController.swift */; };
 		D254468F2A702186007E582B /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D254468E2A702186007E582B /* Tutorial.storyboard */; };
 		D25446922A716077007E582B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25446912A716077007E582B /* UIColor.swift */; };
+		D26EEA572A91E5C7009F673E /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EEA562A91E5C7009F673E /* UserService.swift */; };
+		D26EEA592A932BDD009F673E /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EEA582A932BDD009F673E /* KeyChain.swift */; };
+		D26EEA5B2A932E1B009F673E /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EEA5A2A932E1B009F673E /* Token.swift */; };
 		D272FA2A2A7C0F9E0087C392 /* SignUpResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D272FA292A7C0F9E0087C392 /* SignUpResultViewController.swift */; };
 		D272FA2C2A7CA90D0087C392 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D272FA2B2A7CA90D0087C392 /* TutorialViewController.swift */; };
 		D272FA2E2A7CF8770087C392 /* ProfileTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D272FA2D2A7CF8770087C392 /* ProfileTutorialViewController.swift */; };
@@ -173,6 +176,9 @@
 		D254468C2A701803007E582B /* SignUpWithEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailViewController.swift; sourceTree = "<group>"; };
 		D254468E2A702186007E582B /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		D25446912A716077007E582B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		D26EEA562A91E5C7009F673E /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		D26EEA582A932BDD009F673E /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
+		D26EEA5A2A932E1B009F673E /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		D272FA292A7C0F9E0087C392 /* SignUpResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResultViewController.swift; sourceTree = "<group>"; };
 		D272FA2B2A7CA90D0087C392 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		D272FA2D2A7CF8770087C392 /* ProfileTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTutorialViewController.swift; sourceTree = "<group>"; };
@@ -347,6 +353,7 @@
 				C17DBB382A6E3C25007F45BD /* ViewControllers */,
 				D2E345822A66BD7000922A1C /* AppDelegate.swift */,
 				D2E345842A66BD7000922A1C /* SceneDelegate.swift */,
+				D26EEA582A932BDD009F673E /* KeyChain.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -422,6 +429,7 @@
 			children = (
 				C1415DF12A92EE340038597F /* MunectingRank */,
 				C1415DE52A92E2A40038597F /* MunectingMap */,
+				D26EEA552A91E5B3009F673E /* User */,
 				D2EBDD8F2A89FF110046A5A7 /* Login */,
 				C185E0F22A87D0FC00895C2D /* Musics */,
 				C185E0F82A87D55D00895C2D /* NetworkResult.swift */,
@@ -458,6 +466,14 @@
 				C1D1E68C2A8E162300DF7207 /* UIImage.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D26EEA552A91E5B3009F673E /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D26EEA562A91E5C7009F673E /* UserService.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		D2E345762A66BD7000922A1C = {
@@ -522,6 +538,7 @@
 			isa = PBXGroup;
 			children = (
 				D2913F2D2A6E5BA700B6174F /* User.swift */,
+				D26EEA5A2A932E1B009F673E /* Token.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -838,6 +855,8 @@
 				D272FA302A7CF88C0087C392 /* FinalTutorialViewController.swift in Sources */,
 				B35BE7032A89F4DC00E2ADAE /* ArchiveFilterPopUpViewController.swift in Sources */,
 				C1B86EC12A7D1C0A00F9A151 /* BestMunectorViewController_Temp.swift in Sources */,
+				D26EEA572A91E5C7009F673E /* UserService.swift in Sources */,
+				C1B86EC12A7D1C0A00F9A151 /* BestMunectorViewController.swift in Sources */,
 				C1B86EB42A7D1BAA00F9A151 /* BestMunectorCollectionViewCell.swift in Sources */,
 				C1415DE22A92D1F20038597F /* MusicAnnotationView.swift in Sources */,
 				C1B86EB62A7D1BAF00F9A151 /* MusicSearchCollectionViewCell.swift in Sources */,
@@ -856,8 +875,10 @@
 				C1415DFB2A92FFDB0038597F /* MusicUploadService.swift in Sources */,
 				D272FA2A2A7C0F9E0087C392 /* SignUpResultViewController.swift in Sources */,
 				D25446872A7015F7007E582B /* FindPasswordViewController.swift in Sources */,
+				D26EEA592A932BDD009F673E /* KeyChain.swift in Sources */,
 				C1FC05C42A8E19CB00E0CD26 /* PageViewController.swift in Sources */,
 				C1FC05C82A8E19ED00E0CD26 /* HomeNavigationViewController.swift in Sources */,
+				D26EEA5B2A932E1B009F673E /* Token.swift in Sources */,
 				D254468D2A701803007E582B /* SignUpWithEmailViewController.swift in Sources */,
 				D2913F2E2A6E5BA700B6174F /* User.swift in Sources */,
 				D2E345852A66BD7000922A1C /* SceneDelegate.swift in Sources */,

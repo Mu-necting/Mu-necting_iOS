@@ -22,20 +22,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="eqe-LV-Rkd">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="eqe-LV-Rkd">
                                 <rect key="frame" x="71.666666666666686" y="199" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="SnS-3S-H0I"/>
                                     <constraint firstAttribute="width" constant="250" id="SwG-hu-4dj"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="125"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f6C-Wz-aMS">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임을 입력해주세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f6C-Wz-aMS">
                                 <rect key="frame" x="94.666666666666686" y="489" width="204" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="204" id="AT7-dF-ypj"/>
                                     <constraint firstAttribute="height" constant="40" id="Bxl-kd-z2B"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.circle.fill" catalog="system" highlightedImage="camera.circle.fill" translatesAutoresizingMaskIntoConstraints="NO" id="J7v-Qq-rL1">
@@ -70,6 +76,10 @@
                             <constraint firstItem="eqe-LV-Rkd" firstAttribute="top" secondItem="wNp-cW-xLQ" secondAttribute="bottom" constant="72" id="yzR-W1-UoN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="profileView" destination="eqe-LV-Rkd" id="ufv-uJ-tXn"/>
+                        <outlet property="userNameTextField" destination="f6C-Wz-aMS" id="9x8-QF-vtR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

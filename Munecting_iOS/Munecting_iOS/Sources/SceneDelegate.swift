@@ -21,10 +21,52 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
        }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: windowScene)
+        window?.windowScene = windowScene
+        
+        let token = KeyChain().read(key: "atk")
+        if(token == nil){
+            print("여기")
+            // 토큰이 없는 경우
+            // 로그인 페이지로
+            let mainStoryboard = UIStoryboard(name: "LoginPage", bundle: nil)
+            let mainViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
+             
+             window?.rootViewController = mainViewController
+             window?.makeKeyAndVisible()
+            
+    
+        }else{
+            // 토큰이 있는 경우
+            // 유저 정보 요청
+            UserService.getProfile{
+                (networkResult) in
+                switch networkResult{
+                case .success(let data):
+                    let user : User = data as! User
+                    UserManager.shared.setUser(user)
+                    
+                case .requestErr(let msg):
+                    if let message = msg as? String {
+                        print(message)
+                    }
+                case .pathErr:
+                    print("pathErr in loginWithSocialAPI")
+                case .serverErr:
+                    print("serverErr in loginWithSocialAPI")
+                case .networkFail:
+                    print("networkFail in loginWithSocialAPI")
+                }
+            }
+            
+            // 메인 페이지로
+            let mainStoryboard = UIStoryboard(name: "Home", bundle: nil)
+            let mainViewController = mainStoryboard.instantiateViewController(withIdentifier: "PageViewController")
+             
+             window?.rootViewController = mainViewController
+             window?.makeKeyAndVisible()
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
