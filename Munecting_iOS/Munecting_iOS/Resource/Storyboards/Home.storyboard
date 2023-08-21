@@ -89,6 +89,9 @@
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="pickButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Eqy-z1-bzT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ax-qW-2ZN">
                                         <rect key="frame" x="0.0" y="92" width="279" height="35"/>

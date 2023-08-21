@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IAb-Zn-BmK">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -8,35 +8,107 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Bold700.ttf">
+            <string>Inter-Bold</string>
+        </array>
+        <array key="Inter-SemiBold600.ttf">
+            <string>Inter-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--PickViewController-->
-        <scene sceneID="s0d-6b-0kx">
+        <scene sceneID="Jza-lo-9HR">
             <objects>
-                <viewController storyboardIdentifier="PickViewController" title="PickViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="PickViewController" customModule="Munecting_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                <viewController storyboardIdentifier="PickViewController" title="PickViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IAb-Zn-BmK" customClass="PickViewController" customModule="Munecting_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DDL-gh-5LH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="Pick" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZK-rz-L6A">
-                                <rect key="frame" x="159" y="408.66666666666669" width="75" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Always Awake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nxg-6s-T8A">
+                                <rect key="frame" x="0.0" y="117" width="393" height="25"/>
+                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="20"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="재지팩트" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ji-zo-iHL">
+                                <rect key="frame" x="0.0" y="147" width="393" height="21"/>
+                                <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="purpleBg" translatesAutoresizingMaskIntoConstraints="NO" id="GUU-xK-n7n">
+                                <rect key="frame" x="1.6666666666666572" y="295.33333333333326" width="390" height="509"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="509" id="4Yc-4M-7nn"/>
+                                    <constraint firstAttribute="width" constant="390" id="HEg-sB-kDw"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="작성내용" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MfI-7h-tNC">
+                                <rect key="frame" x="39" y="398" width="315" height="409"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="album2" translatesAutoresizingMaskIntoConstraints="NO" id="Em1-oq-9gF">
+                                <rect key="frame" x="146.66666666666666" y="218" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Fnu-Dc-sTJ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Gov-14-Odj"/>
+                                    <constraint firstAttribute="height" constant="100" id="Nz1-IB-lWa"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="TbM-Ou-qIm"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VlR-L4-B7s">
+                                <rect key="frame" x="344.66666666666669" y="248.00000000000003" width="49" height="38.333333333333343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="AcW-6F-A4f"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="v0D-yr-zfT"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="edit" title=""/>
+                                <connections>
+                                    <action selector="tappedWritingButton:" destination="IAb-Zn-BmK" eventType="touchUpInside" id="liy-LF-GF1"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <viewLayoutGuide key="safeArea" id="iai-94-TR0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KZK-rz-L6A" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="q08-Dg-xrB"/>
-                            <constraint firstItem="KZK-rz-L6A" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="xQ0-IY-R4h"/>
+                            <constraint firstItem="GUU-xK-n7n" firstAttribute="centerX" secondItem="DDL-gh-5LH" secondAttribute="centerX" id="1SP-eX-tbk"/>
+                            <constraint firstItem="Nxg-6s-T8A" firstAttribute="leading" secondItem="iai-94-TR0" secondAttribute="leading" id="2Ze-Nj-2s8"/>
+                            <constraint firstItem="MfI-7h-tNC" firstAttribute="leading" secondItem="iai-94-TR0" secondAttribute="leading" constant="39" id="3pB-nI-nF4"/>
+                            <constraint firstItem="Em1-oq-9gF" firstAttribute="top" secondItem="6ji-zo-iHL" secondAttribute="bottom" constant="50" id="7Pj-O9-yKj"/>
+                            <constraint firstItem="Nxg-6s-T8A" firstAttribute="trailing" secondItem="iai-94-TR0" secondAttribute="trailing" id="LDh-R1-I3H"/>
+                            <constraint firstItem="Nxg-6s-T8A" firstAttribute="top" secondItem="iai-94-TR0" secondAttribute="top" constant="58" id="Mk3-Q5-pRh"/>
+                            <constraint firstItem="6ji-zo-iHL" firstAttribute="top" secondItem="Nxg-6s-T8A" secondAttribute="bottom" constant="5" id="N9q-qr-9LH"/>
+                            <constraint firstItem="Em1-oq-9gF" firstAttribute="centerX" secondItem="DDL-gh-5LH" secondAttribute="centerX" id="Nrw-Iv-7Xm"/>
+                            <constraint firstItem="iai-94-TR0" firstAttribute="trailing" secondItem="MfI-7h-tNC" secondAttribute="trailing" constant="39" id="Sgw-k7-fsT"/>
+                            <constraint firstItem="iai-94-TR0" firstAttribute="bottom" secondItem="MfI-7h-tNC" secondAttribute="bottom" constant="11" id="Stg-lk-RZS"/>
+                            <constraint firstItem="VlR-L4-B7s" firstAttribute="top" secondItem="6ji-zo-iHL" secondAttribute="bottom" constant="80" id="TyZ-G3-B4L"/>
+                            <constraint firstItem="GUU-xK-n7n" firstAttribute="top" secondItem="VlR-L4-B7s" secondAttribute="bottom" constant="9" id="f3O-Dx-94S"/>
+                            <constraint firstItem="MfI-7h-tNC" firstAttribute="top" secondItem="Em1-oq-9gF" secondAttribute="bottom" constant="80" id="lmS-pU-URn"/>
+                            <constraint firstItem="VlR-L4-B7s" firstAttribute="leading" secondItem="Em1-oq-9gF" secondAttribute="trailing" constant="98" id="p61-jx-gSt"/>
+                            <constraint firstItem="6ji-zo-iHL" firstAttribute="trailing" secondItem="iai-94-TR0" secondAttribute="trailing" id="tQw-GH-32Q"/>
+                            <constraint firstItem="6ji-zo-iHL" firstAttribute="leading" secondItem="iai-94-TR0" secondAttribute="leading" id="wbB-vn-AzI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="albumCoverImageView" destination="Em1-oq-9gF" id="cWh-ZP-cM7"/>
+                        <outlet property="artistName" destination="6ji-zo-iHL" id="Lx3-Ar-GX4"/>
+                        <outlet property="trackNameLabel" destination="Nxg-6s-T8A" id="0cI-5X-bx5"/>
+                        <outlet property="writingTextView" destination="MfI-7h-tNC" id="Qch-nK-Gzd"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Sv-bO-1ck" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131" y="-28"/>
+            <point key="canvasLocation" x="1970" y="110"/>
         </scene>
     </scenes>
     <resources>
+        <image name="album2" width="133.33332824707031" height="133.33332824707031"/>
+        <image name="edit" width="25" height="24.333333969116211"/>
+        <image name="purpleBg" width="358" height="469"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

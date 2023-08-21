@@ -17,7 +17,7 @@ class MusicSearchCollectionViewCell: UICollectionViewCell {
     var shadowOffset: CGSize = CGSize(width: 0, height: 0)
     var shadowOpacity: Float = 0.5
     var shadowRadius: CGFloat = 4.0
-    let NavWhite = UIColor(red: 0.7960000038146973, green: 0.8270000219345093, blue: 0.8629999756813049, alpha: 1.0)
+   
 
     
     override init(frame: CGRect) {
@@ -36,7 +36,7 @@ class MusicSearchCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = 8
         layer.borderWidth = 1.0
         layer.borderColor = UIColor.systemGray.cgColor
-        layer.shadowColor = UIColor.clear.cgColor
+        layer.shadowColor = UIColor.navWhiteColor.cgColor
         layer.shadowOpacity = self.shadowOpacity
         layer.shadowOffset = self.shadowOffset
         layer.shadowRadius = self.cornerRadius

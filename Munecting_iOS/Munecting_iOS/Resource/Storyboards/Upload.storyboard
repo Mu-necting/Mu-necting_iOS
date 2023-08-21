@@ -103,7 +103,7 @@
                                             <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="hiphopButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6Q6-c2-X4V"/>
+                                            <action selector="tappedGenreButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1RY-hD-tA3"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAt-Eh-A1Y">
@@ -122,7 +122,7 @@
                                             <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="hiphopButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7da-8w-DtX"/>
+                                            <action selector="tappedGenreButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="5cf-3M-7p4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EA1-Nr-Zvp">
@@ -141,7 +141,7 @@
                                             <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="hiphopButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="QKY-mV-wdo"/>
+                                            <action selector="tappedGenreButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iaW-Sj-Zpp"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRi-cZ-tmO">
@@ -160,7 +160,7 @@
                                             <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="hiphopButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="R6S-Oa-sEf"/>
+                                            <action selector="tappedGenreButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="t8i-Pu-hTa"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alr-V4-1Xd">
@@ -179,7 +179,7 @@
                                             <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="hiphopButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uat-g9-dTE"/>
+                                            <action selector="tappedGenreButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3tr-mH-4zZ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -203,7 +203,7 @@
                                             <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="hiphopButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TeM-To-6m8"/>
+                                            <action selector="tappedGenreButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="SXT-M5-mcT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRT-j3-WBo">
@@ -222,7 +222,7 @@
                                             <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="hiphopButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Kyr-Ju-NXq"/>
+                                            <action selector="tappedGenreButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8tb-DH-YD4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkQ-yc-J2W">
@@ -241,7 +241,7 @@
                                             <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="hiphopButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bSU-O6-GzP"/>
+                                            <action selector="tappedGenreButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7OU-gO-TWC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwa-k8-c4l">
@@ -260,7 +260,7 @@
                                             <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="hiphopButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="h9k-Yn-JHg"/>
+                                            <action selector="tappedGenreButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lds-3b-bgN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abu-yo-tGc">
@@ -279,7 +279,7 @@
                                             <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="hiphopButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fhH-4M-aUv"/>
+                                            <action selector="tappedGenreButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oZi-pk-FPq"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -297,6 +297,9 @@
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="Inter-Bold" family="Inter" pointSize="20"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="tappedUploadButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8Fm-nz-Mdt"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유지 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmx-fN-jAs">
                                 <rect key="frame" x="29.999999999999996" y="310.66666666666669" width="48.666666666666657" height="15.666666666666686"/>
@@ -369,8 +372,17 @@
                     </view>
                     <connections>
                         <outlet property="albumCover" destination="hkq-sI-Gfq" id="enf-t9-erQ"/>
+                        <outlet property="baladButton" destination="EA1-Nr-Zvp" id="GDD-qC-aRP"/>
+                        <outlet property="bluesButton" destination="svq-i6-w1J" id="yn1-aZ-TRC"/>
+                        <outlet property="classicButton" destination="tRi-cZ-tmO" id="rsb-hI-R0W"/>
+                        <outlet property="countryButton" destination="jkQ-yc-J2W" id="N9b-2S-XuX"/>
+                        <outlet property="edmButton" destination="zwa-k8-c4l" id="I92-JG-Agi"/>
                         <outlet property="hiphopButton" destination="YcW-Lr-tzJ" id="ON1-Gr-lK5"/>
+                        <outlet property="kpopButton" destination="abu-yo-tGc" id="pfL-2j-cGC"/>
                         <outlet property="musicView" destination="LF3-su-ca4" id="BE1-aq-1g3"/>
+                        <outlet property="popButton" destination="alr-V4-1Xd" id="rrP-tu-bH2"/>
+                        <outlet property="rnbButton" destination="bRT-j3-WBo" id="yem-mI-oaI"/>
+                        <outlet property="rockButton" destination="gAt-Eh-A1Y" id="oSN-yB-TCq"/>
                         <outlet property="timeLabel" destination="BeY-mC-eZ2" id="Jxd-HX-DS1"/>
                     </connections>
                 </viewController>

@@ -19,34 +19,60 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvP-eU-x2S">
-                                <rect key="frame" x="0.0" y="110" width="393" height="708"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zMr-9L-NW3">
-                                <rect key="frame" x="0.0" y="59" width="393" height="32"/>
-                                <segments>
-                                    <segment title="현재위치"/>
-                                    <segment title="서울"/>
-                                </segments>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGS-DT-EYT">
+                                <rect key="frame" x="338" y="763" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="Ar4-SY-Ozg"/>
+                                    <constraint firstAttribute="height" constant="35" id="G2a-zn-lOI"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="scope" catalog="system" title="" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="strokeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
                                 <connections>
-                                    <action selector="changeValue:" destination="Y6W-OH-hqX" eventType="valueChanged" id="Ygm-t3-FcA"/>
+                                    <action selector="tappedMyLocation:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="73c-iv-y8n"/>
                                 </connections>
-                            </segmentedControl>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmL-ZE-1xc">
+                                <rect key="frame" x="20" y="69" width="45" height="20"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="biE-Iz-CIt"/>
+                                    <constraint firstAttribute="height" constant="20" id="weJ-Wz-JYu"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="서울">
+                                    <backgroundConfiguration key="background" cornerRadius="20"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="tappedSeoulButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qbS-Z0-ePX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="zMr-9L-NW3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="AJ0-tQ-6DR"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zMr-9L-NW3" secondAttribute="trailing" id="Tq7-wT-GwK"/>
+                            <constraint firstItem="tmL-ZE-1xc" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="2Xg-Nq-9Be"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HGS-DT-EYT" secondAttribute="trailing" constant="20" id="PQA-6V-3NE"/>
+                            <constraint firstItem="fvP-eU-x2S" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="UXP-0m-so3"/>
                             <constraint firstItem="fvP-eU-x2S" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="cQP-g8-SyM"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="fvP-eU-x2S" secondAttribute="bottom" id="dBW-Td-xue"/>
                             <constraint firstItem="fvP-eU-x2S" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="i3C-Sc-o3T"/>
-                            <constraint firstItem="fvP-eU-x2S" firstAttribute="top" secondItem="zMr-9L-NW3" secondAttribute="bottom" constant="20" id="nax-5e-LhA"/>
-                            <constraint firstItem="zMr-9L-NW3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="xn4-cE-Rn7"/>
+                            <constraint firstItem="tmL-ZE-1xc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="i9X-Jh-YNT"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="HGS-DT-EYT" secondAttribute="bottom" constant="20" id="sx5-PA-PNc"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="mapkit" destination="fvP-eU-x2S" id="LzN-gO-mOq"/>
+                        <outlet property="seoulButton" destination="tmL-ZE-1xc" id="8sG-kI-TeV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -55,8 +81,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="scope" catalog="system" width="128" height="124"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
