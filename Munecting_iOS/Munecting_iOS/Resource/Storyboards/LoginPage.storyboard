@@ -632,10 +632,10 @@
             </objects>
             <point key="canvasLocation" x="2710.6870229007632" y="707.74647887323943"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Login Navigation View Controller-->
         <scene sceneID="f4j-pO-nae">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TJr-RV-vEi" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="TJr-RV-vEi" customClass="LoginNavigationViewController" customModule="Munecting_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jOD-2k-sps">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>

@@ -90,8 +90,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func onTapFindPwd(_ sender: Any) {
         guard let viewController = loginPageStoryboard.instantiateViewController(identifier: "FindPasswordViewController") as? FindPasswordViewController else {return}
-        print(self.navigationController)
-         self.navigationController?.pushViewController(viewController, animated: true)
+            self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc private func presentSignUpModal() {

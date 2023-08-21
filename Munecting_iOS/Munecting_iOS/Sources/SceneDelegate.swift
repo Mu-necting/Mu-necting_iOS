@@ -27,16 +27,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        
 //        let token = KeyChain().read(key: "atk")
 //        if(token == nil){
-//            print("여기")
 //            // 토큰이 없는 경우
 //            // 로그인 페이지로
 //            let mainStoryboard = UIStoryboard(name: "LoginPage", bundle: nil)
-//            let mainViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
-//             
+//            let mainViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNavigationViewController")
+//
 //             window?.rootViewController = mainViewController
 //             window?.makeKeyAndVisible()
-//            
-//    
+//
+//
 //        }else{
 //            // 토큰이 있는 경우
 //            // 유저 정보 요청
@@ -47,6 +46,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //                    let user : User = data as! User
 //                    UserManager.shared.setUser(user)
 //                    
+//                    // 메인 페이지로
+//                    let mainStoryboard = UIStoryboard(name: "Home", bundle: nil)
+//                    let mainViewController = mainStoryboard.instantiateViewController(withIdentifier: "PageViewController")
+//
+//                    self.window?.rootViewController = mainViewController
+//                    self.window?.makeKeyAndVisible()
+//
 //                case .requestErr(let msg):
 //                    if let message = msg as? String {
 //                        print(message)
@@ -59,13 +65,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //                    print("networkFail in loginWithSocialAPI")
 //                }
 //            }
-//            
-//            // 메인 페이지로
-//            let mainStoryboard = UIStoryboard(name: "Home", bundle: nil)
-//            let mainViewController = mainStoryboard.instantiateViewController(withIdentifier: "PageViewController")
-//             
-//             window?.rootViewController = mainViewController
-//             window?.makeKeyAndVisible()
 //        }
     }
 

@@ -66,6 +66,7 @@
 		D26EEA572A91E5C7009F673E /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EEA562A91E5C7009F673E /* UserService.swift */; };
 		D26EEA592A932BDD009F673E /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EEA582A932BDD009F673E /* KeyChain.swift */; };
 		D26EEA5B2A932E1B009F673E /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EEA5A2A932E1B009F673E /* Token.swift */; };
+		D26EEA612A93570B009F673E /* LoginNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EEA602A93570B009F673E /* LoginNavigationViewController.swift */; };
 		D272FA2A2A7C0F9E0087C392 /* SignUpResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D272FA292A7C0F9E0087C392 /* SignUpResultViewController.swift */; };
 		D272FA2C2A7CA90D0087C392 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D272FA2B2A7CA90D0087C392 /* TutorialViewController.swift */; };
 		D272FA2E2A7CF8770087C392 /* ProfileTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D272FA2D2A7CF8770087C392 /* ProfileTutorialViewController.swift */; };
@@ -179,6 +180,7 @@
 		D26EEA562A91E5C7009F673E /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		D26EEA582A932BDD009F673E /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		D26EEA5A2A932E1B009F673E /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		D26EEA602A93570B009F673E /* LoginNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationViewController.swift; sourceTree = "<group>"; };
 		D272FA292A7C0F9E0087C392 /* SignUpResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResultViewController.swift; sourceTree = "<group>"; };
 		D272FA2B2A7CA90D0087C392 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		D272FA2D2A7CF8770087C392 /* ProfileTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTutorialViewController.swift; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 				D2EBDD932A8DB9690046A5A7 /* ChangePasswordViewController.swift */,
 				C1FC05C92A8E317000E0CD26 /* BestMunectorViewController.swift */,
 				C1415DF52A92F3DA0038597F /* PickViewController.swift */,
+				D26EEA602A93570B009F673E /* LoginNavigationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -856,13 +859,14 @@
 				B35BE7032A89F4DC00E2ADAE /* ArchiveFilterPopUpViewController.swift in Sources */,
 				C1B86EC12A7D1C0A00F9A151 /* BestMunectorViewController_Temp.swift in Sources */,
 				D26EEA572A91E5C7009F673E /* UserService.swift in Sources */,
-				C1B86EC12A7D1C0A00F9A151 /* BestMunectorViewController.swift in Sources */,
+				C1B86EC12A7D1C0A00F9A151 /* BestMunectorViewController_Temp.swift in Sources */,
 				C1B86EB42A7D1BAA00F9A151 /* BestMunectorCollectionViewCell.swift in Sources */,
 				C1415DE22A92D1F20038597F /* MusicAnnotationView.swift in Sources */,
 				C1B86EB62A7D1BAF00F9A151 /* MusicSearchCollectionViewCell.swift in Sources */,
 				C1FC05C62A8E19E400E0CD26 /* MusicSearchNavigationController.swift in Sources */,
 				C1415DFD2A9320240038597F /* MusicForUpload.swift in Sources */,
 				C1415DF62A92F3DA0038597F /* PickViewController.swift in Sources */,
+				D26EEA612A93570B009F673E /* LoginNavigationViewController.swift in Sources */,
 				C185E0F52A87D16200895C2D /* APIConstants.swift in Sources */,
 				C1B86EB22A7D1B9400F9A151 /* MusicSearchData.swift in Sources */,
 				C1B86EC32A7D1C1500F9A151 /* MunectingMapViewController.swift in Sources */,

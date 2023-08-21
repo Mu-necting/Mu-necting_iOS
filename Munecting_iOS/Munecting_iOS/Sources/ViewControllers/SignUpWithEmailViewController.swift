@@ -71,9 +71,9 @@ class SignUpWithEmailViewController: UIViewController {
              (networkResult) in
              switch networkResult{
              case .success(let data):
-                 if(data){
-                     let signUpResultPage = self.loginPageStoryboard.instantiateViewController(withIdentifier: "SignUpResultViewController")
-                     self.show(signUpResultPage, sender: self)
+                 if(data){                     
+                     guard let viewController = self.loginPageStoryboard.instantiateViewController(identifier: "SignUpResultViewController") as? SignUpResultViewController else {return}
+                    self.navigationController?.pushViewController(viewController, animated: true)
                  }
              case .requestErr(let msg):
                  if let message = msg as? String { print(message) }
