@@ -29,6 +29,8 @@
 		C1415DF92A92FBB50038597F /* PickService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415DF82A92FBB50038597F /* PickService.swift */; };
 		C1415DFB2A92FFDB0038597F /* MusicUploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415DFA2A92FFDB0038597F /* MusicUploadService.swift */; };
 		C1415DFD2A9320240038597F /* MusicForUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415DFC2A9320240038597F /* MusicForUpload.swift */; };
+		C1415DFF2A9367B80038597F /* arroundMusic.json in Resources */ = {isa = PBXBuildFile; fileRef = C1415DFE2A9367B80038597F /* arroundMusic.json */; };
+		C1415E012A9371600038597F /* munectingMapData.json in Resources */ = {isa = PBXBuildFile; fileRef = C1415E002A9371600038597F /* munectingMapData.json */; };
 		C185E0F52A87D16200895C2D /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185E0F42A87D16200895C2D /* APIConstants.swift */; };
 		C185E0F72A87D34F00895C2D /* MusicSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185E0F62A87D34F00895C2D /* MusicSearchService.swift */; };
 		C185E0F92A87D55D00895C2D /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185E0F82A87D55D00895C2D /* NetworkResult.swift */; };
@@ -143,6 +145,8 @@
 		C1415DF82A92FBB50038597F /* PickService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickService.swift; sourceTree = "<group>"; };
 		C1415DFA2A92FFDB0038597F /* MusicUploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicUploadService.swift; sourceTree = "<group>"; };
 		C1415DFC2A9320240038597F /* MusicForUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicForUpload.swift; sourceTree = "<group>"; };
+		C1415DFE2A9367B80038597F /* arroundMusic.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = arroundMusic.json; sourceTree = "<group>"; };
+		C1415E002A9371600038597F /* munectingMapData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = munectingMapData.json; sourceTree = "<group>"; };
 		C185E0F42A87D16200895C2D /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		C185E0F62A87D34F00895C2D /* MusicSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchService.swift; sourceTree = "<group>"; };
 		C185E0F82A87D55D00895C2D /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
@@ -506,6 +510,8 @@
 			isa = PBXGroup;
 			children = (
 				C185E1012A89BB0F00895C2D /* musicSearch.json */,
+				C1415DFE2A9367B80038597F /* arroundMusic.json */,
+				C1415E002A9371600038597F /* munectingMapData.json */,
 				C17DBB372A6E3C15007F45BD /* Sources */,
 				C17DBB352A6E3BE0007F45BD /* Resource */,
 				D2E3458B2A66BD7000922A1C /* Munecting_iOS.xcdatamodeld */,
@@ -665,6 +671,7 @@
 				D2E345922A66BD7100922A1C /* LaunchScreen.storyboard in Resources */,
 				C1B86EA42A7D1B2400F9A151 /* Home.storyboard in Resources */,
 				C1B86EAC2A7D1B5100F9A151 /* Pick.storyboard in Resources */,
+				C1415DFF2A9367B80038597F /* arroundMusic.json in Resources */,
 				C1B86EAE2A7D1B5900F9A151 /* Upload.storyboard in Resources */,
 				D2913F2C2A6E5A4300B6174F /* LoginPage.storyboard in Resources */,
 				D2E3458F2A66BD7100922A1C /* Assets.xcassets in Resources */,
@@ -673,6 +680,7 @@
 				C1B86EA82A7D1B4100F9A151 /* MunectingMap.storyboard in Resources */,
 				C185E1022A89BB0F00895C2D /* musicSearch.json in Resources */,
 				D2E3458A2A66BD7000922A1C /* Main.storyboard in Resources */,
+				C1415E012A9371600038597F /* munectingMapData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

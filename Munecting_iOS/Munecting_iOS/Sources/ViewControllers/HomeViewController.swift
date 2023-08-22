@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
     var audioPlayer: AVPlayer?
     var musics: [Music?] = []
     var curMusicNum: Int = 0
-    var arroundMusics: MusicSearchAround?
+    var arroundMusics: [AroundMusic] = []
     var isLike: Bool = false
     var locationManager: CLLocationManager!
     var latitude: Double?
@@ -59,24 +59,28 @@ class HomeViewController: UIViewController {
         //CLLocationManager 설정
         locationManager = CLLocationManager()
         locationManager.delegate = self
+        locationManager.startUpdatingLocation()
         // 위치 데이터 승인 요구
         locationManager.requestWhenInUseAuthorization()
         //배터리에 맞게 권장되는 최적의 정확도
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         savedTransform = albumCoverImageView.layer.presentation()?.transform
         startTransform = albumCoverImageView.layer.presentation()?.transform
+        
+        self.getMunectingMapJSON()
 
 
-            
+        
         
         //더미 노래 갖고오기
         self.getMusic()
-        self.loadJSON()
+//        self.getMunectingMapJSON()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(_:)))
         self.albumCoverImageView.addGestureRecognizer(tapGesture)
+        
 
-        //근처 노래 갖고오기
-//        self.getAroundMusicWithAPI(x: latitude!, y: longitude!, range: 100)
+        
+        
         
         if let music = musics[0]{
             //첫 번째 노래 재생
@@ -96,6 +100,7 @@ class HomeViewController: UIViewController {
             self.genreLabel.text = "Genre : \(music.genre)"
 
         }
+    
         
         //앨범 커버 원형으로 만들기
         albumCoverImageView.layer.cornerRadius = albumCoverImageView.frame.size.width/2
@@ -114,48 +119,114 @@ class HomeViewController: UIViewController {
         
     }
     
+    //임시 함수_JSON 디코딩
+    /*
+    func loadAroundMusicJSON(){
+        if let path = Bundle.main.path(forResource: "arroundMusic", ofType: "json") {
+            do {
+                print("============loadAroundMusicJSON===============")
+                let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let decoder = JSONDecoder()
+                print("============loadAroundMusicJSON===============")
+                let response = try decoder.decode(GenericResponse<[AroundMusic]>.self, from: jsonData)
+                print("============loadAroundMusicJSON===============")
+                print("Is Success:", response.isSuccess)
+                print("Code:", response.code)
+                print("Message:", response.message)
+                print("Music Items:", response.result[0])
+                print("============loadAroundMusicJSON===============")
+            } catch {
+                print("Error:", error)
+            }
+        } else {
+            print("JSON file not found.")
+        }
+    }
+     */
+    /*
+    func searchMusicJSON(){
+        if let path = Bundle.main.path(forResource: "musicSearch", ofType: "json") {
+            do {
+                print("============loadAroundMusicJSON===============")
+                let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let decoder = JSONDecoder()
+                print("============loadAroundMusicJSON===============")
+                let response = try decoder.decode(GenericResponse<MusicSearchResult>.self, from: jsonData)
+                print("============loadAroundMusicJSON===============")
+                print(response.isSuccess)
+                print(response.result.musicSearchRes[0])
+                print("============loadAroundMusicJSON===============")
+            } catch {
+                print("Error:", error)
+            }
+        } else {
+            print("JSON file not found.")
+        }
+    }
+     */
+    
+    func getMunectingMapJSON(){
+        if let path = Bundle.main.path(forResource: "munectingMapData", ofType: "json") {
+            do {
+                print("============loadAroundMusicJSON===============")
+                let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let decoder = JSONDecoder()
+                print("============loadAroundMusicJSON===============")
+                let response = try decoder.decode(GenericResponse<[MunectingMapData]>.self, from: jsonData)
+                print("============loadAroundMusicJSON===============")
+                print(response.isSuccess)
+//                print(response.result.musicSearchRes[0])
+                print("============loadAroundMusicJSON===============")
+            } catch {
+                print("Error:", error)
+            }
+        } else {
+            print("JSON file not found.")
+        }
+    }
+    
     @objc func imageViewTapped(_ gesture: UITapGestureRecognizer){
-        print("============================imageViewTapped Gesture Recognized!!!============================")
+//        print("============================imageViewTapped Gesture Recognized!!!============================")
         guard let currentTime = audioPlayer?.currentTime().seconds else {return}
         guard let music = musics[curMusicNum] else {return}
         
         if(audioPlayer?.rate == 1.0){
             self.audioPlayer?.pause()
-//            self.pauseRotationAnimation()
+            self.pauseRotationAnimation()
         }else{
-//            self.resumeRotationAnimation()
+            self.resumeRotationAnimation()
             self.audioPlayer?.play()
         }
     }
-//
-//    func pauseRotationAnimation() {
-//          // Get the current presentation layer's transform
-//          if let presentationLayer = albumCoverImageView.layer.presentation() {
-//              self.savedTransform = presentationLayer.transform
-//          }
-//        albumCoverImageView.layer.transform = self.startTransform ?? self.savedTransform!
-//
-//          // Remove the animation
-//          albumCoverImageView.layer.removeAnimation(forKey: "rotationAnimation")
-//      }
-//
-//      func resumeRotationAnimation() {
-//          guard let transform = savedTransform else {
-//              return
-//          }
-//
-//          let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-//          rotationAnimation.toValue = NSNumber(value: Double.pi * 2) // 360 degrees rotation (2 * π radians)
-//          rotationAnimation.duration = 5.0 // animation duration in seconds
-//          rotationAnimation.repeatCount = .infinity // repeat infinitely
-//
-//          // Apply the saved transform to the view's layer
-//          albumCoverImageView.layer.transform = transform
-//
-//          DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//              self.albumCoverImageView.layer.add(rotationAnimation, forKey: "rotationAnimation")
-//          }
-//      }
+
+    func pauseRotationAnimation() {
+          // Get the current presentation layer's transform
+          if let presentationLayer = albumCoverImageView.layer.presentation() {
+              self.savedTransform = presentationLayer.transform
+          }
+        albumCoverImageView.layer.transform = self.startTransform ?? self.savedTransform!
+
+          // Remove the animation
+          albumCoverImageView.layer.removeAnimation(forKey: "rotationAnimation")
+      }
+
+      func resumeRotationAnimation() {
+          guard let transform = savedTransform else {
+              return
+          }
+
+          let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+          rotationAnimation.toValue = NSNumber(value: Double.pi * 2) // 360 degrees rotation (2 * π radians)
+          rotationAnimation.duration = 5.0 // animation duration in seconds
+          rotationAnimation.repeatCount = .infinity // repeat infinitely
+
+          // Apply the saved transform to the view's layer
+          albumCoverImageView.layer.transform = transform
+
+          DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+              self.albumCoverImageView.layer.add(rotationAnimation, forKey: "rotationAnimation")
+          }
+      }
     
 
 //    func pauseRotationAnimation() {
@@ -179,31 +250,12 @@ class HomeViewController: UIViewController {
 //    }
 
     
-    //임시 함수_JSON 디코딩
-    func loadJSON(){
-        if let path = Bundle.main.path(forResource: "musicSearch", ofType: "json") {
-            do {
-                let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                
-                let decoder = JSONDecoder()
-                let response = try decoder.decode(GenericResponse<MusicSearchResult>.self, from: jsonData)
-                
-                print("Is Success:", response.isSuccess)
-                print("Code:", response.code)
-                print("Message:", response.message)
-                print("Total Page:", response.result.totalPage)
-                print("Music Items:", response.result.musicSearchRes[0])
-            } catch {
-                print("Error:", error)
-            }
-        } else {
-            print("JSON file not found.")
-        }
-    }
+  
     
     override func viewWillAppear(_ animated: Bool) {
         //내비게이션 바 없애기
         self.navigationController?.navigationBar.isHidden = true
+    
     }
     
     
@@ -364,8 +416,10 @@ class HomeViewController: UIViewController {
             
             switch networkResult{
             case .success(let data):
-                if let arroundMusics = data as? MusicSearchAround{
+                if let arroundMusics = data as? [AroundMusic]{
                     self.arroundMusics = arroundMusics
+                    print("============self.aroundMusic====================")
+                    print(self.arroundMusics)
                 }
             case .requestErr(let msg):
                 if let message = msg as? String { print(message) }
@@ -422,9 +476,11 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("============locationManger In================")
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else {return}
         self.latitude = locValue.latitude
         self.longitude = locValue.longitude
+//        self.getAroundMusicWithAPI(x: self.latitude!, y: self.longitude!, range: 100)
     }
 }
 

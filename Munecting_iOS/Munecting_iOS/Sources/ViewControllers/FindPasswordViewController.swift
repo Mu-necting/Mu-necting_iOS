@@ -9,7 +9,7 @@ import UIKit
 
 class FindPasswordViewController: UIViewController {
     
-    let loginPageStoryboard : UIStoryboard = UIStoryboard(name: "LoginPage", bundle: nil)
+//    let loginPageStoryboard : UIStoryboard = UIStoryboard(name: "LoginPage", bundle: nil)
     
     @IBOutlet weak var confirmButton: UIButton!
     

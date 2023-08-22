@@ -46,10 +46,12 @@ class MunectingMapViewController: UIViewController {
     
     func searchMunectingMapDataWithAPI(x: Double, y: Double, range: Int){
         MunectingMapService.shared.searchMunectingMap(x: x, y: y, range: range, completion: {(networkResult) in
-            
+            print("===========munectingMapData In======================")
             switch networkResult {
             case.success(let data):
                 if let munectingMapData = data as? [MunectingMapData] {
+                    print("===========munectingMapData In======================")
+                    print(munectingMapData)
                     munectingMapData.forEach{
                         let lat = $0.pointX
                         let log = $0.pointY
@@ -68,11 +70,11 @@ class MunectingMapViewController: UIViewController {
                     print(message)
                 }
             case .pathErr:
-                print("pathErr in searchMusicWithAPI")
+                print("pathErr in searchMunectingMapDataWithAPI")
             case .serverErr:
-                print("serverErr in searchMusicWithAPI")
+                print("serverErr in searchMunectingMapDataWithAPI")
             case .networkFail:
-                print("networkFail in searchMusicWithAPI")
+                print("networkFail in searchMunectingMapDataWithAPI")
             }
             
         })
@@ -155,7 +157,7 @@ extension MunectingMapViewController: MKMapViewDelegate, CLLocationManagerDelega
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let pLocation = locations.last
         moveLocation(latitudeValue: (pLocation?.coordinate.latitude)!, longtudeValue: (pLocation?.coordinate.longitude)!, delta: 0.01)
-//        searchMunectingMapDataWithAPI(x: (pLocation?.coordinate.latitude)!, y: (pLocation?.coordinate.longitude)!, range: 1000)
+        searchMunectingMapDataWithAPI(x: (pLocation?.coordinate.latitude)!, y: (pLocation?.coordinate.longitude)!, range: 1000)
         locationManager.stopUpdatingLocation()
     }
     
@@ -183,6 +185,8 @@ extension MunectingMapViewController: MKMapViewDelegate, CLLocationManagerDelega
         case .balad:
             return baladAnnotationView(annotation: annotation, reuseIdentifier: baladAnnotationView.ReuseID)
         case .kpop:
+            return kpopAnnotationView(annotation: annotation, reuseIdentifier: kpopAnnotationView.ReuseID)
+        default:
             return kpopAnnotationView(annotation: annotation, reuseIdentifier: kpopAnnotationView.ReuseID)
         }
     }

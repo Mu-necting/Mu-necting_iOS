@@ -5,7 +5,7 @@ struct APIConstants {
     
     // MARK: - base URL
     
-    static let baseURL = ""
+    static let baseURL = "3.19.110.157:8080"
     
     //임시
 

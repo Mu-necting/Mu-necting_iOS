@@ -1,0 +1,40 @@
+{
+    "isSuccess": true,
+    "code": 1000,
+    "message": "요청에 성공하였습니다.",
+    "result": [
+        {
+            "name": "이름",
+            "coverImg": "ㅁㅇㅇㄹ",
+            "genre": "POP",
+            "musicPre": "asdf",
+            "musicPull": "sda",
+            "replyCnt": 0,
+            "archiveId": 1,
+            "artist": "as",
+            "pickCnt": 2
+        },
+        {
+            "name": "이름",
+            "coverImg": "ㅁㅇㅇㄹ",
+            "genre": "POP",
+            "musicPre": "asdf",
+            "musicPull": "sda",
+            "replyCnt": 0,
+            "archiveId": 2,
+            "artist": "as",
+            "pickCnt": 1
+        },
+        {
+            "name": "이름",
+            "coverImg": "ㅁㅇㅇㄹ",
+            "genre": "POP",
+            "musicPre": "asdf",
+            "musicPull": "sda",
+            "replyCnt": 0,
+            "archiveId": 3,
+            "artist": "as",
+            "pickCnt": 0
+        }
+    ]
+}
