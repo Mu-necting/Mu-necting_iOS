@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class ArchivePickCollectionViewCell: UICollectionViewCell {
     
@@ -24,4 +26,18 @@ class ArchivePickCollectionViewCell: UICollectionViewCell {
             //selectIndicator.isHidden = !isSelected
         }
     }
+    
+    // coverImg를 표시하는 함수
+        func displayCoverImage(fromURL urlString: String) {
+            if let coverImgURL = URL(string: urlString) {
+                AF.request(coverImgURL).responseImage { response in
+                    switch response.result {
+                    case .success(let image):
+                        self.albumImg.image = image
+                    case .failure(let error):
+                        print("Error downloading cover image: \(error)")
+                    }
+                }
+            }
+        }
 }

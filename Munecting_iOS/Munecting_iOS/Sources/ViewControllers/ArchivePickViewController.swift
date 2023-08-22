@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
         
@@ -16,9 +18,12 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
     @IBOutlet weak var editBtn: UIButton!
     
     @IBOutlet weak var filterBtn: UIButton!
+    @IBOutlet weak var nicknameLbl: UILabel!
+    @IBOutlet weak var profileImg: UIImageView!
     
     var images = [UIImage(named: "album1"), UIImage(named: "album2"), UIImage(named: "album3")]
     var selectedIndices: Set<Int> = []
+    
     
     var isLatestSorted = true // 최신순으로 정렬되었는지 여부
     var buttonNum = 0
@@ -34,25 +39,39 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10) // 섹션 주위 여백
         layout.itemSize = CGSize(width: 100, height: 100) // 각 아이템의 크기
         collectionView.collectionViewLayout = layout
-           
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        //eMode를 .view로 초기화
+        // Initialize the view
         eMode = .view
         
-        // 최신순 초기 설정
-        if isLatestSorted {
-            latestBtn.setTitle("최신순", for: .normal)
-            latestBtn.setImage(nil, for: .normal)
-            images.sort { image1, image2 in
-                // 최신순으로 정렬 비교 로직
-                return true // 최신순으로 정렬되었다고 가정
-            }
-            collectionView.reloadData()
-            isLatestSorted = false
-        }
+        // Initialize images and sorting
+        sortImages(isLatest: true)
         
+        loadProfileImage()
+        loadUsername()
+        
+    }
+    
+    func loadProfileImage() {
+        if let profileImageURL = UserManager.shared.getUser()?.profileImage {
+            // Alamofire를 사용하여 프로필 이미지 다운로드
+            AF.request(profileImageURL).responseImage { response in
+                switch response.result {
+                case .success(let image):
+                    self.profileImg.image = image
+                case .failure(let error):
+                    print("Error downloading profile image: \(error)")
+                }
+            }
+        }
+    }
+       
+    func loadUsername() {
+        if let username = UserManager.shared.getUser()?.userName {
+            nicknameLbl.text = username
+        }
     }
     
     //<셀 선택 삭제 기능>
@@ -72,7 +91,7 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
                 }
                 dictionarySelectedIndexPath.removeAll()
                 
-                if isLatestSorted {
+                /*if isLatestSorted {
                     latestBtn.setTitle("최신순", for: .normal)
                     latestBtn.setImage(nil, for: .normal)
                 } else {
@@ -80,15 +99,15 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
                     latestBtn.setImage(nil, for: .normal)
                 }
                 
-                editBtn.setImage(UIImage(named: "edit"), for: .normal)
+                editBtn.setImage(UIImage(named: "edit"), for: .normal)*/
                 
                 collectionView.allowsMultipleSelection = false
                 
             case .select:
-                latestBtn.setImage(UIImage(named: "trash"), for: .normal)
+                /* latestBtn.setImage(UIImage(named: "trash"), for: .normal)
                 latestBtn.setTitle(nil, for: .normal)
                 editBtn.setImage(UIImage(named: "cancel"), for: .normal)
-                editBtn.setTitle(nil, for: .normal)
+                editBtn.setTitle(nil, for: .normal) */
                 
                 collectionView.allowsMultipleSelection = true
             }
@@ -97,13 +116,13 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
        
     var dictionarySelectedIndexPath: [IndexPath: Bool] = [:]
        
-    lazy var deleteButton: UIButton = {
+    /*lazy var deleteButton: UIButton = {
         let button = UIButton(type: .system) // UIButton 초기화
-        button.setImage(UIImage(systemName: "trash"), for: .normal) // 이미지 설정
-        button.setTitle(nil, for: .normal)
+        //button.setImage(UIImage(systemName: "trash"), for: .normal) // 이미지 설정
+        //button.setTitle(nil, for: .normal)
         button.addTarget(self, action: #selector(didDeleteButtonClicked(_:)), for: .touchUpInside) // 동작 추가
         return button
-    }()
+    }()*/
        
     @objc func didDeleteButtonClicked(_ sender: UIButton) {
         var deleteNeededIndexPaths: [IndexPath] = []
@@ -125,14 +144,18 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
        
     @IBAction func editButtonTapped(_ sender: UIButton) {
         eMode = eMode == .view ? .select : .view
-        collectionView.reloadData() // 추가된 부분
+        collectionView.reloadData()
         
-        // 버튼 이미지 변경
-        /*if eMode == .select {
-            editBtn.title = "취소"
+        if eMode == .select {
+            latestBtn.setImage(UIImage(named: "trash"), for: .normal)
+            latestBtn.setTitle("", for: .normal)
+            editBtn.setImage(UIImage(named: "cancel"), for: .normal)
+            editBtn.setTitle("", for: .normal)
+
         } else {
-            editBtn.image = UIImage(named: "edit") // 기본 이미지 이름 사용
-        }*/
+            setButtonTitles()
+            editBtn.setImage(UIImage(named: "edit"), for: .normal)
+        }
     }
        
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -150,6 +173,24 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
            
         return cell
     }
+    
+    /*func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pickCell", for: indexPath) as! ArchivePickCollectionViewCell
+            
+            let musicData = musicDatas[indexPath.row] // musicDatas는 API에서 받아온 데이터 배열
+            
+            cell.albumImg.image = images[indexPath.row] // 기존 코드
+            
+            if let coverImgURL = musicData.coverImg {
+                cell.displayCoverImage(fromURL: coverImgURL) // API에서 받아온 coverImg 표시
+            }
+            
+            // Update cell selection status
+            cell.isSelected = dictionarySelectedIndexPath[indexPath] ?? false
+            
+            return cell
+        }
+    */
     
     //상세보기 페이지 이동 구현
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -176,53 +217,31 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
     
     //<최신순, 인기순 정렬>
     @IBAction func latestButtonTapped(_ sender: UIButton) {
-        // 버튼 이미지 변경
         if eMode == .select {
-            //backBtn.image = UIImage(named: "heart")
-            var deleteNeededIndexPaths: [IndexPath] = []
-                    
-            for (key,value) in dictionarySelectedIndexPath {
-                if value {
-                    deleteNeededIndexPaths.append(key)
-                }
-            }
-                    
-            for i in deleteNeededIndexPaths.sorted(by: { $0.item > $1.item }) {
-                images.remove(at: i.item)
-            }
-            
-            collectionView.deleteItems(at: deleteNeededIndexPaths)
-            dictionarySelectedIndexPath.removeAll()
-            collectionView.reloadData()
-            
-            eMode = .view
-            
-        } else {
-            if isLatestSorted {
-                latestBtn.setTitle("최신순", for: .normal)
-                latestBtn.setImage(nil, for: .normal)
-                
-                images.sort { image1, image2 in
-                    // 최신순으로 정렬 비교 로직
-                    return true // 최신순으로 정렬되었다고 가정
-                }
-                
-                collectionView.reloadData()
-                
-            } else {
-                latestBtn.setTitle("인기순", for: .normal)
-                latestBtn.setImage(nil, for: .normal)
-
-                images.sort { image1, image2 in
-                    // 최신순으로 정렬 비교 로직
-                    return true // 최신순으로 정렬되었다고 가정
-                }
-                
-                collectionView.reloadData()
-            }
+            didDeleteButtonClicked(sender) // 선택한 항목들을 삭제하는 함수 호출
         }
         
-        isLatestSorted = !isLatestSorted
+        sortImages(isLatest: !isLatestSorted)
+    }
+    
+    private func setButtonTitles() {
+        latestBtn.tintColor = .white
+        latestBtn.backgroundColor = .black
+        latestBtn.layer.cornerRadius = 10
+        latestBtn.setTitle(isLatestSorted ? "최신순" : "인기순", for: .normal)
+        latestBtn.setImage(nil, for: .normal)
+    }
+        
+    private func sortImages(isLatest: Bool) {
+        isLatestSorted = isLatest
+        setButtonTitles()
+        
+        images.sort { image1, image2 in
+            // Sorting logic based on isLatest
+            return true // Sorting result (latest or popular)
+        }
+        
+        collectionView.reloadData()
     }
     
     //<뒤로가기 버튼 구현>
