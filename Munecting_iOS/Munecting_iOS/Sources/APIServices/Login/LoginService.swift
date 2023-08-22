@@ -11,6 +11,7 @@ import Alamofire
 struct LoginService{
     
     static func signUp(email:String, password:String, completion: @escaping (NetworkResult<Bool>)->Void){
+        
         let url = APIConstants.signUp
         let header: HTTPHeaders = [
             "Content-Type": "application/json"
@@ -32,12 +33,12 @@ struct LoginService{
                 guard let data = response.value else {
                     return
                 }
-                
                 let decoder = JSONDecoder()
-                guard let decodedData = try? decoder.decode(GenericResponse<String>.self, from: data) else {return}
+                guard let decodedData = try? decoder.decode(GenericResponse<User>.self, from: data) else {
+                    return}
                 
                 switch statusCode {
-                case 1000:
+                case 200:
                     completion(.success(decodedData.isSuccess))
                 default:
                     completion(.networkFail)
@@ -75,10 +76,11 @@ struct LoginService{
                 }
                 
                 let decoder = JSONDecoder()
-                guard let decodedData = try? decoder.decode(GenericResponse<Tokens>.self, from: data) else {return}
                 
+                guard let decodedData = try? decoder.decode(GenericResponse<[Token]>.self, from: data) else {return}
+
                 switch statusCode {
-                case 1000:
+                case 200:
                     completion(.success(decodedData.result))
                 default:
                     completion(.networkFail)
@@ -114,10 +116,10 @@ struct LoginService{
                 }
                 
                 let decoder = JSONDecoder()
-                guard let decodedData = try? decoder.decode(GenericResponse<Tokens>.self, from: data) else {return}
+                guard let decodedData = try? decoder.decode(GenericResponse<[Token]>.self, from: data) else {return}
                 
                 switch statusCode {
-                case 1000:
+                case 200:
                     completion(.success(decodedData.result))
                 default:
                     completion(.networkFail)
@@ -157,7 +159,7 @@ struct LoginService{
                 guard let decodedData = try? decoder.decode(GenericResponse<String>.self, from: data) else {return}
                 
                 switch statusCode {
-                case 1000:
+                case 200:
                     completion(.success(decodedData.result))
                 default:
                     completion(.networkFail)
@@ -196,7 +198,7 @@ struct LoginService{
                 guard let decodedData = try? decoder.decode(GenericResponse<String>.self, from: data) else {return}
                 
                 switch statusCode {
-                case 1000:
+                case 200:
                     completion(.success(decodedData.isSuccess))
                 default:
                     completion(.networkFail)

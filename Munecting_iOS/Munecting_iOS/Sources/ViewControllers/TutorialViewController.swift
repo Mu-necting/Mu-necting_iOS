@@ -55,7 +55,7 @@ class TutorialViewController: UIViewController{
         if(currentPage == (viewsList.count - 1)){
             // 업로드 페이지로 이동
             let user: User = UserManager.shared.getUser()!
-            UserService.changeProfile(name: user.userName, profileImage: user.prevSaveImage){
+            UserService.changeProfile(name: user.userName!, profileImage: UserManager.shared.getPreSaveImage()){
                 (networkResult) in
                 switch networkResult{
                 case .success(let data):

@@ -52,9 +52,9 @@ class LoginViewController: UIViewController {
             (networkResult) in
             switch networkResult{
             case .success(let data):
-                let tokens : Tokens = data as! Tokens
+                let tokens : [Token] = data as! [Token]
                 
-                for token : Token in tokens.tokens {
+                for token : Token in tokens {
                     KeyChain().create(key: token.types, token: token.token)
                 }
                 
@@ -198,9 +198,9 @@ class LoginViewController: UIViewController {
                         (networkResult) in
                         switch networkResult{
                         case .success(let data):
-                            let tokens : Tokens = data as! Tokens
+                            let tokens : [Token] = data as! [Token]
                             
-                            for token : Token in tokens.tokens {
+                            for token : Token in tokens {
                                 KeyChain().create(key: token.types, token: token.token)
                             }
                             

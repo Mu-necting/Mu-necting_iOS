@@ -73,7 +73,7 @@ class SignUpWithEmailViewController: UIViewController {
              case .success(let data):
                  if(data){                     
                      guard let viewController = self.loginPageStoryboard.instantiateViewController(identifier: "SignUpResultViewController") as? SignUpResultViewController else {return}
-                    self.navigationController?.pushViewController(viewController, animated: true)
+                     self.navigationController?.pushViewController(viewController, animated: true)
                  }
              case .requestErr(let msg):
                  if let message = msg as? String { print(message) }

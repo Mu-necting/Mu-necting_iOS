@@ -52,7 +52,7 @@ struct UserService {
                 guard let decodedData = try? decoder.decode(GenericResponse<User>.self, from: data) else {return}
                 
                 switch statusCode {
-                case 1000:
+                case 200:
                     completion(.success(decodedData.isSuccess))
                 default:
                     completion(.networkFail)
@@ -84,10 +84,11 @@ struct UserService {
                 }
                 
                 let decoder = JSONDecoder()
-                guard let decodedData = try? decoder.decode(GenericResponse<User>.self, from: data) else {return}
+                guard let decodedData = try? decoder.decode(GenericResponse<User>.self, from: data) else {
+                    return}
                 
                 switch statusCode {
-                case 1000:
+                case 200:
                     completion(.success(decodedData.result))
                 default:
                     completion(.networkFail)
