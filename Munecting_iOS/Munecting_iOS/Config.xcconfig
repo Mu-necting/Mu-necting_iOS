@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  Munecting_iOS
+//
+//  Created by seonwoo on 2023/08/21.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+KAKAOAPPKEY = 755c8f13785ee882d8b39d1f05019ac1

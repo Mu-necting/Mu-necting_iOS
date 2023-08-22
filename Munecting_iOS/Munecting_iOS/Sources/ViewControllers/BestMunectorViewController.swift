@@ -32,19 +32,19 @@ class BestMunectorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getMunectingRankDataWithAPI(rank: 10)
-        personBackgroundView.layer.cornerRadius = 102 / 2
+        personBackgroundView.layer.cornerRadius = 110 / 2
         personBackgroundView.layer.masksToBounds = true
-        personBackgroundView.backgroundColor = UIColor.systemYellow
+        personBackgroundView.backgroundColor = UIColor.munectingPurple
         personBackgroundView.layer.masksToBounds = true
         
         secondBackgroundView.layer.cornerRadius = 90/2
         secondBackgroundView.layer.masksToBounds = true
-        secondBackgroundView.backgroundColor = UIColor.systemGray4
+        secondBackgroundView.backgroundColor = UIColor.munectingPurple
         secondBackgroundView.layer.masksToBounds = true
         
         thirdBackgroundView.layer.cornerRadius = 90/2
         thirdBackgroundView.layer.masksToBounds = true
-        thirdBackgroundView.backgroundColor = UIColor.munectingCUColor
+        thirdBackgroundView.backgroundColor = UIColor.munectingPurple
         thirdBackgroundView.layer.masksToBounds = true
         
         
@@ -52,6 +52,8 @@ class BestMunectorViewController: UIViewController {
         secondPersonImageView.layer.cornerRadius = 85/2
         thirdPersonImageView.layer.cornerRadius = 85/2
         self.configureCollectionView()
+        
+        self.view.backgroundColor = .white
     }
     
     

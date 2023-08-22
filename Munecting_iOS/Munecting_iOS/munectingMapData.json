@@ -1,0 +1,35 @@
+{
+    "isSuccess": true,
+    "code": 1000,
+    "message": "요청에 성공하였습니다.",
+    "result": [
+        {
+            "pointX": 37.5397651,
+            "pointY": 126.9665087,
+            "genre": "pop",
+            "artist": "이름",
+            "name": "as"
+        },
+        {
+            "pointX": 37.5398289,
+            "pointY": 126.9676996,
+            "genre": "hiphop",
+            "artist": "이름",
+            "name": "as"
+        },
+        {
+            "pointX": 37.5398076,
+            "pointY": 126.9680537,
+            "genre": "balad",
+            "artist": "이름",
+            "name": "as"
+        },
+        {
+            "pointX": 37.5398097,
+            "pointY": 126.9685445,
+            "genre": "hiphop",
+            "artist": "이름",
+            "name": "as"
+        }
+    ]
+}

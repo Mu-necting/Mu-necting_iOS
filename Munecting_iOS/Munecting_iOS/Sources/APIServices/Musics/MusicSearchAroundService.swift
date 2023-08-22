@@ -39,7 +39,7 @@ struct MusicSearchAroundService{
     }
     func judgeSearchAroundMusic(status: Int, data: Data) -> NetworkResult<Any>{
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(GenericResponse<MusicSearchAround>.self, from: data) else {return .pathErr}
+        guard let decodedData = try? decoder.decode(GenericResponse<[AroundMusic]>.self, from: data) else {return .pathErr}
         
         switch status {
         case 1000:

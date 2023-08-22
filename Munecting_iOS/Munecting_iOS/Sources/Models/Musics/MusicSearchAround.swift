@@ -1,18 +1,16 @@
 import Foundation
 import UIKit
 
-struct MusicSearchAround: Codable{
-    var AroundMusics: [AroundMusic]
-}
-
 struct AroundMusic: Codable{
-    let name: String
-    let coverImage: String
-    let genre: String
-    let musicPre: String
-    let musicPull: String
-    let replyCnt: Int
-    let archiveId: Int
+    var name: String
+    var coverImg: String
+    var genre: String
+    var musicPre: String
+    var musicPull: String
+    var replyCnt: Int
+    var archiveId: Int
+    var artist: String
+    var pickCnt: Int
 }
 
 
