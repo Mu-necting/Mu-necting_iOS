@@ -5,7 +5,7 @@ struct APIConstants {
     
     // MARK: - base URL
     
-    static let baseURL = "3.19.110.157:8080"
+    static let baseURL = "http://3.19.110.157:8080"
     
     //임시
 
@@ -37,6 +37,15 @@ struct APIConstants {
     
     //음악 Pick(Post)
     static let pickURL = baseURL + "/pick"
+    
+    //유튜브 전체 재생 링크
+    static let musicPullURL = baseURL + "/musics/youtube-fulllink"
+    
+    //reply 전송
+    static let sendReplyURL = baseURL + "/replies/reply"
+    
+    //reply 취소
+    static let cancelReplyURL = baseURL + "/replies/unreply"
     
 
     

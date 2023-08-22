@@ -6,18 +6,13 @@ struct MusicSearchService{
     
     
     func searchMusic(searchKeyword: String, completion: @escaping (NetworkResult<Any>) -> Void){
-        let url = APIConstants.searchMusicURL
+        let url = "\(APIConstants.searchMusicURL)?search=\(searchKeyword)&page=1"
         let header: HTTPHeaders = [
             "Content-Type": "application/json"
         ]
-        let body: Parameters = [
-            "search" : searchKeyword
-        ]
-        
+
         let dataRequest = AF.request(url,
                                      method: .get,
-                                     parameters: body,
-                                     encoding: URLEncoding.default,
                                      headers: header)
         
         dataRequest.responseData(completionHandler: { (response) in

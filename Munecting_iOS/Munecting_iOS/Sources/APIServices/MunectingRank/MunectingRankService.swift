@@ -6,18 +6,13 @@ struct MunectingRankService{
     
     
     func searchMunectingRank(rank: Int, completion: @escaping (NetworkResult<Any>) -> Void){
-        let url = APIConstants.searchMunectingRank
+        let url = "\(APIConstants.searchMunectingRank)?rank=\(rank)"
         let header: HTTPHeaders = [
             "Content-Type": "application/json"
         ]
-        let body: Parameters = [
-            "rank" : rank
-        ]
-        
+
         let dataRequest = AF.request(url,
                                      method: .get,
-                                     parameters: body,
-                                     encoding: URLEncoding.default,
                                      headers: header)
         
         dataRequest.responseData(completionHandler: { (response) in

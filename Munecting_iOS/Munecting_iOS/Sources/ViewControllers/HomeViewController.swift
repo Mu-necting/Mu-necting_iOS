@@ -53,6 +53,28 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //testCode
+        MusicPullService.shared.pullMusicURL(name: "Attention", artist: "NewJeans", completion: {(networkResult) in
+            
+            print("==========MusicPullService receive networkResult=========")
+            switch networkResult{
+            case .success(let data):
+                print(data)
+            case .requestErr(let msg):
+                if let message = msg as? String { print(message) }
+            case .pathErr:
+                print("pathErr in MusicPullService")
+            case .serverErr:
+                print("serverErr in MusicPullService")
+            case .networkFail:
+                print("networkFail in MusicPullService")
+            }
+            
+        })
+        
+        
+        
         titleStackView.layer.cornerRadius = 10
         albumCoverImageView.isUserInteractionEnabled = true
         
@@ -67,14 +89,13 @@ class HomeViewController: UIViewController {
         savedTransform = albumCoverImageView.layer.presentation()?.transform
         startTransform = albumCoverImageView.layer.presentation()?.transform
         
-        self.getMunectingMapJSON()
+//        self.getMunectingMapJSON()
 
 
         
         
         //더미 노래 갖고오기
         self.getMusic()
-//        self.getMunectingMapJSON()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(_:)))
         self.albumCoverImageView.addGestureRecognizer(tapGesture)
         

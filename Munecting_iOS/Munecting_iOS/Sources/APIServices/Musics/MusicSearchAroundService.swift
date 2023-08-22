@@ -6,20 +6,14 @@ struct MusicSearchAroundService{
     static let shared = MusicSearchAroundService()
     
     func searchAroundMusic(x: Double, y: Double, range: Int, completion: @escaping (NetworkResult<Any>) -> Void){
-        let url = APIConstants.searchAroundMusicURL
+        let url = "\(APIConstants.searchAroundMusicURL)?x=\(x)&y=\(y)&range=\(range)"
         let header: HTTPHeaders = [
             "Content-Type": "application/json"
         ]
-        let body: Parameters = [
-            "x" : x,
-            "y" : y,
-            "range" : range
-        ]
+
         
         let dataRequest = AF.request(url,
                                      method: .get,
-                                     parameters: body,
-                                     encoding: URLEncoding.default,
                                      headers: header)
         dataRequest.responseData(completionHandler: { (response) in
             switch response.result{
