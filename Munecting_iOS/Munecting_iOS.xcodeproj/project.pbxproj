@@ -31,6 +31,9 @@
 		C1415DFD2A9320240038597F /* MusicForUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415DFC2A9320240038597F /* MusicForUpload.swift */; };
 		C1415DFF2A9367B80038597F /* arroundMusic.json in Resources */ = {isa = PBXBuildFile; fileRef = C1415DFE2A9367B80038597F /* arroundMusic.json */; };
 		C1415E012A9371600038597F /* munectingMapData.json in Resources */ = {isa = PBXBuildFile; fileRef = C1415E002A9371600038597F /* munectingMapData.json */; };
+		C1415E032A9495BE0038597F /* MusicPullService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415E022A9495BE0038597F /* MusicPullService.swift */; };
+		C1415E052A94A2170038597F /* MusicPull.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415E042A94A2170038597F /* MusicPull.swift */; };
+		C1415E072A94A26A0038597F /* MusicReplyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1415E062A94A26A0038597F /* MusicReplyService.swift */; };
 		C185E0F52A87D16200895C2D /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185E0F42A87D16200895C2D /* APIConstants.swift */; };
 		C185E0F72A87D34F00895C2D /* MusicSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185E0F62A87D34F00895C2D /* MusicSearchService.swift */; };
 		C185E0F92A87D55D00895C2D /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185E0F82A87D55D00895C2D /* NetworkResult.swift */; };
@@ -147,6 +150,9 @@
 		C1415DFC2A9320240038597F /* MusicForUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicForUpload.swift; sourceTree = "<group>"; };
 		C1415DFE2A9367B80038597F /* arroundMusic.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = arroundMusic.json; sourceTree = "<group>"; };
 		C1415E002A9371600038597F /* munectingMapData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = munectingMapData.json; sourceTree = "<group>"; };
+		C1415E022A9495BE0038597F /* MusicPullService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPullService.swift; sourceTree = "<group>"; };
+		C1415E042A94A2170038597F /* MusicPull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPull.swift; sourceTree = "<group>"; };
+		C1415E062A94A26A0038597F /* MusicReplyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicReplyService.swift; sourceTree = "<group>"; };
 		C185E0F42A87D16200895C2D /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		C185E0F62A87D34F00895C2D /* MusicSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchService.swift; sourceTree = "<group>"; };
 		C185E0F82A87D55D00895C2D /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
@@ -409,6 +415,8 @@
 				C185E0F62A87D34F00895C2D /* MusicSearchService.swift */,
 				C1415DF82A92FBB50038597F /* PickService.swift */,
 				C1415DFA2A92FFDB0038597F /* MusicUploadService.swift */,
+				C1415E022A9495BE0038597F /* MusicPullService.swift */,
+				C1415E062A94A26A0038597F /* MusicReplyService.swift */,
 			);
 			path = Musics;
 			sourceTree = "<group>";
@@ -428,6 +436,7 @@
 				C1B86EB12A7D1B9400F9A151 /* MusicSearchData.swift */,
 				C1415DED2A92EACF0038597F /* Genre.swift */,
 				C1415DFC2A9320240038597F /* MusicForUpload.swift */,
+				C1415E042A94A2170038597F /* MusicPull.swift */,
 			);
 			path = Musics;
 			sourceTree = "<group>";
@@ -856,6 +865,7 @@
 				C1B86ECB2A7E48A400F9A151 /* HomeViewController.swift in Sources */,
 				B39202472A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift in Sources */,
 				C1415DE72A92E2BD0038597F /* MunectingMapService.swift in Sources */,
+				C1415E052A94A2170038597F /* MusicPull.swift in Sources */,
 				C1B86EC52A7D1C1D00F9A151 /* MusicSearchViewController.swift in Sources */,
 				C1AC80A72A860379005E1AE6 /* MusicSearchAroundService.swift in Sources */,
 				C1FC05CC2A8E3F4C00E0CD26 /* BestMunectorTestCollectionViewCell.swift in Sources */,
@@ -877,6 +887,7 @@
 				C1415DFD2A9320240038597F /* MusicForUpload.swift in Sources */,
 				C1415DF62A92F3DA0038597F /* PickViewController.swift in Sources */,
 				D26EEA612A93570B009F673E /* LoginNavigationViewController.swift in Sources */,
+				C1415E032A9495BE0038597F /* MusicPullService.swift in Sources */,
 				C185E0F52A87D16200895C2D /* APIConstants.swift in Sources */,
 				C1B86EB22A7D1B9400F9A151 /* MusicSearchData.swift in Sources */,
 				C1B86EC32A7D1C1500F9A151 /* MunectingMapViewController.swift in Sources */,
@@ -897,6 +908,7 @@
 				D2913F2E2A6E5BA700B6174F /* User.swift in Sources */,
 				D2E345852A66BD7000922A1C /* SceneDelegate.swift in Sources */,
 				D2EBDD912A89FF310046A5A7 /* LoginService.swift in Sources */,
+				C1415E072A94A26A0038597F /* MusicReplyService.swift in Sources */,
 				C185E0FB2A87D8A000895C2D /* GenericResponse.swift in Sources */,
 				C1415DF32A92EE450038597F /* MunectingRankService.swift in Sources */,
 				D25446922A716077007E582B /* UIColor.swift in Sources */,

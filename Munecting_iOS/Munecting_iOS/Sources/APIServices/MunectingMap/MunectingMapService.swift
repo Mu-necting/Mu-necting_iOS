@@ -6,20 +6,13 @@ struct MunectingMapService{
     
     
     func searchMunectingMap(x: Double, y:Double, range: Int, completion: @escaping (NetworkResult<Any>) -> Void){
-        let url = APIConstants.searchMunectingMap
+        let url = "\(APIConstants.searchMunectingMap)?x=\(x)&?y=\(y)&range=\(range)"
         let header: HTTPHeaders = [
             "Content-Type": "application/json"
-        ]
-        let body: Parameters = [
-            "x" : x,
-            "y" : y,
-            "range" : range
         ]
         
         let dataRequest = AF.request(url,
                                      method: .get,
-                                     parameters: body,
-                                     encoding: URLEncoding.default,
                                      headers: header)
         
         dataRequest.responseData(completionHandler: { (response) in
