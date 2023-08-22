@@ -59,6 +59,10 @@ struct APIConstants {
     //Munecting Rank 조회(get)
     static let searchMunectingRank = baseURL + "/rank"
     
+ 
+    //MARK: - Archive
     
+    //pick 상세조회 (get)
+    static let pickDetailURL = baseURL + "/pick/{pickId}/detail"
 }
 

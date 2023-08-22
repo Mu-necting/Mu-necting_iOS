@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0479D41A2A26DDB23AA6FA6E /* Pods_Munecting_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA83446B9B9F06550DF0C449 /* Pods_Munecting_iOS.framework */; };
 		A2DB3106C25D69EBD429EC3C /* Pods_Munecting_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 678789C83F1D154807D5D949 /* Pods_Munecting_iOSTests.framework */; };
+		B32CE33C2A94A172008AC37D /* ArchiveDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32CE33B2A94A172008AC37D /* ArchiveDetail.swift */; };
+		B32CE33F2A94A386008AC37D /* ArchivePickService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32CE33E2A94A386008AC37D /* ArchivePickService.swift */; };
+		B32CE3412A952864008AC37D /* ArchiveUploadDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32CE3402A952864008AC37D /* ArchiveUploadDetailViewController.swift */; };
 		B33B035D2A766583003D4531 /* ArchiveUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33B035C2A766583003D4531 /* ArchiveUploadViewController.swift */; };
 		B33B035F2A7665B0003D4531 /* ArchivePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33B035E2A7665B0003D4531 /* ArchivePickViewController.swift */; };
 		B35BE7012A890FA200E2ADAE /* ArchiveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35BE7002A890FA200E2ADAE /* ArchiveDetailViewController.swift */; };
@@ -120,6 +123,9 @@
 		5C174DA066B8F666884DBA71 /* Pods-Munecting_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munecting_iOS.debug.xcconfig"; path = "Target Support Files/Pods-Munecting_iOS/Pods-Munecting_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		678789C83F1D154807D5D949 /* Pods_Munecting_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Munecting_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8944C49454009BF0AD551C85 /* Pods-Munecting_iOS-Munecting_iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Munecting_iOS-Munecting_iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Munecting_iOS-Munecting_iOSUITests/Pods-Munecting_iOS-Munecting_iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B32CE33B2A94A172008AC37D /* ArchiveDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveDetail.swift; sourceTree = "<group>"; };
+		B32CE33E2A94A386008AC37D /* ArchivePickService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivePickService.swift; sourceTree = "<group>"; };
+		B32CE3402A952864008AC37D /* ArchiveUploadDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveUploadDetailViewController.swift; sourceTree = "<group>"; };
 		B33B035C2A766583003D4531 /* ArchiveUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveUploadViewController.swift; sourceTree = "<group>"; };
 		B33B035E2A7665B0003D4531 /* ArchivePickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivePickViewController.swift; sourceTree = "<group>"; };
 		B35BE7002A890FA200E2ADAE /* ArchiveDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveDetailViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +278,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B32CE33A2A94A156008AC37D /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				B32CE33B2A94A172008AC37D /* ArchiveDetail.swift */,
+			);
+			path = Archive;
+			sourceTree = "<group>";
+		};
+		B32CE33D2A94A363008AC37D /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				B32CE33E2A94A386008AC37D /* ArchivePickService.swift */,
+			);
+			path = Archive;
+			sourceTree = "<group>";
+		};
 		B38637252A76593100BB4F61 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,10 +409,11 @@
 				D254468C2A701803007E582B /* SignUpWithEmailViewController.swift */,
 				B3943B5B2A7CB91300317F2C /* ArchiveViewController.swift */,
 				B33B035E2A7665B0003D4531 /* ArchivePickViewController.swift */,
+				B39202462A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift */,
 				B33B035C2A766583003D4531 /* ArchiveUploadViewController.swift */,
 				B39202482A7CF870001F1C09 /* ArchiveUploadCollectionViewCell.swift */,
-				B39202462A7CF858001F1C09 /* ArchivePickCollectionViewCell.swift */,
 				B35BE7002A890FA200E2ADAE /* ArchiveDetailViewController.swift */,
+				B32CE3402A952864008AC37D /* ArchiveUploadDetailViewController.swift */,
 				B35BE7022A89F4DC00E2ADAE /* ArchiveFilterPopUpViewController.swift */,
 				C1B86ECA2A7E48A400F9A151 /* HomeViewController.swift */,
 				C1B86EC02A7D1C0A00F9A151 /* BestMunectorViewController_Temp.swift */,
@@ -450,6 +473,7 @@
 		C1AC80A52A860339005E1AE6 /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				B32CE33D2A94A363008AC37D /* Archive */,
 				C1415DF12A92EE340038597F /* MunectingRank */,
 				C1415DE52A92E2A40038597F /* MunectingMap */,
 				D26EEA552A91E5B3009F673E /* User */,
@@ -474,6 +498,7 @@
 		D25446302A6E64A8007E582B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B32CE33A2A94A156008AC37D /* Archive */,
 				C1415DF42A92EF670038597F /* MunectingRank */,
 				C1415DEC2A92E95B0038597F /* MunectingMap */,
 				D2EBDD922A8B9C580046A5A7 /* User */,
@@ -860,10 +885,12 @@
 			files = (
 				C1FC05CA2A8E317000E0CD26 /* BestMunectorViewController.swift in Sources */,
 				D26EEA672A937993009F673E /* SettingViewController.swift in Sources */,
+				B32CE3412A952864008AC37D /* ArchiveUploadDetailViewController.swift in Sources */,
 				C1415DE42A92D2020038597F /* MusicClusterAnnotationView.swift in Sources */,
 				C1415DE92A92E6B70038597F /* MunectingMapData.swift in Sources */,
 				D254462D2A6E5BFF007E582B /* LoginViewController.swift in Sources */,
 				C1415DE02A92D1E50038597F /* MusicAnnotation.swift in Sources */,
+				B32CE33C2A94A172008AC37D /* ArchiveDetail.swift in Sources */,
 				C1B86EC92A7D1C2D00F9A151 /* UploadViewController.swift in Sources */,
 				C185E0F72A87D34F00895C2D /* MusicSearchService.swift in Sources */,
 				D272FA2E2A7CF8770087C392 /* ProfileTutorialViewController.swift in Sources */,
@@ -911,6 +938,7 @@
 				D26EEA592A932BDD009F673E /* KeyChain.swift in Sources */,
 				C1FC05C42A8E19CB00E0CD26 /* PageViewController.swift in Sources */,
 				C1FC05C82A8E19ED00E0CD26 /* HomeNavigationViewController.swift in Sources */,
+				B32CE33F2A94A386008AC37D /* ArchivePickService.swift in Sources */,
 				D26EEA5B2A932E1B009F673E /* Token.swift in Sources */,
 				D254468D2A701803007E582B /* SignUpWithEmailViewController.swift in Sources */,
 				D2913F2E2A6E5BA700B6174F /* User.swift in Sources */,

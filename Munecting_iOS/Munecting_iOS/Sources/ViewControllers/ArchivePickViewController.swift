@@ -21,13 +21,15 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
     @IBOutlet weak var nicknameLbl: UILabel!
     @IBOutlet weak var profileImg: UIImageView!
     
-    var images = [UIImage(named: "album1"), UIImage(named: "album2"), UIImage(named: "album3")]
+    //var images = [UIImage(named: "album1"), UIImage(named: "album2"), UIImage(named: "album3")]
+    var images: [ArchiveDetail] = []
+    //var musicData: [ArchiveDetail] = []
     var selectedIndices: Set<Int> = []
     
     
     var isLatestSorted = true // 최신순으로 정렬되었는지 여부
     var buttonNum = 0
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,6 +54,36 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
         loadProfileImage()
         loadUsername()
         
+        // 음악 데이터를 API에서 가져옵니다.
+        fetchMusicData()
+        
+    }
+    
+    func fetchMusicData() {
+        ArchivePickService.ArchivePickDetail(pickId: 1) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let pickDetail):
+                if let archiveDetail = pickDetail as? ArchiveDetail {
+                    ArchiveDetailManager.shared.archiveDetail = archiveDetail
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                    }
+                }
+            case .requestErr(let msg):
+                if let message = msg as? String { print(message) }
+           /* case .pathErr, .serverErr, .networkFail:
+                print("Error in fetchMusicData")
+            case .requestErr(let msg):
+                if let message = msg as? String { print(message) }*/
+            case .pathErr:
+                print("pathErr in fetchMusicData")
+            case .serverErr:
+                print("serverErr in fetchMusicData")
+            case .networkFail:
+                print("networkFail in fetchMusicData")
+            }
+        }
     }
     
     func loadProfileImage() {
@@ -163,7 +195,7 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     //셀에 이미지 삽입
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    /*func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pickCell", for: indexPath) as! ArchivePickCollectionViewCell
            
         cell.albumImg.image = images[indexPath.row]
@@ -172,25 +204,25 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
         cell.isSelected = dictionarySelectedIndexPath[indexPath] ?? false
            
         return cell
+    }*/
+    
+    //서버에서 이미지 받아오기
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pickCell", for: indexPath) as! ArchivePickCollectionViewCell
+        
+        if indexPath.row < images.count {
+            let archiveDetail = images[indexPath.row]
+            let coverImgURL = archiveDetail.coverImg
+            
+            cell.displayCoverImage(fromURL: coverImgURL) // API에서 받아온 coverImg 표시
+        }
+
+        // Update cell selection status
+        cell.isSelected = dictionarySelectedIndexPath[indexPath] ?? false
+
+        return cell
     }
     
-    /*func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pickCell", for: indexPath) as! ArchivePickCollectionViewCell
-            
-            let musicData = musicDatas[indexPath.row] // musicDatas는 API에서 받아온 데이터 배열
-            
-            cell.albumImg.image = images[indexPath.row] // 기존 코드
-            
-            if let coverImgURL = musicData.coverImg {
-                cell.displayCoverImage(fromURL: coverImgURL) // API에서 받아온 coverImg 표시
-            }
-            
-            // Update cell selection status
-            cell.isSelected = dictionarySelectedIndexPath[indexPath] ?? false
-            
-            return cell
-        }
-    */
     
     //상세보기 페이지 이동 구현
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -204,10 +236,10 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
             modalViewController.modalPresentationStyle = self.modalPresentationStyle
                 
             // 선택한 이미지를 모달 뷰 컨트롤러에 전달
-            if let Image = images[indexPath.row] {
+            /*if let Image = images[indexPath.row] {
                 modalViewController.passAlbumImg = Image
-            }
-
+            }*/
+            
             present(modalViewController, animated: true, completion: nil)
             
         case .select:
@@ -246,7 +278,13 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
     
     //<뒤로가기 버튼 구현>
     @IBAction func backBtnTapped(_ sender: UIBarButtonItem) {
-        
+        self.dismiss(animated: true) {
+            let HomeVC = UIStoryboard(name: "Home", bundle: nil)
+                .instantiateViewController(withIdentifier: "HomeVC")
+            
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?
+                .changeRootViewController(HomeVC, animated: true)
+        }
     }
     
     //필터 버튼 구현
