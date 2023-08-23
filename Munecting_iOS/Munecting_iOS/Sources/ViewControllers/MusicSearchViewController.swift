@@ -26,9 +26,10 @@ class MusicSearchViewController: UIViewController {
     
     var searchMusicDatas: [MusicItem] = []
     var musics: [Music_HaveImage] = []
-    var musicForUpload: MusicForUpload?
+    var musicForUpload: MusicForUpload = MusicForUpload(name: "", coverImg: "", musicPre: "", artist: "")
     var musicName: String = ""
     var artist: String = ""
+    var musicPull: String = ""
     var page = 1
     
     //viewDidLoad
@@ -135,7 +136,7 @@ class MusicSearchViewController: UIViewController {
     
     //MusicData 호출
     func searchMusicWithAPI(searchKeyword: String, page: Int){
-        print("=======PAGE = \(self.page)========")
+//        print("=======PAGE = \(self.page)========")
         if self.page == 1{
             self.attachActivityIndicator()
         }
@@ -144,7 +145,7 @@ class MusicSearchViewController: UIViewController {
             switch networkResult {
             case.success(let data):
                 if let musicSearchData = data as? MusicSearchResult {
-                    self.searchMusicDatas = musicSearchData.musicSearchRes
+                    self.searchMusicDatas.append(contentsOf: musicSearchData.musicSearchRes)
                     
                     musicSearchData.musicSearchRes.forEach{
                         var name = $0.name
@@ -182,11 +183,15 @@ class MusicSearchViewController: UIViewController {
             
             switch networkResult {
             case.success(let data):
-                print("==========networkResult == success===============")
                 if let musicPull = data as? String {
-                    print("==========musicPull 형변환 성공===============")
-                    self.musicForUpload?.musicPull = musicPull
-                    print("====musicPull = \(musicPull)=============")
+                    self.musicPull = musicPull
+                    self.musicForUpload.musicPull = self.musicPull
+                    
+                    let sb = UIStoryboard(name: "Upload", bundle: nil)
+                    guard let viewController = sb.instantiateViewController(identifier: "UploadViewController") as? UploadViewController else {return}
+//                    print("=====MusicSearchViewController.musicForUpload = \(self.musicForUpload)")
+                    viewController.musicForUpload = self.musicForUpload
+                    self.navigationController?.pushViewController(viewController, animated: true)
                 }
             case .requestErr(let msg):
                 if let message = msg as? String {
@@ -245,7 +250,10 @@ extension MusicSearchViewController: UICollectionViewDataSource, UICollectionVie
   
     //cell selectdelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let music = musics[indexPath.row]
+        var musicDataForUpload = self.searchMusicDatas
+        musicDataForUpload = musicDataForUpload.reversed()
+        
+        let music = musicDataForUpload[indexPath.row]
         
         print("===========cell selected================")
         
@@ -257,9 +265,13 @@ extension MusicSearchViewController: UICollectionViewDataSource, UICollectionVie
         
         //Get YoutubeLink
         self.searchMusicpullWithAPI(name: musicName, artist: artist)
-//        let sb = UIStoryboard(name: "Upload", bundle: nil)
-//        guard let viewController = sb.instantiateViewController(identifier: "UploadViewController") as? UploadViewController else {return}
-//        self.navigationController?.pushViewController(viewController, animated: true)
+        
+        self.musicForUpload.name = music.name
+        self.musicForUpload.coverImg = music.coverImg
+        self.musicForUpload.musicPre = music.musicPre ?? ""
+        self.musicForUpload.artist = music.artist
+        
+
     }
 }
 

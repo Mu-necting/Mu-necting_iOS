@@ -28,7 +28,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LF3-su-ca4">
                                 <rect key="frame" x="10" y="59" width="373" height="80"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="New Jeans Album Cover.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hkq-sI-Gfq">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="album2" translatesAutoresizingMaskIntoConstraints="NO" id="hkq-sI-Gfq">
                                         <rect key="frame" x="10" y="10" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="87o-YR-2kZ"/>
@@ -372,6 +372,7 @@
                     </view>
                     <connections>
                         <outlet property="albumCover" destination="hkq-sI-Gfq" id="enf-t9-erQ"/>
+                        <outlet property="artistLabel" destination="auG-I9-R6i" id="0Or-2m-Kvq"/>
                         <outlet property="baladButton" destination="EA1-Nr-Zvp" id="GDD-qC-aRP"/>
                         <outlet property="bluesButton" destination="svq-i6-w1J" id="yn1-aZ-TRC"/>
                         <outlet property="classicButton" destination="tRi-cZ-tmO" id="rsb-hI-R0W"/>
@@ -380,6 +381,7 @@
                         <outlet property="hiphopButton" destination="YcW-Lr-tzJ" id="ON1-Gr-lK5"/>
                         <outlet property="kpopButton" destination="abu-yo-tGc" id="pfL-2j-cGC"/>
                         <outlet property="musicView" destination="LF3-su-ca4" id="BE1-aq-1g3"/>
+                        <outlet property="nameLabel" destination="6I4-2Z-7dq" id="9pk-xo-eS1"/>
                         <outlet property="popButton" destination="alr-V4-1Xd" id="rrP-tu-bH2"/>
                         <outlet property="rnbButton" destination="bRT-j3-WBo" id="yem-mI-oaI"/>
                         <outlet property="rockButton" destination="gAt-Eh-A1Y" id="oSN-yB-TCq"/>
@@ -392,7 +394,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="New Jeans Album Cover.jpg" width="63.360000610351562" height="63.360000610351562"/>
+        <image name="album2" width="133.33332824707031" height="133.33332824707031"/>
         <image name="plus.app.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
