@@ -43,6 +43,8 @@ class MusicSearchCollectionViewCell: UICollectionViewCell {
         backView.layer.shadowRadius = self.cornerRadius
         backView.layer.masksToBounds = false
         albumImageView.layer.cornerRadius = 8
+        albumImageView.tintColor = .systemGray
+        albumImageView.backgroundColor = .systemGray
     }
     
 }

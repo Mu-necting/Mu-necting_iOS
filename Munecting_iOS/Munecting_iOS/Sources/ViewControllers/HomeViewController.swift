@@ -65,6 +65,9 @@ class HomeViewController: UIViewController {
         if let presentationLayer = albumCoverImageView.layer.presentation() {
             self.startTransform = presentationLayer.transform
         }
+        
+        //test
+        localJSONTest.shared.munectingMapJSON()
     }
     
     //viewWillAppear
@@ -134,7 +137,7 @@ class HomeViewController: UIViewController {
         albumCoverImageView.isUserInteractionEnabled = true
         
         //앨범 커버 원형으로 만들기
-        albumCoverImageView.layer.cornerRadius = albumCoverImageView.frame.size.width/2
+        albumCoverImageView.layer.cornerRadius = 150
         albumCoverImageView.clipsToBounds = true
     }
     
