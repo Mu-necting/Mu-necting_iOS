@@ -26,6 +26,9 @@ class ArchiveUploadViewController: UIViewController, UICollectionViewDelegate, U
     //var images: [ArchiveDetail] = []
     //var musicData: [ArchiveDetail] = []
     var selectedIndices: Set<Int> = []
+    var titles  = ["Journey", "아까워", "좋아해줘"]
+    var genres = ["힙합", "힙합", "락"]
+    var artists = ["재지팩트(Jazzyfact)", "재지팩트(Jazzyfact)", "검정치마"]
     
     var isLatestSorted = true // 최신순으로 정렬되었는지 여부
     
@@ -43,6 +46,9 @@ class ArchiveUploadViewController: UIViewController, UICollectionViewDelegate, U
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        profileImg.layer.cornerRadius = profileImg.frame.size.width/2
+        profileImg.clipsToBounds = true
         
         // Initialize the view
         eMode = .view
@@ -177,6 +183,7 @@ class ArchiveUploadViewController: UIViewController, UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
+    
     //셀에 이미지 삽입
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "uploadCell", for: indexPath) as! ArchiveUploadCollectionViewCell
@@ -222,6 +229,9 @@ class ArchiveUploadViewController: UIViewController, UICollectionViewDelegate, U
             if let Image = images[indexPath.row] {
                 modalViewController.passAlbumImg = Image
             }
+            modalViewController.titleText = titles[indexPath.row]
+            modalViewController.singerText = artists[indexPath.row]
+            modalViewController.genreText = "Genre: " + genres[indexPath.row]
             
             present(modalViewController, animated: true, completion: nil)
             

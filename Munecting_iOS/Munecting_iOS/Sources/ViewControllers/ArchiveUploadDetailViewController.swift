@@ -14,8 +14,15 @@ class ArchiveUploadDetailViewController: UIViewController {
     @IBOutlet weak var albumCoverImageView: UIImageView!
     @IBOutlet weak var backgroundImg: UIImageView!
     @IBOutlet weak var shadowImg: UIImageView!
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var singerLbl: UILabel!
+    @IBOutlet weak var genreLbl: UILabel!
     
     var passAlbumImg: UIImage?
+    var titleText: String?
+    var singerText: String?
+    var genreText: String?
+    
     var startTransform = UIImageView().layer.presentation()?.transform
     
     override func viewDidLoad() {
@@ -25,6 +32,10 @@ class ArchiveUploadDetailViewController: UIViewController {
         
         albumCoverImageView.image = passAlbumImg
         backgroundImg.image = passAlbumImg
+        
+        titleLbl.text = titleText
+        singerLbl.text = singerText
+        genreLbl.text = genreText
         
         //앨범 커버 원형으로 만들기
         albumCoverImageView.layer.cornerRadius = albumCoverImageView.frame.size.width/2
