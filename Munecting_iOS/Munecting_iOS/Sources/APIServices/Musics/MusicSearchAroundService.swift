@@ -35,7 +35,7 @@ struct MusicSearchAroundService{
         let decoder = JSONDecoder()
         guard let decodedData = try? decoder.decode(GenericResponse<[AroundMusic]>.self, from: data) else {return .pathErr}
         
-        switch status {
+        switch decodedData.code {
         case 1000:
             return .success(decodedData.result)
         default:
