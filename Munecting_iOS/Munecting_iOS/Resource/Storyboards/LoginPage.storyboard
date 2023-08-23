@@ -19,7 +19,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="IM7-Rf-Fy7">
                                 <rect key="frame" x="56.666666666666657" y="356.33333333333331" width="280" height="208.33333333333331"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5iq-15-QbH">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="EMAIL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5iq-15-QbH">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="2mg-Ih-Api"/>
@@ -39,6 +39,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3w-V1-W9c">
                                         <rect key="frame" x="211.66666666666666" y="115.99999999999999" width="68.333333333333343" height="34.333333333333329"/>
+                                        <color key="tintColor" red="0.48923098259999998" green="0.54900438630000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="로그인"/>
                                         <connections>
@@ -74,6 +75,7 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t22-9B-S5q">
                                                 <rect key="frame" x="163.33333333333331" y="0.0" width="83" height="34.333333333333336"/>
+                                                <color key="tintColor" red="0.48923098259999998" green="0.54900438630000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="회원가입"/>
                                                 <connections>
@@ -114,7 +116,9 @@
                     <connections>
                         <outlet property="idTextField" destination="5iq-15-QbH" id="4vt-oy-Cxw"/>
                         <outlet property="kakaoLoginButton" destination="6Si-LI-3FJ" id="5Jx-L0-ylj"/>
+                        <outlet property="loginButton" destination="e3w-V1-W9c" id="act-Hk-hkE"/>
                         <outlet property="passwordTextField" destination="Gng-c9-3rB" id="XJg-Nh-2WJ"/>
+                        <outlet property="signUpButton" destination="t22-9B-S5q" id="ezI-MS-JBc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

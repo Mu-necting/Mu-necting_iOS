@@ -71,20 +71,24 @@ struct LoginService{
                 guard let statusCode = response.response?.statusCode else {
                     return
                 }
-                guard let data = response.value else {
-                    return
-                }
                 
-                let decoder = JSONDecoder()
-                
-                guard let decodedData = try? decoder.decode(GenericResponse<[Token]>.self, from: data) else {return}
-
                 switch statusCode {
                 case 200:
+                    guard let data = response.value else {
+                        return
+                    }
+                    
+                    let decoder = JSONDecoder()
+                    
+                    guard let decodedData = try? decoder.decode(GenericResponse<[Token]>.self, from: data) else {return}
+                    
                     completion(.success(decodedData.result))
+                case 500:
+                    completion(.requestErr("Error"))
                 default:
                     completion(.networkFail)
                 }
+                        
             case .failure(let error):
                 print(error)
                 completion(.networkFail)

@@ -11,6 +11,10 @@ import KakaoSDKUser
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var loginButton: UIButton!
+    
+    @IBOutlet weak var signUpButton: UIButton!
+    
     // 튜토리얼 봤었는지 확인
     var isShownTutorial : Bool = false
 
@@ -25,7 +29,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+                
         let tapKakaoButton = UITapGestureRecognizer(target: self, action: #selector(onTapKakaoLogin))
         kakaoLoginButton.addGestureRecognizer(tapKakaoButton)
         kakaoLoginButton.isUserInteractionEnabled = true
@@ -48,6 +52,8 @@ class LoginViewController: UIViewController {
             return
         }
         
+        LoadingIndicator.showLoading()
+        
         LoginService.login(email: email, password: password){
             (networkResult) in
             switch networkResult{
@@ -59,26 +65,25 @@ class LoginViewController: UIViewController {
                 }
                 
                 UserManager.shared.setUser(User(userID: 0, userName: ""))
+                
                 self.goToMainPage()
                 
             case .requestErr(let msg):
                 if let message = msg as? String {
-                    print(message)
-                    self.showAlert(title: "Error", message: message)
+                    self.showAlert(title: "로그인 오류", message: "이메일이나 비밀번호를 확인해주세요.")
                     break
                 }
             case .pathErr:
                 print("pathErr in loginAPI")
                 break
-            case .serverErr:
-                self.showAlert(title: "내부 서버 오류", message: "잠시 후 다시 시도해주세요")
-                print("serverErr in loginAPI")
-                break
             case .networkFail:
                 self.showAlert(title: "네트워크 오류", message: "네트워크 연결 상태를 확인해주세요")
-                print("networkFail in loginAPI")
+                break
+            case .serverErr:
                 break
             }
+            LoadingIndicator.hideLoading()
+
         }
     }
     
@@ -235,7 +240,11 @@ class LoginViewController: UIViewController {
     @objc private func goToMainPage(){
         if(isShownTutorial){
             // 튜토리얼 봤었으면 메인페이지로
+            let homeVC =  UIStoryboard(name: "Home", bundle: nil)
+                .instantiateViewController(withIdentifier: "PageViewController")
             
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(homeVC, animated: true)
+                    
         }else{
             // 처음이면 튜토리얼 페이지로
             UserDefaults.standard.set(true, forKey: "isShownTutorial")
