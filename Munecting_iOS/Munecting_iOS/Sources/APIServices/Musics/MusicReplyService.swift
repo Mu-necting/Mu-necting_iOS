@@ -10,7 +10,7 @@ struct MusicReplyService{
     //reply보내기
     func sendReply(archiveId: Int, memberId: Int, completion: @escaping (NetworkResult<Any>) -> Void){
         let url = "\(APIConstants.musicPullURL)?archiveId=\(archiveId)&memberId=\(memberId)"
-        
+        print("========sendReply In============")
         let header: HTTPHeaders = [
             "Content-Type": "application/json"
         ]
@@ -21,6 +21,7 @@ struct MusicReplyService{
         dataRequest.responseData(completionHandler: { (response) in
             switch response.result{
             case .success:
+                print("========response.result = success============")
                 guard let statusCode = response.response?.statusCode else {
                     return
                 }
@@ -29,6 +30,7 @@ struct MusicReplyService{
                 }
                 completion(judgeSendReply(status: statusCode, data: data))
             case .failure(let error):
+                print("========response.result = failure============")
                 print(error)
                 completion(.networkFail)
             }
@@ -37,14 +39,17 @@ struct MusicReplyService{
     
     //sednReply 판단
     func judgeSendReply(status: Int, data: Data) -> NetworkResult<Any>{
+        print("========judgeSendReply In============")
         let decoder = JSONDecoder()
         guard let decodedData = try? decoder.decode(GenericResponse<EmptyResult>.self, from: data) else {return .pathErr}
-        print(decodedData)
-        switch status {
+        print("========decoding 성공============")
+        switch decodedData.code {
         case 1000:
+            print("========case 1000 In============")
             return .success(decodedData.result)
 //            return .success(decodedData)
         default:
+            print("========case 1000 In 실패============")
             return .networkFail
         }
     }
@@ -82,7 +87,7 @@ struct MusicReplyService{
         let decoder = JSONDecoder()
         guard let decodedData = try? decoder.decode(GenericResponse<EmptyResult>.self, from: data) else {return .pathErr}
         print(decodedData)
-        switch status {
+        switch decodedData.code {
         case 1000:
             return .success(decodedData.result)
 //            return .success(decodedData)

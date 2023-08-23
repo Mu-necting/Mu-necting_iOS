@@ -5,8 +5,8 @@ struct MusicSearchService{
     static let shared = MusicSearchService()
     
     
-    func searchMusic(searchKeyword: String, completion: @escaping (NetworkResult<Any>) -> Void){
-        let url = "\(APIConstants.searchMusicURL)?search=\(searchKeyword)&page=1"
+    func searchMusic(searchKeyword: String, page: Int, completion: @escaping (NetworkResult<Any>) -> Void){
+        let url = "\(APIConstants.searchMusicURL)?search=\(searchKeyword)&page=\(page)"
         let header: HTTPHeaders = [
             "Content-Type": "application/json"
         ]
@@ -35,8 +35,10 @@ struct MusicSearchService{
     func judgeSearchMusic(status: Int, data: Data) -> NetworkResult<Any>{
         let decoder = JSONDecoder()
         guard let decodedData = try? decoder.decode(GenericResponse<MusicSearchResult>.self, from: data) else {return .pathErr}
+        print(status)
         
-        switch status {
+        var resultStatus = decodedData.code
+        switch resultStatus {
         case 1000:
             return .success(decodedData.result)
         default:
