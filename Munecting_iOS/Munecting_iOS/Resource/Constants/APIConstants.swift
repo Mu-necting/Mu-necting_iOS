@@ -14,6 +14,8 @@ struct APIConstants {
     
     static let login = baseURL + "/login"
     
+    static let logout = baseURL + "/log-out"
+    
     static let loginWithSocialURL = baseURL + "/oauth2/kakao"
     
     static let mailCheck = baseURL + "/mailCheck"
@@ -23,6 +25,11 @@ struct APIConstants {
     static let changeProfile = baseURL + "/members"
     
     static let getProfile = baseURL + "/members"
+    
+    static let changePassword = baseURL + "/members/changepw"
+    
+    static let deleteUser = baseURL + "/members/delete"
+
     
     // MARK: - Musics
     

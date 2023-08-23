@@ -60,5 +60,56 @@ class SettingViewController: UIViewController,  UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 50 // 각 셀의 높이를 50으로 설정
         }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let loginPageStoryboard : UIStoryboard = UIStoryboard(name: "LoginPage", bundle: nil)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        switch indexPath.row {
+        case 0:
+            LoadingIndicator.showLoading()
+            
+            LoginService.logout{
+                (networkResult) in
+                switch networkResult{
+                case .success(let data):
+                    let success = data as! Bool
+                    if(success){
+                        KeyChain().delete(key: "atk")
+                        if(KeyChain().read(key: "rtk") != nil){
+                            KeyChain().delete(key: "rtk")
+                        }
+                        let LoginVC =  UIStoryboard(name: "LoginPage", bundle: nil)
+                                        .instantiateViewController(withIdentifier: "LoginNavigationViewController")
+                        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(LoginVC, animated: true)
+                    }
+                case .requestErr(let msg):
+                    if let message = msg as? String { print(message) }
+                case .pathErr:
+                    print("pathErr in mailCheckAPI")
+                case .serverErr:
+                    print("serverErr in mailCheckAPI")
+                case .networkFail:
+                    print("networkFail in mailCheckAPI")
+                }
+                
+                LoadingIndicator.hideLoading()
+            }
+            
+
+            
+        case 1:
+            guard let viewController = loginPageStoryboard.instantiateViewController(identifier: "DeleteUserViewController") as? DeleteUserViewController else {return}
+            self.navigationController?.pushViewController(viewController, animated: true)
+        case 2:
+            guard let viewController = loginPageStoryboard.instantiateViewController(identifier: "ChangePasswordViewController") as? ChangePasswordViewController else {return}
+            self.navigationController?.pushViewController(viewController, animated: true)
+        default:
+            return
+        }
+
+    }
 
 }

@@ -217,4 +217,48 @@ struct LoginService{
             }
         })
     }
+    
+    static func logout(completion: @escaping (NetworkResult<Any>) -> Void){
+        let url = APIConstants.logout
+        let header: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "atk": KeyChain().read(key: "atk")!,
+        ]
+        
+        let request = AF.request(url,
+                                     method: .post,
+                                     encoding: JSONEncoding.default,
+                                     headers: header)
+        
+        request.responseData(completionHandler: { (response) in
+            switch response.result{
+            case .success:
+                guard let statusCode = response.response?.statusCode else {
+                    return
+                }
+                
+                switch statusCode {
+                case 200:
+                    guard let data = response.value else {
+                        return
+                    }
+                    
+                    let decoder = JSONDecoder()
+                    
+                    guard let decodedData = try? decoder.decode(GenericResponse<String>.self, from: data) else {return}
+                    
+                    completion(.success(decodedData.isSuccess))
+                case 500:
+                    completion(.requestErr("Error"))
+                default:
+                    completion(.networkFail)
+                }
+                        
+            case .failure(let error):
+                print(error)
+                completion(.networkFail)
+            }
+        })
+    }
+
 }
