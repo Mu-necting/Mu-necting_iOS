@@ -52,12 +52,12 @@ struct APIConstants {
     //MARK: - MunecingMap
     
     //MunectingMap 검색(get)
-    static let searchMunectingMap = baseURL + "/map"
+    static let searchMunectingMap = baseURL + "/archive/map"
     
     //MARK: - Munecting Rank
     
     //Munecting Rank 조회(get)
-    static let searchMunectingRank = baseURL + "/rank"
+    static let searchMunectingRank = baseURL + "/members/rank"
     
  
     //MARK: - Archive

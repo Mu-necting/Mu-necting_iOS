@@ -7,7 +7,7 @@
 import UIKit
 
 struct MunectingRankCollectionViewStruct{
-    var profile: String
+    var profile: UIImage
     var nick: String
     var allReplyCnt: Int
     var rank: Int
@@ -22,23 +22,32 @@ class BestMunectorViewController: UIViewController {
     @IBOutlet var secondBackgroundView: UIView!
     @IBOutlet var thirdBackgroundView: UIView!
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var firstReplyCntLabel: UILabel!
+    @IBOutlet var secondReplyCntLabel: UILabel!
+    @IBOutlet var thirdReplyCntLabel: UILabel!
+    @IBOutlet var firstNickLabel: UILabel!
+    @IBOutlet var secondNickLabel: UILabel!
+    @IBOutlet var thirdNickLabel: UILabel!
     
     var collectionViewData:[MunectingRankCollectionViewStruct] = []
     
+    //viewDidLoad
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.getMunectingRankDataWithAPI(rank: 10)
+        self.configureCollectionView()
+        self.configureRankerView()
+        
+        self.view.backgroundColor = .white
+    }
+    
+    //viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.title = ""
         self.navigationController?.navigationBar.tintColor = UIColor.munectingPurple
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        getMunectingRankDataWithAPI(rank: 10)
-        self.configureRankerView()
-        self.configureCollectionView()
-        
-        self.view.backgroundColor = .white
-    }
+
     
     //MARK: 기본 설절 함수
     
@@ -60,9 +69,35 @@ class BestMunectorViewController: UIViewController {
         thirdBackgroundView.layer.masksToBounds = true
         
         
-        firstPersonImageView.layer.cornerRadius = 102/2
+        firstPersonImageView.layer.cornerRadius = 105/2
         secondPersonImageView.layer.cornerRadius = 85/2
         thirdPersonImageView.layer.cornerRadius = 85/2
+        
+
+        
+    }
+    
+    func rankerUIUpdate(){
+    
+        
+
+        if self.collectionViewData.count > 3{
+            self.firstPersonImageView.image = collectionViewData[2].profile
+            self.firstNickLabel.text = collectionViewData[2].nick
+            self.firstReplyCntLabel.text = "\(collectionViewData[2].allReplyCnt)"
+        }
+        
+        if self.collectionViewData.count > 2{
+            self.secondPersonImageView.image = collectionViewData[1].profile
+            self.secondNickLabel.text = collectionViewData[1].nick
+            self.secondReplyCntLabel.text = "\(collectionViewData[1].allReplyCnt)"
+        }
+        
+        if self.collectionViewData.count > 1{
+            self.thirdPersonImageView.image = collectionViewData[0].profile
+            self.thirdNickLabel.text = collectionViewData[0].nick
+            self.thirdReplyCntLabel.text = "\(collectionViewData[0].allReplyCnt)"
+        }
     }
     
     //CollectionView 설정
@@ -73,6 +108,8 @@ class BestMunectorViewController: UIViewController {
         self.collectionView.delegate = self
     }
     
+
+    
     //MARK: 데이터 가져오기 함수
     
     //RankData 가져오기
@@ -82,15 +119,25 @@ class BestMunectorViewController: UIViewController {
             case.success(let data):
                 if let munectingRankData = data as? [MunectingRankData] {
                     munectingRankData.forEach{
-                        var profile = $0.profile
                         var nick = $0.nick
                         var allReplyCnt = $0.allReplyCnt
                         var rank = $0.rank
-                        //error 확인하기
-                        var userRankData = MunectingRankCollectionViewStruct(profile: profile!, nick: nick, allReplyCnt: allReplyCnt, rank: rank)
-                        self.collectionViewData.append(userRankData)
+                        
+                        if let profile = $0.profile{
+                            print("=========URL: \(profile)=========")
+                            var profile = self.getImage(url: URL(string: profile)!)
+                            //error 확인하기
+                            var userRankData = MunectingRankCollectionViewStruct(profile: profile, nick: nick, allReplyCnt: allReplyCnt, rank: rank)
+                            self.collectionViewData.append(userRankData)
+                        }
+                        else{
+                            var profile = UIImage.init(systemName: "person.circle.fill")
+                            var userRankData = MunectingRankCollectionViewStruct(profile: profile!, nick: nick, allReplyCnt: allReplyCnt, rank: rank)
+                            self.collectionViewData.append(userRankData)
+                        }
                     }
                     self.collectionViewData = self.collectionViewData.sorted { $0.rank < $1.rank }
+                    self.rankerUIUpdate()
                     self.collectionView.reloadData()
                 }
             case .requestErr(let msg):
@@ -108,26 +155,45 @@ class BestMunectorViewController: UIViewController {
         })
     }
     
+    //MARK: 기타 함수
+    
+    //url기반 이미지 반환 코드
+    func getImage(url: URL)-> UIImage{
+        if let data = try? Data(contentsOf: url) {
+            if let image = UIImage(data: data) {return image}
+        }else{
+            return UIImage()
+        }
+        return UIImage()
+    }
+    
 }
 
 
 extension BestMunectorViewController: UICollectionViewDataSource, UICollectionViewDelegate{
+    //collectionView Item수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if(self.collectionViewData.count > 3){
+            return self.collectionViewData.count-3
+        }else{
+            return 0
+        }
     }
+    
+    //collectionView cell 생성
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BestMunectorTestCollectionViewCell", for: indexPath) as? BestMunectorTestCollectionViewCell else {return UICollectionViewCell()}
         cell.commmonInit()
         cell.rankingLabel.text = "\(indexPath.row+4)"
-        
-//        cell.userImage = self.collectionViewData[indexPath.row].profile
-//        cell.userIDLabel.text = self.collectionViewData[indexPath.row].nick
-//        cell.replyCntLabel.text = "\(self.collectionViewData[indexPath.row].allReplyCnt)"
+        cell.userImage.image = self.collectionViewData[indexPath.row+3].profile
+        cell.userIDLabel.text = self.collectionViewData[indexPath.row+3].nick
+        cell.replyCntLabel.text = "\(self.collectionViewData[indexPath.row+3].allReplyCnt)"
  
         return cell
     }
 }
 
+//collectionView ItemSize 설정
 extension BestMunectorViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (UIScreen.main.bounds.width), height: 80)

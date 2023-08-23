@@ -27,13 +27,22 @@ class MusicClusterAnnotationView: MKAnnotationView{
     override func prepareForDisplay() {
         super.prepareForDisplay()
         var genreCount:[Int] = []
-        var genreColor: [UIColor] = [UIColor.systemRed, UIColor.systemGreen, UIColor.systemPurple]
+        var genreColor: [UIColor] = [UIColor.systemRed, UIColor.black, UIColor.systemGreen, UIColor.systemOrange, UIColor.munectingPurple,
+                                     UIColor.systemBlue, UIColor.munectingBlue, UIColor.systemYellow, UIColor.lightGray, UIColor.systemPurple]
         
         if let cluster = annotation as? MKClusterAnnotation{
             let total = cluster.memberAnnotations.count
             
             genreCount.append(count(genre: .hiphop))
+            genreCount.append(count(genre: .rock))
             genreCount.append(count(genre: .balad))
+            genreCount.append(count(genre: .classic))
+            genreCount.append(count(genre: .pop))
+            
+            genreCount.append(count(genre: .blues))
+            genreCount.append(count(genre: .rnb))
+            genreCount.append(count(genre: .country))
+            genreCount.append(count(genre: .edm))
             genreCount.append(count(genre: .kpop))
             let mostGenreNum = genreCount.firstIndex(of: genreCount.max()!)
             let genreColor = genreColor[mostGenreNum!]
