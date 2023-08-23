@@ -80,6 +80,7 @@
 		D26EEA672A937993009F673E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EEA662A937993009F673E /* SettingViewController.swift */; };
 		D26EEA6A2A95E998009F673E /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EEA692A95E998009F673E /* LoadingIndicator.swift */; };
 		D26EEA6E2A9687E6009F673E /* DeleteUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EEA6D2A9687E6009F673E /* DeleteUserViewController.swift */; };
+		D26EEA702A969DA0009F673E /* SettingNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EEA6F2A969DA0009F673E /* SettingNavigationViewController.swift */; };
 		D272FA2A2A7C0F9E0087C392 /* SignUpResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D272FA292A7C0F9E0087C392 /* SignUpResultViewController.swift */; };
 		D272FA2C2A7CA90D0087C392 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D272FA2B2A7CA90D0087C392 /* TutorialViewController.swift */; };
 		D272FA2E2A7CF8770087C392 /* ProfileTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D272FA2D2A7CF8770087C392 /* ProfileTutorialViewController.swift */; };
@@ -208,6 +209,7 @@
 		D26EEA662A937993009F673E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		D26EEA692A95E998009F673E /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		D26EEA6D2A9687E6009F673E /* DeleteUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserViewController.swift; sourceTree = "<group>"; };
+		D26EEA6F2A969DA0009F673E /* SettingNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNavigationViewController.swift; sourceTree = "<group>"; };
 		D272FA292A7C0F9E0087C392 /* SignUpResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResultViewController.swift; sourceTree = "<group>"; };
 		D272FA2B2A7CA90D0087C392 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		D272FA2D2A7CF8770087C392 /* ProfileTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTutorialViewController.swift; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 				D26EEA602A93570B009F673E /* LoginNavigationViewController.swift */,
 				D26EEA662A937993009F673E /* SettingViewController.swift */,
 				D26EEA6D2A9687E6009F673E /* DeleteUserViewController.swift */,
+				D26EEA6F2A969DA0009F673E /* SettingNavigationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -933,6 +936,7 @@
 				B35BE7032A89F4DC00E2ADAE /* ArchiveFilterPopUpViewController.swift in Sources */,
 				D26EEA6E2A9687E6009F673E /* DeleteUserViewController.swift in Sources */,
 				D26EEA572A91E5C7009F673E /* UserService.swift in Sources */,
+				D26EEA702A969DA0009F673E /* SettingNavigationViewController.swift in Sources */,
 				C1B86EB42A7D1BAA00F9A151 /* BestMunectorCollectionViewCell.swift in Sources */,
 				C1415DE22A92D1F20038597F /* MusicAnnotationView.swift in Sources */,
 				C1B86EB62A7D1BAF00F9A151 /* MusicSearchCollectionViewCell.swift in Sources */,
