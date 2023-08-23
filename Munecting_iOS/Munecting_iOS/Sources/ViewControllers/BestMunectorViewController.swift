@@ -22,6 +22,7 @@ class BestMunectorViewController: UIViewController {
     @IBOutlet var secondBackgroundView: UIView!
     @IBOutlet var thirdBackgroundView: UIView!
     @IBOutlet var collectionView: UICollectionView!
+    
     var collectionViewData:[MunectingRankCollectionViewStruct] = []
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,9 +30,20 @@ class BestMunectorViewController: UIViewController {
         self.navigationItem.title = ""
         self.navigationController?.navigationBar.tintColor = UIColor.munectingPurple
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getMunectingRankDataWithAPI(rank: 10)
+        self.configureRankerView()
+        self.configureCollectionView()
+        
+        self.view.backgroundColor = .white
+    }
+    
+    //MARK: 기본 설절 함수
+    
+    //Ranker Image 설정
+    private func configureRankerView(){
         personBackgroundView.layer.cornerRadius = 110 / 2
         personBackgroundView.layer.masksToBounds = true
         personBackgroundView.backgroundColor = UIColor.munectingPurple
@@ -51,12 +63,9 @@ class BestMunectorViewController: UIViewController {
         firstPersonImageView.layer.cornerRadius = 102/2
         secondPersonImageView.layer.cornerRadius = 85/2
         thirdPersonImageView.layer.cornerRadius = 85/2
-        self.configureCollectionView()
-        
-        self.view.backgroundColor = .white
     }
     
-    
+    //CollectionView 설정
     private func configureCollectionView(){
         self.collectionView.collectionViewLayout = UICollectionViewFlowLayout()
         self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -64,13 +73,15 @@ class BestMunectorViewController: UIViewController {
         self.collectionView.delegate = self
     }
     
+    //MARK: 데이터 가져오기 함수
+    
+    //RankData 가져오기
     func getMunectingRankDataWithAPI(rank:Int){
         MunectingRankService.shared.searchMunectingRank(rank: rank, completion: {(networkResult) in
-            
             switch networkResult {
             case.success(let data):
-                if let munectingMapData = data as? [MunectingRankData] {
-                    munectingMapData.forEach{
+                if let munectingRankData = data as? [MunectingRankData] {
+                    munectingRankData.forEach{
                         var profile = $0.profile
                         var nick = $0.nick
                         var allReplyCnt = $0.allReplyCnt
