@@ -122,38 +122,15 @@ class ArchiveUploadViewController: UIViewController, UICollectionViewDelegate, U
                 }
                 dictionarySelectedIndexPath.removeAll()
                 
-                /*if isLatestSorted {
-                    latestBtn.setTitle("최신순", for: .normal)
-                    latestBtn.setImage(nil, for: .normal)
-                } else {
-                    latestBtn.setTitle("인기순", for: .normal)
-                    latestBtn.setImage(nil, for: .normal)
-                }
-                
-                editBtn.setImage(UIImage(named: "edit"), for: .normal)*/
-                
                 collectionView.allowsMultipleSelection = false
                 
             case .select:
-                /* latestBtn.setImage(UIImage(named: "trash"), for: .normal)
-                latestBtn.setTitle(nil, for: .normal)
-                editBtn.setImage(UIImage(named: "cancel"), for: .normal)
-                editBtn.setTitle(nil, for: .normal) */
-                
                 collectionView.allowsMultipleSelection = true
             }
         }
     }
        
     var dictionarySelectedIndexPath: [IndexPath: Bool] = [:]
-       
-    /*lazy var deleteButton: UIButton = {
-        let button = UIButton(type: .system) // UIButton 초기화
-        //button.setImage(UIImage(systemName: "trash"), for: .normal) // 이미지 설정
-        //button.setTitle(nil, for: .normal)
-        button.addTarget(self, action: #selector(didDeleteButtonClicked(_:)), for: .touchUpInside) // 동작 추가
-        return button
-    }()*/
        
     @objc func didDeleteButtonClicked(_ sender: UIButton) {
         var deleteNeededIndexPaths: [IndexPath] = []
@@ -171,6 +148,16 @@ class ArchiveUploadViewController: UIViewController, UICollectionViewDelegate, U
         collectionView.deleteItems(at: deleteNeededIndexPaths)
         dictionarySelectedIndexPath.removeAll()
         collectionView.reloadData()
+        
+        eMode = .view
+        if eMode == .select {
+            latestBtn.setImage(UIImage(named: "trash"), for: .normal)
+            editBtn.setImage(UIImage(named: "cancel"), for: .normal)
+            
+        } else {
+            setButtonTitles()
+            editBtn.setImage(UIImage(named: "edit"), for: .normal)
+        }
     }
        
     @IBAction func editButtonTapped(_ sender: UIButton) {
@@ -179,10 +166,8 @@ class ArchiveUploadViewController: UIViewController, UICollectionViewDelegate, U
         
         if eMode == .select {
             latestBtn.setImage(UIImage(named: "trash"), for: .normal)
-            latestBtn.setTitle("", for: .normal)
             editBtn.setImage(UIImage(named: "cancel"), for: .normal)
-            editBtn.setTitle("", for: .normal)
-
+            
         } else {
             setButtonTitles()
             editBtn.setImage(UIImage(named: "edit"), for: .normal)
@@ -249,17 +234,13 @@ class ArchiveUploadViewController: UIViewController, UICollectionViewDelegate, U
     @IBAction func latestButtonTapped(_ sender: UIButton) {
         if eMode == .select {
             didDeleteButtonClicked(sender) // 선택한 항목들을 삭제하는 함수 호출
+        } else {
+            sortImages(isLatest: !isLatestSorted)
         }
-        
-        sortImages(isLatest: !isLatestSorted)
     }
     
     private func setButtonTitles() {
-        latestBtn.tintColor = .white
-        latestBtn.backgroundColor = .black
-        latestBtn.layer.cornerRadius = 10
-        latestBtn.setTitle(isLatestSorted ? "최신순" : "인기순", for: .normal)
-        latestBtn.setImage(nil, for: .normal)
+        latestBtn.setImage(isLatestSorted ? UIImage(named: "popular") : UIImage(named: "latest"), for: .normal)
     }
         
     private func sortImages(isLatest: Bool) {
@@ -282,6 +263,16 @@ class ArchiveUploadViewController: UIViewController, UICollectionViewDelegate, U
             
             (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?
                 .changeRootViewController(HomeVC, animated: true)
+        }
+    }
+    
+    @IBAction func settingBtnTapped(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true) {
+            let SettingVC = UIStoryboard(name: "Setting", bundle: nil)
+                .instantiateViewController(withIdentifier: "SettingVC")
+            
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?
+                .changeRootViewController(SettingVC, animated: true)
         }
     }
     

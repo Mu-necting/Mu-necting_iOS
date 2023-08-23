@@ -145,9 +145,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="최신순">
-                                    <fontDescription key="titleFontDescription" name="Inter-Bold" family="Inter" pointSize="15"/>
-                                </buttonConfiguration>
+                                <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
                                     <action selector="latestButtonTapped:" destination="Z6p-Pd-In2" eventType="touchUpInside" id="D5n-C2-cDq"/>
                                 </connections>
@@ -170,6 +168,9 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="etc" id="mXn-4x-gfQ">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="settingBtnTapped:" destination="Z6p-Pd-In2" id="4Ad-en-mFx"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -236,213 +237,296 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nc6-sU-GxM">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nc6-sU-GxM">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
                                     <action selector="bgBtnTapped:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="6Nf-uj-cpc"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VN5-6x-kxN">
-                                <rect key="frame" x="76" y="284" width="240" height="291"/>
+                            <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ohF-hI-gly">
+                                <rect key="frame" x="79" y="286" width="240" height="291"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VN5-6x-kxN">
+                                <rect key="frame" x="76" y="284" width="240" height="290"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Lh-ya-Gkg">
-                                        <rect key="frame" x="43" y="101" width="60" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="R&amp;B" cornerStyle="dynamic">
-                                            <backgroundConfiguration key="background" cornerRadius="20">
-                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
-                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="tappedGenreButton:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="tM1-r4-g8I"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V31-MQ-PLz">
-                                        <rect key="frame" x="43" y="75" width="60" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="블루스" cornerStyle="dynamic">
-                                            <backgroundConfiguration key="background" cornerRadius="20">
-                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
-                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="tappedGenreButton:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="pzJ-yO-Tt7"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHC-8K-VbV">
-                                        <rect key="frame" x="44" y="127" width="60" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="컨트리" cornerStyle="dynamic">
-                                            <backgroundConfiguration key="background" cornerRadius="20">
-                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
-                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="tappedGenreButton:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="LGC-Un-SWg"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKt-tc-IaB">
-                                        <rect key="frame" x="43" y="162" width="60" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="EDM" cornerStyle="dynamic">
-                                            <backgroundConfiguration key="background" cornerRadius="20">
-                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
-                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="tappedGenreButton:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="F6Q-YU-bNM"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFa-pn-bRV">
-                                        <rect key="frame" x="44" y="188" width="60" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="K-POP" cornerStyle="dynamic">
-                                            <backgroundConfiguration key="background" cornerRadius="20">
-                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
-                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="tappedGenreButton:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="Hhe-Eg-XUj"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="장르선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ujm-cj-OXG">
-                                        <rect key="frame" x="21" y="23" width="59" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장르선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ujm-cj-OXG">
+                                        <rect key="frame" x="26" y="26" width="65" height="25"/>
                                         <color key="tintColor" red="0.270588249" green="0.1686274707" blue="0.39215683940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="Jwe-QW-U9l"/>
+                                            <constraint firstAttribute="width" constant="65" id="qf0-jp-Uzy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <color key="textColor" red="0.270588249" green="0.1686274707" blue="0.39215683940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="highlightedColor" red="0.2666666667" green="0.16862745100000001" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9CB-ha-dHY">
-                                        <rect key="frame" x="94" y="243" width="54" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="gjr-PY-QR5">
+                                        <rect key="frame" x="47" y="73" width="60" height="154"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Lh-ya-Gkg">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="QxJ-Xe-vvg"/>
+                                                    <constraint firstAttribute="width" constant="60" id="s54-BL-ONc"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="R&amp;B" cornerStyle="dynamic">
+                                                    <backgroundConfiguration key="background" cornerRadius="20">
+                                                        <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="tappedGenreButton:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="tM1-r4-g8I"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHC-8K-VbV">
+                                                <rect key="frame" x="0.0" y="34" width="60" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="2BB-cE-Yvp"/>
+                                                    <constraint firstAttribute="width" constant="60" id="SEz-Pd-SM3"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="컨트리" cornerStyle="dynamic">
+                                                    <backgroundConfiguration key="background" cornerRadius="20">
+                                                        <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="tappedGenreButton:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="LGC-Un-SWg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKt-tc-IaB">
+                                                <rect key="frame" x="0.0" y="68" width="60" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="b5l-AG-7hn"/>
+                                                    <constraint firstAttribute="height" constant="18" id="ywd-ek-Aic"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="EDM" cornerStyle="dynamic">
+                                                    <backgroundConfiguration key="background" cornerRadius="20">
+                                                        <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="tappedGenreButton:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="F6Q-YU-bNM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFa-pn-bRV">
+                                                <rect key="frame" x="0.0" y="102" width="60" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="ogo-hQ-TfH"/>
+                                                    <constraint firstAttribute="height" constant="18" id="pJT-ae-Fym"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="K-POP" cornerStyle="dynamic">
+                                                    <backgroundConfiguration key="background" cornerRadius="20">
+                                                        <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="tappedGenreButton:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="Hhe-Eg-XUj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V31-MQ-PLz">
+                                                <rect key="frame" x="0.0" y="136" width="60" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="fvh-yC-al7"/>
+                                                    <constraint firstAttribute="width" constant="60" id="qCr-Iy-Bck"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="블루스" cornerStyle="dynamic">
+                                                    <backgroundConfiguration key="background" cornerRadius="20">
+                                                        <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="tappedGenreButton:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="pzJ-yO-Tt7"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="154" id="cKq-zg-1Vr"/>
+                                            <constraint firstAttribute="width" constant="60" id="d7d-zg-nrl"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bd5-FT-Smr">
+                                        <rect key="frame" x="138" y="73" width="60" height="154"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSk-3e-E2K">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="17y-6P-YJm"/>
+                                                    <constraint firstAttribute="width" constant="60" id="V0l-Mu-Vvl"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="발라드" cornerStyle="dynamic">
+                                                    <backgroundConfiguration key="background" cornerRadius="20">
+                                                        <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="tappedGenreButton:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="Zs9-Wi-0eM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6E-Q2-uCu">
+                                                <rect key="frame" x="0.0" y="34" width="60" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="oCF-1E-yT4"/>
+                                                    <constraint firstAttribute="width" constant="60" id="uEe-dL-TcX"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="팝" cornerStyle="dynamic">
+                                                    <backgroundConfiguration key="background" cornerRadius="20">
+                                                        <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="popBtnTapped:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="shq-4P-sWC"/>
+                                                    <action selector="tappedGenreButton:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="daj-h7-Wdc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6q-zi-RzW">
+                                                <rect key="frame" x="0.0" y="68" width="60" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="WRd-OQ-DI9"/>
+                                                    <constraint firstAttribute="width" constant="60" id="khV-AW-9J5"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="클래식" cornerStyle="dynamic">
+                                                    <backgroundConfiguration key="background" cornerRadius="20">
+                                                        <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="tappedGenreButton:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="En9-X0-hvP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7y-Bd-by7">
+                                                <rect key="frame" x="0.0" y="102" width="60" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="KpZ-Ju-Iwx"/>
+                                                    <constraint firstAttribute="width" constant="60" id="VVI-iH-53n"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="힙합" cornerStyle="dynamic">
+                                                    <backgroundConfiguration key="background" cornerRadius="20">
+                                                        <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="tappedGenreButton:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="3fD-Ik-wwB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euI-8E-5QV">
+                                                <rect key="frame" x="0.0" y="136" width="60" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="OZU-Ag-g4e"/>
+                                                    <constraint firstAttribute="width" constant="60" id="rLM-hL-5nz"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="락" cornerStyle="dynamic">
+                                                    <backgroundConfiguration key="background" cornerRadius="20">
+                                                        <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="tappedGenreButton:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="5El-40-7k3"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="154" id="32b-PH-BuZ"/>
+                                            <constraint firstAttribute="width" constant="60" id="o8p-kw-0sT"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9CB-ha-dHY">
+                                        <rect key="frame" x="93" y="240.00000000000003" width="54" height="34.333333333333343"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34.329999999999998" id="rxf-hh-qjC"/>
+                                            <constraint firstAttribute="width" constant="54" id="wC4-mY-21d"/>
+                                        </constraints>
                                         <color key="tintColor" red="0.270588249" green="0.1686274707" blue="0.39215683940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="확인"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="확인">
+                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="17"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="saveBtnTapped:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="MWB-0l-0IZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSk-3e-E2K">
-                                        <rect key="frame" x="136" y="75" width="60" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="발라드" cornerStyle="dynamic">
-                                            <backgroundConfiguration key="background" cornerRadius="20">
-                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
-                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="tappedGenreButton:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="Zs9-Wi-0eM"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6E-Q2-uCu">
-                                        <rect key="frame" x="136" y="110" width="60" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="팝" cornerStyle="dynamic">
-                                            <backgroundConfiguration key="background" cornerRadius="20">
-                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
-                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="popBtnTapped:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="shq-4P-sWC"/>
-                                            <action selector="tappedGenreButton:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="daj-h7-Wdc"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6q-zi-RzW">
-                                        <rect key="frame" x="136" y="136" width="60" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="클래식" cornerStyle="dynamic">
-                                            <backgroundConfiguration key="background" cornerRadius="20">
-                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
-                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="tappedGenreButton:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="En9-X0-hvP"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7y-Bd-by7">
-                                        <rect key="frame" x="136" y="162" width="60" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="힙합" cornerStyle="dynamic">
-                                            <backgroundConfiguration key="background" cornerRadius="20">
-                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
-                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="tappedGenreButton:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="3fD-Ik-wwB"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euI-8E-5QV">
-                                        <rect key="frame" x="136" y="188" width="60" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="락" cornerStyle="dynamic">
-                                            <backgroundConfiguration key="background" cornerRadius="20">
-                                                <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
-                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="tappedGenreButton:" destination="LtY-Gh-Aeo" eventType="touchUpInside" id="5El-40-7k3"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ujm-cj-OXG" secondAttribute="trailing" constant="149" id="1vy-cC-Bdc"/>
+                                    <constraint firstItem="gjr-PY-QR5" firstAttribute="top" secondItem="Ujm-cj-OXG" secondAttribute="bottom" constant="22" id="3v2-0p-MPG"/>
+                                    <constraint firstAttribute="width" constant="240" id="E6W-Od-Vkp"/>
+                                    <constraint firstItem="gjr-PY-QR5" firstAttribute="leading" secondItem="VN5-6x-kxN" secondAttribute="leading" constant="47" id="G8d-x6-19R"/>
+                                    <constraint firstAttribute="height" constant="290" id="Gsr-DD-SrP"/>
+                                    <constraint firstItem="9CB-ha-dHY" firstAttribute="leading" secondItem="VN5-6x-kxN" secondAttribute="leading" constant="93" id="KrA-bg-6Ar"/>
+                                    <constraint firstItem="Ujm-cj-OXG" firstAttribute="leading" secondItem="VN5-6x-kxN" secondAttribute="leading" constant="26" id="Nw1-Uo-dya"/>
+                                    <constraint firstAttribute="trailing" secondItem="bd5-FT-Smr" secondAttribute="trailing" constant="42" id="P7w-oE-oTu"/>
+                                    <constraint firstItem="bd5-FT-Smr" firstAttribute="top" secondItem="VN5-6x-kxN" secondAttribute="top" constant="73" id="QFn-m1-08O"/>
+                                    <constraint firstAttribute="bottom" secondItem="9CB-ha-dHY" secondAttribute="bottom" constant="15.67" id="XsZ-EP-bYN"/>
+                                    <constraint firstItem="gjr-PY-QR5" firstAttribute="top" secondItem="Ujm-cj-OXG" secondAttribute="bottom" constant="22" id="cny-De-Qyn"/>
+                                    <constraint firstItem="bd5-FT-Smr" firstAttribute="leading" secondItem="gjr-PY-QR5" secondAttribute="trailing" constant="31" id="hfy-VV-B21"/>
+                                    <constraint firstItem="bd5-FT-Smr" firstAttribute="leading" secondItem="gjr-PY-QR5" secondAttribute="trailing" constant="31" id="iT6-ax-2xg"/>
+                                    <constraint firstItem="9CB-ha-dHY" firstAttribute="top" secondItem="gjr-PY-QR5" secondAttribute="bottom" constant="13" id="jFs-8B-TpP"/>
+                                    <constraint firstAttribute="trailing" secondItem="9CB-ha-dHY" secondAttribute="trailing" constant="93" id="jMC-UJ-hSy"/>
+                                    <constraint firstItem="Ujm-cj-OXG" firstAttribute="top" secondItem="VN5-6x-kxN" secondAttribute="top" constant="26" id="keX-7r-CQH"/>
+                                    <constraint firstItem="9CB-ha-dHY" firstAttribute="top" secondItem="gjr-PY-QR5" secondAttribute="bottom" constant="13" id="kpa-5c-VFd"/>
+                                    <constraint firstItem="9CB-ha-dHY" firstAttribute="top" secondItem="bd5-FT-Smr" secondAttribute="bottom" constant="13" id="u4K-84-ZxT"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6gB-5d-YMn"/>
                         <constraints>
-                            <constraint firstItem="6gB-5d-YMn" firstAttribute="bottom" secondItem="Nc6-sU-GxM" secondAttribute="bottom" id="3px-Dx-wKQ"/>
-                            <constraint firstItem="Nc6-sU-GxM" firstAttribute="leading" secondItem="6gB-5d-YMn" secondAttribute="leading" id="Hp6-TC-lKb"/>
-                            <constraint firstItem="Nc6-sU-GxM" firstAttribute="top" secondItem="6gB-5d-YMn" secondAttribute="top" id="anY-S7-kv5"/>
-                            <constraint firstItem="Nc6-sU-GxM" firstAttribute="trailing" secondItem="6gB-5d-YMn" secondAttribute="trailing" id="awu-P6-6GN"/>
+                            <constraint firstItem="6gB-5d-YMn" firstAttribute="bottom" secondItem="VN5-6x-kxN" secondAttribute="bottom" constant="244" id="15x-ZT-QK1"/>
+                            <constraint firstItem="VN5-6x-kxN" firstAttribute="leading" secondItem="6gB-5d-YMn" secondAttribute="leading" constant="76" id="BfK-h0-8Dw"/>
+                            <constraint firstItem="VN5-6x-kxN" firstAttribute="top" secondItem="6gB-5d-YMn" secondAttribute="top" constant="225" id="Pck-Pz-d6K"/>
+                            <constraint firstItem="6gB-5d-YMn" firstAttribute="trailing" secondItem="VN5-6x-kxN" secondAttribute="trailing" constant="77" id="fE3-4d-rjC"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="balladBtn" destination="MSk-3e-E2K" id="AbC-g2-iro"/>
                         <outlet property="bgBtn" destination="Nc6-sU-GxM" id="oPT-Ap-sn6"/>
                         <outlet property="bluesBtn" destination="V31-MQ-PLz" id="Y9x-rc-miu"/>
+                        <outlet property="buttonView" destination="VN5-6x-kxN" id="xIH-YH-Ku2"/>
                         <outlet property="classicBtn" destination="S6q-zi-RzW" id="jzH-l3-Jt0"/>
                         <outlet property="countryBtn" destination="HHC-8K-VbV" id="1vE-Xg-Dwo"/>
                         <outlet property="edmBtn" destination="oKt-tc-IaB" id="ZYW-Ym-DuH"/>
@@ -452,6 +536,7 @@
                         <outlet property="rnbBtn" destination="4Lh-ya-Gkg" id="s75-Q9-LQ0"/>
                         <outlet property="rockBtn" destination="euI-8E-5QV" id="luK-Nk-fuM"/>
                         <outlet property="saveBtn" destination="9CB-ha-dHY" id="7x8-bw-ZgB"/>
+                        <outlet property="shadowView" destination="ohF-hI-gly" id="JY8-d6-RjO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KK5-TH-B3J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -524,16 +609,14 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvD-Z3-EKb">
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvD-Z3-EKb">
                                 <rect key="frame" x="22" y="302" width="70" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="최신순">
-                                    <fontDescription key="titleFontDescription" name="Inter-Bold" family="Inter" pointSize="15"/>
-                                </buttonConfiguration>
+                                <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
-                                    <action selector="latestButtonTapped:" destination="BKj-vx-3k7" eventType="touchUpInside" id="H3a-16-fEY"/>
+                                    <action selector="latestButtonTapped:" destination="BKj-vx-3k7" eventType="touchUpInside" id="tBF-Fd-l1B"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line 2" translatesAutoresizingMaskIntoConstraints="NO" id="fN8-Lv-3Ka">
@@ -585,7 +668,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="edit" title=""/>
                                 <connections>
-                                    <action selector="popularButtonTapped:" destination="BKj-vx-3k7" eventType="touchUpInside" id="nF8-bR-Rmt"/>
+                                    <action selector="editButtonTapped:" destination="BKj-vx-3k7" eventType="touchUpInside" id="xFB-qg-PNL"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MuS-9u-OUU">
@@ -602,6 +685,9 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="etc" id="yx6-O1-hdd">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="settingBtnTapped:" destination="BKj-vx-3k7" id="6VY-Je-IUy"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -615,7 +701,7 @@
                         <outlet property="collectionView" destination="2yk-JM-7Jm" id="QUT-x3-5Uu"/>
                         <outlet property="editBtn" destination="Sdy-KK-Yp0" id="Dor-1x-nCH"/>
                         <outlet property="filterBtn" destination="zCm-e9-H5o" id="CrR-gv-knY"/>
-                        <outlet property="latestBtn" destination="pvD-Z3-EKb" id="xwo-37-3Sd"/>
+                        <outlet property="latestBtn" destination="pvD-Z3-EKb" id="LUE-AP-eEE"/>
                         <outlet property="nicknameLbl" destination="Cde-yX-MgL" id="7uI-Re-ySe"/>
                         <outlet property="profileImg" destination="uv4-4m-AoT" id="fqs-Qe-gtL"/>
                     </connections>

@@ -23,12 +23,21 @@ class ArchiveFilterPopUpViewController: UIViewController {
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var bgBtn: UIButton!
     
+    @IBOutlet weak var buttonView: UIView!
+    @IBOutlet weak var shadowView: UIView!
+    
     var tapped = false
     var genreButtons: [UIButton] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        buttonView.layer.cornerRadius = 10
+        buttonView.clipsToBounds = true
+        
+        shadowView.layer.cornerRadius = 10
+        shadowView.clipsToBounds = true
+        
         // Do any additional setup after loading the view.
         
         genreButtons = [self.bluesBtn,self.popBtn,self.balladBtn,self.rnbBtn,self.countryBtn,
