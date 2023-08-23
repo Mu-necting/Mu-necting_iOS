@@ -41,11 +41,11 @@ struct PickService{
     
     func judgePickMusic(status: Int, data: Data) -> NetworkResult<Any>{
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(GenericResponse<EmptyResult>.self, from: data) else {return .pathErr}
+        guard let decodedData = try? decoder.decode(SimpleResponse.self, from: data) else {return .pathErr}
         
-        switch status {
+        switch decodedData.code {
         case 1000:
-            return .success(decodedData.result)
+            return .success(decodedData)
         default:
             return .networkFail
         }

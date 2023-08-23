@@ -6,7 +6,10 @@ struct MusicUploadService{
     struct EmptyResult: Codable {}
     
     func uploadMusic(name: String, coverImg: String, musicPre: String, musicPull: String, artist: String, genre: String, endTime: Int, pointX: Double, pointY: Double, memberID: Int, completion: @escaping (NetworkResult<Any>) -> Void){
-        let url = APIConstants.pickURL
+        
+        print("======uploadMusic In==========")
+
+        let url = APIConstants.uploadMusic
         let header: HTTPHeaders = [
             "Content-Type": "application/json"
         ]
@@ -32,6 +35,7 @@ struct MusicUploadService{
         dataRequest.responseData(completionHandler: { (response) in
             switch response.result{
             case .success:
+                print("======response.result == success ==========")
                 guard let statusCode = response.response?.statusCode else {
                     return
                 }
@@ -40,6 +44,7 @@ struct MusicUploadService{
                 }
                 completion(judgeUploadMusic(status: statusCode, data: data))
             case .failure(let error):
+                print("======response.result == failure ==========")
                 print(error)
                 completion(.networkFail)
             }
@@ -48,11 +53,13 @@ struct MusicUploadService{
     
     func judgeUploadMusic(status: Int, data: Data) -> NetworkResult<Any>{
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(GenericResponse<EmptyResult>.self, from: data) else {return .pathErr}
-        
-        switch status {
+        print("======judgeUplocaMuisc in=========")
+
+        guard let decodedData = try? decoder.decode(SimpleResponse.self, from: data) else {return .pathErr}
+        print("======decode 성공=========")
+        switch decodedData.code {
         case 1000:
-            return .success(decodedData.result)
+            return .success(data)
         default:
             return .networkFail
         }

@@ -3,6 +3,8 @@ import Foundation
 
 struct localJSONTest{
     static let shared = localJSONTest()
+    struct EmptyResult: Codable {}
+    
     
     func loadAroundMusicJSON(){
         if let path = Bundle.main.path(forResource: "arroundMusic", ofType: "json") {
@@ -62,6 +64,25 @@ struct localJSONTest{
                 print(response.isSuccess)
                 print(response.result.musicSearchRes[0])
                 print("============searchMusicJSON===============")
+            } catch {
+                print("Error:", error)
+            }
+        } else {
+            print("JSON file not found.")
+        }
+    }
+    
+    func uploadMusicJSON(){
+        if let path = Bundle.main.path(forResource: "emptyResult", ofType: "json") {
+            do {
+                print("============uploadMusicJSON===============")
+                let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let decoder = JSONDecoder()
+                print("============uploadMusicJSON===============")
+                let response = try decoder.decode(SimpleResponse.self, from: jsonData)
+                print("============uploadMusicJSON===============")
+                print(response.isSuccess)
+                print("============uploadMusicJSON===============")
             } catch {
                 print("Error:", error)
             }
