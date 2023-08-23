@@ -44,14 +44,19 @@ class SignUpWithEmailViewController: UIViewController {
                 case .success(let data):
                     self.verifyNumber = data
                     self.emailTextField.isUserInteractionEnabled = false
+                    self.showAlert(title:"요청 완료",message : "메일로 인증번호가 전송되었어요." )
                 case .requestErr(let msg):
                     if let message = msg as? String { print(message) }
+                    self.showAlert(title:"요청 에러",message : "가입된 메일로 인증을 요청하세요." )
                 case .pathErr:
                     print("pathErr in loginWithSocialAPI")
+                    self.showAlert(title:"ERROR",message : "에러." )
                 case .serverErr:
                     print("serverErr in loginWithSocialAPI")
+                    self.showAlert(title:"ERROR",message : "내부 서버 에러." )
                 case .networkFail:
                     print("networkFail in loginWithSocialAPI")
+                    self.showAlert(title:"ERROR",message : "네트워크 에러." )
                 }
                 
                 LoadingIndicator.hideLoading()
@@ -72,6 +77,8 @@ class SignUpWithEmailViewController: UIViewController {
             return
         }
         
+        LoadingIndicator.showLoading()
+        
         LoginService.signUp(email: emailTextField.text!, password: passwordTextField.text!){
              (networkResult) in
              switch networkResult{
@@ -82,13 +89,19 @@ class SignUpWithEmailViewController: UIViewController {
                  }
              case .requestErr(let msg):
                  if let message = msg as? String { print(message) }
+                 self.showAlert(title:"요청 에러",message : "메일과 비밀번호를 확인해주세요." )
              case .pathErr:
                  print("pathErr in loginWithSocialAPI")
+                 self.showAlert(title:"ERROR",message : "에러." )
              case .serverErr:
                  print("serverErr in loginWithSocialAPI")
+                 self.showAlert(title:"ERROR",message : "내부 서버 에러." )
              case .networkFail:
                  print("networkFail in loginWithSocialAPI")
+                 self.showAlert(title:"ERROR",message : "네트워크 에러." )
              }
+            
+            LoadingIndicator.hideLoading()
          }
     }
     
