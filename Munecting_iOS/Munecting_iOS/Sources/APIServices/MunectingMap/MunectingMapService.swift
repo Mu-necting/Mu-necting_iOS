@@ -6,7 +6,8 @@ struct MunectingMapService{
     
     
     func searchMunectingMap(x: Double, y:Double, range: Int, completion: @escaping (NetworkResult<Any>) -> Void){
-        let url = "\(APIConstants.searchMunectingMap)?x=\(x)&?y=\(y)&range=\(range)"
+        print("===========SearchMunectingMap In======================")
+        let url = "\(APIConstants.searchMunectingMap)/?x=\(x)&?y=\(y)&range=\(range)"
         let header: HTTPHeaders = [
             "Content-Type": "application/json"
         ]
@@ -18,6 +19,7 @@ struct MunectingMapService{
         dataRequest.responseData(completionHandler: { (response) in
             switch response.result{
             case .success:
+                print("===========response.result == success ======================")
                 guard let statusCode = response.response?.statusCode else {
                     return
                 }
@@ -26,6 +28,7 @@ struct MunectingMapService{
                 }
                 completion(judgeSearchMunectingMap(status: statusCode, data: data))
             case .failure(let error):
+                print("===========response.result == failure ======================")
                 print(error)
                 completion(.networkFail)
             }
@@ -33,10 +36,11 @@ struct MunectingMapService{
     }
     
     func judgeSearchMunectingMap(status: Int, data: Data) -> NetworkResult<Any>{
+        print("====judgeSearchMunectingMap In======")
         let decoder = JSONDecoder()
         guard let decodedData = try? decoder.decode(GenericResponse<[MunectingMapData]>.self, from: data) else {return .pathErr}
-        
-        switch status {
+        print("=====decoding 성공======")
+        switch decodedData.code {
         case 1000:
             return .success(decodedData.result)
         default:

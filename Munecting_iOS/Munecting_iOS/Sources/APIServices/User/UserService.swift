@@ -11,14 +11,13 @@ import Alamofire
 struct UserService {
     
     static func changeProfile(name: String, profileImage:UIImage?, completion: @escaping (NetworkResult<Any>) -> Void){
-        
+                
         var profile : UIImage
         if(profileImage == nil) {
             profile = UIImage(named: "profile")!
         }else{
             profile = profileImage!
         }
-        
         
         let url = APIConstants.changeProfile
         let header: HTTPHeaders = [
@@ -28,14 +27,20 @@ struct UserService {
         
         let body : Parameters = ["name" : name]
         
+        let jsonData = try? JSONSerialization.data(withJSONObject: body)
+        
         let request = AF.upload(multipartFormData: { multipartFormData in
-            for (key, value) in body {
-                multipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
-            }
+            if let json = jsonData {
+                    multipartFormData.append(json, withName: "member", mimeType: "application/json")
+                }
+            
             if let image = profile.pngData() {
-                multipartFormData.append(image, withName: "profile", fileName: "\(image).png", mimeType: "image/png")
+                print("여길 안들어옴")
+                multipartFormData.append(image, withName: "profile", fileName: "\(name).png", mimeType: "image/png")
             }
-        }, to: url, usingThreshold: UInt64.init(), method: .post, headers: header)
+            
+           
+        }, to: url, method: .post, headers: header)
         
         
         request.responseData(completionHandler: { (response) in
@@ -44,6 +49,8 @@ struct UserService {
                 guard let statusCode = response.response?.statusCode else {
                     return
                 }
+                
+                print(statusCode)
                 switch statusCode {
                 case 200:
                     guard let data = response.value else {
@@ -53,7 +60,7 @@ struct UserService {
                     let decoder = JSONDecoder()
                     guard let decodedData = try? decoder.decode(GenericResponse<User>.self, from: data) else {return}
                     
-                    completion(.success(decodedData.isSuccess))
+                    completion(.success(decodedData.result))
                 default:
                     completion(.networkFail)
                 }

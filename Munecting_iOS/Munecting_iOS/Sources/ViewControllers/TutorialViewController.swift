@@ -55,12 +55,20 @@ class TutorialViewController: UIViewController{
         if(currentPage == (viewsList.count - 1)){
             // 업로드 페이지로 이동
             let user: User = UserManager.shared.getUser()!
+            
+            LoadingIndicator.showLoading()
+            
             UserService.changeProfile(name: user.userName!, profileImage: UserManager.shared.getPreSaveImage()){
                 (networkResult) in
                 switch networkResult{
                 case .success(let data):
                     let user : User = data as! User
                     UserManager.shared.setUser(user)
+                    
+                    let musicSearchVC =  UIStoryboard(name: "MusicSearch", bundle: nil)
+                                    .instantiateViewController(withIdentifier: "MusicSearchNavigationController")
+                                
+                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(musicSearchVC, animated: true)
                     
                 case .requestErr(let msg):
                     if let message = msg as? String {
@@ -73,6 +81,8 @@ class TutorialViewController: UIViewController{
                 case .networkFail:
                     print("networkFail in loginWithSocialAPI")
                 }
+                
+                LoadingIndicator.hideLoading()
             }
             
         }else{
