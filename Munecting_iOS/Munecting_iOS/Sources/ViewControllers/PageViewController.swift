@@ -7,6 +7,11 @@
 
 import UIKit
 
+struct pageIndex{
+    static let shared = pageIndex()
+    var Index = 1
+}
+
 class PageViewController: UIViewController {
     
     lazy var pageViewController: UIPageViewController = {
@@ -21,6 +26,7 @@ class PageViewController: UIViewController {
         return view
     }()
     var dataViewControllers: [UIViewController] = []
+    var pageIndex = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +44,14 @@ class PageViewController: UIViewController {
         guard let uploadViewController = MusicSearchSb.instantiateViewController(identifier: "MusicSearchNavigationController") as? MusicSearchNavigationController else {return}
         
         dataViewControllers = [uploadViewController, homeViewController, archiveViewController]
-        pageViewController.setViewControllers([dataViewControllers[1]], direction: .forward, animated: true, completion: nil)
+        pageViewController.setViewControllers([dataViewControllers[self.pageIndex]], direction: .forward, animated: true, completion: nil)
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("=====viewWillAppear=========")
+        self.pageIndex = 1
+        pageViewController.setViewControllers([dataViewControllers[self.pageIndex]], direction: .forward, animated: true, completion: nil)
 
     }
     

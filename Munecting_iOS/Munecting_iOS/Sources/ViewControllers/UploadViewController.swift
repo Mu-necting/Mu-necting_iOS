@@ -40,7 +40,7 @@ class UploadViewController: UIViewController {
         timeLabel.layer.borderColor = UIColor.gray.cgColor
         timeLabel.layer.borderWidth = 0.8
         
-        albumCover.layer.cornerRadius = 30
+        albumCover.layer.cornerRadius = 8
         
         musicView.layer.cornerRadius = 8
         musicView.layer.borderColor = UIColor.systemGray5.cgColor
@@ -106,6 +106,17 @@ class UploadViewController: UIViewController {
             showAlert(title: "장르를 설정해 주세요")
             return
         }
+        let sb = UIStoryboard(name: "Home", bundle: nil)
+        guard let viewController = sb.instantiateViewController(identifier: "PageViewController") as? PageViewController else {return}
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(viewController, animated: true)
+
+        
+//        self.navigationController?.popToRootViewController(animated: true)
+//
+//        if let pageViewController = self.navigationController?.viewControllers.first as? PageViewController {
+//            print("====pageViewController 형변환 성공========")
+//            pageViewController.pageViewController.setViewControllers([pageViewController.dataViewControllers[1]], direction: .forward, animated: true, completion: nil)
+//        }
     }
     
     //showAlert
@@ -114,5 +125,5 @@ class UploadViewController: UIViewController {
            let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
            alertController.addAction(okAction)
            present(alertController, animated: true, completion: nil)
-       }
+    }
 }
