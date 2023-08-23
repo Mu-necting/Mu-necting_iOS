@@ -1,9 +1,9 @@
 import Foundation
 
-struct MusicForUpload{
-    let name: String
-    let coverImg: String
-    let musicPre: String
-    let artist: String
-    let musicPull: String
+struct MusicForUpload: Codable{
+    var name: String
+    var coverImg: String
+    var musicPre: String
+    var musicPull: String?
+    var artist: String
 }
