@@ -45,13 +45,13 @@ struct APIConstants {
     //음악 Pick(Post)
     static let pickURL = baseURL + "/pick"
     
-    //유튜브 전체 재생 링크
+    //유튜브 전체 재생 링크(post)
     static let musicPullURL = baseURL + "/musics/youtube-fulllink"
     
-    //reply 전송
+    //reply 전송(post)
     static let sendReplyURL = baseURL + "/replies/reply"
     
-    //reply 취소
+    //reply 취소(post)
     static let cancelReplyURL = baseURL + "/replies/unreply"
     
 

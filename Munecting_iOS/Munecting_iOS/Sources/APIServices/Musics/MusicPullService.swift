@@ -40,11 +40,14 @@ struct MusicPullService{
     func judgeMusicPull(status: Int, data: Data) -> NetworkResult<Any>{
         let decoder = JSONDecoder()
         print("====judgeMusicPull In=====")
-        guard let decodedData = try? decoder.decode(GenericResponse<EmptyResult>.self, from: data) else {return .pathErr}
+        print(data)
+        print(type(of: data))
+//        guard let decodedData = try? decoder.decode(YouTubeVideo.self, from: data) else {return .pathErr}
+        guard let decodedData = String(data: data, encoding: .utf8) else{return .pathErr}
         print("======decode 성공=======")
         print(decodedData)
         switch status {
-        case 1000:
+        case 200:
 //            return .success(decodedData.result)
             return .success(decodedData)
         default:
