@@ -29,17 +29,16 @@ struct UserService {
         
         let jsonData = try? JSONSerialization.data(withJSONObject: body)
         
+        let resizedImage = profile.resize(to: CGSize(width: 200, height: 200) )
+        let imageData = resizedImage.jpegData(compressionQuality: 1)
+        
         let request = AF.upload(multipartFormData: { multipartFormData in
             if let json = jsonData {
                     multipartFormData.append(json, withName: "member", mimeType: "application/json")
                 }
+
+            multipartFormData.append(imageData!, withName: "profile", fileName: "\(name).jpeg", mimeType: "image/jpeg")
             
-            if let image = profile.pngData() {
-                print("여길 안들어옴")
-                multipartFormData.append(image, withName: "profile", fileName: "\(name).png", mimeType: "image/png")
-            }
-            
-           
         }, to: url, method: .post, headers: header)
         
         
@@ -79,7 +78,6 @@ struct UserService {
         ]
         
         let request = AF.request(url,method: .get,headers: header)
-        
         request.responseData(completionHandler: { (response) in
             switch response.result{
             case .success:
