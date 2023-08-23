@@ -10,7 +10,7 @@ import Alamofire
 
 struct LoginService{
     
-    static func signUp(email:String, password:String, completion: @escaping (NetworkResult<Bool>)->Void){
+    static func signUp(email:String, password:String, completion: @escaping (NetworkResult<Any>)->Void){
         
         let url = APIConstants.signUp
         let header: HTTPHeaders = [
@@ -30,16 +30,18 @@ struct LoginService{
                 guard let statusCode = response.response?.statusCode else {
                     return
                 }
-                guard let data = response.value else {
-                    return
-                }
-                let decoder = JSONDecoder()
-                guard let decodedData = try? decoder.decode(GenericResponse<User>.self, from: data) else {
-                    return}
                 
                 switch statusCode {
                 case 200:
+                    guard let data = response.value else {
+                        return
+                    }
+                    let decoder = JSONDecoder()
+                    guard let decodedData = try? decoder.decode(GenericResponse<User>.self, from: data) else {
+                        return}
                     completion(.success(decodedData.isSuccess))
+                case 500:
+                    completion(.requestErr("Error"))
                 default:
                     completion(.networkFail)
                 }
@@ -115,15 +117,16 @@ struct LoginService{
                 guard let statusCode = response.response?.statusCode else {
                     return
                 }
-                guard let data = response.value else {
-                    return
-                }
-                
-                let decoder = JSONDecoder()
-                guard let decodedData = try? decoder.decode(GenericResponse<[Token]>.self, from: data) else {return}
                 
                 switch statusCode {
                 case 200:
+                    guard let data = response.value else {
+                        return
+                    }
+                    
+                    let decoder = JSONDecoder()
+                    guard let decodedData = try? decoder.decode(GenericResponse<[Token]>.self, from: data) else {return}
+                    
                     completion(.success(decodedData.result))
                 default:
                     completion(.networkFail)
@@ -155,15 +158,16 @@ struct LoginService{
                 guard let statusCode = response.response?.statusCode else {
                     return
                 }
-                guard let data = response.value else {
-                    return
-                }
-                
-                let decoder = JSONDecoder()
-                guard let decodedData = try? decoder.decode(GenericResponse<String>.self, from: data) else {return}
                 
                 switch statusCode {
                 case 200:
+                    guard let data = response.value else {
+                        return
+                    }
+                    
+                    let decoder = JSONDecoder()
+                    guard let decodedData = try? decoder.decode(GenericResponse<String>.self, from: data) else {return}
+                    
                     completion(.success(decodedData.result))
                 default:
                     completion(.networkFail)
@@ -194,15 +198,15 @@ struct LoginService{
                 guard let statusCode = response.response?.statusCode else {
                     return
                 }
-                guard let data = response.value else {
-                    return
-                }
-                
-                let decoder = JSONDecoder()
-                guard let decodedData = try? decoder.decode(GenericResponse<String>.self, from: data) else {return}
                 
                 switch statusCode {
                 case 200:
+                    guard let data = response.value else {
+                        return
+                    }
+                    
+                    let decoder = JSONDecoder()
+                    guard let decodedData = try? decoder.decode(GenericResponse<String>.self, from: data) else {return}
                     completion(.success(decodedData.isSuccess))
                 default:
                     completion(.networkFail)

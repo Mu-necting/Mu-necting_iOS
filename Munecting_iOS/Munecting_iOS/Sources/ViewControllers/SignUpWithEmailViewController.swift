@@ -83,13 +83,14 @@ class SignUpWithEmailViewController: UIViewController {
              (networkResult) in
              switch networkResult{
              case .success(let data):
-                 if(data){                     
+                 let success = data as! Bool
+                 if(success){                     
                      guard let viewController = self.loginPageStoryboard.instantiateViewController(identifier: "SignUpResultViewController") as? SignUpResultViewController else {return}
                      self.navigationController?.pushViewController(viewController, animated: true)
                  }
              case .requestErr(let msg):
                  if let message = msg as? String { print(message) }
-                 self.showAlert(title:"요청 에러",message : "메일과 비밀번호를 확인해주세요." )
+                 self.showAlert(title:"이미 가입된 이메일 입니다.",message : "메일과 비밀번호를 확인해주세요." )
              case .pathErr:
                  print("pathErr in loginWithSocialAPI")
                  self.showAlert(title:"ERROR",message : "에러." )
