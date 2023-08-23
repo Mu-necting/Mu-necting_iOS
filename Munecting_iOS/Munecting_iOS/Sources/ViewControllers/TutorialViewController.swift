@@ -65,8 +65,10 @@ class TutorialViewController: UIViewController{
                     let user : User = data as! User
                     UserManager.shared.setUser(user)
                     
-                    print("잘됐나 확인")
-                    print(user)
+                    let musicSearchVC =  UIStoryboard(name: "MusicSearch", bundle: nil)
+                                    .instantiateViewController(withIdentifier: "MusicSearchNavigationController")
+                                
+                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(musicSearchVC, animated: true)
                     
                 case .requestErr(let msg):
                     if let message = msg as? String {
