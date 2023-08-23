@@ -77,6 +77,7 @@
 		D26EEA612A93570B009F673E /* LoginNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EEA602A93570B009F673E /* LoginNavigationViewController.swift */; };
 		D26EEA652A9378D8009F673E /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D26EEA642A9378D8009F673E /* Setting.storyboard */; };
 		D26EEA672A937993009F673E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EEA662A937993009F673E /* SettingViewController.swift */; };
+		D26EEA6A2A95E998009F673E /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EEA692A95E998009F673E /* LoadingIndicator.swift */; };
 		D272FA2A2A7C0F9E0087C392 /* SignUpResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D272FA292A7C0F9E0087C392 /* SignUpResultViewController.swift */; };
 		D272FA2C2A7CA90D0087C392 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D272FA2B2A7CA90D0087C392 /* TutorialViewController.swift */; };
 		D272FA2E2A7CF8770087C392 /* ProfileTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D272FA2D2A7CF8770087C392 /* ProfileTutorialViewController.swift */; };
@@ -202,6 +203,7 @@
 		D26EEA632A9367EC009F673E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		D26EEA642A9378D8009F673E /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		D26EEA662A937993009F673E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		D26EEA692A95E998009F673E /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		D272FA292A7C0F9E0087C392 /* SignUpResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResultViewController.swift; sourceTree = "<group>"; };
 		D272FA2B2A7CA90D0087C392 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		D272FA2D2A7CF8770087C392 /* ProfileTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTutorialViewController.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 		C17DBB372A6E3C15007F45BD /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D26EEA682A95E977009F673E /* Util */,
 				C1AC80A52A860339005E1AE6 /* APIServices */,
 				D25446902A716040007E582B /* Extensions */,
 				D25446302A6E64A8007E582B /* Models */,
@@ -522,6 +525,14 @@
 				D26EEA562A91E5C7009F673E /* UserService.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		D26EEA682A95E977009F673E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D26EEA692A95E998009F673E /* LoadingIndicator.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		D2E345762A66BD7000922A1C = {
@@ -939,6 +950,7 @@
 				C1FC05C42A8E19CB00E0CD26 /* PageViewController.swift in Sources */,
 				C1FC05C82A8E19ED00E0CD26 /* HomeNavigationViewController.swift in Sources */,
 				B32CE33F2A94A386008AC37D /* ArchivePickService.swift in Sources */,
+				D26EEA6A2A95E998009F673E /* LoadingIndicator.swift in Sources */,
 				D26EEA5B2A932E1B009F673E /* Token.swift in Sources */,
 				D254468D2A701803007E582B /* SignUpWithEmailViewController.swift in Sources */,
 				D2913F2E2A6E5BA700B6174F /* User.swift in Sources */,

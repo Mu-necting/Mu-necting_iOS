@@ -35,6 +35,9 @@ class SignUpWithEmailViewController: UIViewController {
     
     @IBAction func onTapVerify(_ sender: Any) {
         if(emailTextField.text != nil){
+            
+            LoadingIndicator.showLoading()
+            
             LoginService.mailCheck(email: emailTextField.text!){
                 (networkResult) in
                 switch networkResult{
@@ -50,6 +53,8 @@ class SignUpWithEmailViewController: UIViewController {
                 case .networkFail:
                     print("networkFail in loginWithSocialAPI")
                 }
+                
+                LoadingIndicator.hideLoading()
             }
         }
     }
