@@ -40,6 +40,10 @@ class MusicSearchViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print("=====MusicSearchViewController viewWillAppear In==========")
+//        if(pageIndex.shared.Index == 1){
+//            
+//        }
         self.navigationController?.navigationBar.isHidden = true
         self.musics = []
         self.collectionView.reloadData()

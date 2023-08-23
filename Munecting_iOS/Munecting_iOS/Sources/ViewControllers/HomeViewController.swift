@@ -307,6 +307,7 @@ class HomeViewController: UIViewController {
             case .success(let data):
                 if let arroundMusics = data as? [AroundMusic]{
                     if(arroundMusics.count == 0){
+                        self.showAlert(title: "주변 \(range)m에 업로드 된 음악이 없습니다. \n추천 음악을 재생합니다.")
                         self.getDummyMusic()
                         self.updataUI()
                     }

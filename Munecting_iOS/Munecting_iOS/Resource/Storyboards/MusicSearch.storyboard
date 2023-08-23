@@ -73,27 +73,31 @@
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ed8-oc-xhw">
-                                                            <rect key="frame" x="75" y="12.333333333333332" width="85.666666666666686" height="45.666666666666671"/>
+                                                            <rect key="frame" x="75" y="12.333333333333332" width="248" height="45.666666666666671"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attention" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50k-Rv-G2a">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="85.666666666666671" height="23"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Attention" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50k-Rv-G2a">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="248" height="23"/>
                                                                     <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="19"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NewJeans" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIU-Ny-dzv">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="NewJeans" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIU-Ny-dzv">
                                                                     <rect key="frame" x="0.0" y="31.000000000000004" width="58.333333333333336" height="14.666666666666668"/>
                                                                     <fontDescription key="fontDescription" name="Inter-Light" family="Inter" pointSize="12"/>
                                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="50k-Rv-G2a" secondAttribute="trailing" id="dOE-yb-kvA"/>
+                                                            </constraints>
                                                         </stackView>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstItem="Ed8-oc-xhw" firstAttribute="centerY" secondItem="yu2-d0-Hor" secondAttribute="centerY" id="0d4-jX-ek0"/>
                                                         <constraint firstItem="Rld-om-ReY" firstAttribute="centerY" secondItem="yu2-d0-Hor" secondAttribute="centerY" id="7Gx-bj-7Kl"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Ed8-oc-xhw" secondAttribute="trailing" id="EdV-Ny-Dsz"/>
                                                         <constraint firstItem="Rld-om-ReY" firstAttribute="leading" secondItem="yu2-d0-Hor" secondAttribute="leading" constant="10" id="NWu-oV-ty3"/>
                                                         <constraint firstItem="Ed8-oc-xhw" firstAttribute="leading" secondItem="Rld-om-ReY" secondAttribute="trailing" constant="10" id="O6A-Zj-XVN"/>
                                                     </constraints>
