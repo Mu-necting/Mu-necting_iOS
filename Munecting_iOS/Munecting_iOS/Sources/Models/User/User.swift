@@ -11,6 +11,27 @@ struct User : Codable {
         case userName = "name"
         case profileImage = "profileImage"
     }
+    
+    init(userID: Int, userName: String?, profileImage: String? = "") {
+         self.userID = userID
+         self.userName = userName
+        
+        if(profileImage == ""){
+            self.profileImage = ""
+        }else{
+            self.profileImage = "https://munecting.s3.us-east-2.amazonaws.com/" + profileImage!
+        }
+     }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        userID = try container.decode(Int.self, forKey: .userID)
+        userName = try container.decodeIfPresent(String.self, forKey: .userName)
+
+        if let image = try container.decodeIfPresent(String.self, forKey: .profileImage) {
+            profileImage = "https://munecting.s3.us-east-2.amazonaws.com/" + image
+        }
+    }
 }
 
 

@@ -28,6 +28,8 @@ class FindPasswordViewController: UIViewController {
     
     @IBAction func onTapVerify(_ sender: Any) {
         if(emailTextField.text != nil){
+            LoadingIndicator.showLoading()
+            
             LoginService.mailCheck(email: emailTextField.text!){
                 (networkResult) in
                 switch networkResult{
@@ -43,6 +45,8 @@ class FindPasswordViewController: UIViewController {
                 case .networkFail:
                     print("networkFail in mailCheckAPI")
                 }
+                
+                LoadingIndicator.hideLoading()
             }
         }
     }
