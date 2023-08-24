@@ -30,13 +30,16 @@ class PickViewController: UIViewController {
     
     
     @IBAction func tappedWritingButton(_ sender: Any) {
+        print("======tappedWritingButton=====")
         guard let writing = writingTextView.text else {return}
+        print("======writing ok=====")
         guard let memberID = UserManager.shared.getUser()?.userID else {return}
         
         self.pickWithAPI(writing: writing, memberId: memberID, archiveId: music.archiveId)
     }
     
     func pickWithAPI(writing: String, memberId: Int, archiveId: Int){
+        print("========pickWithAPI==========")
         PickService.shared.PickMusic(writing: writing, memberId: memberId, archievId: archiveId, completion: {(networkResult) in
             
             switch networkResult {

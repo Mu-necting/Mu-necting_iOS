@@ -54,15 +54,16 @@ struct MusicUploadService{
     func judgeUploadMusic(status: Int, data: Data) -> NetworkResult<Any>{
         let decoder = JSONDecoder()
         print("======judgeUplocaMuisc in=========")
+        return .success(data)
 
-        guard let decodedData = try? decoder.decode(SimpleResponse.self, from: data) else {return .pathErr}
-        print("======decode 성공=========")
-        switch decodedData.code {
-        case 1000:
-            return .success(data)
-        default:
-            return .networkFail
-        }
+//        guard let decodedData = try? decoder.decode(SimpleResponse.self, from: data) else {return .pathErr}
+//        print("======decode 성공=========")
+//        switch decodedData.code {
+//        case 1000:
+//            return .success(data)
+//        default:
+//            return .networkFail
+//        }
     }
     
     

@@ -170,8 +170,8 @@ class UploadViewController: UIViewController {
         guard let pointX = musicForUpload.pointX else {return}
         guard let pointY = musicForUpload.pointY else {return}
         print("======좌표======")
-//        guard let userID = UserManager.shared.getUser()?.userID else {return}
-        let userID = 1
+        guard let userID = UserManager.shared.getUser()?.userID else {return}
+//        let userID = 1
 
         print("======프로퍼티 unwraping 성공======")
         MusicUploadService.shared.uploadMusic(name: name,
