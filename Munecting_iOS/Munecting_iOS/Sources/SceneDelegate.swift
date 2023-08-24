@@ -58,11 +58,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                         print(message)
                     }
                 case .pathErr:
-                    print("pathErr in loginWithSocialAPI")
+                    print("pathErr in loginWithAPI")
                 case .serverErr:
-                    print("serverErr in loginWithSocialAPI")
+                    print("serverErr in loginWithAPI")
                 case .networkFail:
-                    print("networkFail in loginWithSocialAPI")
+                    let mainStoryboard = UIStoryboard(name: "LoginPage", bundle: nil)
+                    let mainViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNavigationViewController")
+
+                    self.window?.rootViewController = mainViewController
+                    self.window?.makeKeyAndVisible()
+                    print("networkFail in loginWithAPI")
                 }
             }
         }
