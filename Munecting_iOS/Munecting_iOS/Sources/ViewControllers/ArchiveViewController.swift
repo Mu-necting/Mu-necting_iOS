@@ -14,6 +14,8 @@ class ArchiveViewController: UIViewController {
     @IBOutlet weak var pickView: UIView!
     @IBOutlet weak var uploadView: UIView!
     
+    let sb = UIStoryboard(name: "Home", bundle: nil)
+
     @IBAction func switchViews(_ sender: UISegmentedControl) {
         
         if sender.selectedSegmentIndex == 0 {
@@ -31,8 +33,10 @@ class ArchiveViewController: UIViewController {
         
         segmentedControl.selectedSegmentIndex = 0
         
+        /*guard let viewController = sb.instantiateViewController(identifier: "PageViewController") as? PageViewController else {return}
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(viewController, animated: true)*/
+        
     }
-    
 
     /*
     // MARK: - Navigation

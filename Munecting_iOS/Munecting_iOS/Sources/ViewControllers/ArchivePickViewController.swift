@@ -378,11 +378,9 @@ class ArchivePickViewController: UIViewController, UICollectionViewDelegate, UIC
     //<뒤로가기 버튼 구현>
     @IBAction func backBtnTapped(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true) {
-            let HomeVC = UIStoryboard(name: "Home", bundle: nil)
-                .instantiateViewController(withIdentifier: "HomeVC")
-            
-            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?
-                .changeRootViewController(HomeVC, animated: true)
+            let sb = UIStoryboard(name: "Home", bundle: nil)
+            guard let viewController = sb.instantiateViewController(identifier: "PageViewController") as? PageViewController else {return}
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(viewController, animated: true)
         }
     }
     
