@@ -36,6 +36,7 @@ class MusicSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureCollectionView()
+        self.searchTextField.delegate = self
     }
     
     //viewWillAppear
@@ -278,6 +279,24 @@ extension MusicSearchViewController: UICollectionViewDataSource, UICollectionVie
 extension MusicSearchViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (UIScreen.main.bounds.width), height: 80)
+    }
+}
+
+extension MusicSearchViewController: UITextFieldDelegate{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // Create a character set containing only English letters
+        let englishLetters = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ +")
+
+        // Loop through each character in the replacement string
+        for character in string {
+            // Check if the character is NOT in the English letters character set
+            if !englishLetters.contains(UnicodeScalar(String(character))!) {
+                self.showAlert(title: "영어만 입력할 수 있습니다.")
+                return false // Reject the input
+            }
+        }
+
+        return true // Allow the input
     }
 }
 
