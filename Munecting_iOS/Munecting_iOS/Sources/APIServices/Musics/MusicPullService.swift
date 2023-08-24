@@ -13,7 +13,7 @@ struct MusicPullService{
         let header: HTTPHeaders = [
             "Content-Type": "application/json"
         ]
-        print("=====PullMusicURL()In=======")
+//        print("=====PullMusicURL()In=======")
         let dataRequest = AF.request(url,
                                      method: .post,
                                      headers: header)
@@ -21,7 +21,7 @@ struct MusicPullService{
         dataRequest.responseData(completionHandler: { (response) in
             switch response.result{
             case .success:
-                print("======pullMusicURL의 NetworkReslt가 Success입니다==========")
+//                print("======pullMusicURL의 NetworkReslt가 Success입니다==========")
                 guard let statusCode = response.response?.statusCode else {
                     return
                 }
@@ -30,7 +30,7 @@ struct MusicPullService{
                 }
                 completion(judgeMusicPull(status: statusCode, data: data))
             case .failure(let error):
-                print("======pullMusicURL의 NetworkReslt가 failure입니다==========")
+//                print("======pullMusicURL의 NetworkReslt가 failure입니다==========")
                 print(error)
                 completion(.networkFail)
             }
@@ -39,12 +39,15 @@ struct MusicPullService{
     
     func judgeMusicPull(status: Int, data: Data) -> NetworkResult<Any>{
         let decoder = JSONDecoder()
-        print("====judgeMusicPull In=====")
-        guard let decodedData = try? decoder.decode(GenericResponse<EmptyResult>.self, from: data) else {return .pathErr}
-        print("======decode 성공=======")
+//        print("====judgeMusicPull In=====")
+        print(data)
+        print(type(of: data))
+//        guard let decodedData = try? decoder.decode(YouTubeVideo.self, from: data) else {return .pathErr}
+        guard let decodedData = String(data: data, encoding: .utf8) else{return .pathErr}
+//        print("======decode 성공=======")
         print(decodedData)
         switch status {
-        case 1000:
+        case 200:
 //            return .success(decodedData.result)
             return .success(decodedData)
         default:

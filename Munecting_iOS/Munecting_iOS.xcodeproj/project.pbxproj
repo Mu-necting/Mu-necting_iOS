@@ -44,6 +44,9 @@
 		C185E1022A89BB0F00895C2D /* musicSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = C185E1012A89BB0F00895C2D /* musicSearch.json */; };
 		C196437A2A967B40007ADF72 /* LocalJSONTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19643792A967B40007ADF72 /* LocalJSONTest.swift */; };
 		C196437C2A967BF4007ADF72 /* MunectingMapBlankResult.json in Resources */ = {isa = PBXBuildFile; fileRef = C196437B2A967BF4007ADF72 /* MunectingMapBlankResult.json */; };
+		C196437E2A96915C007ADF72 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C196437D2A96915C007ADF72 /* UIImageView.swift */; };
+		C19643802A96B846007ADF72 /* emptyResult.json in Resources */ = {isa = PBXBuildFile; fileRef = C196437F2A96B846007ADF72 /* emptyResult.json */; };
+		C19643822A96B98C007ADF72 /* SimepleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19643812A96B98C007ADF72 /* SimepleResponse.swift */; };
 		C1AC80A72A860379005E1AE6 /* MusicSearchAroundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AC80A62A860379005E1AE6 /* MusicSearchAroundService.swift */; };
 		C1B86EA42A7D1B2400F9A151 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B86EA32A7D1B2400F9A151 /* Home.storyboard */; };
 		C1B86EA62A7D1B3D00F9A151 /* BestMunector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B86EA52A7D1B3D00F9A151 /* BestMunector.storyboard */; };
@@ -79,6 +82,8 @@
 		D26EEA652A9378D8009F673E /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D26EEA642A9378D8009F673E /* Setting.storyboard */; };
 		D26EEA672A937993009F673E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EEA662A937993009F673E /* SettingViewController.swift */; };
 		D26EEA6A2A95E998009F673E /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EEA692A95E998009F673E /* LoadingIndicator.swift */; };
+		D26EEA6E2A9687E6009F673E /* DeleteUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EEA6D2A9687E6009F673E /* DeleteUserViewController.swift */; };
+		D26EEA702A969DA0009F673E /* SettingNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EEA6F2A969DA0009F673E /* SettingNavigationViewController.swift */; };
 		D272FA2A2A7C0F9E0087C392 /* SignUpResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D272FA292A7C0F9E0087C392 /* SignUpResultViewController.swift */; };
 		D272FA2C2A7CA90D0087C392 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D272FA2B2A7CA90D0087C392 /* TutorialViewController.swift */; };
 		D272FA2E2A7CF8770087C392 /* ProfileTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D272FA2D2A7CF8770087C392 /* ProfileTutorialViewController.swift */; };
@@ -170,6 +175,9 @@
 		C185E1012A89BB0F00895C2D /* musicSearch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = musicSearch.json; sourceTree = "<group>"; };
 		C19643792A967B40007ADF72 /* LocalJSONTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalJSONTest.swift; sourceTree = "<group>"; };
 		C196437B2A967BF4007ADF72 /* MunectingMapBlankResult.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MunectingMapBlankResult.json; sourceTree = "<group>"; };
+		C196437D2A96915C007ADF72 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		C196437F2A96B846007ADF72 /* emptyResult.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = emptyResult.json; sourceTree = "<group>"; };
+		C19643812A96B98C007ADF72 /* SimepleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimepleResponse.swift; sourceTree = "<group>"; };
 		C1AC80A62A860379005E1AE6 /* MusicSearchAroundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchAroundService.swift; sourceTree = "<group>"; };
 		C1B86EA32A7D1B2400F9A151 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		C1B86EA52A7D1B3D00F9A151 /* BestMunector.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BestMunector.storyboard; sourceTree = "<group>"; };
@@ -206,6 +214,8 @@
 		D26EEA642A9378D8009F673E /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		D26EEA662A937993009F673E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		D26EEA692A95E998009F673E /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		D26EEA6D2A9687E6009F673E /* DeleteUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserViewController.swift; sourceTree = "<group>"; };
+		D26EEA6F2A969DA0009F673E /* SettingNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNavigationViewController.swift; sourceTree = "<group>"; };
 		D272FA292A7C0F9E0087C392 /* SignUpResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResultViewController.swift; sourceTree = "<group>"; };
 		D272FA2B2A7CA90D0087C392 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		D272FA2D2A7CF8770087C392 /* ProfileTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTutorialViewController.swift; sourceTree = "<group>"; };
@@ -437,6 +447,8 @@
 				C1415DF52A92F3DA0038597F /* PickViewController.swift */,
 				D26EEA602A93570B009F673E /* LoginNavigationViewController.swift */,
 				D26EEA662A937993009F673E /* SettingViewController.swift */,
+				D26EEA6D2A9687E6009F673E /* DeleteUserViewController.swift */,
+				D26EEA6F2A969DA0009F673E /* SettingNavigationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -486,6 +498,7 @@
 				C185E0F82A87D55D00895C2D /* NetworkResult.swift */,
 				C185E0FA2A87D8A000895C2D /* GenericResponse.swift */,
 				C19643792A967B40007ADF72 /* LocalJSONTest.swift */,
+				C19643812A96B98C007ADF72 /* SimepleResponse.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -517,6 +530,7 @@
 			children = (
 				D25446912A716077007E582B /* UIColor.swift */,
 				C1D1E68C2A8E162300DF7207 /* UIImage.swift */,
+				C196437D2A96915C007ADF72 /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -565,6 +579,7 @@
 				C185E1012A89BB0F00895C2D /* musicSearch.json */,
 				C1415DFE2A9367B80038597F /* arroundMusic.json */,
 				C1415E002A9371600038597F /* munectingMapData.json */,
+				C196437F2A96B846007ADF72 /* emptyResult.json */,
 				C196437B2A967BF4007ADF72 /* MunectingMapBlankResult.json */,
 				C17DBB372A6E3C15007F45BD /* Sources */,
 				C17DBB352A6E3BE0007F45BD /* Resource */,
@@ -724,6 +739,7 @@
 				D26EEA652A9378D8009F673E /* Setting.storyboard in Resources */,
 				C1B86EAA2A7D1B4A00F9A151 /* MusicSearch.storyboard in Resources */,
 				D2E345922A66BD7100922A1C /* LaunchScreen.storyboard in Resources */,
+				C19643802A96B846007ADF72 /* emptyResult.json in Resources */,
 				C1B86EA42A7D1B2400F9A151 /* Home.storyboard in Resources */,
 				C1B86EAC2A7D1B5100F9A151 /* Pick.storyboard in Resources */,
 				C1415DFF2A9367B80038597F /* arroundMusic.json in Resources */,
@@ -928,8 +944,12 @@
 				C1B86ECD2A80BC0600F9A151 /* MusicSearchAround.swift in Sources */,
 				D272FA302A7CF88C0087C392 /* FinalTutorialViewController.swift in Sources */,
 				B35BE7032A89F4DC00E2ADAE /* ArchiveFilterPopUpViewController.swift in Sources */,
+				D26EEA6E2A9687E6009F673E /* DeleteUserViewController.swift in Sources */,
+				C19643822A96B98C007ADF72 /* SimepleResponse.swift in Sources */,
 				D26EEA572A91E5C7009F673E /* UserService.swift in Sources */,
+				D26EEA702A969DA0009F673E /* SettingNavigationViewController.swift in Sources */,
 				C1B86EB42A7D1BAA00F9A151 /* BestMunectorCollectionViewCell.swift in Sources */,
+				C196437E2A96915C007ADF72 /* UIImageView.swift in Sources */,
 				C1415DE22A92D1F20038597F /* MusicAnnotationView.swift in Sources */,
 				C1B86EB62A7D1BAF00F9A151 /* MusicSearchCollectionViewCell.swift in Sources */,
 				C1FC05C62A8E19E400E0CD26 /* MusicSearchNavigationController.swift in Sources */,

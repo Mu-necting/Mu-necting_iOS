@@ -34,7 +34,7 @@ class BestMunectorViewController: UIViewController {
     //viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.getMunectingRankDataWithAPI(rank: 10)
+        self.getMunectingRankDataWithAPI(rank: 1)
         self.configureCollectionView()
         self.configureRankerView()
         
@@ -125,9 +125,9 @@ class BestMunectorViewController: UIViewController {
                         
                         if let profile = $0.profile{
                             print("=========URL: \(profile)=========")
-                            var profile = self.getImage(url: URL(string: profile)!)
+//                            let profile = self.getImage(url: URL(string: "https://munecting.s3.us-east-2.amazonaws.com/\(profile)")!)
                             //error 확인하기
-                            var userRankData = MunectingRankCollectionViewStruct(profile: profile, nick: nick, allReplyCnt: allReplyCnt, rank: rank)
+                            var userRankData = MunectingRankCollectionViewStruct(profile: UIImage(systemName: "person.circle.fill")!, nick: nick, allReplyCnt: allReplyCnt, rank: rank)
                             self.collectionViewData.append(userRankData)
                         }
                         else{

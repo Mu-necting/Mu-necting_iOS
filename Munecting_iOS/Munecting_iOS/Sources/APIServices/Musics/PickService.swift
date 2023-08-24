@@ -6,6 +6,7 @@ struct PickService{
     struct EmptyResult: Codable {}
     
     func PickMusic(writing: String, memberId: Int, archievId: Int, completion: @escaping (NetworkResult<Any>) -> Void){
+        print("========PickMusic In=============")
         let url = APIConstants.pickURL
         let header: HTTPHeaders = [
             "Content-Type": "application/json"
@@ -25,6 +26,7 @@ struct PickService{
         dataRequest.responseData(completionHandler: { (response) in
             switch response.result{
             case .success:
+                print("========response.result == Success=============")
                 guard let statusCode = response.response?.statusCode else {
                     return
                 }
@@ -33,6 +35,7 @@ struct PickService{
                 }
                 completion(judgePickMusic(status: statusCode, data: data))
             case .failure(let error):
+                print("========response.result == failure=============")
                 print(error)
                 completion(.networkFail)
             }
@@ -40,15 +43,17 @@ struct PickService{
     }
     
     func judgePickMusic(status: Int, data: Data) -> NetworkResult<Any>{
+        print("========judgePickMusic In=============")
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(GenericResponse<EmptyResult>.self, from: data) else {return .pathErr}
-        
-        switch status {
-        case 1000:
-            return .success(decodedData.result)
-        default:
-            return .networkFail
-        }
+        return .success(data)
+//        guard let decodedData = try? decoder.decode(SimpleResponse.self, from: data) else {return .pathErr}
+//        print("========decoding 성공=============")
+//        switch decodedData.code {
+//        case 1000:
+//            return .success(decodedData)
+//        default:
+//            return .networkFail
+//        }
     }
     
     

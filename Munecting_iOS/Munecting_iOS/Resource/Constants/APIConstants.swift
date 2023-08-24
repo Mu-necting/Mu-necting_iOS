@@ -14,6 +14,8 @@ struct APIConstants {
     
     static let login = baseURL + "/login"
     
+    static let logout = baseURL + "/log-out"
+    
     static let loginWithSocialURL = baseURL + "/oauth2/kakao"
     
     static let mailCheck = baseURL + "/mailCheck"
@@ -23,6 +25,11 @@ struct APIConstants {
     static let changeProfile = baseURL + "/members"
     
     static let getProfile = baseURL + "/members"
+    
+    static let changePassword = baseURL + "/members/changepw"
+    
+    static let deleteUser = baseURL + "/members/delete"
+
     
     // MARK: - Musics
     
@@ -38,13 +45,13 @@ struct APIConstants {
     //음악 Pick(Post)
     static let pickURL = baseURL + "/pick"
     
-    //유튜브 전체 재생 링크
+    //유튜브 전체 재생 링크(post)
     static let musicPullURL = baseURL + "/musics/youtube-fulllink"
     
-    //reply 전송
+    //reply 전송(post)
     static let sendReplyURL = baseURL + "/replies/reply"
     
-    //reply 취소
+    //reply 취소(post)
     static let cancelReplyURL = baseURL + "/replies/unreply"
     
 

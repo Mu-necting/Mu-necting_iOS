@@ -602,7 +602,7 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="onTapNextButton:" destination="LG4-KA-qTQ" eventType="touchUpInside" id="uWv-d7-wO4"/>
+                                    <action selector="onTapChangeButton:" destination="LG4-KA-qTQ" eventType="touchUpInside" id="m4j-OA-hqI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -627,7 +627,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="nextButton" destination="cUe-kz-JWh" id="DWs-58-G5w"/>
+                        <outlet property="changeButton" destination="cUe-kz-JWh" id="Pl6-Vn-12v"/>
                         <outlet property="passwordCheckTextField" destination="fNf-Fm-yLX" id="iYP-Yn-3Bg"/>
                         <outlet property="passwordTextField" destination="aZQ-6C-hXK" id="N1S-Gh-9Ep"/>
                     </connections>
@@ -653,6 +653,79 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ciz-yE-FhL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="951.90839694656484" y="-34.507042253521128"/>
+        </scene>
+        <!--Delete User View Controller-->
+        <scene sceneID="KHa-pR-agN">
+            <objects>
+                <viewController storyboardIdentifier="DeleteUserViewController" id="6X8-wt-B8Z" customClass="DeleteUserViewController" customModule="Munecting_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XYM-Zm-Ogx">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="im0-6f-OZ0">
+                                <rect key="frame" x="82.666666666666671" y="404.66666666666669" width="227.66666666666663" height="68"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴 후에는 7일 동안" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mj4-sN-bko">
+                                        <rect key="frame" x="12" y="0.0" width="203.66666666666666" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="재가입이 불가능합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHo-fW-V32">
+                                        <rect key="frame" x="0.0" y="38" width="227.66666666666666" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴하시겠습니까?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KP9-WT-b6i">
+                                <rect key="frame" x="47.999999999999986" y="137" width="186.66666666666663" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGj-10-WHz">
+                                <rect key="frame" x="48" y="698" width="297" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="B8U-cm-ZOX"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="탈퇴하기">
+                                            <attributes>
+                                                <font key="NSFont" size="14" name="AppleSDGothicNeo-Bold"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onTapChangeButton:" destination="LG4-KA-qTQ" eventType="touchUpInside" id="ljJ-1E-Bge"/>
+                                    <action selector="onTapDeleteUserButton:" destination="6X8-wt-B8Z" eventType="touchUpInside" id="hwZ-7H-mia"/>
+                                    <action selector="onTapNextButton:" destination="LG4-KA-qTQ" eventType="touchUpInside" id="fyd-V7-Rwa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bEO-vU-cYC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bEO-vU-cYC" firstAttribute="bottom" secondItem="jGj-10-WHz" secondAttribute="bottom" constant="78" id="700-Gp-B8K"/>
+                            <constraint firstItem="bEO-vU-cYC" firstAttribute="trailing" secondItem="jGj-10-WHz" secondAttribute="trailing" constant="48" id="Dch-ex-GwX"/>
+                            <constraint firstItem="KP9-WT-b6i" firstAttribute="leading" secondItem="bEO-vU-cYC" secondAttribute="leading" constant="48" id="IQo-8M-IZq"/>
+                            <constraint firstItem="im0-6f-OZ0" firstAttribute="centerY" secondItem="bEO-vU-cYC" secondAttribute="centerY" id="Y8m-7x-23U"/>
+                            <constraint firstItem="KP9-WT-b6i" firstAttribute="top" secondItem="bEO-vU-cYC" secondAttribute="top" constant="78" id="eXf-kk-Ydw"/>
+                            <constraint firstItem="im0-6f-OZ0" firstAttribute="centerX" secondItem="bEO-vU-cYC" secondAttribute="centerX" id="eaF-RB-QMe"/>
+                            <constraint firstItem="jGj-10-WHz" firstAttribute="leading" secondItem="bEO-vU-cYC" secondAttribute="leading" constant="48" id="vZH-vU-aAK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lGY-6v-LmV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2762.5954198473282" y="1488.7323943661972"/>
         </scene>
     </scenes>
     <resources>

@@ -67,7 +67,7 @@ class HomeViewController: UIViewController {
         }
         
         //test
-        localJSONTest.shared.munectingMapJSON()
+        localJSONTest.shared.uploadMusicJSON()
     }
     
     //viewWillAppear
@@ -147,9 +147,9 @@ class HomeViewController: UIViewController {
         
         if(audioPlayer?.rate == 1.0){
             self.audioPlayer?.pause()
-            self.pauseRotationAnimation()
+//            self.pauseRotationAnimation()
         }else{
-            self.resumeRotationAnimation()
+//            self.resumeRotationAnimation()
             self.audioPlayer?.play()
         }
     }
@@ -279,10 +279,10 @@ class HomeViewController: UIViewController {
     @IBAction func pickButtonTapped(_ sender: Any) {
         self.audioPlayer?.pause()
         let music = self.arroundMusics[self.curMusicNum]
-        let albumCoverImage = music.coverImg
-        let archiveID = music.archiveId
+   
         let sb = UIStoryboard(name: "Pick", bundle: nil)
         guard let viewController = sb.instantiateViewController(identifier: "PickViewController") as? PickViewController else {return}
+        viewController.music = music
 //            viewController.albumCoverImageView.image = self.getImage(url: URL(string: music.coverImage)!)
 //            viewController.artistName.text = music.name
 //            viewController.archievID = music.archiveId
