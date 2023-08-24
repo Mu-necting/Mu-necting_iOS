@@ -31,7 +31,20 @@ class ArchiveDetailViewController: UIViewController {
         genreLbl.text = genreText
         
         albumImg.layer.cornerRadius = 10
+        
+        // Add a tap gesture recognizer to the view
+        //let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        //view.addGestureRecognizer(tapGesture)
+        
+        // Set the delegate of the text field
+       // self.detailTextView.delegate = self
     }
+    
+    @objc func dismissKeyboard() {
+            // Resign first responder status to dismiss the keyboard
+        self.detailTextView.resignFirstResponder()
+        self.view.endEditing(true)
+        }
     
     func loadDetailData() {
         if let archiveDetail = ArchiveDetailManager.shared.archiveDetail {

@@ -37,6 +37,14 @@ class MusicSearchViewController: UIViewController {
         super.viewDidLoad()
         self.configureCollectionView()
         self.searchTextField.delegate = self
+        
+        let tapGeture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        
+  
+    }
+    
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
     }
     
     //viewWillAppear
@@ -131,6 +139,8 @@ class MusicSearchViewController: UIViewController {
         self.collectionView.reloadData()
         self.page = 1
         self.searchMusicWithAPI(searchKeyword: musicName, page: page)
+        
+        view.endEditing(true)
     }
     
     //MARK: Data 관련 함수
@@ -297,6 +307,11 @@ extension MusicSearchViewController: UITextFieldDelegate{
         }
 
         return true // Allow the input
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

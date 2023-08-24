@@ -5,6 +5,7 @@
 //  Created by 이현호 on 2023/08/17.
 //
 import UIKit
+import Alamofire
 
 struct MunectingRankCollectionViewStruct{
     var profile: UIImage
@@ -34,7 +35,9 @@ class BestMunectorViewController: UIViewController {
     //viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.getMunectingRankDataWithAPI(rank: 1)
+//        self.getMunectingRankDataWithAPI(rank: 10)
+        self.getDummy()
+        self.rankerUIUpdate()
         self.configureCollectionView()
         self.configureRankerView()
         
@@ -79,8 +82,6 @@ class BestMunectorViewController: UIViewController {
     
     func rankerUIUpdate(){
     
-        
-
         if self.collectionViewData.count > 3{
             self.firstPersonImageView.image = collectionViewData[2].profile
             self.firstNickLabel.text = collectionViewData[2].nick
@@ -107,8 +108,20 @@ class BestMunectorViewController: UIViewController {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
     }
-    
 
+//    func loadProfileImage() {
+//        if let profileImageURL = UserManager.shared.getUser()?.profileImage {
+//            // Alamofire를 사용하여 프로필 이미지 다운로드
+//            AF.request(profileImageURL).responseImage { response in
+//                switch response.result {
+//                case .success(let image):
+//                    self.profileImg.image = image
+//                case .failure(let error):
+//                    print("Error downloading profile image: \(error)")
+//                }
+//            }
+//        }
+//    }
     
     //MARK: 데이터 가져오기 함수
     
@@ -122,22 +135,28 @@ class BestMunectorViewController: UIViewController {
                         var nick = $0.nick
                         var allReplyCnt = $0.allReplyCnt
                         var rank = $0.rank
+                        var profile = $0.profile
+                        var profileImage = self.getImage(url: URL(string: "https://munecting.s3.us-east-2.amazonaws.com/" + profile!)!)
                         
-                        if let profile = $0.profile{
-                            print("=========URL: \(profile)=========")
-//                            let profile = self.getImage(url: URL(string: "https://munecting.s3.us-east-2.amazonaws.com/\(profile)")!)
-                            //error 확인하기
-                            var userRankData = MunectingRankCollectionViewStruct(profile: UIImage(systemName: "person.circle.fill")!, nick: nick, allReplyCnt: allReplyCnt, rank: rank)
-                            self.collectionViewData.append(userRankData)
-                        }
-                        else{
-                            var profile = UIImage.init(systemName: "person.circle.fill")
-                            var userRankData = MunectingRankCollectionViewStruct(profile: profile!, nick: nick, allReplyCnt: allReplyCnt, rank: rank)
-                            self.collectionViewData.append(userRankData)
-                        }
+                        var userRankData = MunectingRankCollectionViewStruct(profile: profileImage, nick: nick, allReplyCnt: allReplyCnt, rank: rank)
+                        self.collectionViewData.append(userRankData)
+                        
+                        
+//                        let profileImage = "https://munecting.s3.us-east-2.amazonaws.com/" + profile!
+//                        AF.request(profileImage).responseImage{ response in
+//                            switch response.result{
+//                            case .success(let image):
+//                                var userRankData = MunectingRankCollectionViewStruct(profile: image, nick: nick, allReplyCnt: allReplyCnt, rank: rank)
+//                                self.collectionViewData.append(userRankData)
+//                            case .failure(let error):
+//                                print("Error downloading profile image: \(error)")
+//                            }
+//                        }
                     }
                     self.collectionViewData = self.collectionViewData.sorted { $0.rank < $1.rank }
                     self.rankerUIUpdate()
+                    print("=============collectionViewData===========")
+                    print("\(self.collectionViewData)")
                     self.collectionView.reloadData()
                 }
             case .requestErr(let msg):
@@ -151,8 +170,31 @@ class BestMunectorViewController: UIViewController {
             case .networkFail:
                 print("networkFail in searchMusicWithAPI")
             }
-            
         })
+    }
+    
+    //getDummy
+    func getDummy(){
+        for _ in 1...30 {
+             // Generate random profile image (replace with your logic)
+             let randomProfileImage = UIImage(systemName: "person.fill")!
+             
+             // Generate random nick name (replace with your logic)
+             let randomNick = "User" + String(Int.random(in: 1...100))
+             
+             // Generate random allReplyCnt and rank (replace with your logic)
+             let randomAllReplyCnt = Int.random(in: 0...100)
+             let randomRank = Int.random(in: 1...30)
+             
+             // Create a MunectingRankCollectionViewStruct instance
+             let data = MunectingRankCollectionViewStruct(profile: randomProfileImage,
+                                                         nick: randomNick,
+                                                         allReplyCnt: randomAllReplyCnt,
+                                                         rank: randomRank)
+            
+            self.collectionViewData = self.collectionViewData.sorted { $0.allReplyCnt > $1.allReplyCnt }
+            self.collectionViewData.append(data)
+         }
     }
     
     //MARK: 기타 함수
@@ -162,9 +204,9 @@ class BestMunectorViewController: UIViewController {
         if let data = try? Data(contentsOf: url) {
             if let image = UIImage(data: data) {return image}
         }else{
-            return UIImage()
+            return UIImage(systemName: "person.fill")!
         }
-        return UIImage()
+        return UIImage(systemName: "person.fill")!
     }
     
 }

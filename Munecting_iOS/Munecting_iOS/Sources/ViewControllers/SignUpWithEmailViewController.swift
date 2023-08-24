@@ -31,7 +31,21 @@ class SignUpWithEmailViewController: UIViewController {
         // Do any additional setup after loading the view.
         verifiedMark.isHidden = true
         verifyNumberTextField.addTarget(self, action: #selector(didTextFieldChanged), for: .editingChanged)
+        
+        // Add a tap gesture recognizer to the view
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        
+        // Set the delegate of the text field
+        self.emailTextField.delegate = self
+        
     }
+    
+    @objc func dismissKeyboard() {
+            // Resign first responder status to dismiss the keyboard
+        self.emailTextField.resignFirstResponder()
+        view.endEditing(true)
+        }
     
     @IBAction func onTapVerify(_ sender: Any) {
         if(emailTextField.text != nil){
@@ -43,7 +57,7 @@ class SignUpWithEmailViewController: UIViewController {
                 switch networkResult{
                 case .success(let data):
                     self.verifyNumber = data
-                    self.emailTextField.isUserInteractionEnabled = false
+//                    self.emailTextField.isUserInteractionEnabled = false
                     self.showAlert(title:"요청 완료",message : "메일로 인증번호가 전송되었어요." )
                 case .requestErr(let msg):
                     if let message = msg as? String { print(message) }
@@ -109,7 +123,7 @@ class SignUpWithEmailViewController: UIViewController {
     @objc private func didTextFieldChanged(){
         if(verifyNumberTextField.text == verifyNumber){
             verifiedMark.isHidden = false
-            verifyNumberTextField.isUserInteractionEnabled = false
+//            verifyNumberTextField.isUserInteractionEnabled = false
             isVerified = true
         }
     }
@@ -124,3 +138,11 @@ class SignUpWithEmailViewController: UIViewController {
     }
 }
 
+// UITextFieldDelegate method to dismiss keyboard when Return key is pressed
+extension SignUpWithEmailViewController : UITextFieldDelegate{
+    
+func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+      textField.resignFirstResponder()
+      return true
+  }
+}
